@@ -1,0 +1,41 @@
+create table person (
+    person_id integer AUTO_INCREMENT PRIMARY KEY ,
+    person_pass varchar(100) not null,
+    person_email varchar(100) UNIQUE not null,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    gender varchar(10) not null,
+    mobile varchar(15) not null,
+    day_bd integer(10) not null,
+    month_bd integer(10) not null,
+    year_bd integer(10) not null,
+    country varchar(50) not null,
+    city varchar(50) not null,
+    person_role integer (10) not null,
+    active integer not null,
+    INDEX(person_email)
+);
+
+create table forms(
+    form_id integer PRIMARY KEY AUTO_INCREMENT,
+    education integer not null,
+    major integer (50),
+    skills varchar (200) not null ,
+    languages varchar(200) not null,
+    job_type integer not null,
+    position integer not null,
+    about varchar (1500)not null,
+    person_id integer not null,
+    FOREIGN KEY (person_id) REFERENCES person(person_id),
+    INDEX (form_id)
+);
+
+create table contacts (
+    contact_id integer PRIMARY KEY AUTO_INCREMENT,
+    full_name varchar(100) not null,
+    email varchar(100) not null,
+    subject varchar(300) not null,
+    message varchar (3000) not null,
+   	INDEX (email)
+);
+

@@ -19,10 +19,30 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/abdelrahman" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="user page final" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="home page final">
+      <change afterPath="$PROJECT_DIR$/Home/PHP/ContactUs/contact.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/PHP/ContactUs/pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/PHP/SignIn/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/PHP/SignIn/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/PHP/SignIn/pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/PHP/SignUp/pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/PHP/SignUp/signup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/PHP/Edit/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/PHP/Edit/pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,6 +60,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1kUCOcfm8lTi2WePfAjaCktIW3q" />
@@ -52,7 +76,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vendor/Fonts/font-awesome-4.7.0/fonts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -64,19 +88,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Web-Project\Vendor\Fonts\font-awesome-4.7.0\fonts" />
-      <recent name="C:\xampp\htdocs\Web-Project\Vendor\Fonts\font-awesome-4.7.0\css" />
-      <recent name="C:\xampp\htdocs\Web-Project\Vendor\script" />
-      <recent name="C:\xampp\htdocs\Web-Project\Vender\script" />
-      <recent name="C:\xampp\htdocs\Web-Project\User" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\User\PHP" />
       <recent name="C:\xampp\htdocs\Web-Project\Vender\CSS" />
       <recent name="C:\xampp\htdocs\Web-Project\Vender\Fonts" />
       <recent name="C:\xampp\htdocs\Web-Project\Vender" />
       <recent name="C:\xampp\htdocs\Web-Project\User" />
-      <recent name="C:\xampp\htdocs\Web-Project" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject" />
+      <recent name="C:\xampp\htdocs\WebProject\Home" />
+      <recent name="C:\xampp\htdocs\Web-Project\Vendor\Fonts\font-awesome-4.7.0\fonts" />
+      <recent name="C:\xampp\htdocs\Web-Project\Vendor\Fonts\font-awesome-4.7.0\css" />
+      <recent name="C:\xampp\htdocs\Web-Project\Vendor\script" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (3)">
