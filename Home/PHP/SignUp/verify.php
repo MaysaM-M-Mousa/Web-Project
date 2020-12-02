@@ -31,7 +31,7 @@ http://localhost/WebProject/Home/PHP/SignUp/verify.php?email=' . $_SESSION['user
 }
 // in case this php file is entered without the 2 cases
 if (!isset($_SESSION['hash_verification']) && !isset($_SESSION['user_email'])) {
-    header("Location: ../../../Home/HTML/index.html");
+    header("Location: ../../../Home/HTML/index.php");
     return;
 }
 
@@ -146,7 +146,7 @@ if (isset($_GET['email']) && isset($_GET['hash'])) {
 
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <div class="container">
-        <a id="brand" class="navbar-brand" href="../../HTML/index.html">Palestine Hoter</a>
+        <a id="brand" class="navbar-brand" href="../../HTML/index.php">Palestine Hoter</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navdiv">
             <span class="navbar-toggler-icon" style="color:white"></span>
         </button>

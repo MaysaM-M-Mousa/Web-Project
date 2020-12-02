@@ -3,7 +3,7 @@ require_once 'pdo.php';
 session_start();
 
 if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-    header("Location:../../../Home/HTML/index.html");
+    header("Location:../../../Home/HTML/index.php");
     return;
 }
 
@@ -73,7 +73,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name'])
             ":city" => $city
         ));
         $_SESSION['suc_msg'] = "Your information was successfully updated";
-        header("Location:../../HTML/index.html");
+        header("Location:../../HTML/index.php");
         return;
 
     } catch (PDOException $e) {
@@ -91,7 +91,7 @@ $result = $pdo->query($sql);
 
 // to check it's in the database
 if ($result->rowCount() < 1) {
-    header("Location:../../HTML/index.html");
+    header("Location:../../HTML/index.php");
     return;
 }
 $row = $result->fetch(PDO::FETCH_ASSOC);
@@ -402,7 +402,7 @@ $person_role_form = $row['person_role'];
                            style="  width: 150px">
                 </div>
                 <div class="col-6">
-                    <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.html"
+                    <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.php"
                        style=" width: 100px">Cancel</a>
                 </div>
             </div>

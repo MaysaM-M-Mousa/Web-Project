@@ -1,3 +1,82 @@
+<?php
+require_once '../PHP/SignIn/pdo.php';
+session_start();
+
+//if(isset($_SESSION['person_id']) && isset($_SESSION['person_role'])){
+//    header("Location:../../HTML/index.html");
+//    return;
+//}
+
+
+if (isset($_POST['resend'])) {
+    $_SESSION['hash_verification'] = md5(rand(0, 1000));
+    header('Location: ../SignUp/verify.php');
+    return;
+}
+
+if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
+
+    if (strlen($_POST['person_email']) < 1 || strlen($_POST['person_pass']) < 1 || strlen($_POST['login']) < 1) {
+        header("Location : login.php");
+        return;
+    }
+    $person_pass = htmlentities($_POST['person_pass']);
+    $person_email = htmlentities($_POST['person_email']);
+
+    $_SESSION['user_email'] = $person_email;
+
+    if (!strpos($person_email, "@")) {
+        $_SESSION['error_message'] = "Email must has '@' character.";
+        header("Location: login.php");
+        return;
+    }
+
+
+
+    $hashed_pass = hash("sha256", trim($person_pass, " "));
+    $stmt = $pdo->query("SELECT * FROM person where person_email=" . "'" . trim($person_email, " ") . "'");
+
+if ($stmt->rowCount() < 1) {
+$_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
+header("Location:login.php");
+return;
+}
+
+
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($row['active'] == 0) {
+$_SESSION['error_verification'] = "Your account is not verified yet!";
+header("Location:login.php");
+return;
+}
+
+
+if ($row['person_pass'] !== $hashed_pass || $row['person_email'] !== $person_email) {
+$_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
+header("Location:login.php");
+return;
+}
+
+
+
+
+// if everything is okey! store person_role and person_id
+$_SESSION['person_id'] = $row['person_id'];
+$_SESSION['person_role'] = $row['person_role'];
+$_SESSION['activated'] = 1;
+
+unset($_SESSION['user_email']);
+header("Location:../../PHP/Edit/edit.php");
+return;
+
+//    header("Location:../../HTML/index.html");
+
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +84,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>La Terra Santa &reg;</title>
     <link rel="stylesheet" href="../../Vendor/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
     <link rel="stylesheet" href="../../Vendor/CSS/flexslider.css">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../../Vendor/CSS/flaticon.css" type="text/css">
@@ -20,7 +99,7 @@
     </div>
     <nav class="mainmenu mobile-menu">
         <ul>
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
             <li><a href="./rooms.html">Rooms</a></li>
             <li><a href="./about-us.html">About Us</a></li>
             <li><a href="./pages.html">Pages</a></li>
@@ -30,6 +109,7 @@
     </nav>
     <div id="mobile-menu-wrap"></div>
     <div class="top-social">
+
         <a href="#"><i class="fa fa-facebook"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-tripadvisor"></i></a>
@@ -42,24 +122,81 @@
 </div>
 <!-- Offcanvas Menu Section End -->
 
+<!-- Modal Login -->
+<div id="login" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Sign In</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="model-wrapper">
+                        <?php
+                        if (isset($_SESSION['error_verification'])) {
+                            unset($_SESSION['error_verification']);
+                            echo '<form method="post">';
+                            echo '<p class="hint-text">Please Verify Your Email..</p>';
+                            echo '<input class="btn btn-primary btn-block btn-lg"type="submit" name="resend" value="Resend Email" class="offset-3"> ';
+                            echo '</form>';
+                            }
+                        ?>
+                    </div>
+                    <div class="model-wrapper">
+                        <div class="input-data">
+                            <input type="text" class="form-control" name="person_email" id="user_email" required="required">
+                            <label>Name</label>
+                            <div class="underline"></div>
+                        </div>
+                    </div>
+                    <div class="model-wrapper">
+                        <div class="input-data">
+                            <input type="password" class="form-control" name="person_pass" id="user_pass" required="required">
+                            <label>Password</label>
+                            <div class="underline"></div>
+                        </div>
+                    </div>
+                    <div class="model-wrapper">
+                        <?php
+                        if (isset($_SESSION['error_message'])) {
+                            echo "<span class='offset-md-3' style='color: red'>" . $_SESSION['error_message'] . "</span>";
+                            unset($_SESSION['error_message']);
+                        } else if (isset($_SESSION['email_not_found_msg'])) {
+                            echo "<span class='offset-md-3' style='color: red'>" . $_SESSION['email_not_found_msg'] . "</span>";
+                            unset($_SESSION['email_not_found_msg']);
+                        }
+                        ?>
+
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+                    </div>
+                    <p class="hint-text"><a href="#">Forgot Password?</a></p>
+                </form>
+            </div>
+            <div class="modal-footer">Still Without A Room? &nbsp;<a href="#">Reserve Now</a></div>
+        </div>
+    </div>
+</div>
 <!-- Header Section Begin -->
 <header class="header-section">
     <nav class="top-nav">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <ul class="tn-left">
+                        <li><i class="fas fa-user"></i><a href="#login" class="trigger-btn" data-toggle="modal"> Sign in</a></li>
                         <li><i class="fa fa-phone"></i><a href="tel:123456789">123456789</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:maysam@gmail.com">maysam@gmail.com</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="tn-right">
                         <div class="top-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-tripadvisor"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -70,8 +207,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-dark py-4">
         <div class="container-fluid">
             <!--  Show this only on mobile to medium screens  -->
-            <a href="index.html" class="navbar-brand d-lg-none d-block my-2 ml-3"><img src="../images/logo-sm.png"
-                                                                                       alt="La Terra Santa Logo"></a>
+            <a href="index.php" class="navbar-brand d-lg-none d-block my-2 ml-3"><img src="../images/logo-sm.png"
+                                                                                      alt="La Terra Santa Logo"></a>
             <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item px-1 mr-1 active"><a class="nav-link px-0" href="#">Home <span class="sr-only">(current)</span></a>
@@ -80,8 +217,8 @@
                     <l1 class="nav-item px-0 mr-5"><a class="nav-link px-1" href="#">Contact</a></l1>
                 </ul>
                 <!--   Show this only lg screens and up   -->
-                <a href="index.html" class="navbar-brand d-none d-lg-block my-5"><img src="../images/logo-full.png"
-                                                                                      alt="La Terra Santa Logo"></a>
+                <a href="index.php" class="navbar-brand d-none d-lg-block my-5"><img src="../images/logo-full.png"
+                                                                                     alt="La Terra Santa Logo"></a>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item px-0 ml-5"><a class="nav-link px-1" href="#">Tell Your Story</a></li>
                     <li class="nav-item px-0 ml-2"><a class="nav-link px-1" href="#">Be Part Of Us</a></li>
@@ -287,7 +424,6 @@
         </div>
     </div>
 </section>
-
 <section class="section-invert">
     <div class="container-fluid">
         <div class="room-items no-gutters">
@@ -295,8 +431,8 @@
                 <div class="col-lg-3 col-md-6">
                     <div class="room-item" style="background-image: url('../images/room-b1.jpg')">
                         <div class="hr-text">
-                            <h3>Double Room</h3>
-                            <h2>199$<span>/Pernight</span></h2>
+                            <h3>Single Room</h3>
+                            <h2>150$<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
                                 <tr>
@@ -322,10 +458,10 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="room-item" style="background-image: url('../images/room-b1.jpg')">
+                    <div class="room-item" style="background-image: url('../images/room-b2.jpg')">
                         <div class="hr-text">
                             <h3>Double Room</h3>
-                            <h2>199$<span>/Pernight</span></h2>
+                            <h2>200$<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
                                 <tr>
@@ -334,7 +470,36 @@
                                 </tr>
                                 <tr>
                                     <td class="r-o">Capacity:</td>
-                                    <td>Max persion 5</td>
+                                    <td>Single Person</td>
+                                </tr>
+                                <tr>
+                                    <td class="r-o">Bed:</td>
+                                    <td>Single Bed</td>
+                                </tr>
+                                <tr>
+                                    <td class="r-o">Services:</td>
+                                    <td>Wifi, Television, Bathroom,...</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <a href="#" class="primary-link">More Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="room-item" style="background-image: url('../images/room-b3.jpg')">
+                        <div class="hr-text">
+                            <h3>Duplex Room</h3>
+                            <h2>250$<span>/Pernight</span></h2>
+                            <table>
+                                <tbody>
+                                <tr>
+                                    <td class="r-o">Size:</td>
+                                    <td>45 ft</td>
+                                </tr>
+                                <tr>
+                                    <td class="r-o">Capacity:</td>
+                                    <td>3 People</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Bed:</td>
@@ -351,52 +516,23 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="room-item" style="background-image: url('../images/room-b1.jpg')">
+                    <div class="room-item" style="background-image: url('../images/room-b4.jpg')">
                         <div class="hr-text">
-                            <h3>Double Room</h3>
-                            <h2>199$<span>/Pernight</span></h2>
+                            <h3>Studio </h3>
+                            <h2>350$<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
                                 <tr>
                                     <td class="r-o">Size:</td>
-                                    <td>30 ft</td>
+                                    <td>100 ft</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Capacity:</td>
-                                    <td>Max persion 5</td>
+                                    <td>5 People</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <a href="#" class="primary-link">More Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="room-item" style="background-image: url('../images/room-b1.jpg')">
-                        <div class="hr-text">
-                            <h3>Double Room</h3>
-                            <h2>199$<span>/Pernight</span></h2>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td class="r-o">Size:</td>
-                                    <td>30 ft</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Capacity:</td>
-                                    <td>Max persion 5</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
+                                    <td>2 King Beds, 1 Single Bed </td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Services:</td>
@@ -427,42 +563,41 @@
         </div>
     </div>
 </section>
-
 <section class="instagram section-invert">
     <div class="container-fluid">
         <div class="row no-gutters">
             <div class="col-sm-12 col-md">
                 <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
                     <div class="icon d-flex justify-content-center">
-                        <span class="fa fa-instagram align-self-center"></span>
+                        <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
                 <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
                     <div class="icon d-flex justify-content-center">
-                        <span class="fa fa-instagram align-self-center"></span>
+                        <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
                 <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
                     <div class="icon d-flex justify-content-center">
-                        <span class="fa fa-instagram align-self-center"></span>
+                        <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md ">
                 <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
                     <div class="icon d-flex justify-content-center">
-                        <span class="fa fa-instagram align-self-center"></span>
+                        <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
                 <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
                     <div class="icon d-flex justify-content-center">
-                        <span class="fa fa-instagram align-self-center"></span>
+                        <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
@@ -545,6 +680,8 @@
 <!-- jQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
+<script src="../../Vendor/script/bootstrap.min.js"></script>
+
 <script src="../../Vendor/script/jquery.scrollUp.min.js"></script>
 <script src="../../Vendor/script/jquery.slicknav.js"></script>
 
@@ -565,7 +702,7 @@
             animation: 'fade', // Fade, slide, none
             animationInSpeed: 200, // Animation in speed (ms)
             animationOutSpeed: 200, // Animation out speed (ms)
-            scrollText: '<i class="fa fa-angle-double-up" style="font-size: 2.2rem"></i>', // Text for element
+            scrollText: '<i class="fas fa-angle-double-up mt-2" style="font-size:2rem"></i>', // Text for element
             activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
         });
         $(".mobile-menu").slicknav({

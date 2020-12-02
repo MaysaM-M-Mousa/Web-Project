@@ -1,9 +1,9 @@
 <?php
 require_once 'pdo.php';
 session_start();
-
+// TODO this file has been marged with index.php this is a note خدعتك
 //if(isset($_SESSION['person_id']) && isset($_SESSION['person_role'])){
-//    header("Location:../../HTML/index.html");
+//    header("Location:../../HTML/index.php");
 //    return;
 //}
 
@@ -70,7 +70,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     header("Location:../../PHP/Edit/edit.php");
     return;
 
-//    header("Location:../../HTML/index.html");
+//    header("Location:../../HTML/index.php");
 
 
 }
@@ -106,7 +106,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <div class="container">
-        <a id="brand" class="navbar-brand" href="../../HTML/index.html">Palestine Hoter</a>
+        <a id="brand" class="navbar-brand" href="../../HTML/index.php">Palestine Hoter</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navdiv">
             <span class="navbar-toggler-icon" style="color:white"></span>
         </button>
@@ -154,7 +154,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
             <div class="form-group row aling-items-center offset-md-3">
                 <button type="submit" class="btn btn-primary mb-2" name="login" value="log">Sign In</button>
-                <a class="btn btn-secondary mb-2" href="../../HTML/index.html" style="margin-left: 20px">Cancel</a>
+                <a class="btn btn-secondary mb-2" href="../../HTML/index.php" style="margin-left: 20px">Cancel</a>
             </div>
 
 

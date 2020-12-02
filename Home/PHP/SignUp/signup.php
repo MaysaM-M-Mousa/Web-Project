@@ -105,7 +105,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
     //Store user_id, user_name, user_pass in a session
     // redirect to signin.php
     header("Location: verify.php");
-//    header("Location:../../HTML/index.html");
+//    header("Location:../../HTML/index.php");
     return;
 
 }
@@ -149,7 +149,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
     <div class="container">
-        <a id="brand" class="navbar-brand" href="../../HTML/index.html">Palestine Hoter</a>
+        <a id="brand" class="navbar-brand" href="../../HTML/index.php">Palestine Hoter</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navdiv">
             <span class="navbar-toggler-icon" style="color:white"></span>
         </button>
@@ -317,7 +317,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
                         <input type="radio" class="form-check-input" name="gender" value="female">Female
                     </label>
                 </div>
-                <div class="form-check-inline disabled">
+                <div class="form-check-inline">
                     <label class="form-check-label">
                         <input type="radio" class="form-check-input" name="gender" value="personal">Keep it personal
                     </label>
@@ -369,7 +369,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
                            style="  width: 150px">
                 </div>
                 <div class="col-6">
-                    <a class="btn btn-secondary mb-2" href="../../HTML/index.html"
+                    <a class="btn btn-secondary mb-2" href="../../HTML/index.php"
                        style=" width: 100px">Cancel</a>
                 </div>
             </div>
