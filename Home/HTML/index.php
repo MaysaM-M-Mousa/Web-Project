@@ -86,8 +86,10 @@ return;
     <link rel="stylesheet" href="../../Vendor/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
     <link rel="stylesheet" href="../../Vendor/CSS/flexslider.css">
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../../Vendor/CSS/magnific-popup.css">
     <link rel="stylesheet" href="../../Vendor/CSS/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/styles.css">
+
 </head>
 
 <body>
@@ -175,7 +177,7 @@ return;
                     <p class="hint-text"><a href="#">Forgot Password?</a></p>
                 </form>
             </div>
-            <div class="modal-footer">Still Without A Room? &nbsp;<a href="#">Reserve Now</a></div>
+            <div class="modal-footer">Still Without A Room? &nbsp;<a href="signup.php">Reserve Now</a></div>
         </div>
     </div>
 </div>
@@ -320,7 +322,7 @@ return;
                 <h2 class="cta-heading">Reserve A Room Now <span> &mdash; and begin your journey at one of the oldest cites in the world!</span>
                 </h2>
             </div>
-            <div class="col-8 col-md-2 offset-2 offset-md-0"><a href="#" class="btn btn-primary">Reserve now</a></div>
+            <div class="col-8 col-md-2 offset-2 offset-md-0"><a href="signup.php" class="btn btn-primary">Reserve now</a></div>
         </div>
     </div>
     <hr class="line">
@@ -567,35 +569,35 @@ return;
     <div class="container-fluid">
         <div class="row no-gutters">
             <div class="col-sm-12 col-md">
-                <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
+                <a  href="../images/insta-1.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-1.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
-                <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
+                <a href="../images/insta-2.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-2.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
-                <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
+                <a href="../images/insta-3.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-3.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md ">
-                <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
+                <a href="../images/insta-4.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-4.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
-                <a href="images/insta-1.jpg" class="insta-img " style="background-image: url(../images/insta-1.jpg);">
+                <a href="../images/insta-5.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-5.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
@@ -681,9 +683,10 @@ return;
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
 <script src="../../Vendor/script/bootstrap.min.js"></script>
-
+<script src="../../Vendor/script/jquery.magnific-popup.min.js"></script>
 <script src="../../Vendor/script/jquery.scrollUp.min.js"></script>
 <script src="../../Vendor/script/jquery.slicknav.js"></script>
+
 
 <script>
     $(window).load(function () {
@@ -725,7 +728,24 @@ return;
         prependTo: '#mobile-menu-wrap',
         allowParentLinks: true
     });
-
-
+    $('.image-popup').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [1,1] // Will preload 0 - before current, and 1 after the current image
+        },
+        image: {
+            verticalFit: true
+        },
+        zoom: {
+            enabled: false,
+            duration: 300 // don't foget to change the duration also in CSS
+        }
+    });
 </script>
 </html>
