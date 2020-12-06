@@ -39,3 +39,22 @@ create table contacts (
    	INDEX (email)
 );
 
+create table reserves (
+    reserve_id integer PRIMARY KEY AUTO_INCREMENT,
+    start_date date not null,
+    end_date date not null,
+    room_type integer not null,
+    person_id integer not null,
+    booking_option_id integer unique not null,
+
+    FOREIGN KEY (booking_option_id) REFERENCES booking_option(booking_option_id),
+    FOREIGN KEY (person_id) REFERENCES person(person_id),
+
+);
+
+create table booking_option(
+    booking_option_id PRIMARY KEY AUTO_INCREMENT,
+
+
+);
+

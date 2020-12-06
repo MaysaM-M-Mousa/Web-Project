@@ -19,18 +19,32 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/abdelrahman" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="Sign Up--">
-      <change afterPath="$PROJECT_DIR$/Home/images/insta-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/images/insta-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/images/insta-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/images/insta-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/images/room-b2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/images/room-b3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Home/images/room-b4.jpg" afterDir="false" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="after combining">
+      <change afterPath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/Features/Restaurant/categories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/Features/Restaurant/category.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/Features/Settings/applyjob.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/Features/Settings/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/Features/Settings/pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/HTML/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/PHP/LogOut/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/SignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/SignUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/HTML/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/PHP/Edit/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/PHP/Edit/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tables.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +65,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1kUCOcfm8lTi2WePfAjaCktIW3q" />
   <component name="ProjectViewState">
@@ -62,7 +79,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vendor/CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/User/Features/Settings" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,18 +92,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\User\Features\Restaurant" />
+      <recent name="C:\xampp\htdocs\WebProject\User\PHP\LogOut" />
       <recent name="C:\xampp\htdocs\WebProject\User\PHP" />
       <recent name="C:\xampp\htdocs\Web-Project\Vender\CSS" />
       <recent name="C:\xampp\htdocs\Web-Project\Vender\Fonts" />
-      <recent name="C:\xampp\htdocs\Web-Project\Vender" />
-      <recent name="C:\xampp\htdocs\Web-Project\User" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\User\Features\Settings" />
+      <recent name="C:\xampp\htdocs\WebProject\User\PHP\Edit" />
       <recent name="C:\xampp\htdocs\Web-Project\Vendor\CSS" />
       <recent name="C:\xampp\htdocs\Web-Project\Vendor\script" />
       <recent name="C:\xampp\htdocs\Web-Project\Home\HTML" />
-      <recent name="C:\xampp\htdocs\Web-Project\Home\CSS\DatePicker" />
-      <recent name="C:\xampp\htdocs\Web-Project\Home\script" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html (3)">
@@ -129,6 +146,7 @@
       <workItem from="1605979933127" duration="112105000" />
       <workItem from="1606447222854" duration="108000" />
       <workItem from="1606846561008" duration="69247000" />
+      <workItem from="1607207552100" duration="7953000" />
     </task>
     <task id="LOCAL-00001" summary="home page">
       <created>1606265626691</created>
@@ -176,7 +194,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/abdelrahman" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -192,6 +222,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Sign Up--" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Deployment" timestamp="1607176073908">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1607176073908" />
+    <state x="361" y="71" width="814" height="728" key="#Intentions" timestamp="1607205383932">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" width="814" height="728" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1607205383932" />
     <state x="732" y="405" key="#Notifications" timestamp="1606942751161">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -284,26 +322,32 @@
     </state>
     <state width="1160" height="207" key="GridCell.Tab.3.right/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627593" />
     <state width="1877" height="175" key="GridCell.Tab.3.right/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622624" />
-    <state x="678" y="555" key="NewPhpFileDialog" timestamp="1606748250785">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="542" y="394" key="NewPhpFileDialog" timestamp="1607205452930">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="542" y="394" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1607205452930" />
     <state x="678" y="555" key="NewPhpFileDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1606748250785" />
-    <state x="346" y="80" key="SettingsEditor" timestamp="1607051987524">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1607169710007">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1605745819621" />
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607169710007" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607051987524" />
     <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1607052619604">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1607052619604" />
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607189697272" />
     <state x="504" y="503" width="672" height="677" key="run.anything.popup" timestamp="1606330020122">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="504" y="503" width="672" height="677" key="run.anything.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1606330020122" />
-    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1607044068404">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="498" y="181" width="672" height="482" key="search.everywhere.popup" timestamp="1607189139428">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="498" y="181" width="672" height="482" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607189139428" />
     <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1607044068404" />
   </component>
 </project>

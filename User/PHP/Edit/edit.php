@@ -2,10 +2,10 @@
 require_once 'pdo.php';
 session_start();
 
-if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-    header("Location:../../../Home/HTML/index.php");
-    return;
-}
+//if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+//    header("Location:../../../Home/HTML/index.php");
+//    return;
+//}
 
 if (isset($_POST['first_name']) && isset($_POST['last_name'])
     && isset($_POST['user_pass']) && isset($_POST['confirm_user_pass']) && isset($_POST['gender'])

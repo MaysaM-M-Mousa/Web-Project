@@ -1,11 +1,6 @@
 <?php
 require_once 'pdo.php';
-session_start();
-
-//if(isset($_SESSION['person_id']) && isset($_SESSION['person_role'])){
-//    header("Location:../../HTML/index.html");
-//    return;
-//}
+//session_start();
 
 
 if (isset($_POST['resend'])) {
@@ -185,7 +180,6 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

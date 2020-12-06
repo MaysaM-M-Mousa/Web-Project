@@ -1,12 +1,6 @@
 <?php
-require_once '../PHP/SignIn/pdo.php';
+require_once 'pdo.php';
 session_start();
-
-//if(isset($_SESSION['person_id']) && isset($_SESSION['person_role'])){
-//    header("Location:../../HTML/index.html");
-//    return;
-//}
-
 
 if (isset($_POST['resend'])) {
     $_SESSION['hash_verification'] = md5(rand(0, 1000));
@@ -16,8 +10,10 @@ if (isset($_POST['resend'])) {
 
 if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
-    if (strlen($_POST['person_email']) < 1 || strlen($_POST['person_pass']) < 1 || strlen($_POST['login']) < 1) {
-        header("Location : login.php");
+
+    if (strlen($_POST['person_email']) < 1 || strlen($_POST['person_pass']) < 1) {
+        $err_msg = 'USERNAME AND PASSWORD ARE REQUIRED';
+        echo '<span style="color: red">' . $err_msg . '</span>';
         return;
     }
     $person_pass = htmlentities($_POST['person_pass']);
@@ -26,52 +22,44 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     $_SESSION['user_email'] = $person_email;
 
     if (!strpos($person_email, "@")) {
-        $_SESSION['error_message'] = "Email must has '@' character.";
-        header("Location: login.php");
+        $err_msg = 'Invalid Email!';
+        echo '<span style="color: red">' . $err_msg . '</span>';
         return;
     }
-
-
 
     $hashed_pass = hash("sha256", trim($person_pass, " "));
     $stmt = $pdo->query("SELECT * FROM person where person_email=" . "'" . trim($person_email, " ") . "'");
 
-if ($stmt->rowCount() < 1) {
-$_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
-header("Location:login.php");
-return;
-}
+    if ($stmt->rowCount() < 1) {
+        $err_msg = "You are not registered!";
+        echo '<span style="color: red">' . $err_msg . '</span>';
+        return;
+    }
 
 
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($row['active'] == 0) {
-$_SESSION['error_verification'] = "Your account is not verified yet!";
-header("Location:login.php");
-return;
-}
-
-
-if ($row['person_pass'] !== $hashed_pass || $row['person_email'] !== $person_email) {
-$_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
-header("Location:login.php");
-return;
-}
+    if ($row['active'] == 0) {
+        $err_msg =  "Your account is not verified yet!";
+        echo '<span style="color: red">' . $err_msg . '</span>';
+        return;
+    }
 
 
-
+    if ($row['person_pass'] !== $hashed_pass || $row['person_email'] !== $person_email) {
+        $err_msg = "Either user name or password are wrong!";
+        echo '<span style="color: red">' . $err_msg . '</span>';
+        return;
+    }
 
 // if everything is okey! store person_role and person_id
-$_SESSION['person_id'] = $row['person_id'];
-$_SESSION['person_role'] = $row['person_role'];
-$_SESSION['activated'] = 1;
+    $_SESSION['person_id'] = $row['person_id'];
+    $_SESSION['person_role'] = $row['person_role'];
+    $_SESSION['activated'] = 1;
 
-unset($_SESSION['user_email']);
-header("Location:../../PHP/Edit/edit.php");
-return;
-
-//    header("Location:../../HTML/index.html");
-
+    unset($_SESSION['user_email']);
+    echo 'You are allowed to log in';
+    return;
 
 }
 
@@ -133,49 +121,34 @@ return;
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <form method="post">
-                    <div class="model-wrapper">
-                        <?php
-                        if (isset($_SESSION['error_verification'])) {
-                            unset($_SESSION['error_verification']);
-                            echo '<form method="post">';
-                            echo '<p class="hint-text">Please Verify Your Email..</p>';
-                            echo '<input class="btn btn-primary btn-block btn-lg"type="submit" name="resend" value="Resend Email" class="offset-3"> ';
-                            echo '</form>';
-                            }
-                        ?>
-                    </div>
-                    <div class="model-wrapper">
-                        <div class="input-data">
-                            <input type="text" class="form-control" name="person_email" id="user_email" required="required">
-                            <label>Name</label>
-                            <div class="underline"></div>
-                        </div>
-                    </div>
-                    <div class="model-wrapper">
-                        <div class="input-data">
-                            <input type="password" class="form-control" name="person_pass" id="user_pass" required="required">
-                            <label>Password</label>
-                            <div class="underline"></div>
-                        </div>
-                    </div>
-                    <div class="model-wrapper">
-                        <?php
-                        if (isset($_SESSION['error_message'])) {
-                            echo "<span class='offset-md-3' style='color: red'>" . $_SESSION['error_message'] . "</span>";
-                            unset($_SESSION['error_message']);
-                        } else if (isset($_SESSION['email_not_found_msg'])) {
-                            echo "<span class='offset-md-3' style='color: red'>" . $_SESSION['email_not_found_msg'] . "</span>";
-                            unset($_SESSION['email_not_found_msg']);
-                        }
-                        ?>
+                <!--                <form>-->
 
+                <div class="model-wrapper">
+                    <div class="input-data">
+                        <input type="text" class="form-control" name="person_email" id="user_email"
+                               required="required">
+                        <label>Name</label>
+                        <div class="underline"></div>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+                </div>
+                <div class="model-wrapper">
+                    <div class="input-data">
+                        <input type="password" class="form-control" name="person_pass" id="user_pass"
+                               required="required">
+                        <label>Password</label>
+                        <div class="underline"></div>
                     </div>
-                    <p class="hint-text"><a href="#">Forgot Password?</a></p>
-                </form>
+                </div>
+                <div class="model-wrapper" id="emailNF">
+
+                </div>
+                <div class="form-group">
+                    <button id="loginBTN" class="btn btn-primary btn-block btn-lg">Sign
+                        In
+                    </button>
+                </div>
+                <p class="hint-text"><a href="#">Forgot Password?</a></p>
+                <!--                </form>-->
             </div>
             <div class="modal-footer">Still Without A Room? &nbsp;<a href="signup.php">Reserve Now</a></div>
         </div>
@@ -188,7 +161,8 @@ return;
             <div class="row">
                 <div class="col-lg-8">
                     <ul class="tn-left">
-                        <li><i class="fas fa-user"></i><a href="#login" class="trigger-btn" data-toggle="modal"> Sign in</a></li>
+                        <li><i class="fas fa-user"></i><a href="#login" class="trigger-btn" data-toggle="modal"> Sign
+                                in</a></li>
                         <li><i class="fa fa-phone"></i><a href="tel:123456789">123456789</a></li>
                     </ul>
                 </div>
@@ -226,7 +200,8 @@ return;
                     <li class="nav-item px-0 ml-2"><a class="nav-link px-1" href="#">Be Part Of Us</a></li>
                 </ul>
             </div>
-            <button class="canvas-open btn" type="button"><span><i class="fa fa-bars" style="color:#B79040; font-size:28px;"></i></span>
+            <button class="canvas-open btn" type="button"><span><i class="fa fa-bars"
+                                                                   style="color:#B79040; font-size:28px;"></i></span>
             </button>
         </div>
     </nav>
@@ -322,7 +297,8 @@ return;
                 <h2 class="cta-heading">Reserve A Room Now <span> &mdash; and begin your journey at one of the oldest cites in the world!</span>
                 </h2>
             </div>
-            <div class="col-8 col-md-2 offset-2 offset-md-0"><a href="signup.php" class="btn btn-primary">Reserve now</a></div>
+            <div class="col-8 col-md-2 offset-2 offset-md-0"><a href="signup.php" class="btn btn-primary">Reserve
+                    now</a></div>
         </div>
     </div>
     <hr class="line">
@@ -534,7 +510,7 @@ return;
                                 </tr>
                                 <tr>
                                     <td class="r-o">Bed:</td>
-                                    <td>2 King Beds, 1 Single Bed </td>
+                                    <td>2 King Beds, 1 Single Bed</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Services:</td>
@@ -569,35 +545,40 @@ return;
     <div class="container-fluid">
         <div class="row no-gutters">
             <div class="col-sm-12 col-md">
-                <a  href="../images/insta-1.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-1.jpg);">
+                <a href="../images/insta-1.jpg" class="insta-img image-popup"
+                   style="background-image: url(../images/insta-1.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
-                <a href="../images/insta-2.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-2.jpg);">
+                <a href="../images/insta-2.jpg" class="insta-img image-popup"
+                   style="background-image: url(../images/insta-2.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
-                <a href="../images/insta-3.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-3.jpg);">
+                <a href="../images/insta-3.jpg" class="insta-img image-popup"
+                   style="background-image: url(../images/insta-3.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md ">
-                <a href="../images/insta-4.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-4.jpg);">
+                <a href="../images/insta-4.jpg" class="insta-img image-popup"
+                   style="background-image: url(../images/insta-4.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
                 </a>
             </div>
             <div class="col-sm-12 col-md">
-                <a href="../images/insta-5.jpg" class="insta-img image-popup" style="background-image: url(../images/insta-5.jpg);">
+                <a href="../images/insta-5.jpg" class="insta-img image-popup"
+                   style="background-image: url(../images/insta-5.jpg);">
                     <div class="icon d-flex justify-content-center">
                         <span class="fab fa-instagram align-self-center"></span>
                     </div>
@@ -621,7 +602,7 @@ return;
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a>
                     </li>
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Get
-                        Started</a></li>
+                            Started</a></li>
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Videos</a>
                     </li>
                 </ul>
@@ -636,7 +617,7 @@ return;
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a>
                     </li>
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Get
-                        Started</a></li>
+                            Started</a></li>
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Videos</a>
                     </li>
                 </ul>
@@ -651,9 +632,9 @@ return;
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>FAQ</a>
                     </li>
                     <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Get
-                        Started</a></li>
+                            Started</a></li>
                     <li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i
-                            class="fa fa-angle-double-right"></i>Imprint</a></li>
+                                    class="fa fa-angle-double-right"></i>Imprint</a></li>
                 </ul>
             </div>
         </div>
@@ -661,11 +642,11 @@ return;
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
                 <ul class="list-unstyled list-inline social text-center">
                     <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
-                            class="fa fa-facebook"></i></a></li>
+                                    class="fa fa-facebook"></i></a></li>
                     <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
-                            class="fa fa-twitter"></i></a></li>
+                                    class="fa fa-twitter"></i></a></li>
                     <li class="list-inline-item"><a href="https://www.fiverr.com/share/qb8D02"><i
-                            class="fa fa-instagram"></i></a></li>
+                                    class="fa fa-instagram"></i></a></li>
                 </ul>
             </div>
             <hr>
@@ -681,7 +662,8 @@ return;
 </body>
 <!-- jQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
 <script src="../../Vendor/script/bootstrap.min.js"></script>
 <script src="../../Vendor/script/jquery.magnific-popup.min.js"></script>
 <script src="../../Vendor/script/jquery.scrollUp.min.js"></script>
@@ -737,7 +719,7 @@ return;
         gallery: {
             enabled: true,
             navigateByImgClick: true,
-            preload: [1,1] // Will preload 0 - before current, and 1 after the current image
+            preload: [1, 1] // Will preload 0 - before current, and 1 after the current image
         },
         image: {
             verticalFit: true
@@ -747,5 +729,19 @@ return;
             duration: 300 // don't foget to change the duration also in CSS
         }
     });
+
+    // Login AJAX
+    $("#loginBTN").on('click', function () {
+        $.post('index.php', {
+            'person_email': document.getElementById("user_email").value,
+            'person_pass': document.getElementById("user_pass").value
+        }, function (data, status) {
+                if(data ==='You are allowed to log in'){
+                    window.location.replace("../../User/HTML/index.php");
+                }else {
+                    document.getElementById('emailNF').innerHTML = data;
+                }
+        })
+    })
 </script>
 </html>
