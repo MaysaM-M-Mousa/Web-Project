@@ -2,10 +2,10 @@
 require_once 'pdo.php';
 session_start();
 
-if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+/*if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
     header("Location:../../../Home/HTML/index.php");
     return;
-}
+}*/
 
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['gender']) && isset($_POST['mobile'])
     && isset($_POST['day_birthday']) && isset($_POST['month_birthday'])
@@ -191,41 +191,22 @@ $person_role_form = $row['person_role'];
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>La Terra Santa &reg;</title>
-    <link rel="stylesheet" href="../../Vendor/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="../../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
-    <link rel="stylesheet" href="../../Vendor/CSS/flexslider.css">
-    <link rel="stylesheet" href="../CSS/styles.css">
-    <link rel="stylesheet" href="../../Vendor/CSS/flaticon.css" type="text/css">
-
-
-    <style>
-        label {
-            font-size: large;
-        }
-
-        .form-group {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-    </style>
-</head>
-<body>
-
-
 <div class="container">
-
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="main-h1">Settings</h1>
+            <hr class="line">
+            <p class="main-content">
+                At La Terra Santa, we serve a tasting menu that highlights the best produce we can source
+                from across the Country, with ideas and inspirations from around the world.
+            </p>
+        </div>
+    </div>
     <div class="accordion" id="accordionExample">
-        <div class="card">
+        <div class="card card-settings">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                    <button class="btn card-btn btn-link btn-block text-left" type="button" data-toggle="collapse"
                             data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Personal Information
                     </button>
@@ -384,7 +365,7 @@ $person_role_form = $row['person_role'];
                         </select>
                     </div>
 
-                    <!--        country-->
+                    <!--  End country-->
 
                     <!--Gender-->
                     <div class="form-group row align-items-center">
@@ -432,22 +413,15 @@ $person_role_form = $row['person_role'];
                     </div>
 
                     <div class="form-group row align-items-center">
-                        <div class="row">
-                            <div class="col-6">
-                                <input type="submit" class="btn btn-primary mb-2" name="updatePersonalInfo"
-                                       value="Save Changes" id="updatePIBTN"
-                                       style="  width: 150px">
+                            <div class="offset-4 col-3">
+                                <input type="submit" class="btn btn-primary mb-2" name="updatePersonalInfo" value="Save Changes" id="updatePIBTN">
                             </div>
-                            <div class="col-6">
-                                <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.php"
-                                   style=" width: 100px">Cancel</a>
+                            <div class="col-2">
+                                <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.php">Cancel</a>
                             </div>
-                        </div>
-
                     </div>
 
                     <div id="piMSG">
-
                     </div>
 
                     <!--                    </form>-->
@@ -455,10 +429,10 @@ $person_role_form = $row['person_role'];
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card card-settings">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    <button class="btn card-btn btn-link btn-block collapsed" type="button" data-toggle="collapse"
                             data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         Change Password
                     </button>
@@ -486,28 +460,24 @@ $person_role_form = $row['person_role'];
 
 
                     <div class="form-group row align-items-center">
-                        <div class="row">
-                            <div class="col-6">
+                            <div class="offset-4 col-3">
                                 <input id="changePassBTN" class="btn btn-primary mb-2" name="updatePass"
                                        value="Save Changes"
                                        style="width: 150px">
                             </div>
-                            <div class="col-6">
+                            <div class="col-2">
                                 <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.php"
                                    style=" width: 100px">Cancel</a>
                             </div>
-                        </div>
                     </div>
-                    <div id="passMSG" class="row">
-
-                    </div>
+                    <div id="passMSG" class="row"></div>
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card card-settings">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    <button class="btn card-btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
                             data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Apply for a Job
                     </button>
@@ -651,10 +621,10 @@ $person_role_form = $row['person_role'];
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card card-settings">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    <button class="btn card-btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
                             data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Contact Us
                     </button>
@@ -668,14 +638,6 @@ $person_role_form = $row['person_role'];
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
-<script src="../../Vendor/script/jquery.scrollUp.min.js"></script>
-<script src="../../Vendor/script/jquery.slicknav.js"></script>
-<script src="../../Vendor/script/popper.js"></script>
-<script src="../../Vendor/script/bootstrap.min.js"></script>
 
 <script>
 
@@ -745,6 +707,3 @@ $person_role_form = $row['person_role'];
         })
     })
 </script>
-
-</body>
-</html>

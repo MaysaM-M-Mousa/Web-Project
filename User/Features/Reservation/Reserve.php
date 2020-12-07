@@ -16,10 +16,16 @@
 </head>
 
 <body>
+
 <div class="container">
-    <div class="row">
-        <h1>Reservation!!!</h1>
-    </div>
+    <section>
+        <h1 class="main-h1">Reservation</h1>
+        <hr class="line">
+        <p class="main-content">
+            Book your stay with us directly and enjoy the best possible rate and early check in and late check out.
+            The best offer you will find, guaranteed.
+        </p>
+    </section>
 </div>
 
 <!--TODO: Put reserve form here without the signup form-->

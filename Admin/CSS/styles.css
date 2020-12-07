@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
+li:last-child{
+position: relative;
+  bottom: 0;
+}
+
+.bg-dark{
+  background:#232530 !important ;
+}
+a.brand{
+  font-family: 'Italianno', cursive;
+  font-size: 44px;
+margin-left: auto;
+  margin-right: auto;
+  color: #B79040;
+  padding-left: 100px;
+}
+body {
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: #F8F9FF;
+  color: gray; }
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  color: #232530;
+}
+
+a:hover, a:focus {
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.wrapper {
+  width: 100%; }
+
+
+#sidebar {
+  min-width: 270px;
+  max-width: 270px;
+  background: #232530;
+  color: #B79040;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#sidebar.active {
+  min-width: 80px;
+  max-width: 80px;
+  text-align: center;
+}
+
+#sidebar.active ul.components li {
+  font-size: 18px;
+overflow: visible;
+}
+
+#sidebar.active ul.components li a {
+  padding: 10px 0;
+  display: none;
+}
+.icon{
+  font-size: 24px;
+  color: white;
+}
+.active > .icon{
+  color: #B79040;
+}
+@media (prefers-reduced-motion: reduce) {
+  #sidebar ul.components {
+    padding: 0;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #sidebar ul.components {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+#sidebar ul li {
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding:30px ;
+
+}
+
+#sidebar ul li a {
+  font-family: "Segoe UI", serif;
+  padding: 0px 20px;
+  display:none;
+  color: #eeeeee;
+  position: absolute;
+
+}
+
+
+#sidebar ul li:hover a {
+  color: #B79040;
+  cursor: pointer;
+
+}
+#sidebar ul li:hover i {
+  color: #B79040;
+  cursor: pointer;
+
+}
+#sidebar ul li.active > a {
+  background: transparent;
+  color: #B79040;
+}
+
+@media (max-width: 992px) {
+  #sidebar {
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+    margin-left: -80px !important;
+  }
+  #sidebar.active {
+    margin-left: 0 !important;
+  }
+  #sidebar a{
+    display: none;
+  }
+}
+@media (max-height:641px) {
+  #sidebar ul li {
+    padding: 13px;
+  }
+}
+@media (max-height:900px) {
+  #sidebar ul li {
+    padding: 17px;
+  }
+}
+@media (min-width:993px) {
+
+  #sidebar ul li > a {
+    background: transparent;
+    display: inline;
+  }
+}
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+
+#content {
+  display: block;
+  width: 100%;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn.btn-primary {
+  background: #232530;
+  border-color: #232530;
+}
+
+.btn.btn-primary:hover, .btn.btn-primary:focus {
+  background: #232530 !important;
+  border-color: #232530 !important;
+}
+h1.main-h1 {
+  font-family: 'Gilda Display', serif;
+  line-height: 1.2;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  letter-spacing: 5px;
+  text-align: center;
+
+}
+
+p.main-content {
+  font-family: "Cabin", sans-serif;
+  color: #50525E;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 1px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+.dashboard-section{
+  margin: 30px;
+}
+.dashboard-item {
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border: 1px #B79040 solid;
+  padding: 20px 35px 18px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.dashboard-item:hover {
+  background: #232530;
+}
+.dashboard-item-odd:hover{
+  background: #B79040;
+}
+.dashboard-item:hover i {
+  color: #eeeeee;
+}
+.dashboard-item:hover h4 {
+  color: #eeeeee;
+}
+.dashboard-item:hover p {
+  color: #eeeeee;
+}
+.dashboard-item i {
+  display: inline-block;
+  color: #B79040;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.dashboard-item h4 {
+  font-family: "Crimson Text", serif;
+  color: #B79040;
+  font-size: 22px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.dashboard-item p {
+  font-family: "Cabin", sans-serif;
+  padding-bottom: 30px;
+  color: #212529;
+  font-size: 18px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}

@@ -2,12 +2,10 @@
 require_once 'pdo.php';
 session_start();
 
-if (isset($_POST['resend'])) {
-    $_SESSION['hash_verification'] = md5(rand(0, 1000));
-    header('Location: ../SignUp/verify.php');
-    return;
-}
-
+//if (isset($_POST['resend'])) {
+//    $_SESSION['hash_verification'] = md5(rand(0, 1000));
+//    return;
+//}
 if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
 
@@ -19,7 +17,9 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     $person_pass = htmlentities($_POST['person_pass']);
     $person_email = htmlentities($_POST['person_email']);
 
+    // to use it later for verification if it's needed!
     $_SESSION['user_email'] = $person_email;
+    $_SESSION['temp_user_email'] = $person_email;
 
     if (!strpos($person_email, "@")) {
         $err_msg = 'Invalid Email!';
@@ -40,8 +40,10 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($row['active'] == 0) {
-        $err_msg =  "Your account is not verified yet!";
+        $_SESSION['hash_verification'] = md5(rand(0, 1000));
+        $err_msg = "Your account is not verified yet!";
         echo '<span style="color: red">' . $err_msg . '</span>';
+        echo '<div id="verificationDiv"><a href="#" onclick="sendEmailVerification()" style="color: blue">Send me Email</a></div>';
         return;
     }
 
@@ -736,12 +738,19 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
             'person_email': document.getElementById("user_email").value,
             'person_pass': document.getElementById("user_pass").value
         }, function (data, status) {
-                if(data ==='You are allowed to log in'){
-                    window.location.replace("../../User/HTML/index.php");
-                }else {
-                    document.getElementById('emailNF').innerHTML = data;
-                }
+            if (data === 'You are allowed to log in') {
+                window.location.replace("../../User/HTML/index.php");
+            } else {
+                document.getElementById('emailNF').innerHTML = data;
+            }
         })
     })
+
+    function sendEmailVerification() {
+        $.post('../PHP/SignUp/verify.php', {'resend': 'resendEmail'}, function (data, status) {
+            document.getElementById('verificationDiv').innerHTML = data;
+        });
+    }
+
 </script>
 </html>

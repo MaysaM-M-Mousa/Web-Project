@@ -58,3 +58,125 @@ create table booking_option(
 
 );
 
+*****************************************************
+create table person (
+    person_id integer AUTO_INCREMENT PRIMARY KEY ,
+    person_pass varchar(100) not null,
+    person_email varchar(100) UNIQUE not null,
+    first_name varchar(50) not null,
+    last_name varchar(50) not null,
+    gender varchar(10) not null,
+    mobile varchar(15) not null,
+    day_bd integer(10) not null,
+    month_bd integer(10) not null,
+    year_bd integer(10) not null,
+    country varchar(50) not null,
+    city varchar(50) not null,
+    person_role integer (10) not null,
+    active integer not null,
+    INDEX(person_email)
+);
+
+create table forms(
+    form_id integer PRIMARY KEY AUTO_INCREMENT,
+    education integer not null,
+    major integer (50),
+    skills varchar (200) not null ,
+    languages varchar(200) not null,
+    job_type integer not null,
+    position integer not null,
+    about varchar (1500)not null,
+    person_id integer not null,
+    date_of_applying date no null,
+    FOREIGN KEY (person_id) REFERENCES person(person_id),
+    INDEX (form_id)
+);
+
+create table contacts (
+    contact_id integer PRIMARY KEY AUTO_INCREMENT,
+    full_name varchar(100) not null,
+    email varchar(100) not null,
+    subject varchar(300) not null,
+    message varchar (3000) not null,
+   	INDEX (email)
+);
+
+create table categories(
+    cat_id integer PRIMARY KEY AUTO_INCREMENT,
+    category_name varchar(50) not null,
+    description varchar(50) not null,
+    image varchar(300) not null,
+    INDEX (category_name)
+);
+
+create table category_items (
+    item_id PRIMARY KEY AUTO_INCREMENT,
+    item_name varchar(50) not null,
+    item_value integer not null,
+    item_description varchar(50) not null,
+    item_price integer not null,
+    image varchar(300) not null,
+    cat_id integer not null,
+    FOREIGN KEY (cat_id) REFERENCES categories(cat_id)
+);
+
+create table booking (
+    book_id PRIMARY KEY AUTO_INCREMENT,
+    start_date date not null,
+    end_date date not null,
+    person_id integer not null,
+    room_id integer not null,
+
+    FOREIGN KEY (room_id) REFERENCES room(room_id),
+    FOREIGN KEY (person_id) REFERENCES person(person_id),
+    index (start_date,end_date)
+);
+
+create table room(
+    room_id PRIMARY KEY AUTO_INCREMENT,
+    room_number integer unique not null,
+    room_description varchar (300),
+);
+
+create table booking_options(
+    option_id PRIMARY KEY AUTO_INCREMENT,
+    option_name varchar (50) not null,
+    option_price integer not null
+);
+
+// table btw booking_options and booking
+create table options_booking(
+    id PRIMARY KEY AUTO_INCREMENT,
+    book_id integer not null,
+    option_id integer not null
+
+    FOREIGN KEY (book_id) REFERENCES booking(book_id),
+    FOREIGN KEY (option_id) REFERENCES booking_options(option_id)
+);
+
+
+create table orders (
+    order_id PRIMARY KEY AUTO_INCREMENT,
+    booking_id integer not null,
+    item_id integer not null,
+    order_time date not null,
+    estimated_time date not null,
+
+    FOREIGN KEY (book_id) REFERENCES booking(book_id),
+    FOREIGN KEY (item_id) REFERENCES category_item(item_id)
+
+);
+
+
+//create table user_history (
+//    history_id PRIMARY KEY AUTO_INCREMENT,
+//    booking_id integer not null,
+//    order_id integer not null,
+//    order_request date not null,
+//    foreign key
+//);
+
+
+
+
+

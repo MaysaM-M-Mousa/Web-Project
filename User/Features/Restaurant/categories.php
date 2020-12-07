@@ -1,84 +1,60 @@
-<?php
-//session_start();
-//if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-//    header("Location: ../../Home/HTML/index.php");
-//    return;
-//}
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>La Terra Santa &reg;</title>
-    <link rel="stylesheet" href="../../../Vendor/CSS/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
-    <link rel="stylesheet" href="../../../Vendor/CSS/flexslider.css">
-    <link rel="stylesheet" href="../../CSS/styles.css">
-    <link rel="stylesheet" href="../../../Vendor/CSS/flaticon.css" type="text/css">
-
-</head>
-<body>
-
-<div class="container">
-
-
-    <div class="row" style="width: 100%">
-<!--        TODO: insert 2 photos here for the restaurant ... -->
-        <div class="col-6" style="border: 1px red solid; width: 100%; height: 200px">
-            <p>insert photo here</p>
-        </div>
-
-        <div class="col-6" style="border: 1px red solid; width: 100%; height: 200px">
-            <p>insert photo here</p>
-
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="main-h1">Restaurant</h1>
+            <hr class="line">
+            <p class="main-content">
+                At La Terra Santa, we serve a tasting menu that highlights the best produce we can source
+                from across the Country, with ideas and inspirations from around the world.
+            </p>
         </div>
     </div>
 
-    <div class="row justify-content-center" style="width: 100%">
-        <h1>Categories</h1>
+    <div class="row mt-2">
+        <section class="slider col-12 col-md-10 offset-md-1">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li style="background-image: url('../images/restaurnat-1.jpg')"></li>
+                    <li style="background-image: url('../images/restaurnat-2.jpg')"></li>
+                    <li style="background-image: url('../images/restaurant-3.jpg')"></li>
+                </ul>
+            </div>
+        </section>
+        <div class="col-8 offset-2">
+            <h2 class="main-h2 mt-5">Categories</h2>
+            <hr class="line">
+        </div>
     </div>
-    <a href="../../../Home/images/insta-1.jpg"></a>
-
+    <div class="row">
     <?php
-
-    for ($i = 0; $i < 3; $i++) {
-//        TODO: style the cards here ....
-        echo '<div class="row">';
-        echo '<div class="card mb-3">';
-        echo '<img src="../../Home/images/insta-1.jpg" style="width: 100%; height: 180px" class="card-img-top" alt="...">';
-        echo '<div class="card-body">';
-        echo '<h5 class="card-title">Category 1</h5>';
-        echo '<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>';
-        echo '<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>';
-        echo '<button class="btn btn-primary" onclick="goToCategory()">Browse</button>';
-        echo '</div></div></div>';
-
+    for ($i = 0; $i < 4; $i++) {
+        ?>
+            <div onclick="goToCategory()" class="card Catagories col-10 offset-1 col-xl-5 pr-0 <?php if($i%2==0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0';?>">
+                <div class="container-fluid no-gutters">
+                    <div class="row">
+                        <img class="col-md-4 col-12 pr-0" src="../../Home/images/insta-1.jpg"
+                                                     alt="...">
+                        <div class="card-body col-12 col-md-8">
+                            <h3 class="main-h3 card-title">Category 1</h3>
+                            <hr class="card-line">
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional
+                                content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php
     }
     ?>
-<!-- TODO: u can read the comment div below to understand it easily :)-->
-<!--    <div class="row">-->
-<!---->
-<!--        <div class="card mb-3">-->
-<!--            <img src="../../Home/images/insta-1.jpg" style="width: 100%; height: 180px" class="card-img-top" alt="...">-->
-<!--            <div class="card-body">-->
-<!--                <h5 class="card-title">Category 1</h5>-->
-<!--                <p class="card-text">This is a wider card with supporting text below as a natural-->
-<!--                    lead-in to additional content. This content is a little bit longer.</p>-->
-<!--                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
-<!--                <div class="justify-content-center" style="width: 100%">-->
-<!--                    <button class="btn btn-primary">Browse</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
+    </div>
 </div>
 
-</body>
+<script>
+    $(document).ready(function () {
+        $('.flexslider').flexslider({
+            animation: "slide"
+        });
+    });
 
-
-
-</html>
+</script>

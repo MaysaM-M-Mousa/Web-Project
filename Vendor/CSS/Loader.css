@@ -1,0 +1,39 @@
+.globe-loader {
+    position: relative;
+    font-size: 60px;
+    color: #232530;
+
+}
+.globe-loader > i {
+    display: block;
+    position: absolute;
+    font-size: 24px;
+    color: #B79040;
+    height:50%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transform-origin: center bottom;
+    animation: loader-spin 3s infinite ease-in-out;
+}
+.globe-loader > i::before {
+    position: relative;
+    top: -1.25em;
+}
+@keyframes loader-spin {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) rotate(1turn);
+    }
+}
+
+
+.loader-wrapper {
+    margin-top: 20%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+ 

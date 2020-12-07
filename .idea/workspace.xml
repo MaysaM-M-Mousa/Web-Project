@@ -24,26 +24,31 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/abdelrahman" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/maysam" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="after combining">
-      <change afterPath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Restaurant/categories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Restaurant/category.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Settings/applyjob.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Settings/edit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Settings/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/HTML/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/PHP/LogOut/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="after combining 2">
+      <change afterPath="$PROJECT_DIR$/Admin/CSS/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/HTML/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/PHP/Edit/edit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/PHP/Edit/pdo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/PHP/LogOut/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/images/restaurant-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/images/restaurnat-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/images/restaurnat-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/CSS/Loader.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/HTML/SignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/SignUp.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/HTML/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/PHP/Edit/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/PHP/Edit/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/User/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Settings/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Settings/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/HTML/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tables.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +84,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/User/Features/Settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vendor/CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -91,6 +96,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\Vendor\CSS" />
+      <recent name="C:\xampp\htdocs\WebProject" />
+      <recent name="C:\xampp\htdocs\WebProject\User" />
+      <recent name="C:\xampp\htdocs\WebProject\Admin" />
+      <recent name="C:\xampp\htdocs\WebProject\User\Features\Settings" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\User\Features\Restaurant" />
       <recent name="C:\xampp\htdocs\WebProject\User\PHP\LogOut" />
@@ -98,37 +110,30 @@
       <recent name="C:\xampp\htdocs\Web-Project\Vender\CSS" />
       <recent name="C:\xampp\htdocs\Web-Project\Vender\Fonts" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\User\Features\Settings" />
-      <recent name="C:\xampp\htdocs\WebProject\User\PHP\Edit" />
-      <recent name="C:\xampp\htdocs\Web-Project\Vendor\CSS" />
-      <recent name="C:\xampp\htdocs\Web-Project\Vendor\script" />
-      <recent name="C:\xampp\htdocs\Web-Project\Home\HTML" />
-    </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (3)">
+  <component name="RunManager" selected="JavaScript Debug.index.php (1)">
     <configuration name="SignUp.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:80/Web-Project/Home/HTML/SignUp.php">
-      <method v="2" />
-    </configuration>
-    <configuration name="about.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:80/temp1/Web-Project/Home/HTML/about.html">
-      <method v="2" />
-    </configuration>
-    <configuration name="index.html (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:80/temp1/Web-Project/Home/HTML/index.html">
       <method v="2" />
     </configuration>
     <configuration name="index.html (3)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:80/Web-Project/User/HTML/index.html">
       <method v="2" />
     </configuration>
+    <configuration name="index.php (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost//WebProject/Home/HTML/index.php">
+      <method v="2" />
+    </configuration>
     <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:80/Web-Project/Home/HTML/index.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Home/HTML/index.php">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.php (1)" />
+        <item itemvalue="PHP Script.index.php" />
         <item itemvalue="JavaScript Debug.index.html (3)" />
         <item itemvalue="JavaScript Debug.SignUp.php" />
         <item itemvalue="JavaScript Debug.index.php" />
-        <item itemvalue="JavaScript Debug.index.html (2)" />
-        <item itemvalue="JavaScript Debug.about.html" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +151,10 @@
       <workItem from="1605979933127" duration="112105000" />
       <workItem from="1606447222854" duration="108000" />
       <workItem from="1606846561008" duration="69247000" />
-      <workItem from="1607207552100" duration="7953000" />
+      <workItem from="1607207552100" duration="8225000" />
+      <workItem from="1607249101975" duration="2034000" />
+      <workItem from="1607267584424" duration="218000" />
+      <workItem from="1607323487180" duration="15369000" />
     </task>
     <task id="LOCAL-00001" summary="home page">
       <created>1606265626691</created>
@@ -183,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607052571637</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="after combining 2">
+      <created>1607217364081</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607217364081</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +215,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/abdelrahman" />
+                        <option value="origin/maysam" />
                       </list>
                     </value>
                   </entry>
@@ -219,7 +234,8 @@
     <MESSAGE value="user page final" />
     <MESSAGE value="Sign Up" />
     <MESSAGE value="Sign Up--" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sign Up--" />
+    <MESSAGE value="after combining 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="after combining 2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1607176073908">
@@ -242,45 +258,53 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="534" y="333" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1606612113334" />
-    <state width="1877" height="175" key="GridCell.Tab.0.bottom" timestamp="1607052622622">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1607340819657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.0.bottom/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627592" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607340819657" />
     <state width="1877" height="175" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622622" />
-    <state width="1877" height="175" key="GridCell.Tab.0.center" timestamp="1607052622622">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1607340819657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.0.center/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627592" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607340819657" />
     <state width="1877" height="175" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622622" />
-    <state width="1877" height="175" key="GridCell.Tab.0.left" timestamp="1607052622622">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1607340819656">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.0.left/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627592" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607340819656" />
     <state width="1877" height="175" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622622" />
-    <state width="1877" height="175" key="GridCell.Tab.0.right" timestamp="1607052622622">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1607340819657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.0.right/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627592" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607340819657" />
     <state width="1877" height="175" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622622" />
-    <state width="1877" height="175" key="GridCell.Tab.1.bottom" timestamp="1607052622624">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.1.bottom" timestamp="1607340819657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.1.bottom/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627593" />
+    <state width="1493" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607340819657" />
     <state width="1877" height="175" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622624" />
-    <state width="1877" height="175" key="GridCell.Tab.1.center" timestamp="1607052622623">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.1.center" timestamp="1607340819657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.1.center/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627592" />
+    <state width="1493" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1607340819657" />
     <state width="1877" height="175" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622623" />
-    <state width="1877" height="175" key="GridCell.Tab.1.left" timestamp="1607052622623">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.1.left" timestamp="1607340819657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.1.left/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627592" />
+    <state width="1493" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1607340819657" />
     <state width="1877" height="175" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622623" />
-    <state width="1877" height="175" key="GridCell.Tab.1.right" timestamp="1607052622623">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state width="1493" height="210" key="GridCell.Tab.1.right" timestamp="1607340819657">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1160" height="207" key="GridCell.Tab.1.right/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627592" />
+    <state width="1493" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1607340819657" />
     <state width="1877" height="175" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1607052622623" />
     <state width="1877" height="175" key="GridCell.Tab.2.bottom" timestamp="1607052622624">
       <screen x="0" y="0" width="1920" height="1160" />
@@ -332,9 +356,10 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607169710007" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607051987524" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1607052619604">
-      <screen x="0" y="0" width="1920" height="1160" />
+    <state x="442" y="222" key="Vcs.Push.Dialog.v2" timestamp="1607217373236">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="442" y="222" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607217373236" />
     <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1607052619604" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
       <screen x="0" y="0" width="1536" height="824" />
