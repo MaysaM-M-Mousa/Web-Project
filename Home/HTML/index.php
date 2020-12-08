@@ -157,31 +157,31 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     </div>
 </div>
 <!-- Header Section Begin -->
-<header class="header-section">
-    <nav class="top-nav">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <ul class="tn-left">
-                        <li><i class="fas fa-user"></i><a href="#login" class="trigger-btn" data-toggle="modal"> Sign
-                                in</a></li>
-                        <li><i class="fa fa-phone"></i><a href="tel:123456789">123456789</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <div class="tn-right">
-                        <div class="top-social">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-tripadvisor"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
+<nav class="top-nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <ul class="tn-left">
+                    <li><i class="fas fa-user"></i><a href="#login" class="trigger-btn" data-toggle="modal"> Sign
+                            in</a></li>
+                    <li><i class="fa fa-phone"></i><a href="tel:123456789">123456789</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <div class="tn-right">
+                    <div class="top-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-    </nav>
+    </div>
+    </div>
+</nav>
+<header class="header-section">
     <nav class="navbar navbar-expand-lg navbar-light bg-dark py-4">
         <div class="container-fluid">
             <!--  Show this only on mobile to medium screens  -->

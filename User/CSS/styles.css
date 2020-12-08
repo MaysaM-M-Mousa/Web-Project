@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 
 @media only screen and (min-width: 1200px) {
     :root {
@@ -28,6 +29,20 @@
         font-size: 11px;
     }
 }
+
+/*------------------------
+       Selection
+  -------------------------*/
+::-moz-selection { /* Code for Firefox */
+    color: #232530;
+    background: #d2a94c;
+}
+
+::selection {
+    color: #232530;
+    background: #d2a94c;
+}
+
 
 li:last-child {
     position: relative;
@@ -128,6 +143,10 @@ hr.card-line {
     color: #B79040;
 }
 
+.custom-select{
+ height: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
     #sidebar ul.components {
         padding: 0;
@@ -158,19 +177,40 @@ hr.card-line {
     display: none;
     color: #eeeeee;
     position: absolute;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
 
 }
 
+#sidebar ul li i {
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+
+
+}
 
 #sidebar ul li:hover a {
     color: #B79040;
     cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
 
 }
 
 #sidebar ul li:hover i {
     color: #B79040;
     cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
 
 }
 
@@ -200,6 +240,10 @@ hr.card-line {
     #sidebar ul li {
         padding: 13px;
     }
+
+    a.brand {
+        padding-left: 0;
+    }
 }
 
 @media (max-height: 900px) {
@@ -222,6 +266,11 @@ a[data-toggle="collapse"] {
 
 
 #content {
+    position:relative;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: block;
     width: 100%;
     padding: 0;
@@ -234,11 +283,67 @@ a[data-toggle="collapse"] {
 .btn.btn-primary {
     background: #232530;
     border-color: #232530;
-}
 
+}
+.back-btn{
+    position: absolute;
+    top: 25px;
+    left:30px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border-color:#232530 ;
+    border-width: 2px;
+    border-style: solid;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+}
+.back-btn:hover{
+background-color:#232530 ;
+    cursor: pointer;
+    border-color:#B79040 ;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+}
+.back-btn:hover i{
+    color:#B79040 ;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+
+}
+.back-btn i{
+    position: relative;
+    top:11px;
+    left: 11px;
+    color:#232530 ;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    -webkit-transition: all 0.7s ease-in-out;
+}
 .btn.btn-primary:hover, .btn.btn-primary:focus {
     background: #232530;
     border-color: #232530;
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #232530;
+    border-color: #B79040;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(183, 144, 64,.5);
+}
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(183, 144, 64,.5);
 }
 
 h1.main-h1 {
@@ -658,7 +763,6 @@ p.main-content {
     -o-transition: all 0.7s ease-in-out;
     -webkit-transition: all 0.7s ease-in-out;
 }
-
 
 
 

@@ -194,6 +194,8 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/signup.css">
     <link rel="stylesheet" href="../../Vendor/CSS/flaticon.css" type="text/css">
+
+
 </head>
 
 <body>
@@ -1006,8 +1008,6 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 <script src="../../Vendor/script/jquery.scrollUp.min.js"></script>
 <script src="../../Vendor/script/jquery.slicknav.js"></script>
 <script src="../script/mobiscroll.jquery.min.js"></script>
-
-
 <script>
     $(".canvas-open").on('click', function () {
         $(".offcanvas-menu-wrapper").addClass("show-offcanvas-menu-wrapper");
@@ -1214,7 +1214,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 
         if (start == "" || end == "") {
             $("#errorDate").css("display", "block");
-            return false;
+            return true;
         } else {
             $("#errorDate").css("display", "none");
         }

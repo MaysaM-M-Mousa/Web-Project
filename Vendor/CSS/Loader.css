@@ -31,6 +31,7 @@
 
 
 .loader-wrapper {
+    z-index: 100;
     margin-top: 20%;
     display: none;
     margin-left: auto;

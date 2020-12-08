@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/timeline.css">
 
+
+
 </head>
 <body>
 
@@ -51,7 +53,25 @@
                     <a class="nav-link px-1" href="#">contact</a>
                 </l1>
             </ul>
+            <div id="date" class="row">
+                <div class="col-12">
+                    <input id="daterangepicker" type="text">
+                </div>
+                <script>
+                    ej.base.enableRipple(window.ripple)
 
+                    var daterangepicker = new ej.calendars.DateRangePicker({
+                        allowEdit:false,
+
+                        focus: function(){
+                            daterangepicker.show();
+                        }
+                    });
+                    daterangepicker.appendTo('#daterangepicker');
+
+                </script>
+
+            </div>
 
             <!--   Show this only lg screens and up   -->
             <a href="index.php" class="navbar-brand d-none d-lg-block my-4"><img height="70" src="../images/logo-full.png"
