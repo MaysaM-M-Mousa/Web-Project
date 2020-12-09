@@ -192,17 +192,16 @@ $person_role_form = $row['person_role'];
 ?>
 
 <div class="container">
+    <!--    Header-->
     <div class="row">
         <div class="col-8 offset-2">
             <h1 class="main-h1">Settings</h1>
             <hr class="line">
-            <p class="main-content">
-                At La Terra Santa, we serve a tasting menu that highlights the best produce we can source
-                from across the Country, with ideas and inspirations from around the world.
-            </p>
         </div>
     </div>
-    <div class="accordion" id="accordionExample">
+
+    <div class="accordion card-forms" id="accordionExample">
+        <!--Edit personal info start-->
         <div class="card card-settings">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
@@ -212,110 +211,94 @@ $person_role_form = $row['person_role'];
                     </button>
                 </h2>
             </div>
-
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
-
-                    <!--                    <form method="post" class="col-12" action="../Features/Settings/edit.php">-->
-
                     <?php
                     if (isset($_SESSION['error_duplicated_email'])) {
-                        echo "<span class='offset-md-3' style='color: red;font-size: large'>'" . $_SESSION['error_duplicated_email'] . "</span>";
+                        echo "<span class='offset-md-3' style='color:darkred;font-size: large'>'" . $_SESSION['error_duplicated_email'] . "</span>";
                         unset($_SESSION['error_duplicated_email']);
                     }
-
                     ?>
-
+                    <!--Name Start-->
                     <div class="form-group row align-items-center">
-                        <label class="col-3" for="first_name">First Name:</label>
-                        <input class="col-6 form-control" type="text" id="first_name" name="first_name" size="30"
+                        <label class="col-12 col-md-3" for="first_name">First Name:</label>
+                        <input class="col-12 col-md-9 form-control" type="text" id="first_name" name="first_name"
                                required
                                value="<?php echo $first_name_form ?>">
                     </div>
 
-
                     <div class="form-group row align-items-center">
-                        <label class="col-3" for="last_name">Last Name:</label>
-                        <input class="col-6 form-control" type="text" id="last_name" name="last_name" size="30"
+                        <label class="col-12 col-md-3" for="last_name">Last Name:</label>
+                        <input class="col-12 col-md-9 form-control" type="text" id="last_name" name="last_name"
                                required
                                value="<?php echo $last_name_form ?>">
                     </div>
+                    <!--Name End-->
 
-
-                    <!--        birthday-->
-
+                    <!--birthday Start-->
                     <div class="form-group row align-items-center">
                         <label class="col-3">Birthday:</label>
-                        <div class="col-9 row">
-
-
-                            <div class="form-check-inline row aling-items-center">
-                                <label class="col-5">Day</label>
-                                <select class="custom-select col-7" id="day" required name="day_birthday">
-                                    <option selected>day</option>
-                                    <?php
-                                    for ($i = 1; $i < 32; $i++)
-                                        if ($day_form == $i)
-                                            echo "<option selected value='$i'>$i</option>";
-                                        else
-                                            echo "<option value='$i'>$i</option>";
-                                    ?>
-                                </select>
-                            </div>
-
-                            <div class="form-check-inline row align-items-center">
-                                <label class="col-5">Month</label>
-                                <select class="custom-select col-7" id="month" required name="month_birthday">
-                                    <option selected>month</option>
-
-                                    <?php
-                                    $arr = array("January", "February", "March", "April", "May", "June", "July", "August",
-                                        "September", "October", "November", "December");
-
-                                    for ($i = 1; $i < 13; $i++)
-                                        if ($month_form == $i)
-                                            echo "<option selected value='$i'>" . $arr[$i - 1] . "</option>";
-                                        else
-                                            echo "<option value='$i'>" . $arr[$i - 1] . "</option>";
-                                    ?>
-
-                                </select>
-                            </div>
-
-                            <div class="form-check-inline row align-items-center">
-                                <label class="col-5">Year</label>
-                                <select class="custom-select col-7" id="year" required name="year_birthday">
-                                    <option selected>year</option>
-                                    <?php
-                                    for ($i = 2021; $i >= 1900; $i--)
-                                        if ($year_form == $i)
-                                            echo "<option selected value='$i'>$i</option>";
-                                        else
-                                            echo "<option value='$i'>$i</option>";
-                                    ?>
-                                </select>
-                            </div>
+                        <!-- Day-->
+                        <div class="pl-0 align-items-center col-3">
+                            <label>Day</label>
+                            <select class="custom-select" id="day" required name="day_birthday">
+                                <option selected>day</option>
+                                <?php
+                                for ($i = 1; $i < 32; $i++)
+                                    if ($day_form == $i)
+                                        echo "<option selected value='$i'>$i</option>";
+                                    else
+                                        echo "<option value='$i'>$i</option>";
+                                ?>
+                            </select>
                         </div>
+                        <!--Month-->
+                        <div class="pl-0 align-items-center col-3">
+                            <label>Month</label>
+                            <select class="custom-select select" id="month" required name="month_birthday">
+                                <option selected>month</option>
 
+                                <?php
+                                $arr = array("January", "February", "March", "April", "May", "June", "July", "August",
+                                    "September", "October", "November", "December");
+
+                                for ($i = 1; $i < 13; $i++)
+                                    if ($month_form == $i)
+                                        echo "<option selected value='$i'>" . $arr[$i - 1] . "</option>";
+                                    else
+                                        echo "<option value='$i'>" . $arr[$i - 1] . "</option>";
+                                ?>
+                            </select>
+                        </div>
+                        <!--Year-->
+                        <div class="pl-0 align-items-center col-3">
+                            <label class="">Year</label>
+                            <select class="custom-select" id="year" required name="year_birthday">
+                                <option selected>year</option>
+                                <?php
+                                for ($i = 2000; $i >= 1900; $i--)
+                                    if ($year_form == $i)
+                                        echo "<option selected value='$i'>$i</option>";
+                                    else
+                                        echo "<option value='$i'>$i</option>";
+                                ?>
+                            </select>
+                        </div>
                     </div>
-
-
-                    <!--        end of BD-->
-
+                    <!--End of BD-->
+                    <!--phone-->
                     <div class="form-group row align-items-center align-items-center">
 
-                        <label class="col-3" for="mobile">Mobile Number:</label>
-                        <input class="col-6 form-control" type="tel" id="mobile" name="mobile" size="30"
-                               required placeholder="970599******" value="<?php echo $mobile_form ?>">
+                        <label class="col-12 col-md-3" for="mobile">Mobile Number:</label>
+                        <input class="col-12 col-md-9 form-control" type="tel" id="mobile" name="mobile"
+                               required placeholder="970599999999" value="<?php echo $mobile_form ?>">
                     </div>
-
-
+                    <!--                    Country-->
                     <div class="form-group row align-items-center">
-                        <label class="col-3">Country:</label>
-                        <select class="custom-select col-6" id="country" name="country" required>
+                        <label class="col-12 col-md-3">Country:</label>
+                        <select class="custom-select col-12 col-md-9" id="country" name="country" required>
                             <option selected>country</option>
                             <?php
-
                             $countries = array("Palestine", "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla",
                                 "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria",
                                 "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin",
@@ -354,7 +337,6 @@ $person_role_form = $row['person_role'];
                                 "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan",
                                 "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)",
                                 "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
-
                             for ($i = 0; $i < sizeof($countries); $i++)
                                 if ($country_form == $countries[$i])
                                     echo "<option selected value='$countries[$i]'>$countries[$i]</option>";
@@ -364,71 +346,56 @@ $person_role_form = $row['person_role'];
                             ?>
                         </select>
                     </div>
-
                     <!--  End country-->
-
                     <!--Gender-->
-                    <div class="form-group row align-items-center">
-                        <label class="col-3">Gender:</label>
-
-                        <div class="col-6">
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" id="maleG" name="gender" value="male"
-                                        <?php echo $gender_form === 'male' ? "checked" : "" ?>
-                                    >Male
-                                </label>
-                            </div>
-                            <div class="form-check-inline">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" id="femaleG" name="gender"
-                                           value="female"
-                                        <?php echo $gender_form === 'female' ? "checked" : "" ?>
-                                    >Female
-                                </label>
-                            </div>
-                            <div class="form-check-inline disabled">
-                                <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" id="personalG" name="gender"
-                                           value="personal"
-                                        <?php echo $gender_form === 'personal' ? "checked" : "" ?>
-                                    >Keep it personal
-                                </label>
-                            </div>
+                    <div class="form-group row justify-content-start">
+                        <label class="col-12 col-md-3">Gender:</label>
+                        <div class="pl-0 col-4 col-md-3 form-check form-check-inline mr-0 align-items-baseline">
+                            <label class="form-check-label">Male</label>
+                            <input type="radio" class="form-check-input" id="maleG" name="gender" value="male"
+                                <?php echo $gender_form === 'male' ? "checked" : "" ?>>
+                        </div>
+                        <div class="pl-0 col-4 col-md-3 form-check form-check-inline mr-0 align-items-baseline">
+                            <label class="form-check-label">Female</label>
+                            <input type="radio" class="form-check-input" id="femaleG" name="gender"
+                                   value="female"
+                                <?php echo $gender_form === 'female' ? "checked" : "" ?>>
+                        </div>
+                        <div class="pl-0 col-4 col-md-3 form-check form-check-inline mr-0 align-items-baseline">
+                            <label class="form-check-label">Keep it personal</label>
+                            <input type="radio" class="form-check-input" id="personalG" name="gender"
+                                   value="personal"
+                                <?php echo $gender_form === 'personal' ? "checked" : "" ?>>
                         </div>
                     </div>
                     <!--end of Gender-->
-
+                    <!-- City-->
                     <div class="form-group row align-items-center">
-                        <label class="col-3" for="city">City:</label>
-                        <input class="col-6 form-control" type="text" id="city" name="city" size="30" required
+                        <label class="col-12 col-md-3" for="city">City:</label>
+                        <input class="col-12 col-md-9 form-control" type="text" id="city" name="city" required
                                value="<?php echo $city_form ?>">
                     </div>
-
+                    <!--Email-->
                     <div class="form-group row align-items-center">
-                        <label class="col-3" for="user_email">Email:</label>
-                        <input class="col-6 form-control" type="email" id="user_email" name="user_email"
+                        <label class="col-12 col-md-3" for="user_email">Email:</label>
+                        <input class="col-12 col-md-9 form-control" type="email" id="user_email" name="user_email"
                                placeholder="ex@gmail.com"
-                               size="30" disabled required value="<?php echo $person_email_form ?>">
+                               disabled required value="<?php echo $person_email_form ?>">
                     </div>
-
-                    <div class="form-group row align-items-center">
-                            <div class="offset-4 col-3">
-                                <input type="submit" class="btn btn-primary mb-2" name="updatePersonalInfo" value="Save Changes" id="updatePIBTN">
-                            </div>
-                            <div class="col-2">
-                                <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.php">Cancel</a>
-                            </div>
+                    <!--buttons-->
+                    <div class="form-group row">
+                        <div class="col-12 text-center ">
+                            <input type="submit" class="btn btn-primary mb-2 ml-auto mr-auto " name="updatePersonalInfo"
+                                   value="Save Changes" id="updatePIBTN">
+                        </div>
                     </div>
-
-                    <div id="piMSG">
-                    </div>
-
-                    <!--                    </form>-->
-
                 </div>
+                <div id="piMSG">
+                </div>
+                <!--</form>-->
             </div>
         </div>
+        <!-- Edit personal info End-->
         <div class="card card-settings">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
@@ -441,34 +408,28 @@ $person_role_form = $row['person_role'];
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                     <div class="form-group row align-items-center">
-                        <label class="col-3" for="old_user_password">Current Password:</label>
+                        <label class="col-5" for="old_user_password">Current Password:</label>
                         <input class="col-6 form-control" type="password" id="old_user_password" name="old_user_pass"
-                               size="30"
                                required>
                     </div>
                     <div class="form-group row align-items-center">
-                        <label class="col-3" for="user_password">New Password:</label>
+                        <label class="col-5" for="user_password">New Password:</label>
                         <input class="col-6 form-control" type="password" id="user_password" name="user_pass" size="30"
                                required>
                     </div>
                     <div class="form-group row align-items-center">
-                        <label class="col-3" for="confirm_user_password">Confirm New Password:</label>
+                        <label class="col-5" for="confirm_user_password">Confirm New Password:</label>
                         <input class="col-6 form-control" type="password" id="confirm_user_password"
-                               name="confirm_user_pass"
-                               size="30" required>
+                               name="confirm_user_pass" size="30" required>
                     </div>
 
 
                     <div class="form-group row align-items-center">
-                            <div class="offset-4 col-3">
-                                <input id="changePassBTN" class="btn btn-primary mb-2" name="updatePass"
-                                       value="Save Changes"
-                                       style="width: 150px">
-                            </div>
-                            <div class="col-2">
-                                <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.php"
-                                   style=" width: 100px">Cancel</a>
-                            </div>
+                        <div class="offset-4 col-3">
+                            <input id="changePassBTN" class="btn btn-primary mb-2" name="updatePass"
+                                   value="Save Changes"
+                                   style="width: 150px">
+                        </div>
                     </div>
                     <div id="passMSG" class="row"></div>
                 </div>
@@ -477,7 +438,8 @@ $person_role_form = $row['person_role'];
         <div class="card card-settings">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn card-btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    <button class="btn card-btn btn-link btn-block text-left collapsed" type="button"
+                            data-toggle="collapse"
                             data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Apply for a Job
                     </button>
@@ -485,20 +447,15 @@ $person_role_form = $row['person_role'];
             </div>
             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-
-                    <!--                    <form method="post" class="row">-->
                     <div class="row">
-
-                        <div class="col-6 row">
-
-                            <div class="form-group col-12 align-items-center row" style="position: relative">
+                        <!--first part of the form-->
+                        <div class="col-12 col-xl-6">
+                            <div class="form-group row align-items-center row">
                                 <label class="col-3 innerLabel" for="education">Education:</label>
                                 <div class="row col-9">
-
                                     <label class="col-12 " style="font-size: small">What is your highest education?
                                         <span style="color: red; font-size: large">*</span>
                                     </label>
-
                                     <select class="custom-select col-12" id="education" name="education" required>
                                         <option value="">education</option>
                                         <?php
@@ -508,20 +465,17 @@ $person_role_form = $row['person_role'];
                                         for ($i = 0; $i < sizeof($arr); $i++)
                                             echo "<option value='$i'>" . $arr[$i] . "</option>";
                                         ?>
-
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="form-group col-12 align-items-center row" style="position: relative">
+                            <div class="form-group col-12 align-items-center row">
                                 <label class="col-3 innerLabel" for="major">Major:</label>
                                 <div class="row col-9">
                                     <label class="col-12 " style="font-size: small">What is your major?</label>
                                     <input class="col-12 form-control" type="text" id="major" name="major" size="30">
                                 </div>
                             </div>
-
-                            <div class="form-group col-12 align-items-center row" style="position: relative">
+                            <div class="form-group col-12 align-items-center row">
                                 <label class="col-3 innerLabel" for="language">Languages:</label>
                                 <div class="row col-9">
                                     <label class="col-12 " style="font-size: small">Languages you speak?
@@ -531,8 +485,7 @@ $person_role_form = $row['person_role'];
                                            size="30" required>
                                 </div>
                             </div>
-
-                            <div class="form-group col-12 align-items-center row" style="position: relative">
+                            <div class="form-group col-12 align-items-center row">
                                 <label class="col-3 innerLabel" for="skills">Skills:</label>
                                 <div class="row col-9">
                                     <label class="col-12 " style="font-size: small">Write skills you earned
@@ -542,8 +495,7 @@ $person_role_form = $row['person_role'];
                                            required>
                                 </div>
                             </div>
-
-                            <div class="form-group col-12 align-items-center row" style="position: relative">
+                            <div class="form-group col-12 align-items-center row">
                                 <label class="col-3 innerLabel" for="skills">Job Type:</label>
 
                                 <div class="row col-9">
@@ -565,15 +517,13 @@ $person_role_form = $row['person_role'];
                             </div>
                         </div>
                         <!--second part of the form-->
-
-                        <div class="col-6 row">
-                            <div class="form-group col-12 align-items-center row" style="position: relative">
+                        <div class="col-12 col-xl-6">
+                            <div class="form-group row align-items-center">
                                 <label class="col-3 innerLabel" for="position">Position:</label>
                                 <div class="row col-9">
                                     <label class="col-12 " style="font-size: small">You are applying to be a?
                                         <span style="color: red; font-size: large">*</span>
                                     </label>
-
                                     <select class="custom-select col-12" id="position" name="position" required>
                                         <option value="">position</option>
                                         <?php
@@ -584,47 +534,34 @@ $person_role_form = $row['person_role'];
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="form-group col-12 align-items-center row" style="position:relative;">
+                            <div class="form-group col-12 align-items-center row">
                                 <label class="col-3 innerLabel" for="about">About you:</label>
                                 <div class="row col-9">
-                                    <label class="col-12 " style="font-size: small">
+                                    <label class="col-12 ">
                                         Tell us about yourself, if you have a previous experience, training, and
                                         certificates
-                                        you earned.<span style="color: red; font-size: large">*</span>
+                                        you earned.<span class="error">*</span>
                                     </label>
                                     <textarea class="col-12 form-control" type="text" id="about" name="about" rows="9"
                                               maxlength="1500"
                                               required placeholder="type here">
-                    </textarea>
+                                    </textarea>
                                 </div>
                             </div>
-
-                        </div>
-                        <div class="row" style="height: 50px">
-
-                        </div>
-
-                        <div class="row" style="width: 100%">
-                            <div style="margin-left: 66.5%" class="row col-12">
-                                <a class="btn btn-secondary mb-2" href="../../../Home/HTML/index.html"
-                                   style=" width: 100px">Cancel</a>
-                                <input id="applyJobBTN" class="btn btn-primary mb-2" value="Apply Now"
-                                       style=" width: 150px; margin-left: 10px">
+                            <div class="row col-12 ">
+                                <input id="applyJobBTN" class="btn btn-primary mb-2" value="Apply Now">
                             </div>
                         </div>
                         <div id="applyResult"></div>
-                        <!--                    </form>-->
                     </div>
-
-
                 </div>
             </div>
         </div>
         <div class="card card-settings">
             <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
-                    <button class="btn card-btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                    <button class="btn card-btn btn-link btn-block text-left collapsed" type="button"
+                            data-toggle="collapse"
                             data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                         Contact Us
                     </button>
@@ -698,7 +635,7 @@ $person_role_form = $row['person_role'];
             'about': document.getElementById('about').value
         }, function (data, status) {
             if (status == 'success') {
-                if(data == 'Your application is successfully sent!'){
+                if (data == 'Your application is successfully sent!') {
                     document.getElementById('applyResult').innerHTML = data;
                     onwaiting()
                 }

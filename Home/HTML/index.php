@@ -739,7 +739,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
             'person_pass': document.getElementById("user_pass").value
         }, function (data, status) {
             if (data === 'You are allowed to log in') {
-                window.location.replace("../../User/HTML/index.php");
+                window.location.replace("../../User/index.php");
             } else {
                 document.getElementById('emailNF').innerHTML = data;
             }

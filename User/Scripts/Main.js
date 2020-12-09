@@ -18,14 +18,6 @@
 
 // 1. SideBar Start
     $(document).ready(function () {
-        (function ($) {
-
-            $('.js-fullheight').css('height', $(window).height());
-            $(window).resize(function () {
-                $('.js-fullheight').css('height', $(window).height());
-            });
-
-        })($);
         $('#sidebarCollapse').on('click', function () {
             $('#sidebar').toggleClass('active');
         });
@@ -38,9 +30,16 @@
                 $("#loader").css("display", "block");
             },
             ajaxStop: function () {
+                var $timeline_block = $('.cd-timeline-block');
                 $('#sidebar').removeClass('active');
                 $("#loader").css("display", "none");
                 $("#content").css("display", "block");
+                //hide timeline blocks which are outside the viewport
+                $timeline_block.each(function () {
+                    if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+                        $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+                    }
+                });
             }
         });
 //3. Load DashBoard On Start
@@ -81,12 +80,20 @@
             $(".components li").removeClass("active");
             $("#settings").addClass("active");
         })
+//8. Hotel Facilities Ajax
+        $("#HF").click(function () {
+            $("#content").load("Features/HotelFacilities/HF.htm");
+            $(".components li").removeClass("active");
+            $("#HF").addClass("active");
+        })
 //9. Log Out
         $("#logOut").click(function () {
             window.location.replace("PHP/LogOut/logout.php");
         })
 
     });
+
+
 
 })(jQuery);
 //End jQuery

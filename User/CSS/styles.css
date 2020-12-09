@@ -49,6 +49,7 @@ li:last-child {
     bottom: 0;
 }
 
+
 .bg-dark {
     background: #232530 !important;
 }
@@ -96,6 +97,45 @@ hr.line {
     color: #B79040;
     margin-bottom: 40px;
 }
+/*input*/
+.card-forms input,.card-forms textarea,.card-forms select{
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Cabin;
+    color: #232530;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.card-forms .form-check-input{
+    width: auto;
+    margin-left: 10px;
+
+}
+.card-forms input:focus,
+.card-forms textarea:focus,.card-forms select:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #B79040;
+    outline-width: 0
+}
+.card-forms option{
+    padding: 5px;
+    box-shadow: 0px 15px 24px -21px rgba(0, 0, 0, 0.18);
+    font-family: "Cabin", serif;
+
+}
+.card-forms option:hover{
+color: #B79040;
+    background-color:#232530 ;
+}
+
 
 hr.card-line {
     width: 35%;
@@ -145,6 +185,7 @@ hr.card-line {
 
 .custom-select{
  height: auto;
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -283,6 +324,7 @@ a[data-toggle="collapse"] {
 .btn.btn-primary {
     background: #232530;
     border-color: #232530;
+    color: #eeeeee;
 
 }
 .back-btn{
@@ -522,6 +564,7 @@ p.main-content {
         height: 500px;
     }
 
+
 }
 
 
@@ -749,11 +792,18 @@ p.main-content {
 
 .card-settings .card-body .btn-primary {
     width: 180px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .card-settings .card-body .btn-secondary {
     width: 110px;
 }
+.card-settings .card-body {
+
+   margin: 30px 30px;
+}
+
 
 .card-settings .card-body .btn:hover {
     background-color: #B79040;

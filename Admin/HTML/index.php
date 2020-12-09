@@ -20,6 +20,18 @@
     <link rel="stylesheet" href="../../Vendor/CSS/flexslider.css">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../../Vendor/CSS/flaticon.css" type="text/css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+            integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+            integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -35,43 +47,43 @@
         <ul class="list-unstyled components mb-5">
             <li class="active">
                 <i class="far fa-home icon"></i>
-                <a href="#"> Dashboard</a>
+                <a> Dashboard</a>
             </li>
             <li>
                 <i class="far fa-luggage-cart icon"></i>
-                <a href="#"> Booking</a>
+                <a> Booking</a>
             </li>
-            <li>
+            <li id="roomLink">
                 <i class="far fa-luggage-cart icon"></i>
-                <a href="#"> Rooms</a>
+                <a> Rooms</a>
             </li>
             <li>
-                <i id="resIcon" class="far fa-utensils-alt icon"></i>
-                <a id="resLink"> Restaurant</a>
+                <i class="far fa-utensils-alt icon"></i>
+                <a> Restaurant</a>
             </li>
             <li>
                 <i class="far fa-tshirt icon"></i>
-                <a href="#"> Staff</a>
+                <a> Staff</a>
             </li>
-            <li>
+            <li id="jobLink">
                 <i class="far fa-blanket icon"></i>
-                <a href="#"> Job Applications</a>
+                <a> Job Applications</a>
             </li>
             <li>
                 <i class="far fa-user-tie icon"></i>
-                <a class="" href="#"> Room dashboard</a>
+                <a> Room dashboard</a>
             </li>
-            <li>
-                <i id="settingsIcon" class="far fa-cog icon"></i>
-                <a id="settingsLink"> Reviews</a>
+            <li id="contactLink">
+                <i class="far fa-cog icon"></i>
+                <a> Reviews/Contacts</a>
             </li>
-            <li>
+            <li id="customerLink">
                 <i class="far fa-hotel icon"></i>
-                <a href="#"> </a>
+                <a> Customers</a>
             </li>
             <li id="logOutItem">
                 <i class="far fa-door-open icon"></i>
-                <a href="../PHP/LogOut/logout.php" id="signOut"> Sign Out</a>
+                <a href="../PHP/LogOut/logout.php" id="signOut" style="text-decoration: none"> Sign Out</a>
             </li>
         </ul>
     </nav>
@@ -182,7 +194,8 @@
         });
 
         // for log out icon
-        $("#logOutItem").click(function () {sidebarCollapse
+        $("#logOutItem").click(function () {
+            sidebarCollapse
             window.location.replace("../PHP/LogOut/logout.php");
         })
 
@@ -205,6 +218,11 @@
         //     $("#content").load("../Features/Settings/edit.php");
         // })
 
+        $("#roomLink").click(function () {
+            $('#content').load('../Features/Room/room.php');
+        })
+
+
     })(jQuery));
 
     // when categories.php is loaded, each category card has Browse btn, this function handles the event when it's clicked
@@ -213,7 +231,216 @@
     //     $("#content").load("../Features/Restaurant/category.php", "data1");
     // }
 
+    // AJAX for Adding Room Feature
+    function submitAddingRoomForm() {
+        $.post('../Features/Room/Room.php', {
+            'roomNumber': document.getElementById('roomNumber').value,
+            'rentPerNight': document.getElementById('rentPerNight').value,
+            'telNum': document.getElementById('telNum').value,
+            'badCapacity': document.getElementById('badCapacity').value,
+            'roomType': document.getElementById('roomType').value,
+            'roomDescription': document.getElementById('roomDescription').value
+
+        }, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('MSG').innerHTML = data;
+            }
+        })
+    }
+
+    function allRooms() {
+        $.post('../Features/Room/AllRooms.php', {}, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('content').innerHTML = data;
+            }
+        })
+    }
+
+
+    // AJAX for Editing Room
+    function EditRoom(roomID) {
+        $.post('../Features/Room/EditRoom.php', {
+            'EditRoom': 'EditRoom',
+            'room_id': roomID
+        }, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('content').innerHTML = data;
+            }
+        })
+    }
+
+    function submitChangingRoom(roomID) {
+        $.post('../Features/Room/EditRoom.php', {
+            'room_id_Edit': roomID,
+            'roomNumberEdit': document.getElementById('roomNumberEdit').value,
+            'rentPerNightEdit': document.getElementById('rentPerNightEdit').value,
+            'telNumEdit': document.getElementById('telNumEdit').value,
+            'badCapacityEdit': document.getElementById('badCapacityEdit').value,
+            'roomTypeEdit': document.getElementById('roomTypeEdit').value,
+            'roomDescriptionEdit': document.getElementById('roomDescriptionEdit').value
+
+        }, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('MSG').innerHTML = data;
+            }
+        })
+    }
+
+    function deleteRoom(room_id) {
+        document.getElementById('content').innerHTML =
+            '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
+            '" src="../images/VZvw.gif">';
+
+        $.post('../Features/Room/DeleteRoom.php', {
+            'deleteRoom': 'deleteRoom',
+            'room_id': room_id
+        }, function (data, status) {
+            document.getElementById('content').innerHTML = data;
+        })
+    }
+
+    function roomSearch() {
+        document.getElementById('searchRoomResult').innerHTML =
+            '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
+            '" src="../images/VZvw.gif">';
+
+        var searchBar = document.getElementById('searchRoomBar').value;
+        var filter = document.getElementById('searchRoomFilter').value;
+        var orderBy = document.getElementById('searchRoomOrdering').value;
+        var takenFlag = document.getElementById('takenRoomCB').checked;
+
+        $.get('../Features/Room/SearchRoom.php', {
+            'searchBar': searchBar,
+            'filter': filter,
+            'order_by': orderBy,
+            'taken': takenFlag
+        }, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('searchRoomResult').innerHTML = data;
+            }
+        })
+    }
+
+    // AJAX for Contacts Feature
+    $("#contactLink").click(function () {
+        $.post('../Features/Contacts/Contacts.php',
+            {}, function (data, status) {
+                if (status === 'success') {
+                    document.getElementById('content').innerHTML = data;
+                }
+            })
+    })
+
+    function sendEmailBTN(contact_id, counter) {
+        var divID = 'MSG' + counter;
+        var emailMSG = 'email_message' + counter;
+        var emailSender = 'emailSender' + counter;
+        var statusID = 'status' + counter;
+        document.getElementById(statusID).innerHTML = '<img width="35px" height="30px"  src="../images/VZvw.gif">';
+        console.log(divID);
+        $.post('../Features/Contacts/Contacts.php', {
+            'sendReplyEmail': 'sendReplyEmail',
+            'emailSender': document.getElementById(emailSender).innerText,
+            'email_message': document.getElementById(emailMSG).value,
+            'contact_id': contact_id
+        }, function (data, status) {
+            if (status === 'success') {
+                document.getElementById(divID).innerHTML = data;
+                document.getElementById(statusID).innerHTML = '<i class="fa fa-check"></i> Replied';
+            }
+        })
+    }
+
+    function contactSearch() {
+        // centering the GIF in the center till response
+        document.getElementById('searchContactResult').innerHTML =
+            '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
+            '" src="../images/VZvw.gif">';
+
+        var searchBar = document.getElementById('searchContactBar').value;
+        var filter = document.getElementById('searchContactFilter').value;
+        var orderBy = document.getElementById('searchContactOrdering').value;
+        var repliedFlag = document.getElementById('repliedContactCB').checked;
+        $.get('../Features/Contacts/SearchContacts.php?searchBar=' + searchBar + '&filter=' + filter + '&order_by=' + orderBy + '&replied=' + repliedFlag,
+            function (data, status) {
+                if (status === 'success') {
+                    document.getElementById('searchContactResult').innerHTML = data;
+                }
+            })
+    }
+
+    function deleteContactCard(contact_id, counter) {
+        var mainDivID = 'cardContactDiv' + counter;
+        document.getElementById(mainDivID).style.display = 'none';
+        $.post('../Features/Contacts/Contacts.php', {
+            'deleteContact': 'deleteContact',
+            'contact_id': contact_id
+        })
+
+    }
+
+    // AJAX for Job Applications
+    $("#jobLink").click(function () {
+        $("#content").load('../Features/JobApplications/JobApps.php');
+    })
+
+    function sendEmailJobBTN(form_id, counter) {
+        var divID = 'MSG' + counter;
+        var emailMSG = 'email_message' + counter;
+        var emailSender = 'emailSender' + counter;
+        var statusID = 'status' + counter;
+        document.getElementById(statusID).innerHTML = '<img width="35px" height="30px"  src="../images/VZvw.gif">';
+        $.post('../Features/JobApplications/JobApps.php', {
+            'sendReplyJobEmail': 'sendReplyJobEmail',
+            'emailSender': document.getElementById(emailSender).innerText,
+            'email_message': document.getElementById(emailMSG).value,
+            'form_id': form_id
+        }, function (data, status) {
+            if (status === 'success') {
+                document.getElementById(divID).innerHTML = data;
+                document.getElementById(statusID).innerHTML = '<i class="fa fa-check"></i> Replied';
+            }
+        })
+    }
+
+    function jobSearch() {
+        document.getElementById('searchJobResult').innerHTML =
+            '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
+            '" src="../images/VZvw.gif">';
+
+        var searchBar = document.getElementById('searchJobBar').value;
+        var filter = document.getElementById('searchAppsFilter').value;
+        var orderBy = document.getElementById('searchAppsOrdering').value;
+        var repliedFlag = document.getElementById('repliedAppCB').checked;
+        $.get('../Features/JobApplications/SearchJobApps.php', {
+                'searchBar': searchBar,
+                'filter': filter,
+                'order_by': orderBy,
+                'replied': repliedFlag
+            }
+            , function (data, status) {
+                if (status === 'success') {
+                    document.getElementById('searchJobResult').innerHTML = data;
+                }
+            })
+    }
+
+    function deleteJobCard(form_id, counter) {
+        var mainDivID = 'cardJobDiv' + counter;
+        document.getElementById(mainDivID).style.display = 'none';
+        $.post('../Features/JobApplications/JobApps.php', {
+            'deleteForm': 'deleteForm',
+            'form_id': form_id
+        })
+    }
+
+    // AJAX for customer item
+
+    $("#customerLink").click(function (){
+        $("#content").load('../Features/Users/AllUsers.php');
+    })
 
 </script>
 </body>
 </html>
+
