@@ -14,63 +14,14 @@ $result = $pdo->query($sql);
 
 
 <div class="container">
+    <section>
+        <h1 class="main-h1">Rooms</h1>
+        <hr class="line">
+        <p class="main-content">The table below contains all information about hotel's rooms with ability to modify them..</p>
+    </section>
 
-    <!--    search bar-->
-    <div class="row" style="position: relative">
-        <div class="form-floating mb-3 col-5">
-            <input type="search" class="form-control" id="searchRoomBar" placeholder="Search">
-            <label for="searchRoomBar">Search</label>
-        </div>
-        <div class="col-2" style="position: relative">
-            <button class="btn btn-primary" onclick="roomSearch()"
-                    style="width: 100%;height: 40px; position:absolute; top: 50%;left: 50%;transform: translate(-50%,-50%)">
-                Search
-            </button>
-        </div>
-
-        <div class="col-2">
-            <div class="form-floating">
-                <select class="form-select" id="searchRoomFilter">
-                    <option selected>Search Method</option>
-                    <option value="roomNumber">Room Number</option>
-                    <option value="roomType">Room Type</option>
-                    <option value="badCapacity">Bad Capacity</option>
-                    <option value="telNumber">Tel. Number</option>
-                    <option value="price">Price</option>
-                    <option value="description">Description</option>
-                </select>
-                <label for="searchRoomFilter">Method Filter</label>
-            </div>
-        </div>
-
-        <div class="col-2">
-            <div class="form-floating">
-                <select class="form-select" id="searchRoomOrdering">
-                    <option selected>Order By</option>
-                    <option value="roomNumber">Room Number</option>
-                    <option value="badCapacity">Bad Capacity</option>
-                    <option value="price">Price</option>
-                </select>
-                <label for="searchRoomOrdering">Order By</label>
-            </div>
-        </div>
-
-        <div class="form-check col-1" style="position:relative;">
-            <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">
-                <input class="form-check-input" type="checkbox" value="" id="takenRoomCB">
-                <label class="form-check-label" for="takenRoomCB">
-                    Taken
-                </label>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div id="searchRoomResult">
-
-        <table class="table table-hover">
-
+    <div class="row forms mt-5">
+        <table id="rooms" class="table table-striped table-light " style="width:100%">
             <thead>
             <tr>
                 <th>Room Number</th>
@@ -80,6 +31,7 @@ $result = $pdo->query($sql);
                 <th>Rent Per Night</th>
                 <th>Room Description</th>
                 <th>Status</th>
+                <th class="edit_r">Action</th>
             </tr>
             </thead>
 
@@ -95,18 +47,38 @@ $result = $pdo->query($sql);
                     <td><?php echo $row['rent_per_night'] ?></td>
                     <td><?php echo $row['room_description'] ?></td>
                     <td><?php echo $row['status'] == 0 ? 'Available' : 'Taken' ?></td>
-                    <td>
-                        <button onclick="EditRoom(this.value)" value="<?php echo $row['room_id'] ?>">Edit</button>
+                    <td class="edit_r">
+                        <button onclick="EditRoom(this.value)" value="<?php echo $row['room_id'] ?>" class="edit-table fas fa-edit"></button>
                     </td>
                 </tr>
 
                 <?php
             }
             ?>
+
             </tbody>
         </table>
     </div>
-
 </div>
+
+<script src="../Vendor/script/bootstrap.min.js"></script>
+<script src="Scripts/jquery.dataTables.min.js"></script>
+<script src="Scripts/dataTables.bootstrap4.min.js"></script>
+<script src="Scripts/Rooms.js"></script>
+<script>
+    //  All Rooms Table init
+    $(document).ready(function () {
+
+        if ($("#rooms").length) {
+            var table = $('#rooms').DataTable({
+                "scrollX": true,
+                responsive: true
+
+            });
+        }
+    });
+</script>
+
+
 
 

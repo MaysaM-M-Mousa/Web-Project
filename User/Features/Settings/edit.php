@@ -6,6 +6,7 @@ session_start();
     header("Location:../../../Home/HTML/index.php");
     return;
 }*/
+sleep(1);
 
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['gender']) && isset($_POST['mobile'])
     && isset($_POST['day_birthday']) && isset($_POST['month_birthday'])
@@ -108,7 +109,7 @@ if (isset($_POST['update']) && $_POST['update'] == 'updatePass'
         $statement = $pdo->prepare($sqlstmt);
 
         $statement->execute(array(":person_pass" => $hashed_pass));
-        $msg = "Your information was successfully updated";
+        $msg = "Your Password was successfully updated";
         echo '<span style="color: green">' . $msg . '</span>';
         return;
 
@@ -141,8 +142,8 @@ if (isset($_POST['apply']) && $_POST['apply'] == 'applyForAJob' && isset($_POST[
     }
 
     try {
-        $sql = "insert into forms (education,major,skills,languages,job_type,position,about,person_id) values
-    (:education,:major,:skills,:languages,:job_type,:position,:about,:person_id)";
+        $sql = "insert into forms (education,major,skills,languages,job_type,position,about,person_id,date_of_applying) values
+    (:education,:major,:skills,:languages,:job_type,:position,:about,:person_id,:date_of_applying)";
         $stmt = $pdo->prepare($sql);
 
         $stmt->execute(array(
@@ -153,7 +154,8 @@ if (isset($_POST['apply']) && $_POST['apply'] == 'applyForAJob' && isset($_POST[
             ":job_type" => $job_type,
             ":position" => $position,
             ":about" => $about,
-            ":person_id" => $person_id
+            ":person_id" => $person_id,
+            ':date_of_applying'=>date('Y-m-d')
         ));
     } catch (Exception $e) {
         echo $e->getMessage();
@@ -163,6 +165,37 @@ if (isset($_POST['apply']) && $_POST['apply'] == 'applyForAJob' && isset($_POST[
     echo '<span style="color: green">' . $msg . '</span>';
     return;
 
+}
+// contacting :
+if (isset($_POST['fullName']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])) {
+
+    $fullName = htmlentities($_POST['fullName']);
+    $email = htmlentities($_POST['email']);
+    $subject = htmlentities($_POST['subject']);
+    $message = htmlentities($_POST['message']);
+
+    if (strlen($fullName) < 1 || strlen($email) < 1 || strlen($subject) < 1 || strlen($message) < 1) {
+        echo '<span style="color: red">All Fields are required!</span>';
+        return;
+    }
+
+    try {
+        $sql = "insert into contacts (full_name,email,subject,message,date_of_receive) values
+            (:full_name,:email,:subject,:message,:date_of_receive)";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(array(
+            ":full_name" => $fullName,
+            ":email" => $email,
+            ":subject" => $subject,
+            ":message" => $message,
+            'date_of_receive'=>date('Y-m-d')
+        ));
+
+        echo '<span style="color: green">Thank you for contacting us, we will reply on the email you entered.</span>';
+        return;
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 }
 
 
@@ -276,7 +309,7 @@ $person_role_form = $row['person_role'];
                             <select class="custom-select" id="year" required name="year_birthday">
                                 <option selected>year</option>
                                 <?php
-                                for ($i = 2000; $i >= 1900; $i--)
+                                for ($i = 2021; $i >= 1900; $i--)
                                     if ($year_form == $i)
                                         echo "<option selected value='$i'>$i</option>";
                                     else
@@ -389,8 +422,8 @@ $person_role_form = $row['person_role'];
                                    value="Save Changes" id="updatePIBTN">
                         </div>
                     </div>
-                </div>
-                <div id="piMSG">
+                    <div class="row" id="piMSG">
+                    </div>
                 </div>
                 <!--</form>-->
             </div>
@@ -502,13 +535,13 @@ $person_role_form = $row['person_role'];
 
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="job_type" value="0">Full
+                                            <input type="radio" class="form-check-input" id="fullTimeRB" name="job_type" value="0">Full
                                             Time
                                         </label>
                                     </div>
                                     <div class="form-check-inline" style="margin-left: 40px">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="job_type" value="1">Part
+                                            <input type="radio" class="form-check-input" id="partTimeRB" name="job_type" value="1">Part
                                             Time
                                         </label>
                                     </div>
@@ -540,12 +573,11 @@ $person_role_form = $row['person_role'];
                                     <label class="col-12 ">
                                         Tell us about yourself, if you have a previous experience, training, and
                                         certificates
-                                        you earned.<span class="error">*</span>
+                                        you earned.<span class="error" style="color: red">*</span>
                                     </label>
                                     <textarea class="col-12 form-control" type="text" id="about" name="about" rows="9"
                                               maxlength="1500"
-                                              required placeholder="type here">
-                                    </textarea>
+                                              required placeholder="type here"></textarea>
                                 </div>
                             </div>
                             <div class="row col-12 ">
@@ -562,20 +594,48 @@ $person_role_form = $row['person_role'];
                 <h2 class="mb-0">
                     <button class="btn card-btn btn-link btn-block text-left collapsed" type="button"
                             data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         Contact Us
                     </button>
                 </h2>
             </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                 <div class="card-body">
+                    <div class="row">
+                        <div class="form-group row col-12">
+                            <input class="col-6 form-control" id="fullNameContact" type="text" name="fullName"
+                                   placeholder="Full Name"
+                                   required>
+
+                            <input class="col-6 form-control" id="emailContact" type="email" name="email"
+                                   placeholder="Email" required>
+
+                        </div>
+                        <div class="form-group row col-12">
+                            <input class="form-control col-12" id="subjectContact" type="text" name="subject"
+                                   placeholder="Subject">
+
+                        </div>
+                        <div class="form-group row col-12">
+                        <textarea class="col-12 form-control" type="text" id="messageContact" name="message" rows="10"
+                                  maxlength="3000"
+                                  required placeholder="Your message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-primary mb-2" type="submit" id="sendContactBTN" name="send"
+                                   value="Send"
+                                   style="width: 100px; float: right">
+                        </div>
+
+                    </div>
+                    <div id="contactResult" class="row"></div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
+<a href=""></a>
 <script>
 
 
@@ -583,7 +643,7 @@ $person_role_form = $row['person_role'];
         // get the chosen gender
         var checked_gender = document.querySelector('input[name = "gender"]:checked');
 
-        $.post('../Features/Settings/edit.php', {
+        $.post('../../../../WebProject/User/Features/Settings/edit.php', {
             'update': 'updatePI',
             'first_name': document.getElementById("first_name").value,
             'last_name': document.getElementById("last_name").value,
@@ -596,11 +656,10 @@ $person_role_form = $row['person_role'];
             'year_birthday': document.getElementById("year").value,
 
             'country': document.getElementById("country").value,
-
             'city': document.getElementById("city").value
 
         }, function (data, status) {
-            if (status == 'success') {
+            if (status === 'success') {
                 document.getElementById('piMSG').innerHTML = data;
             }
         })
@@ -609,13 +668,13 @@ $person_role_form = $row['person_role'];
     // AJAX for changing password
     $("#changePassBTN").click(function () {
 
-        $.post('../Features/Settings/edit.php', {
+        $.post('../../../../WebProject/User/Features/Settings/edit.php', {
             'update': 'updatePass',
             'user_pass': document.getElementById('user_password').value,
             'confirm_user_pass': document.getElementById('confirm_user_password').value,
             'old_user_pass': document.getElementById('old_user_password').value
         }, function (data, status) {
-            if (status == 'success') {
+            if (status === 'success') {
                 document.getElementById('passMSG').innerHTML = data;
             }
         })
@@ -624,7 +683,7 @@ $person_role_form = $row['person_role'];
     // AJAX for applying a job
     $("#applyJobBTN").click(function () {
         var checked_job_type = document.querySelector('input[name = "job_type"]:checked');
-        $.post('../Features/Settings/edit.php', {
+        $.post('../../../../WebProject/User/Features/Settings/edit.php', {
             'apply': 'applyForAJob',
             'education': document.getElementById('education').value,
             'major': document.getElementById('major').value,
@@ -634,12 +693,38 @@ $person_role_form = $row['person_role'];
             'position': document.getElementById('position').value,
             'about': document.getElementById('about').value
         }, function (data, status) {
-            if (status == 'success') {
-                if (data == 'Your application is successfully sent!') {
-                    document.getElementById('applyResult').innerHTML = data;
-                    onwaiting()
-                }
+            if (status === 'success') {
+                // if (data === 'Your application is successfully sent!') {
+                //     document.getElementById('applyResult').innerHTML = data;
+                //     onwaiting()
+                // }
+                // reseting the default values
+                document.getElementById('education').selectIndex = 0;
+                document.getElementById('major').value = "";
+                document.getElementById('language').value = "";
+                document.getElementById('skills').value = "";
+                document.getElementById('position').value = "";
+                document.getElementById('about').value = "";
+                $('#fullTimeRB').removeAttr('checked');
+                $('#partTimeRB').removeAttr('checked');
+
                 document.getElementById('applyResult').innerHTML = data;
+            }
+        })
+    })
+    $('#sendContactBTN').click(function () {
+        $.post('../../../../WebProject/User/Features/Settings/edit.php', {
+            'email': document.getElementById('emailContact').value,
+            'subject': document.getElementById('subjectContact').value,
+            'fullName': document.getElementById('fullNameContact').value,
+            'message': document.getElementById('messageContact').value
+        }, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('emailContact').value = "";
+                document.getElementById('subjectContact').value = "";
+                document.getElementById('fullNameContact').value = "";
+                document.getElementById('messageContact').value = "";
+                document.getElementById('contactResult').innerHTML = data;
             }
         })
     })

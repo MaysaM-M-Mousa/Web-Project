@@ -1,3 +1,8 @@
+<?php
+// VALIDATION
+sleep(1);
+?>
+
 <section class="section-invert dashboard-section">
     <div class="container-fluid">
         <div class="row">

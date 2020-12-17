@@ -7,7 +7,6 @@ session_start();
 if (isset($_SESSION['hash_verification']) && isset($_SESSION['user_email'])) {
     // to use it in case of clicking resend
     $_SESSION['temp_user_email'] = $_SESSION['user_email'];
-
     $to = $_SESSION['user_email'];
     $subject = 'Email Verification';
     $headers = 'From: 1.c.f.m.m.a.m@gmail.com';

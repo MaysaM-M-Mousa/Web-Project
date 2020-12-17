@@ -1,7 +1,6 @@
 <?php
 require_once 'pdo.php';
-//session_start();
-
+session_start();
 
 if (isset($_POST['resend'])) {
     $_SESSION['hash_verification'] = md5(rand(0, 1000));
@@ -9,67 +8,65 @@ if (isset($_POST['resend'])) {
     return;
 }
 
-if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
-
-    if (strlen($_POST['person_email']) < 1 || strlen($_POST['person_pass']) < 1 || strlen($_POST['login']) < 1) {
-        header("Location : login.php");
-        return;
-    }
-    $person_pass = htmlentities($_POST['person_pass']);
-    $person_email = htmlentities($_POST['person_email']);
-
-    $_SESSION['user_email'] = $person_email;
-
-    if (!strpos($person_email, "@")) {
-        $_SESSION['error_message'] = "Email must has '@' character.";
-        header("Location: login.php");
-        return;
-    }
-
-
-    $hashed_pass = hash("sha256", trim($person_pass, " "));
-    $stmt = $pdo->query("SELECT * FROM person where person_email=" . "'" . trim($person_email, " ") . "'");
-
-    if ($stmt->rowCount() < 1) {
-        $_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
-        header("Location:login.php");
-        return;
-    }
-
-
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($row['active'] == 0) {
-        $_SESSION['error_verification'] = "Your account is not verified yet!";
-        header("Location:login.php");
-        return;
-    }
-
-
-    if ($row['person_pass'] !== $hashed_pass || $row['person_email'] !== $person_email) {
-        $_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
-        header("Location:login.php");
-        return;
-    }
-
-
-// if everything is okey! store person_role and person_id
-    $_SESSION['person_id'] = $row['person_id'];
-    $_SESSION['person_role'] = $row['person_role'];
-    $_SESSION['activated'] = 1;
-
-    unset($_SESSION['user_email']);
-    header("Location:../../PHP/Edit/edit.php");
-    return;
-
-//    header("Location:../../HTML/index.html");
-
-
-}
+//if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
+//
+//    if (strlen($_POST['person_email']) < 1 || strlen($_POST['person_pass']) < 1 || strlen($_POST['login']) < 1) {
+//        header("Location : login.php");
+//        return;
+//    }
+//    $person_pass = htmlentities($_POST['person_pass']);
+//    $person_email = htmlentities($_POST['person_email']);
+//
+//    $_SESSION['user_email'] = $person_email;
+//
+//    if (!strpos($person_email, "@")) {
+//        $_SESSION['error_message'] = "Email must has '@' character.";
+//        header("Location: login.php");
+//        return;
+//    }
+//
+//    $hashed_pass = hash("sha256", trim($person_pass, " "));
+//    $stmt = $pdo->query("SELECT * FROM person where person_email=" . "'" . trim($person_email, " ") . "'");
+//
+//    if ($stmt->rowCount() < 1) {
+//        $_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
+//        header("Location:login.php");
+//        return;
+//    }
+//
+//
+//    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+//
+//    if ($row['active'] == 0) {
+//        $_SESSION['error_verification'] = "Your account is not verified yet!";
+//        header("Location:login.php");
+//        return;
+//    }
+//
+//
+//    if ($row['person_pass'] !== $hashed_pass || $row['person_email'] !== $person_email) {
+//        $_SESSION['email_not_found_msg'] = "Either user name or password are wrong!";
+//        header("Location:login.php");
+//        return;
+//    }
+//
+//
+//// if everything is okey! store person_role and person_id
+//    $_SESSION['person_id'] = $row['person_id'];
+//    $_SESSION['person_role'] = $row['person_role'];
+//    $_SESSION['activated'] = 1;
+//
+//    unset($_SESSION['user_email']);
+//    header("Location:../../PHP/Edit/edit.php");
+//    return;
+//
+////    header("Location:../../HTML/index.html");
+//
+//
+//}
 
 ?>
 <?php
-session_start();
 
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['user_email'])
     && isset($_POST['user_pass']) && isset($_POST['confirm_user_pass']) && isset($_POST['gender'])
@@ -98,20 +95,17 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
         || strlen($year) < 1 || strlen($country) < 1 || strlen($city) < 1
         || !is_numeric($mobile) || !is_numeric($day) || !is_numeric($year) || !is_numeric($month)
     ) {
-        header("Location:signup.php");
+        echo '<span style="color: red">All Fields Are Required!</span>';
         return;
     }
 
     if ($user_pass !== $confirm_user_pass) {
-        //flash message
-        $_SESSION['error_pass'] = "Passwords are not identical!";
-        header("Location: signup.php");
+        echo '<span style="color: red">Passwords are not identical!</span>';
         return;
     }
 
     if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION['error_message'] = "Email must has '@' character.";
-        header("Location: signup.php");
+        echo '<span style="color: red">Email must has @ character.</span>';
         return;
     }
 
@@ -143,41 +137,23 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
             ":person_role" => $person_role,
             ":active" => $active
         ));
-//            ":hash_verification" => $hash_verification,
-        // sending email
-//        $to = $user_email;
-//        $subject = 'Email Verification';
-//        $headers = 'From: 1.c.f.m.m.a.m@gmail.com';
-//        $email_msg = 'Thanks for signing up!
-//Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
-//
-//------------------------
-//email: ' . $user_email . '
-//------------------------
-//
-//Please click this link to activate your account:
-//http://localhost/WebProject/Home/PHP/SignUp/verify.php?email=' . $user_email . '&hash=' . $hash_verification . '';
 
-//        mail($user_email, $subject, $email_msg, $headers);
-        // saving hash and email in case of resending email
-        $_SESSION['hash_verification'] = $hash_verification;
-        $_SESSION['user_email'] = $user_email;
-        header("Location: verify.php");
 
+//        $_SESSION['hash_verification'] = $hash_verification;
+//        $_SESSION['user_email'] = $user_email;
+//        header("Location: verify.php");
+
+        echo '<span style="color: green">Thank you for signing up!, a verification email was sent to you,
+                                         please verify yout account to continue. </span>';
+        return;
     } catch (PDOException $e) {
-        $_SESSION['error_duplicated_email'] = 'You already have an account!';
-        header("Location: signup.php");
+
+        echo '<span style="color: red">You already have an account!</span>';
         return;
     }
 
-
-    //Store user_id, user_name, user_pass in a session
-    // redirect to signin.php
-    header("Location: verify.php");
-//    header("Location:../../HTML/index.php");
-    return;
-
 }
+
 
 ?>
 
@@ -252,7 +228,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
                     </div>
                     <div class="model-wrapper">
                         <div class="input-data">
-                            <input type="text" class="form-control" name="person_email" id="user_email"
+                            <input type="text" class="form-control" name="person_email" id="user_email2"
                                    required="required">
                             <label>Name</label>
                             <div class="underline"></div>
@@ -606,7 +582,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
                             <div class="col-12 col-md-9">
                                 <div class="form-check-inline row align-items-center">
                                     <label>Day &nbsp;</label>
-                                    <select class="custom-select" required name="day_birthday">
+                                    <select id="day_birthday" class="custom-select" required name="day_birthday">
                                         <option value="">day</option>
                                         <?php
                                         for ($i = 1; $i < 32; $i++)
@@ -617,7 +593,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 
                                 <div class="form-check-inline row align-items-center">
                                     <label> Month&nbsp; </label>
-                                    <select class="custom-select" required name="month_birthday">
+                                    <select id="month_birthday" class="custom-select" required name="month_birthday">
                                         <option value="">month</option>
 
                                         --><?php
@@ -633,7 +609,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 
                                 <div class="form-check-inline row">
                                     <label> Year&nbsp; </label>
-                                    <select class="custom-select" required name="year_birthday">
+                                    <select id="year_birthday" class="custom-select" required name="year_birthday">
                                         <option value=""> year</option>
                                         <?php
                                         for ($i = 2021; $i >= 1900; $i--)
@@ -762,13 +738,13 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
                             <span id="errorPassword" class="col-9 offset-3 error"><i
                                         class="fas fa-exclamation-circle	"></i> Please Fill Your Password</span>
                         </div>
-
-                        <?php
-                        if (isset($_SESSION['error_pass'])) {
-                            echo "<span class='offset-md-3' style='color: red'>" . $_SESSION['error_pass'] . "</span>";
-                            unset($_SESSION['error_pass']);
-                        }
-                        ?>
+<!---->
+<!--                        --><?php
+//                        if (isset($_SESSION['error_pass'])) {
+//                            echo "<span class='offset-md-3' style='color: red'>" . $_SESSION['error_pass'] . "</span>";
+//                            unset($_SESSION['error_pass']);
+//                        }
+//                        ?>
                         <div class="form-group row align-items-center">
                             <label class="col-12 col-md-3" for="confirm_user_password">Confirm Password:</label>
                             <input class="col-12 col-md-9 form-control" type="password" id="confirm_user_password"
@@ -780,6 +756,9 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
                             <span id="errorMatch" class="col-9 offset-3 error"><i
                                         class="fas fa-exclamation-circle	"></i> Password Mismatch ..</span>
                         </div>
+
+                        <span id="resultMSG"></span>
+
                         <input type="button" id="submit1" name="next" class="next action-button" value="Next"/>
                         <input type="button" name="previous" class="previous action-button-previous input-data"
                                value="Previous"/>
@@ -1027,7 +1006,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 
         let current_fs, next_fs, previous_fs; //fieldsets
         let opacity;
-
+        var gender = document.querySelector('input[name = "gender"]:checked');
         $(".next").click(function () {
             if ($(this).hasClass("next0")) {
                 if (!validateForm_0())
@@ -1037,14 +1016,29 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
                 $.ajax({
                     type: "POST",
                     url: url,
-                    data: $("#signup").serialize(), // serializes the form's elements.
-                    success: function(data)
-                    {
-                        alert(data); // show response from the php script.
+
+                    data:  //$("#signup").serialize(), // serializes the form's elements.
+                        {
+                        'first_name': document.getElementById('first_name').value,
+                        'last_name': document.getElementById('last_name').value,
+                        'user_email': document.getElementById('user_email').value,
+                        'user_pass': document.getElementById('user_password').value,
+                        'confirm_user_pass': document.getElementById('confirm_user_password').value,
+                        'gender': gender,
+                        'mobile': document.getElementById('mobile').value,
+                        'day_birthday': document.getElementById('day_birthday').value,
+                        'month_birthday': document.getElementById('month_birthday').value,
+                        'year_birthday': document.getElementById('year_birthday').value,
+                        'city': document.getElementById('city').value,
+                        'country': document.getElementById('country').value,
+                    }
+                    success: function (data) {
+                        document.getElementById('resultMSG').innerHTML = data;
+                        // alert(data); // show response from the php script.
                     }
                 });
-                if(!validateForm_1())
-                    return ;
+                if (!validateForm_1())
+                    return;
             }
             current_fs = $(this).parent();
             next_fs = $(this).parent().next();

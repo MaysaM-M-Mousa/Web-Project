@@ -54,11 +54,10 @@ create table reserves (
 
 create table booking_option(
     booking_option_id PRIMARY KEY AUTO_INCREMENT,
-
-
 );
 
-*****************************************************
+###################################################################################
+
 create table person (
     person_id integer AUTO_INCREMENT PRIMARY KEY ,
     person_pass varchar(100) not null,
@@ -87,6 +86,8 @@ create table forms(
     position integer not null,
     about varchar (1500)not null,
     person_id integer not null,
+    status integer not null,
+    date_of_applying date not null,
     date_of_applying date no null,
     FOREIGN KEY (person_id) REFERENCES person(person_id),
     INDEX (form_id)
@@ -97,31 +98,56 @@ create table contacts (
     full_name varchar(100) not null,
     email varchar(100) not null,
     subject varchar(300) not null,
+    status integer not null,
+    date_of_receive date not null,
     message varchar (3000) not null,
    	INDEX (email)
 );
-
-create table categories(
+*****************************************************
+create table category(
     cat_id integer PRIMARY KEY AUTO_INCREMENT,
-    category_name varchar(50) not null,
-    description varchar(50) not null,
+    category_name varchar(50) unique not null,
+    description varchar(500) not null,
     image varchar(300) not null,
     INDEX (category_name)
 );
 
-create table category_items (
-    item_id PRIMARY KEY AUTO_INCREMENT,
+create table sub_category(
+    sub_cat_id integer PRIMARY KEY AUTO_INCREMENT,
+    sub_cat_name varchar(50) not null,
+    description varchar(500) not null,
+    image varchar(300) not null,
+
+    cat_id integer not null,
+    FOREIGN KEY (cat_id) REFERENCES category(cat_id),
+
+    INDEX (sub_cat_name)
+);
+
+create table item (
+    item_id integer PRIMARY KEY AUTO_INCREMENT,
     item_name varchar(50) not null,
-    item_value integer not null,
-    item_description varchar(50) not null,
+    item_description varchar(300) not null,
     item_price integer not null,
     image varchar(300) not null,
-    cat_id integer not null,
-    FOREIGN KEY (cat_id) REFERENCES categories(cat_id)
+    sub_cat_id integer not null,
+    FOREIGN KEY (sub_cat_id) REFERENCES sub_category(sub_cat_id)
+);
+
+create table orders (
+    order_id integer PRIMARY KEY AUTO_INCREMENT,
+    book_id integer not null,
+    item_id integer not null,
+    order_time date not null,
+    estimated_time date not null,
+    quantity integer not null
+
+    FOREIGN KEY (book_id) REFERENCES booking(book_id),
+    FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
 create table booking (
-    book_id PRIMARY KEY AUTO_INCREMENT,
+    book_id integer PRIMARY KEY AUTO_INCREMENT,
     start_date date not null,
     end_date date not null,
     person_id integer not null,
@@ -133,10 +159,16 @@ create table booking (
 );
 
 create table room(
-    room_id PRIMARY KEY AUTO_INCREMENT,
+    room_id integer PRIMARY KEY AUTO_INCREMENT,
     room_number integer unique not null,
     room_description varchar (300),
+    room_type varchar(50) not null,
+    bad_capacity integer not null,
+    tel_number integer not null,
+    rent_per_night integer not null,
+    status integer not null
 );
+###################################################################################
 
 create table booking_options(
     option_id PRIMARY KEY AUTO_INCREMENT,
@@ -155,17 +187,6 @@ create table options_booking(
 );
 
 
-create table orders (
-    order_id PRIMARY KEY AUTO_INCREMENT,
-    booking_id integer not null,
-    item_id integer not null,
-    order_time date not null,
-    estimated_time date not null,
-
-    FOREIGN KEY (book_id) REFERENCES booking(book_id),
-    FOREIGN KEY (item_id) REFERENCES category_item(item_id)
-
-);
 
 
 //create table user_history (

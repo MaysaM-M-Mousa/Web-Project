@@ -82,18 +82,22 @@
         })
 //8. Hotel Facilities Ajax
         $("#HF").click(function () {
+
             $("#content").load("Features/HotelFacilities/HF.htm");
             $(".components li").removeClass("active");
             $("#HF").addClass("active");
         })
-//9. Log Out
+//9. History
+        $("#history").click(function (){
+            $("#content").load("Features/History/history.php");
+            $(".components li").removeClass("active");
+            $("#history").addClass("active");
+        })
+//10. Log Out
         $("#logOut").click(function () {
             window.location.replace("PHP/LogOut/logout.php");
         })
-
     });
-
-
 
 })(jQuery);
 //End jQuery

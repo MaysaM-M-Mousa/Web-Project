@@ -55,9 +55,24 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     }
 
 // if everything is okey! store person_role and person_id
+
+
     $_SESSION['person_id'] = $row['person_id'];
     $_SESSION['person_role'] = $row['person_role'];
     $_SESSION['activated'] = 1;
+
+//     storing booking id
+    $sql = 'select booking.book_id from booking,person where booking.person_id=person.person_id
+            and booking.person_id=:person_id and :curr_date between booking.start_date and booking.end_date';
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(array(
+        ':person_id' => $_SESSION['person_id'],
+        ':curr_date' => date("Y-m-d")
+    ));
+
+    $bookingResult = $stmt->fetch(PDO::FETCH_ASSOC);
+    $_SESSION['book_id'] = $stmt->rowCount() < 1 ? 'none' : $bookingResult['book_id'];
+//    echo $bookingResult['book_id'];
 
     unset($_SESSION['user_email']);
     echo 'You are allowed to log in';

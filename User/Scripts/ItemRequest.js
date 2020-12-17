@@ -7,20 +7,57 @@
 
 ---------------------------------------------------------  */
 
-(function ($){
+(function ($) {
 
 
     //1. Back Button Handling
-    $(document).ready(function (){
-        $(".back-btn").on("click",function (){
+    $(document).ready(function () {
+        $(".back-btn").on("click", function () {
             $("#content").load("Features/ItemRequest/ItemRequestCategories.php", "data1");
-        } )
+        })
     });
     // 2. Sub Category Ajax
-    $(document).ready(function (){
-        $("#cat1").on("click",function (){
+    $(document).ready(function () {
+        $("#cat1").on("click", function () {
             $("#content").load("Features/ItemRequest/ItemRequestSub.php", "data1");
-        } )
+        })
     });
 
 })(jQuery);
+
+function goToItemReqSub(cat_id) {
+    $.post('Features/ItemRequest/ItemRequestSub.php', {
+            'subCatChosen': 'subCatChosen',
+            'cat_id': cat_id
+        },
+        function (data, status) {
+            if (status === 'success') {
+                document.getElementById('content').innerHTML = data;
+            }
+        }
+    )
+}
+
+function goToItemReqItems(sub_cat_id) {
+    $.post('Features/ItemRequest/ItemRequestItems.php', {
+        'itemChosen': 'itemChosen',
+        'sub_cat_id': sub_cat_id
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('content').innerHTML = data;
+        }
+    })
+}
+
+function orderItem(item_id, quantity) {
+    $.post('Features/ItemRequest/ItemRequestItems.php', {
+        'item_id': item_id,
+        'quantity': quantity
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('content').innerHTML = data;
+        }
+    })
+}
+
+

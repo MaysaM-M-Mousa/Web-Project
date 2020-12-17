@@ -1,3 +1,10 @@
+<?php
+// validation for user SESSIONS
+
+sleep(1);
+
+?>
+
 
 <!--Form Styling -->
 <link rel="stylesheet" href="CSS/signup.css">
@@ -37,7 +44,7 @@
                                 <h2 class="fs-title"> Duration Of Stay:</h2>
                             </div>
                             <div class="col-5">
-                                <h2 class="steps">Step 1 - 5</h2>
+                                <h2 class="steps">Step 1 - 3</h2>
                             </div>
                             <hr class="line">
 
@@ -48,7 +55,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <span id="errorDate" class="error"><i class="fas fa-exclamation-circle	"></i> Please Fill All Fields Here</span>
+                            <span id="errorDate" class="error"><i class="fas fa-exclamation-circle"></i> Please Fill All Fields Here</span>
                         </div>
                         <input type="button" name="next" class="next next0 action-button" value="Next"/>
                     </fieldset>
@@ -59,7 +66,7 @@
                                 <h2 class="fs-title">Room Type:</h2>
                             </div>
                             <div class="col-5">
-                                <h2 class="steps">Step 2 - 5</h2>
+                                <h2 class="steps">Step 2 - 3</h2>
                             </div>
                             <hr class="line">
 
@@ -73,8 +80,8 @@
                                             <!--Start First Room-->
                                             <div class="room-item"
                                                  style="background-image: url('../Home/images/room-b1.jpg')">
-                                                <input class="room-radio" type="radio" onclick="roomSelect()"
-                                                       name="room" value="single"
+                                                <input checked="checked" class="room-radio" type="radio" onclick="roomSelect()"
+                                                       name="room" value="1"
                                                        id="room_1" checked="checked">
                                                 <div class="bg-active"></div>
                                                 <div class="hr-text">
@@ -90,7 +97,7 @@
                                             <div class="room-item"
                                                  style="background-image: url('../Home/images/room-b2.jpg')">
                                                 <input class="room-radio" type="radio" onclick="roomSelect()"
-                                                       name="room" value="double"
+                                                       name="room" value="2"
                                                        id="room_2">
                                                 <div class="bg-active"></div>
                                                 <div class="hr-text">
@@ -106,11 +113,11 @@
                                             <div class="room-item"
                                                  style="background-image: url('../Home/images/room-b3.jpg')">
                                                 <input class="room-radio" onclick="roomSelect()" type="radio"
-                                                       name="room" value="duplex"
+                                                       name="room" value="4"
                                                        id="room_3">
                                                 <div class="bg-active"></div>
                                                 <div class="hr-text">
-                                                    <h3>Duplex Room</h3>
+                                                    <h3>Quad Room</h3>
                                                     <h2>250$<span>/Pernight</span></h2>
                                                     <a href="#" style="visibility: hidden" class="primary-link">More
                                                         Details</a>
@@ -122,11 +129,11 @@
                                             <div class="room-item"
                                                  style="background-image: url('../Home/images/room-b4.jpg')">
                                                 <input class="room-radio" onclick="roomSelect()" type="radio"
-                                                       name="room" value="studio"
+                                                       name="room" value="6"
                                                        id="room_4">
                                                 <div class="bg-active"></div>
                                                 <div class="hr-text">
-                                                    <h3>Studio </h3>
+                                                    <h3>King Room </h3>
                                                     <h2>350$<span>/Pernight</span></h2>
                                                     <a href="#" style="visibility: hidden" class="primary-link">More
                                                         Details</a>
@@ -228,7 +235,7 @@
                             </div>
                         </section>
                         <!--End Booking Options Section-->
-                        <input type="button" name="next" class="next next0 action-button" value="Next"/>
+                        <input type="button" onclick="reserveARoom()" name="next" class="next next0 action-button" value="Next"/>
                         <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                     </fieldset>
                     <!--Start Finish Section -->
@@ -238,7 +245,7 @@
                                 <h2 class="fs-title">Finish:</h2>
                             </div>
                             <div class="col-5">
-                                <h2 class="steps">Step 5 - 5</h2>
+                                <h2 class="steps">Step 3 - 3</h2>
                             </div>
                             <hr class="line">
                         </div>

@@ -49,11 +49,7 @@ if (isset($_POST['education']) && isset($_POST['major']) && isset($_POST['langua
     $_SESSION['suc-msg'] = 'Your application is successfully sent!';
     header("Location: applyjob.php");
     return;
-
-
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -208,8 +204,7 @@ if (isset($_POST['education']) && isset($_POST['major']) && isset($_POST['langua
                         you earned.<span style="color: red; font-size: large">*</span>
                     </label>
                     <textarea class="col-12 form-control" type="text" id="about" name="about" rows="9" maxlength="1500"
-                              required placeholder="type here">
-                    </textarea>
+                              required placeholder="type here"></textarea>
                 </div>
             </div>
 

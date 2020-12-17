@@ -59,75 +59,90 @@ if (isset($_POST['room_id'])) {
 
 ?>
 
-<div class="container">
-    <div class="row">
-        <h1>Add A Room</h1>
-    </div>
-
-    <div class="row">
-        <button onclick="allRooms()" class="btn btn-warning">All Rooms</button>
-    </div>
-
-    <div class="row" style="height: 100px"></div>
-
-    <!--    <form id="addRoomForm">-->
-    <div class="row">
-        <input class="col-6 form-control" type="text" name="roomNumberEdit" id="roomNumberEdit"
-               placeholder="Room Number"
-               required value="<?php echo $room_number ?>">
-
-        <select class="custom-select col-6" required name="roomTypeEdit" id="roomTypeEdit">
-            <option value="">Room Type</option>
-            <?php
-            $roomTypeArr = array('Single', 'Double', 'Triple', 'Quad', 'King', 'Suit', 'Apartment');
-            for ($i = 0; $i < sizeof($roomTypeArr); $i++) {
-                if ($room_type == $roomTypeArr[$i])
-                    echo "<option value='$roomTypeArr[$i]' selected>$roomTypeArr[$i]</option>";
-                else
-                    echo "<option value='$roomTypeArr[$i]'>$roomTypeArr[$i]</option>";
-            }
-            ?>
-        </select>
-    </div>
-
-    <div class="row">
-
-        <input class="col-6 form-control" name="rentPerNightEdit" id="rentPerNightEdit" placeholder="Rent Per Night $"
-               required value="<?php echo $rent_per_night ?>">
-
-        <select class="custom-select col-6" required name="badCapacityEdit" id="badCapacityEdit">
-            <option value="">Bad Capacity</option>
-            <?php
-            for ($i = 1; $i <= 8; $i++)
-                if ($bad_capacity == $i)
-                    echo "<option value='$i' selected>$i</option>";
-                else
-                    echo "<option value='$i'>$i</option>";
-            ?>
-        </select>
-
-    </div>
-
-    <div class="row">
-        <input class="col-6 form-control" type="tel" id="telNumEdit" name="telNumEdit" placeholder="234****" required
-               value="<?php echo $tel_number ?>">
-        <textarea class="col-6" placeholder="Room Description" id="roomDescriptionEdit" rows="4" cols="20"
-        ><?php echo $room_description ?></textarea>
-    </div>
-
-    <div class="row">
-        <div class="col-6">
-            <input style="width: 100%" onclick="deleteRoom(<?php echo $room_id ?>)" type="button" class="btn btn-danger"
-                   value="Delete This Room">
+<div class="container forms">
+        <div onclick="allRooms()" class="back-btn">
+            <i class="fal fa-arrow-left"></i>
         </div>
-        <div class="col-6">
-            <input style="width: 100%" onclick="submitChangingRoom(<?php echo $room_id ?>)" type="button"
-                   class="btn btn-primary" value="Save Changes">
+    <div class="form-border-2">
+        <div class="form-border-1">
+            <section>
+                <h1 class="main-h1">Edit Room No.<?php echo $room_number ?></h1>
+                <hr class="line">
+                <p class="main-content">Please fill the form below with information about the room you want to
+                    edit..</p>
+            </section>
+            <div class="row mx-3">
+                <label for="#roomNumberEdit" class="col-12 col-md-3">Room Number:</label>
+                <input class="col-12 col-md-9 form-control" type="text" name="roomNumberEdit" id="roomNumberEdit"
+                       placeholder="Room Number"
+                       required value="<?php echo $room_number ?>">
+            </div>
+            <div class="row mx-3">
+                <label for="#roomTypeEdit" class="col-12 col-md-3">Room Type:</label>
+                <select class="custom-select col-12 col-md-9" required name="roomTypeEdit" id="roomTypeEdit">
+                    <option value="">Room Type</option>
+                    <?php
+                    $roomTypeArr = array('Single', 'Double', 'Quad', 'King');
+                    for ($i = 0; $i < sizeof($roomTypeArr); $i++) {
+                        if ($room_type == $roomTypeArr[$i])
+                            echo "<option value='$roomTypeArr[$i]' selected>$roomTypeArr[$i]</option>";
+                        else
+                            echo "<option value='$roomTypeArr[$i]'>$roomTypeArr[$i]</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="row mx-3">
+                <label for="#rentPerNightEdit" class="col-12 col-md-3">Rent Per Night:</label>
+
+                <input class="col-12 col-md-9 form-control" name="rentPerNightEdit" id="rentPerNightEdit"
+                       placeholder="Rent Per Night $"
+                       required value="<?php echo $rent_per_night ?>">
+
+            </div>
+            <div class="row mx-3">
+                <label for="#badCapacityEdit" class="col-12 col-md-3">Bed Capacity:</label>
+
+                <select class="custom-select col-12 col-md-9" required name="badCapacityEdit" id="badCapacityEdit">
+                    <option value="">Bad Capacity</option>
+                    <?php
+                    for ($i = 1; $i <= 8; $i++)
+                        if ($bad_capacity == $i)
+                            echo "<option value='$i' selected>$i</option>";
+                        else
+                            echo "<option value='$i'>$i</option>";
+                    ?>
+                </select>
+
+            </div>
+            <div class="row mx-3">
+                <label for="#telNumEdit" class="col-12 col-md-3">Tel:</label>
+
+                <input class="col-12 col-md-9 form-control" type="tel" id="telNumEdit" name="telNumEdit"
+                       placeholder="234****" required
+                       value="<?php echo $tel_number ?>">
+
+            </div>
+            <div class="row mx-3 mb-2">
+                <label for="#roomDescriptionEdit" class="col-12 col-md-3">Description:</label>
+                <textarea class="col-12 col-md-9" placeholder="Room Description" id="roomDescriptionEdit" rows="4"
+                          cols="20"
+                ><?php echo $room_description ?></textarea>
+            </div>
+            <div class="row mx-3">
+                <div class="col-12 offset-md-3 col-md-3">
+                    <input onclick="deleteRoom(<?php echo $room_id ?>)" type="button"
+                           class="btn btn-danger"
+                           value="Delete This Room">
+                </div>
+                <div class="col-12 offset-md-1 col-md-4">
+                    <input  style="width: 100%" onclick="submitChangingRoom(<?php echo $room_id ?>)" type="button"
+                           class="btn btn-primary" value="Save Changes">
+                </div>
+                <div class="col-12 error" id="MSG"></div>
+            </div>
         </div>
-
     </div>
-    <!--    </form>-->
-
-    <div id="MSG"></div>
+    <script src="Scripts/Rooms.js"></script>
 </div>
 

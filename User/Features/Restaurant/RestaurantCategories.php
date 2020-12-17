@@ -1,5 +1,15 @@
+<?php
+// VALIDATION
+require 'pdo.php';
+sleep(1);
+
+$sql = "select sub_category.description,sub_category.sub_cat_id,sub_category.sub_cat_name,sub_category.image from sub_category left join category on sub_category.cat_id=category.cat_id where category.category_name='Food' and category.category_name is not null";
+$result = $pdo->query($sql);
+
+?>
+
 <div class="container-fluid">
-<!--    Header start-->
+    <!--    Header start-->
     <div class="row">
         <div class="col-8 offset-2">
             <h1 class="main-h1">Restaurant</h1>
@@ -10,8 +20,8 @@
             </p>
         </div>
     </div>
-<!-- Header end-->
-<!--Slider Start-->
+    <!-- Header end-->
+    <!--Slider Start-->
     <div class="row mt-2">
         <section class="slider col-12 col-md-10 offset-md-1">
             <div class="flexslider">
@@ -27,31 +37,31 @@
             <hr class="line">
         </div>
     </div>
-<!-- Slider End   -->
-<!-- Cards Start -->
+    <!--     Slider End   -->
+    <!-- Cards Start -->
     <div class="row">
-    <?php
-    for ($i = 0; $i < 4; $i++) {
-        ?>
-            <div class="card Catagories col-10 offset-1 col-xl-5 pr-0 <?php if($i%2==0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0';?>">
+        <?php
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+
+            ?>
+            <div onclick="goToCategory(<?php echo $row['sub_cat_id'] ?>)"
+                 class="card Catagories col-10 offset-1 col-xl-5 pr-0 <?php if ($i % 2 == 0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0'; ?>">
                 <div class="container-fluid no-gutters">
                     <div class="row">
                         <img class="col-md-4 col-12 pr-0" src="../../Home/images/insta-1.jpg"
-                                                     alt="...">
+                             alt="...">
                         <div class="card-body col-12 col-md-8">
-                            <h3 class="main-h3 card-title">Category 1</h3>
+                            <h3 class="main-h3 card-title"><?php echo $row['sub_cat_name'] ?></h3>
                             <hr class="card-line">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                                additional
-                                content. This content is a little bit longer.</p>
+                            <p class="card-text"><?php echo $row['description'] ?></p>
                         </div>
                     </div>
                 </div>
             </div>
-        <?php
-    }
-    ?>
+            <?php
+        }
+        ?>
     </div>
- <!--Card end-->
+    <!--Card end-->
     <script src="Scripts/Restaurant.js" type="text/javascript"></script>
 </div>

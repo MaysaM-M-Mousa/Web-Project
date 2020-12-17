@@ -1,5 +1,6 @@
 <?php
 //session_start();
+//echo $_SESSION['book_id'];
 //if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
 //    header("Location: ../../Home/HTML/index.php");
 //    return;
@@ -24,7 +25,6 @@
     <link rel="stylesheet" href="CSS/styles.css">
 
 </head>
-
 <body>
 <!--Top Nav Start-->
 <nav class="navbar navbar-dark bg-dark">
@@ -35,7 +35,6 @@
     </button>
 </nav>
 <!--Top Nav End-->
-
 <!--Content Wrapper Start-->
 <div class="wrapper d-flex align-items-stretch">
     <!-- Side Menu Start-->
@@ -69,6 +68,10 @@
                 <i class="far fa-hotel icon"></i>
                 <a> Hotel Facilities</a>
             </li>
+            <li id="history">
+                <i class="far fa-clock icon"></i>
+                <a> History</a>
+            </li>
             <li id="logOut">
                 <i class="far fa-door-open icon"></i>
                 <a> Sign Out</a>
@@ -92,7 +95,6 @@
 </div>
 <!--Content Wrapper End-->
 
-
 <!-- Scripts -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
@@ -100,6 +102,7 @@
 <script src="../Vendor/script/popper.js"></script>
 <script src="../Vendor/script/bootstrap.min.js"></script>
 <script src="Scripts/Main.js"></script>
-
 </body>
 </html>
+<a href=""></a>
+<script src=""></script>

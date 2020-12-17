@@ -1,3 +1,17 @@
+<?php
+require_once 'pdo.php';
+sleep(1);
+
+if (isset($_POST['cat_id'], $_POST['subCatChosen'])) {
+
+    $cat_id = htmlentities($_POST['cat_id']);
+
+    $sql = 'SELECT * FROM category,sub_category WHERE category.cat_id = sub_category.cat_id AND category.cat_id='.$cat_id;
+    $result = $pdo->query($sql);
+
+}
+?>
+
 <div class="container-fluid">
 
     <!--Back Button-->
@@ -14,34 +28,32 @@
     </div>
 
     <!--Cards-->
-    <?php
-    for ($i = 0; $i < 3; $i++) {
-        echo '<div class="row">'; ?>
-        <?php for ($j = 0; $j < 4; $j++) {
+    <!-- Cards Start -->
+    <div class="row">
+        <?php
+        $counter = 0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             ?>
-            <div class="card card-food col-10 offset-1 col-xl-5 pr-0 ">
+            <div onclick="goToItemReqItems(<?php echo $row['sub_cat_id']?>)"
+                 class="card Catagories col-10 offset-1 col-xl-5 pr-0 <?php if ($counter % 2 == 0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0'; ?>">
                 <div class="container-fluid no-gutters">
                     <div class="row">
-                        <img class="col-4 pr-0" src="../Home/images/insta-1.jpg"
+                        <img class="col-md-4 col-12 pr-0" src="../../Home/images/insta-1.jpg"
                              alt="...">
-                        <div class="card-body col-8">
-                            <div class="price"><div class="price-text">15$                            <hr class="card-line">
-                                </div>
-                            </div>
-                            <h3 class="main-h3 card-title">Category 1</h3>
-                            <hr class="card-line"/>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in
-                                to</p>
-                            <button class="order btn btn-primary col-12">Order Now</button>
-
+                        <div class="card-body col-12 col-md-8">
+                            <h3 class="main-h3 card-title"><?php echo $row['sub_cat_name']?></h3>
+                            <hr class="card-line">
+                            <p class="card-text"><?php echo $row['description']?></p>
                         </div>
                     </div>
                 </div>
             </div>
-        <?php } ?>
-        <?php echo '</div>' ?>
-    <?php } ?>
-
+            <?php
+            $counter++;
+        }
+        ?>
+    </div>
+    <!--Card end-->
     <script src="Scripts/ItemRequest.js" type="text/javascript"></script>
 </div>
 

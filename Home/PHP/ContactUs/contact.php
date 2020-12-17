@@ -3,7 +3,6 @@ session_start();
 require_once 'pdo.php';
 if (isset($_POST['fullName']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message'])) {
 
-
     $fullName = htmlentities($_POST['fullName']);
     $email = htmlentities($_POST['email']);
     $subject = htmlentities($_POST['subject']);
@@ -13,7 +12,6 @@ if (isset($_POST['fullName']) && isset($_POST['email']) && isset($_POST['subject
         header("Location: contact.php");
         return;
     }
-
 
     try {
         $sql = "insert into contacts (full_name,email,subject,message) values
@@ -115,7 +113,6 @@ if (isset($_POST['fullName']) && isset($_POST['email']) && isset($_POST['subject
                 </div>
             </div>
         </div>
-
     </div>
 </header>
 
