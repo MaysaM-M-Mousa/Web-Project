@@ -155,7 +155,7 @@ if (isset($_POST['apply']) && $_POST['apply'] == 'applyForAJob' && isset($_POST[
             ":position" => $position,
             ":about" => $about,
             ":person_id" => $person_id,
-            ':date_of_applying'=>date('Y-m-d')
+            ':date_of_applying' => date('Y-m-d')
         ));
     } catch (Exception $e) {
         echo $e->getMessage();
@@ -188,7 +188,7 @@ if (isset($_POST['fullName']) && isset($_POST['email']) && isset($_POST['subject
             ":email" => $email,
             ":subject" => $subject,
             ":message" => $message,
-            'date_of_receive'=>date('Y-m-d')
+            'date_of_receive' => date('Y-m-d')
         ));
 
         echo '<span style="color: green">Thank you for contacting us, we will reply on the email you entered.</span>';
@@ -535,13 +535,15 @@ $person_role_form = $row['person_role'];
 
                                     <div class="form-check-inline">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="fullTimeRB" name="job_type" value="0">Full
+                                            <input type="radio" class="form-check-input" id="fullTimeRB" name="job_type"
+                                                   value="0">Full
                                             Time
                                         </label>
                                     </div>
                                     <div class="form-check-inline" style="margin-left: 40px">
                                         <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" id="partTimeRB" name="job_type" value="1">Part
+                                            <input type="radio" class="form-check-input" id="partTimeRB" name="job_type"
+                                                   value="1">Part
                                             Time
                                         </label>
                                     </div>
@@ -601,32 +603,35 @@ $person_role_form = $row['person_role'];
             </div>
             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="form-group row col-12">
-                            <input class="col-6 form-control" id="fullNameContact" type="text" name="fullName"
-                                   placeholder="Full Name"
-                                   required>
+                    <div class="row mx-3 mt-3">
+                        <label class="col-12 col-md-3" >Full Name: </label>
+                        <input class="col-12 col-md-9 form-control" type="text" name="fullName" placeholder="Full Name" required>
 
-                            <input class="col-6 form-control" id="emailContact" type="email" name="email"
-                                   placeholder="Email" required>
+                    </div>
+                    <dix class="row mx-3">
+                        <label class="col-12 col-md-3">Email: </label>
+                        <input class="col-12 col-md-9 form-control" type="email" name="email" placeholder="Email" required>
+                    </dix>
+                    <div class="row mx-3">
+                        <label class="col-12 col-md-3" >Subject: </label>
+                        <input class="form-control col-12 col-md-9" type="text" name="subject" placeholder="Subject">
 
-                        </div>
-                        <div class="form-group row col-12">
-                            <input class="form-control col-12" id="subjectContact" type="text" name="subject"
-                                   placeholder="Subject">
+                    </div>
+                    <div class="row mx-3">
+                        <label class="col-12 col-md-3" >Massage: </label>
+                        <textarea class="col-12 col-md-9 form-control" type="text" id="message" name="message" rows="10" maxlength="3000"
+                                  required placeholder="Your message">
+                </textarea>
+                    </div>
 
-                        </div>
-                        <div class="form-group row col-12">
-                        <textarea class="col-12 form-control" type="text" id="messageContact" name="message" rows="10"
-                                  maxlength="3000"
-                                  required placeholder="Your message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input class="btn btn-primary mb-2" type="submit" id="sendContactBTN" name="send"
-                                   value="Send"
-                                   style="width: 100px; float: right">
-                        </div>
-
+                    <div class="row pb-4">
+                        <input class="btn btn-primary mb-2" type="submit" name="send" value="Send">
+                        <?php
+                        if (isset($_SESSION['suc_msg'])) {
+                            echo "<span class=\"offset-md-3\" style=\"color:darkgreen;font-size: large;font-family:\'Cabin\', serif;'>" . $_SESSION['suc_msg'] . "</span>";
+                            unset($_SESSION['suc_msg']);
+                        }
+                        ?>
                     </div>
                     <div id="contactResult" class="row"></div>
 

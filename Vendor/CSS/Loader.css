@@ -3,6 +3,13 @@
     font-size: 60px;
     color: #232530;
 
+
+}
+.loader-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
 }
 .globe-loader > i {
     display: block;

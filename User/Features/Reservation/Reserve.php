@@ -57,7 +57,7 @@ sleep(1);
                         <div class="row">
                             <span id="errorDate" class="error"><i class="fas fa-exclamation-circle"></i> Please Fill All Fields Here</span>
                         </div>
-                        <input type="button" name="next" class="next next0 action-button" value="Next"/>
+                        <input type="button" onclick="validateForm()" name="next" class="next next0 action-button" value="Next"/>
                     </fieldset>
                     <!--End DatePicker -->
                     <fieldset>

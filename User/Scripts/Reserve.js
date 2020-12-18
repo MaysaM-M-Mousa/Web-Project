@@ -147,7 +147,7 @@ function roomSelect() {
 
 // 4. Validate Date Input
 function validateForm() {
-    // var date = document.getElementById('daterangepicker').innerHTML;
+    let date=document.getElementById('daterangepicker').value;
     if (date === "") {
         $("#errorDate").css("display", "block");
         return false;
@@ -158,11 +158,6 @@ function validateForm() {
 }
 
 function reserveARoom() {
-
-    // alert(
-    //     document.querySelector('input[name="room"]:checked').value
-    // )
-
     $.post('Features/Reservation/reserveRoom.php', {
         'reserveRoom': 'reserveRoom',
         'dateRange': document.getElementById('daterangepicker').value,

@@ -101,9 +101,15 @@
                 <i class="far fa-blanket icon"></i>
                 <a> Job Applications</a>
             </li>
-            <li>
+            <li class="sidebar-dropdown">
                 <i class="far fa-user-tie icon"></i>
-                <a> Room dashboard</a>
+                <a> Employees</a>
+                <div class="sidebar-submenu">
+                    <ul>
+                        <li id="addEmployee">Add Employee</li>
+                        <li id="allEmployees">All Employees</li>
+                    </ul>
+                </div>
             </li>
             <li id="contactLink">
                 <i class="far fa-cog icon"></i>
