@@ -99,10 +99,10 @@
             $('#content').load('Features/Room/addRoom.php');
         })
         $("#addEmployee").click(function () {
-            $('#content').load('Features/Room/addRoom.php');
+            $('#content').load('Features/Staff/AddStaff.php');
         })
         $("#allEmployees").click(function () {
-            $('#content').load('Features/Room/addRoom.php');
+            $('#content').load('Features/Staff/AllStaff.php');
         })
     });
 
