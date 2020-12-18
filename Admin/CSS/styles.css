@@ -509,6 +509,47 @@ font-family: "Cabin", serif;
     width: fit-content!important;
 }
 
+.searchbar.forms .btn.btn-primary{
+    width: 98%;
+    margin-top: 2px;
+
+}
+.searchbar.forms .col-7{
+padding-right: 0;
+
+}
+.searchbar.forms .col-7 input{
+width: 90%;
+    margin-left: auto;
+}
+.searchbar.forms .col-3{
+    padding-left: 5px;
+
+}
+.forms .form-check-input {
+    width: 25px;
+    height: 25px !important;
+    margin-top: 50px;
+    margin-left: -13%;
+}
+#advanceBtn{
+    background-color: transparent;
+    font-family: "Cabin", serif;
+    font-size: 18px;
+    padding-left: -20px;
+
+}
+#advanceBtn:hover{
+    background-color: transparent;
+    font-family: "Cabin", serif;
+    font-size: 18px;
+    color:#B79040;
+
+}
+#advanced{
+    display: none;
+}
+
 @media screen and (max-width:1200px) {
     .details h5 {
         text-align: center;

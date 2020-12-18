@@ -30,53 +30,52 @@
         fullHeight();
 // 1. SideBar Start
         $('#sidebarCollapse').on('click', function () {
-            if(window.innerWidth>992) {
+            if (window.innerWidth > 992) {
                 $('#sidebar').toggleClass('active');
                 submenu();
-            }
-            else{
+            } else {
                 $('#sidebar').toggleClass('active-mobile');
             }
         });
-        $(".sidebar-dropdown > a").on("click",submenu);
-        $("#content").on("click",submenu);
+        $(".sidebar-dropdown > a").on("click", submenu);
+        $("#content").on("click", submenu);
 
-        $(".sidebar-dropdown > i").on("click",function (event) {
-            var menu_id="#"+event.target.id;
-            if(!$('#sidebar').hasClass('active')||window.innerWidth>992) {
+        $(".sidebar-dropdown > i").on("click", function (event) {
+            var menu_id = "#" + event.target.id;
+            if (!$('#sidebar').hasClass('active') || window.innerWidth > 992) {
                 $(".sidebar-submenu").removeAttr('style');
-                if($(menu_id).siblings(":last").hasClass("hoverMenu")){
+                if ($(menu_id).siblings(":last").hasClass("hoverMenu")) {
                     $(menu_id).siblings(":last").removeClass("hoverMenu");
-                    $(".sub-line").css("display","block");
+                    $(".sub-line").css("display", "block");
 
-                }else {
+                } else {
                     $(".sidebar-submenu").removeClass("hoverMenu");
                     $(menu_id).siblings(":last").addClass("hoverMenu");
-                    $(".sub-line").css("display","none");
-                    $(".catagories").css("color","#eeeeee");
-                    $(".cat-menu").css("display","none");
+                    $(".sub-line").css("display", "none");
+                    $(".catagories").css("color", "#eeeeee");
+                    $(".cat-menu").css("display", "none");
                     $(menu_id).siblings(":last").slideDown(200);
                 }
             }
         });
-        $(".catagories").on("click",function () {
-            if($(this).siblings(":last").hasClass("active")) {
+        $(".catagories").on("click", function () {
+            if ($(this).siblings(":last").hasClass("active")) {
                 $(this).siblings(":last").removeClass("active");
                 $(this).siblings(":last").slideUp(200);
-            }
-            else {
+            } else {
                 $(this).siblings(":last").addClass("active");
                 $(this).siblings(":last").slideDown(200);
             }
         })
-        function submenu(){
+
+        function submenu() {
             $(".sidebar-submenu").slideUp(200);
             if ($(this).parent().hasClass("active")) {
                 $(".sidebar-dropdown").removeClass("active");
                 $(this).parent().removeClass("active");
             } else {
                 $(".sidebar-dropdown").removeClass("active");
-                if( $('#sidebar').hasClass('active')){
+                if ($('#sidebar').hasClass('active')) {
                     $(this).next(".sidebar-submenu").slideDown(200);
                 }
                 $(this).parent().addClass("active");
@@ -129,8 +128,8 @@
         $("#content").load('Features/Users/AllUsers.php');
     })
 })(jQuery);
-//End jQuery
 
+//End jQuery
 
 
 function deleteJobCard(form_id, counter) {
@@ -169,12 +168,12 @@ function sendEmailJobBTN(form_id, counter) {
     var emailMSG = 'reply' + counter;
     var emailSender = 'emailSender' + counter;
     var statusID = 'status' + counter;
-    var edit=editor[counter];
+    var edit = editor[counter];
     document.getElementById(statusID).innerHTML = '<img width="35px" height="30px"  src="../images/VZvw.gif">';
     $.post('Features/JobApplications/JobApps.php', {
         'sendReplyJobEmail': 'sendReplyJobEmail',
         'emailSender': document.getElementById(emailSender).innerText,
-        'email_message':edit.root.innerHTML,
+        'email_message': edit.root.innerHTML,
         'form_id': form_id
     }, function (data, status) {
         if (status === 'success') {
@@ -256,10 +255,6 @@ function roomSearch() {
 }
 
 
-
-
-
-
 function deleteRoom(room_id) {
     document.getElementById('content').innerHTML =
         '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
@@ -316,7 +311,7 @@ function addCategoryBTN() {
 function EditCategory(cat_id) {
     $.ajax({
         type: 'POST',
-        data:{
+        data: {
             'editCategory': 'editCategory',
             'cat_id': cat_id
         },
@@ -324,7 +319,7 @@ function EditCategory(cat_id) {
         success: function (data) {
             $("#content").html(data);
             if ($("#back-btn").length > 0) {
-                $("#back-btn").click(function (){
+                $("#back-btn").click(function () {
                     $.ajax({
                         type: 'POST',
                         url: 'Features/Services/Categories/AllCategories.php',
@@ -338,7 +333,7 @@ function EditCategory(cat_id) {
                             }
                         }
                     })
-                } );
+                });
             }
         }
     })
@@ -414,7 +409,7 @@ function addSubCategoryBTN() {
 function EditSubCategory(sub_cat_id) {
     $.ajax({
         type: 'POST',
-        data:{
+        data: {
             'editSubCategory': 'editSubCategory',
             'sub_cat_id': sub_cat_id
         },
@@ -422,7 +417,7 @@ function EditSubCategory(sub_cat_id) {
         success: function (data) {
             $("#content").html(data);
             if ($("#back-btn").length > 0) {
-                $("#back-btn").click(function (){
+                $("#back-btn").click(function () {
                     $.ajax({
                         type: 'POST',
                         url: 'Features/Services/Sub-Categories/AllSubCategories.php',
@@ -436,7 +431,7 @@ function EditSubCategory(sub_cat_id) {
                             }
                         }
                     })
-                } );
+                });
             }
         }
     })
@@ -523,7 +518,7 @@ function addItemBTN() {
 function EditItem(item_id) {
     $.ajax({
         type: 'POST',
-        data:{
+        data: {
             'editItem': 'editSubCategory',
             'item_id': item_id
         },
@@ -531,7 +526,7 @@ function EditItem(item_id) {
         success: function (data) {
             $("#content").html(data);
             if ($("#back-btn").length > 0) {
-                $("#back-btn").click(function (){
+                $("#back-btn").click(function () {
                     $.ajax({
                         type: 'POST',
                         url: 'Features/Services/Items/AllItems.php',
@@ -545,13 +540,13 @@ function EditItem(item_id) {
                             }
                         }
                     })
-                } );
+                });
             }
         }
     })
 }
 
-function submitChangingItem(item_id){
+function submitChangingItem(item_id) {
 
     $.post('Features/Services/Items/EditItem.php', {
         'item_name_edit': document.getElementById('itemNameEdit').value,
@@ -587,7 +582,6 @@ $("#bookingLink").click(function () {
     })
 })
 
-
 function EditBook(book_id) {
     $.post('Features/Booking/EditBooking.php', {
         'book_id': book_id
@@ -596,3 +590,63 @@ function EditBook(book_id) {
             document.getElementById('content').innerHTML = data;
     })
 }
+
+function EditBooking(roomType, person_id) {
+
+    $.post('Features/Booking/EditBooking.php', {
+        'checkForRoomType': 'checkForRoomType',
+        'room_type': roomType,
+        'start_date': document.getElementById('startDateEdit').value,
+        'end_date': document.getElementById('endDateEdit').value,
+        'person_id': person_id,
+
+    }, function (data, status) {
+        if (status === 'success') {
+
+            if (data.includes('<span')) {
+                document.getElementById('editBookingResult').innerHTML = data;
+                document.getElementById('roomNumberFB').innerHTML = '<option>Available Rooms</option>';
+            } else {
+                document.getElementById('roomNumberFB').innerHTML = data;
+                document.getElementById('editBookingResult').innerHTML = "";
+            }
+
+        }
+    })
+}
+
+function submitChangingBooking(book_id, person_id) {
+
+    $.post('Features/Booking/EditBooking.php', {
+        'editBook': 'editBook',
+        'book_id': book_id,
+        'person_id': person_id,
+        'start_date': document.getElementById('startDateEdit').value,
+        'end_date': document.getElementById('endDateEdit').value,
+        'room_id': document.getElementById('roomNumberFB').value
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('editBookingResult').innerHTML = data;
+        }
+    })
+}
+
+function deleteBook(book_id, start_date) {
+    $.post('Features/Booking/DeleteBook.php', {
+        'deleteBook': 'deleteBook',
+        'book_id': book_id,
+        'start_date': start_date
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('content').innerHTML = data;
+        }
+    })
+}
+
+// $("#fullName").autocomplete({
+//     source: "Features/Staff/search.php",
+//     minLength: 2,
+//     select: function (event, ui) {
+//         log(ui.item ? "Selected: " + ui.item.value + " aka " + ui.item.id : "Nothing selected, input was " + this.value);
+//     }
+// });

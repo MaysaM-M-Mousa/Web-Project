@@ -29,18 +29,18 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['g
         || !is_numeric($day) || !is_numeric($year) || !is_numeric($month)
     ) {
         $msg = 'All Fields are required';
-        echo '<span style="color: red">' . $msg . '</span>';
+        echo '<span style="color: darkred">' . $msg . '</span>';
         return;
     }
 
     if (!is_numeric($mobile)) {
         $msg = 'Mobile must be a number';
-        echo '<span style="color: red">' . $msg . '</span>';
+        echo '<span style="color: darkred">' . $msg . '</span>';
         return;
     }
     if (strlen($mobile) < 10) {
         $msg = 'Minimum Width is 10';
-        echo '<span style="color: red">' . $msg . '</span>';
+        echo '<span style="color: darkred">' . $msg . '</span>';
         return;
     }
 
@@ -81,7 +81,7 @@ if (isset($_POST['update']) && $_POST['update'] == 'updatePass'
 
     if (strlen($user_pass) < 1 || strlen($confirm_user_pass) < 1 || strlen($old_user_pass) < 1) {
         $msg = 'All Fields are required';
-        echo '<span style="color: red">' . $msg . '</span>';
+        echo '<span style="color: darkred">' . $msg . '</span>';
         return;
     }
 
@@ -91,13 +91,13 @@ if (isset($_POST['update']) && $_POST['update'] == 'updatePass'
 
     if ($pass_row['person_pass'] !== hash('sha256', $old_user_pass)) {
         $msg = "Incorrect password!";
-        echo '<span style="color: red">' . $msg . '</span>';
+        echo '<span style="color: darkred">' . $msg . '</span>';
         return;
     }
 
     if ($user_pass !== $confirm_user_pass) {
         $msg = "Passwords are not identical!";
-        echo '<span style="color: red">' . $msg . '</span>';
+        echo '<span style="color: darkred">' . $msg . '</span>';
         return;
     }
 

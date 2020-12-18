@@ -12,71 +12,25 @@ $sql = 'select * from person where person_role=0 and active=1';
 $result = $pdo->query($sql);
 ?>
 
+
 <div class="container">
+    <section>
+        <h1 class="main-h1">Customers</h1>
+        <hr class="line">
+        <p class="main-content">The table below contains all information about hotel's customers..</p>
+    </section>
 
-    <!--    search bar-->
-    <div class="row" style="position: relative">
-        <div class="form-floating mb-3 col-5">
-            <input type="search" class="form-control" id="searchUserBar" placeholder="Search">
-            <label for="searchUserBar">Search</label>
-        </div>
-        <div class="col-2" style="position: relative">
-            <button class="btn btn-primary" onclick="userSearch()"
-                    style="width: 100%;height: 40px; position:absolute; top: 50%;left: 50%;transform: translate(-50%,-50%)">
-                Search
-            </button>
-        </div>
-
-        <div class="col-2">
-            <div class="form-floating">
-                <select class="form-select" id="searchUserFilter">
-                    <option selected>Search Method</option>
-                    <option value="roomNumber">Room Number</option>
-                    <option value="roomType">Room Type</option>
-                    <option value="badCapacity">Bad Capacity</option>
-                    <option value="telNumber">Tel. Number</option>
-                    <option value="price">Price</option>
-                    <option value="description">Description</option>
-                </select>
-                <label for="searchUserFilter">Method Filter</label>
-            </div>
-        </div>
-
-        <div class="col-2">
-            <div class="form-floating">
-                <select class="form-select" id="searchUserOrdering">
-                    <option selected>Order By</option>
-                    <option value="roomNumber">Room Number</option>
-                    <option value="badCapacity">Bad Capacity</option>
-                    <option value="price">Price</option>
-                </select>
-                <label for="searchUserOrdering">Order By</label>
-            </div>
-        </div>
-
-<!--        commented for now-->
-
-<!--        <div class="form-check col-1" style="position:relative;">-->
-<!--            <div style="position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%)">-->
-<!--                <input class="form-check-input" type="checkbox" value="" id="takenRoomCB">-->
-<!--                <label class="form-check-label" for="takenRoomCB">-->
-<!--                    Taken-->
-<!--                </label>-->
-<!--            </div>-->
-<!--        </div>-->
-    </div>
-
-    <div id="searchUserResult">
-
-        <table class="table table-hover">
-
+    <div class="row forms mt-5">
+        <table id="customers" class="table table-striped table-light " style="width:100%">
             <thead>
+            <tr>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Mobile</th>
                 <th>City</th>
 
+            </tr>
             </tr>
             </thead>
 
@@ -97,8 +51,15 @@ $result = $pdo->query($sql);
             </tbody>
         </table>
     </div>
-
 </div>
+
+<script src="../Vendor/script/bootstrap.min.js"></script>
+<script src="Scripts/jquery.dataTables.min.js"></script>
+<script src="Scripts/dataTables.bootstrap4.min.js"></script>
+
+
+
+
 
 
 

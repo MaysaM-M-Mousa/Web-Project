@@ -31,7 +31,7 @@ if (isset($_POST['sendReplyJobEmail'], $_POST['emailSender'], $_POST['form_id'])
     $email_msg = $_POST['email_message'];
 
     mail($to, $subject, $email_msg, $headers);
-    echo '<span style="color: darkgreen;font-family: \'Cabin\', serif;">Email was successfully sent!</span>';
+    echo '<span style="color: darkgreen;font-family: \'Cabin\', serif;margin-top: 10px">Email was successfully sent!</span>';
     return;
 }
 
@@ -42,62 +42,58 @@ $result = $pdo->query($sql);
 ?>
 
 
+<link rel="stylesheet" href="../Vendor/CSS/Loader.css">
 
 <div class="container">
     <section>
         <h1 class="main-h1">Job Applications</h1>
         <hr class="line">
-        <p class="main-content">Below are all the job request that has been sent to us you can reed thier information and reply to them directly..</p>
+        <p class="main-content">Below are all the job request that has been sent to us you can reed thier information
+            and reply to them directly..</p>
     </section>
     <!--    search bar-->
-    <div class="row">
-        <div class="form-floating mb-3 col-5">
-            <input type="search" class="form-control" id="searchJobBar" placeholder="Search">
-            <label for="searchJobBar">Search</label>
-        </div>
-
+    <div class="row searchbar forms">
+        <div class="col-7">
+            <input type="search" class="form-control" id="searchJobBar" placeholder="Search"></div>
         <div class="col-2">
-            <button class="btn btn-primary" onclick="jobSearch()" style="width: 100%;height: 60px">Search</button>
+            <button class="btn btn-primary" onclick="jobSearch()"><i class="far fa-search"></i> Search</button>
         </div>
-
-        <div class="col-2">
-            <div class="form-floating">
-                <select class="form-select" id="searchAppsFilter">
-                    <option selected>Search Method</option>
-                    <option value="email">Email</option>
-                    <option value="name">Name</option>
-                    <option value="languages">Languages</option>
-                    <option value="position">Position</option>
-                    <option value="education">Education</option>
-                    <option value="major">Major</option>
-                    <option value="skills">Skills</option>
-                    <option value="mobile">Mobile</option>
-                    <option value="city">City</option>
-                </select>
-                <label for="searchAppsFilter">Method Filter</label>
-            </div>
+        <div class="col-1">
+            <button id="advanceBtn" class="btn"> Advance Search</button>
         </div>
-
-        <div class="col-2">
-            <div class="form-floating">
-                <select class="form-select" id="searchAppsOrdering">
-                    <option selected>Order By</option>
-                    <option value="date">Date</option>
-                    <option value="name">Name</option>
-                    <option value="email">Email</option>
-                </select>
-                <label for="searchAppsOrdering">Order By</label>
-            </div>
-        </div>
-
-        <div class="form-check col-1">
-            <input class="form-check-input" type="checkbox" value="" id="repliedAppCB">
-            <label class="form-check-label" for="repliedCB">
-                Replied
-            </label>
-        </div>
-
     </div>
+
+    <div id="advanced" class="row searchbar forms">
+        <div class="col-3 offset-3">
+            <label for="searchAppsFilter">Method Filter</label>
+            <select class="form-select" id="searchAppsFilter">
+                <option selected>Search Method</option>
+                <option value="email">Email</option>
+                <option value="name">Name</option>
+                <option value="languages">Languages</option>
+                <option value="position">Position</option>
+                <option value="education">Education</option>
+                <option value="major">Major</option>
+                <option value="skills">Skills</option>
+                <option value="mobile">Mobile</option>
+                <option value="city">City</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label for="searchAppsOrdering">Order By</label>
+            <select class="form-select" id="searchAppsOrdering">
+                <option selected>Order By</option>
+                <option value="date">Date</option>
+                <option value="name">Name</option>
+                <option value="email">Email</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <label class="form-check-label" for="repliedAppCB">Replied</label>
+            <input class="form-check-input" type="checkbox" value="" id="repliedAppCB">
+        </div>
+    </div>
+
     <!--  End of SearchBar-->
     <div id="searchJobResult">
         <div class="container forms">
@@ -122,7 +118,8 @@ $result = $pdo->query($sql);
                 ?>
                 <div class="form-border-2  my-5" id="cardJobDiv<?php echo $counter ?>">
                     <div class="card-border-1">
-                        <div class="delete" onclick="deleteJobCard(<?php echo $row['form_id'] ?>,<?php echo $counter ?>)">
+                        <div class="delete"
+                             onclick="deleteJobCard(<?php echo $row['form_id'] ?>,<?php echo $counter ?>)">
                             <i class="far fa-trash-alt"></i>
                         </div>
                         <section class="header text-center">
@@ -186,10 +183,12 @@ $result = $pdo->query($sql);
                                 </div>
                             </div>
                             <div class="row">
-                                <button class="reply-btn btn btn-primary"><i class="fas fa-envelope" style="font-size: 20px"></i> Reply</button>
+                                <button class="reply-btn btn btn-primary"><i class="fas fa-envelope"
+                                                                             style="font-size: 20px"></i> Reply
+                                </button>
                             </div>
                             <div class="reply text-center">
-                                <div  id="reply<?php echo $counter ?>"></div>
+                                <div id="reply<?php echo $counter ?>"></div>
                                 <button onclick="sendEmailJobBTN(<?php echo $row['form_id'] ?>,<?php echo $counter ?>)"
                                         class="btn btn-primary mt-4">Send
                                 </button>
@@ -243,6 +242,22 @@ $result = $pdo->query($sql);
             $(this).parent().next().slideDown(300);
         }
     });
+    $("#advanceBtn").on("click", function () {
+        if ($("#advanced").hasClass("active")) {
+            $("#advanced").removeClass("active");
+            $("#advanced").slideUp(300);
+
+        } else {
+            $("#advanced").addClass("active");
+            $("#advanced").slideDown({
+                start: function () {
+                    $(this).css({
+                        display: "flex"
+                    })
+                }
+            });
+        }
+    })
 
     // configure Quill to use inline styles so the email's format properly
     var DirectionAttribute = Quill.import('attributors/attribute/direction');
@@ -283,6 +298,9 @@ $result = $pdo->query($sql);
 
     var SizeStyle = Quill.import('attributors/style/size');
     Quill.register(SizeStyle, true);
+    let fonts = Quill.import("attributors/style/font");
+    fonts.whitelist = ["initial", "sans-serif", "serif", "monospace","cabin"];
+    Quill.register(fonts, true);
     var toolbarOptions = [
         ['bold', 'italic', 'underline'],        // toggled buttons
 
@@ -300,10 +318,10 @@ $result = $pdo->query($sql);
         ['clean'], // remove formatting button
 
     ];
-    var count=  eval("<?php echo $counter; ?>");
+    var count = eval("<?php echo $counter; ?>");
     var editor = [];
     for (let i = 1; i <= count; i++) {
-        let temp='#reply'+i;
+        let temp = '#reply' + i;
         editor[i] = new Quill(temp, {
             modules: {
                 toolbar: toolbarOptions
@@ -311,15 +329,19 @@ $result = $pdo->query($sql);
             theme: 'snow'
         });
         editor[i].setContents([
-            { insert: 'Hello,\nThanks for Applying a job,\n'+
-                    'we received your application, and we are pleased to tell you that you are accepted to be interviewed in La Terra Santa Hotel.\n'+
-                    'We are waiting for you tomorrow on 9:00 AM.\n'+
-                    'La Terra Santa.\n'+
-                    'Best of luck. ',attributes: { bold: true} },
-            { insert: '\n' }
+            {
+                insert: 'Hello,\n', attributes: {bold: true,align:"center",color:"#232530",header:"2"}
+            },
+            {
+                insert: '\nThanks for Applying for a job,\n' +
+                    'we received your application, and we are pleased to tell you that you are accepted to be interviewed in La Terra Santa Hotel.\n' +
+                    'We are waiting for you tomorrow on 9:00 AM.\n' +
+                    'La Terra Santa.'+
+                    '\n\n Best of luck.'+'  \n',
+                attributes: {bold: true,align:"center", color: "#B79040",header:"3" }
+            }
         ]);
     }
-
 
 
 </script>

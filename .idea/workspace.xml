@@ -24,83 +24,243 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/abdelrahman" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/maysam" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="User">
-      <change afterPath="$PROJECT_DIR$/Admin/CSS/calender.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/CSS/calender.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/CSS/calender.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/CSS/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/CSS/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/CSS/dropzone.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/CSS/jquery.gridster.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Booking/AllBooking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Booking/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Room/addRoom.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Room/upload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AllCategories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/DeleteCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/EditCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/AddItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/AllItems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/DeleteItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/EditItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AddSubCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AllSubCategories.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/DeleteSubCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/EditSubCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/Rooms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/calender.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/dropzone.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Scripts/jquery.gridster.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/History/history.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/History/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestItems.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/ItemRequest/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Reservation/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Reservation/reserveRoom.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Restaurant/pdo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Features/Restaurant/test.php" afterDir="false" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="Sub Menu">
+      <change afterPath="$PROJECT_DIR$/Admin/Features/Booking/DeleteBook.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/HTML/contactus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/HTML/validateSignUp.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/About9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/Desktop.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/images/about1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Home/script/Main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dashboard-layout.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dashboard-layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/ej2-layouts.umd.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/ej2-layouts.umd.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/es6/ej2-layouts.es2015.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/es6/ej2-layouts.es2015.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/es6/ej2-layouts.es5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/es6/ej2-layouts.es5.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/global/ej2-layouts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/global/ej2-layouts.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/dist/global/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/helpers/e2e/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/helpers/e2e/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/helpers/e2e/splitter-helper.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/helpers/e2e/splitter-helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/license" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/splitter.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/splitter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/dashboard-layout/dashboard-layout-model.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/dashboard-layout/dashboard-layout.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/dashboard-layout/dashboard-layout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/dashboard-layout/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/dashboard-layout/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/splitter/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/splitter/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/splitter/splitter-model.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/splitter/splitter.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/src/splitter/splitter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_all.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_bootstrap-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_bootstrap-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_bootstrap4-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_fabric-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_fabric-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_highcontrast-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_highcontrast-light-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_material-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_material-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/_theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/bootstrap-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/bootstrap-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/bootstrap4.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/fabric-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/fabric-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/fabric.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/fabric.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/highcontrast-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/highcontrast-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/highcontrast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/highcontrast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/material-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/material-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/avatar/material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/bootstrap-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/bootstrap-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/bootstrap4.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_all.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_bootstrap-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_bootstrap-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_bootstrap4-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_fabric-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_fabric-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_highcontrast-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_highcontrast-light-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_material-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_material-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/_theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/bootstrap-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/bootstrap-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/bootstrap4.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/fabric-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/fabric-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/fabric.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/fabric.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/highcontrast-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/highcontrast-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/highcontrast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/highcontrast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/material-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/material-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/card/material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_all.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_bootstrap-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_bootstrap-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_bootstrap4-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_fabric-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_fabric-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_highcontrast-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_highcontrast-light-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_material-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_material-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/_theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/bootstrap-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/bootstrap-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/bootstrap4.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/fabric-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/fabric-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/fabric.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/fabric.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/highcontrast-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/highcontrast-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/highcontrast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/highcontrast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_bootstrap-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_bootstrap4.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_fabric-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_fabric.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_highcontrast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_material-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/icons/_material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/material-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/material-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/dashboard-layout/material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/fabric-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/fabric-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/fabric.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/fabric.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/highcontrast-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/highcontrast-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/highcontrast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/highcontrast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/material-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/material-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_all.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_bootstrap-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_bootstrap-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_bootstrap4-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_fabric-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_fabric-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_highcontrast-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_highcontrast-light-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_material-dark-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_material-definition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_responsive.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/_theme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/bootstrap-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/bootstrap-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/bootstrap4.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/fabric-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/fabric-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/fabric.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/fabric.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/highcontrast-light.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/highcontrast-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/highcontrast.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/highcontrast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_bootstrap-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_bootstrap4.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_fabric-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_fabric.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_highcontrast-light.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_highcontrast.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_material-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/icons/_material.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/material-dark.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/material-dark.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/material.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vendor/DatePicker/ej2-layouts/styles/splitter/material.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/CSS/calender.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/calender.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/Features/JobApplications/JobApps.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/JobApplications/JobApps.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/AllRooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/AllRooms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/EditRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/EditRoom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/Room.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/HTML/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/JobApplications/SearchJobApps.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/JobApplications/SearchJobApps.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Scripts/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/CSS/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/Home/CSS/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Home/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/CSS/timeline.css" beforeDir="false" afterPath="$PROJECT_DIR$/Home/CSS/timeline.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/HTML/SignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/SignUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/about.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/HTML/pdo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/pdo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Home/PHP/ContactUs/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/PHP/ContactUs/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Settings/applyjob.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Settings/applyjob.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/images/logo-full_old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/images/logo-sm_old.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/images/sep.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/CSS/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/User/CSS/signup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/User/CSS/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/Features/Settings/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Settings/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/Reserve.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Reserve.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/Restaurant.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Restaurant.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tables.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vendor/CSS/Loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/Vendor/CSS/Loader.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,9 +282,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1kUCOcfm8lTi2WePfAjaCktIW3q" />
   <component name="ProjectLevelVcsManager">
@@ -140,7 +297,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Admin/Features" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,19 +310,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\Admin" />
-      <recent name="C:\xampp\htdocs\WebProject" />
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Features\Booking" />
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Features\Services\Items" />
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Features\Services\Sub-Categories" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
       <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
       <recent name="C:\xampp\htdocs\WebProject\User" />
       <recent name="C:\xampp\htdocs\WebProject\Vendor\DatePicker" />
       <recent name="C:\xampp\htdocs\WebProject\User\Features\Restaurant" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
+      <recent name="C:\xampp\htdocs\WebProject\Home\CSS" />
+      <recent name="C:\xampp\htdocs\WebProject\Vendor\DatePicker" />
+      <recent name="C:\xampp\htdocs\WebProject\Admin" />
+      <recent name="C:\xampp\htdocs\WebProject" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.test.php">
@@ -438,30 +595,30 @@
     </state>
     <state width="1160" height="207" key="GridCell.Tab.3.right/0.0.1200.1880@0.0.1200.1880" timestamp="1605977627593" />
     <state width="1877" height="163" key="GridCell.Tab.3.right/0.0.1920.1160@0.0.1920.1160" timestamp="1607371673604" />
-    <state x="542" y="394" key="NewPhpFileDialog" timestamp="1608159604017">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="678" y="555" key="NewPhpFileDialog" timestamp="1608267855889">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="542" y="394" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1608159604017" />
-    <state x="678" y="555" key="NewPhpFileDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1606748250785" />
+    <state x="678" y="555" key="NewPhpFileDialog/0.0.1920.1160@0.0.1920.1160" timestamp="1608267855889" />
     <state x="346" y="80" key="SettingsEditor" timestamp="1607456806423">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607169710007" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607456806423" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1607455831721">
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608262987759">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="442" y="222" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607217373236" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1607455831721" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608262987759" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607189697272" />
-    <state x="403" y="357" width="538" height="481" key="run.anything.popup" timestamp="1607639907108">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="504" y="503" width="672" height="677" key="run.anything.popup" timestamp="1608235780943">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="403" y="357" width="538" height="481" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1607639907108" />
-    <state x="504" y="503" width="672" height="677" key="run.anything.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1606330020122" />
+    <state x="504" y="503" width="672" height="677" key="run.anything.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1608235780943" />
     <state x="498" y="181" width="672" height="482" key="search.everywhere.popup" timestamp="1608070789449">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
