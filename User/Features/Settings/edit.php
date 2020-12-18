@@ -175,7 +175,7 @@ if (isset($_POST['fullName']) && isset($_POST['email']) && isset($_POST['subject
     $message = htmlentities($_POST['message']);
 
     if (strlen($fullName) < 1 || strlen($email) < 1 || strlen($subject) < 1 || strlen($message) < 1) {
-        echo '<span style="color: red">All Fields are required!</span>';
+        echo '<span style="color: darkred">All Fields are required!</span>';
         return;
     }
 
@@ -432,7 +432,7 @@ $person_role_form = $row['person_role'];
         <div class="card card-settings">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
-                    <button class="btn card-btn btn-link btn-block collapsed" type="button" data-toggle="collapse"
+                    <button class="btn card-btn btn-link btn-block1collapsed" type="button" data-toggle="collapse"
                             data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                         Change Password
                     </button>
@@ -441,24 +441,24 @@ $person_role_form = $row['person_role'];
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
                     <div class="form-group row align-items-center">
-                        <label class="col-5" for="old_user_password">Current Password:</label>
-                        <input class="col-6 form-control" type="password" id="old_user_password" name="old_user_pass"
+                        <label class="col-12 offset-md-1 col-md-3" for="old_user_password">Current Password:</label>
+                        <input class="col-12 col-md-6 form-control" type="password" id="old_user_password" name="old_user_pass"
                                required>
                     </div>
                     <div class="form-group row align-items-center">
-                        <label class="col-5" for="user_password">New Password:</label>
-                        <input class="col-6 form-control" type="password" id="user_password" name="user_pass" size="30"
+                        <label class="col-12 offset-md-1 col-md-3" for="user_password">New Password:</label>
+                        <input class="col-12 col-md-6 form-control" type="password" id="user_password" name="user_pass" size="30"
                                required>
                     </div>
                     <div class="form-group row align-items-center">
-                        <label class="col-5" for="confirm_user_password">Confirm New Password:</label>
-                        <input class="col-6 form-control" type="password" id="confirm_user_password"
+                        <label class="col-12 offset-md-1 col-md-3" for="confirm_user_password">Confirm New Password:</label>
+                        <input class="col-12 col-md-6 form-control" type="password" id="confirm_user_password"
                                name="confirm_user_pass" size="30" required>
                     </div>
 
 
                     <div class="form-group row align-items-center">
-                        <div class="offset-4 col-3">
+                        <div class="offset-5 offset-md-5 col-3">
                             <input id="changePassBTN" class="btn btn-primary mb-2" name="updatePass"
                                    value="Save Changes"
                                    style="width: 150px">
@@ -605,27 +605,26 @@ $person_role_form = $row['person_role'];
                 <div class="card-body">
                     <div class="row mx-3 mt-3">
                         <label class="col-12 col-md-3" >Full Name: </label>
-                        <input class="col-12 col-md-9 form-control" type="text" name="fullName" placeholder="Full Name" required>
+                        <input class="col-12 col-md-9 form-control" type="text" id="fullNameContact" name="fullName" placeholder="Full Name" required>
 
                     </div>
                     <dix class="row mx-3">
                         <label class="col-12 col-md-3">Email: </label>
-                        <input class="col-12 col-md-9 form-control" type="email" name="email" placeholder="Email" required>
+                        <input class="col-12 col-md-9 form-control" type="email" id="emailContact" name="email" placeholder="Email" required>
                     </dix>
                     <div class="row mx-3">
                         <label class="col-12 col-md-3" >Subject: </label>
-                        <input class="form-control col-12 col-md-9" type="text" name="subject" placeholder="Subject">
+                        <input class="form-control col-12 col-md-9" type="text" id="subjectContact" name="subject" placeholder="Subject">
 
                     </div>
                     <div class="row mx-3">
                         <label class="col-12 col-md-3" >Massage: </label>
-                        <textarea class="col-12 col-md-9 form-control" type="text" id="message" name="message" rows="10" maxlength="3000"
-                                  required placeholder="Your message">
-                </textarea>
+                        <textarea class="col-12 col-md-9 form-control" type="text" id="messageContact" name="message" rows="10" maxlength="3000"
+                                  required placeholder="Your message"></textarea>
                     </div>
 
                     <div class="row pb-4">
-                        <input class="btn btn-primary mb-2" type="submit" name="send" value="Send">
+                        <input class="btn btn-primary mb-2" id="sendContactBTN" name="send" value="Send">
                         <?php
                         if (isset($_SESSION['suc_msg'])) {
                             echo "<span class=\"offset-md-3\" style=\"color:darkgreen;font-size: large;font-family:\'Cabin\', serif;'>" . $_SESSION['suc_msg'] . "</span>";

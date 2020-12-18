@@ -41,6 +41,7 @@ $result = $pdo->query($sql);
     <!-- Cards Start -->
     <div class="row">
         <?php
+        $i=0;
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
             ?>
@@ -59,6 +60,7 @@ $result = $pdo->query($sql);
                 </div>
             </div>
             <?php
+            $i++;
         }
         ?>
     </div>

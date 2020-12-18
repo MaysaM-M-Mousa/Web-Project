@@ -54,7 +54,7 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
 <div class="container-fluid">
 
     <!--Back Button-->
-    <div class="back-btn">
+    <div id="back-btn" class="back-btn">
         <i class="fal fa-arrow-left"></i>
     </div>
     <!-- Header-->
@@ -80,7 +80,7 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
                         <img class="col-4 pr-0" src="../Home/images/insta-1.jpg" alt="...">
                         <div class="card-body col-8">
                             <div class="price">
-                                <div class="price-text"><?php echo $row['item_price'] ?>
+                                <div class="price-text"><?php echo $row['item_price']?>$
                                     <hr class="card-line">
                                 </div>
                             </div>

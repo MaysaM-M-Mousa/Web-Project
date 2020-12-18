@@ -87,7 +87,60 @@
                 </div>
                 <div id="two" class="e-panel" data-row="0" data-col="1" data-sizeX="3" data-sizeY="2">
                     <div class="e-panel-container">
-                        <div class="content">1</div>
+                        <div class="content">
+
+                            <div class="row" id="chart3Container">
+                                <canvas id="myChart3"></canvas>
+                            </div>
+                            <hr>
+
+
+                            <!--dates row-->
+                            <div class="row">
+                                <div class="form-group col-6 row">
+                                    <label for="firstDateCh3" class="col-3 col-form-label">First Date:</label>
+                                    <div class="col-9">
+                                        <input class="form-control" type="date" value="2020-12-10" id="firstDateCh3">
+                                    </div>
+                                </div>
+                                <div class="form-group col-6 row">
+                                    <label for="secondDateCh3" class="col-3 col-form-label">Second Date:</label>
+                                    <div class="col-9">
+                                        <input class="form-control" type="date" value="2020-12-20" id="secondDateCh3">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--selection row-->
+
+                            <div class="row">
+                                <div class="row col-4">
+                                    <label for="chartType" class="col-3 col-form-label">Chart Type:</label>
+                                    <div class="col-9">
+                                        <select class="form-select" id="chartTypeCh3">
+                                            <option value="line">Line</option>
+                                            <option value="radar">Radar</option>
+                                            <option value="bar">Bar</option>
+                                            <option value="doughnut">Doughnut</option>
+                                            <option value="pie">Pie</option>
+                                            <option value="polarArea">Polar Area</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row col-4">
+                                    <label for="chartType" class="col-3 col-form-label">Method:</label>
+                                    <div class="col-9">
+                                        <select class="form-select" id="methodCh3">
+                                            <option value="bookings">Bookings</option>
+                                            <option value="orders">Orders</option>
+                                            <option value="rooms">Rooms</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row col-4">
+                                    <button class="btn btn-primary" id="clickBTN" onclick="getReport()">Get Report</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="three" class="e-panel" data-row="0" data-col="4" data-sizeX="1" data-sizeY="3">
@@ -193,12 +246,16 @@
                 </div>
                 <div id="five" class="e-panel" data-row="2" data-col="0" data-sizeX="2" data-sizeY="1">
                     <div class="e-panel-container">
-                        <div class="content">4</div>
+                        <div class="content">
+                            <canvas id="myChart1"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div id="six" class="e-panel" data-row="2" data-col="2" data-sizeX="1" data-sizeY="1">
                     <div class="e-panel-container">
-                        <div class="content">5</div>
+                        <div class="content">
+                            <canvas id="myChart2" style="width: 100%;height: 100%"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div id="seven" class="e-panel" data-row="2" data-col="3" data-sizeX="1" data-sizeY="1">

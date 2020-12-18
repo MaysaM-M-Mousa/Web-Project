@@ -6,10 +6,18 @@
 //    return;
 //}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--    TODO: Dash board element desgin-->
+    <!--    TODO: Reserve Form errors Style -->
+    <!--    TODO: Apply For Jop Style -->
+    <!--    TODO: Cards Order Style -->
+    <!--    TODO: History Style -->
+    <!--    TODO: HF Data + Style -->
+    <!--    TODO: item to subcat Button -->
+    <!--    TODO: Add Animation -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>La Terra Santa &reg;</title>
@@ -17,9 +25,9 @@
     <link rel="stylesheet" href="../Vendor/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
     <link rel="stylesheet" href="../Vendor/CSS/flexslider.css">
-    <link href="../Vendor/DatePicker/ej2-base/fabric.css" rel="stylesheet" type="text/css" />
-    <link href="../Vendor/DatePicker/ej2-calendars/fabric.css" rel="stylesheet" type="text/css" /
-    <link href="../Vendor/DatePicker/ej2-buttons/styles/fabric.css" rel="stylesheet" type="text/css" />
+    <link href="../Vendor/DatePicker/ej2-base/fabric.css" rel="stylesheet" type="text/css"/>
+    <link href="../Vendor/DatePicker/ej2-calendars/fabric.css" rel="stylesheet" type="text/css"/>
+    <link href="../Vendor/DatePicker/ej2-buttons/styles/fabric.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="../Vendor/CSS/flaticon.css" type="text/css">
     <link rel="stylesheet" href="../Vendor/CSS/Loader.css">
     <link rel="stylesheet" href="CSS/styles.css">
@@ -32,7 +40,7 @@
         <a class="brand" href="index.php">La Terra Santa</a>
         <div class="sepr"></div>
         <div class="sepl"></div>
-<!--        <h6>Hotel</h6>-->
+        <h6>Hotel</h6>
     </div>
     <button type="button" id="sidebarCollapse" class="btn btn-primary">
         <i class="fa fa-bars" style="color:#B79040;font-size: 24px;"></i>
@@ -61,10 +69,7 @@
                 <i class="far fa-blanket icon"></i>
                 <a href="#"> Item Request</a>
             </li>
-            <li>
-                <i class="far fa-user-tie icon"></i>
-                <a> Room dashboard</a>
-            </li>
+
             <li id="settings">
                 <i class="far fa-cog icon"></i>
                 <a> Settings</a>
@@ -102,7 +107,8 @@
 
 <!-- Scripts -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
 <script src="../Vendor/script/jquery.slicknav.js"></script>
 <script src="../Vendor/script/popper.js"></script>
 <script src="../Vendor/script/bootstrap.min.js"></script>

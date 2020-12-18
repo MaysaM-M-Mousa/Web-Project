@@ -127,7 +127,7 @@ $result = $pdo->query($sql);
                             <h5><?php echo ($row['job_type'] == 0) ? 'Part Time' : 'Full Time' ?></h5>
                             <h4><?php echo $row['first_name'] . ' ' . $row['last_name'] ?></h4>
                             <h5 id="emailSender<?php echo $counter ?>"><?php echo $row['person_email'] ?></h5>
-                            <h6 class="col-2"><?php echo $row['date_of_applying'] ?></h6>
+                            <h6 class="col-12"><?php echo $row['date_of_applying'] ?></h6>
                             <div>
                                 <?php
                                 if ($row['status'] == 1)

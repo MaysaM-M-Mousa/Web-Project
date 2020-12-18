@@ -15,12 +15,6 @@
             animation: "slide"
         });
     });
-    //2. Back Button Handling
-    $(document).ready(function () {
-        $(".back-btn").on("click", function () {
-            $("#content").load("Features/Restaurant/RestaurantCategories.php", "data1");
-        })
-    });
     // 3. Sub Category Ajax
     $(document).ready(function () {
         // $("#cat1").on("click",function (){
@@ -39,6 +33,9 @@ function goToCategory(sub_cat_id) {
         function (data, status) {
             if (status === 'success') {
                 document.getElementById('content').innerHTML = data;
+                $('#back-btn').on("click", function () {
+                    $("#content").load("Features/Restaurant/RestaurantCategories.php", "data1");
+                });
             }
         })
 }

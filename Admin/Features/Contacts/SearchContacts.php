@@ -7,12 +7,12 @@
 //}
 require_once 'pdo.php';
 sleep(1);
-if (isset($_GET['searchBar'], $_GET['filter'], $_GET['order_by'], $_GET['replied'])) {
+if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['replied'])) {
 
-    $searchbar = htmlentities($_GET['searchBar']);
-    $filter = htmlentities($_GET['filter']);
-    $order_by = htmlentities($_GET['order_by']);
-    $replied = htmlentities($_GET['replied']);
+    $searchbar = htmlentities($_POST['searchBar']);
+    $filter = htmlentities($_POST['filter']);
+    $order_by = htmlentities($_POST['order_by']);
+    $replied = htmlentities($_POST['replied']);
 
     switch ($filter) {
         case 'email':
@@ -61,13 +61,13 @@ if (isset($_GET['searchBar'], $_GET['filter'], $_GET['order_by'], $_GET['replied
     // if search bar is empty
     if (empty($searchbar)) {
         if ($colDBOrderBY === 'none') {
-            $sql = 'select * from contacts where status=' . $status;
+            $sql = 'select * from contacts';
         } elseif ($colDBOrderBY !== 'none') {
             $sql = 'select * from contacts where status=' . $status . ' order by ' . $colDBOrderBY . " $typeOfOrdering";
         }
     } else {
         if ($colDBFilter === 'none' && $colDBOrderBY === 'none') {
-            $sql = 'select * from contacts where status=' . $status . ' and subject like "%' . $searchbar . '%"';
+            $sql = 'select * from contacts where subject like "%' . $searchbar . '%"';
         } elseif ($colDBFilter !== 'none' && $colDBOrderBY === 'none') {
             $sql = 'select * from contacts where status=' . $status . ' and ' . $colDBFilter . ' like ' . '"%' . $searchbar . '%"';
         } elseif ($colDBFilter === 'none' && $colDBOrderBY !== 'none') {
@@ -96,66 +96,183 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     $counter++;
     ?>
 
-    <div class="row">
-        <div class="card text-dark bg-warning mb-3" style="width: 100%">
-            <div class="card-header row">
-                <div class="col-10" style="display: inline-block">
-                    <h3 class="col-10" style="display: inline-block">
-                        Subject: <?php echo $row['subject'] ?> </h3>
-                </div>
-                <div class="col-2" style="display: inline-block">
-                    <?php
-                    if ($row['status'] == 1)
-                        echo '<span id="status' . $counter . '" style="color: black"><i class="fa fa-check"></i> Replied</span>';
-                    else
-                        echo '<span id="status' . $counter . '" style="color: black"></span>';
-                    ?>
-                </div>
+    <div class="container forms">
+        <?php
+        $counter = 0;
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+            $counter++;
+            ?>
 
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <h6 class="card-title col-10" id="emailSender<?php echo $counter ?>">Sender
-                        Email: <?php echo $row['email'] ?></h6>
-                    <h6 class="col-2"><?php echo $row['date_of_receive'] ?></h6>
-                </div>
-                <h6>From: <?php echo $row['full_name'] ?></h6>
-                <p class="card-text"><?php echo $row['message'] ?></p>
-
-                <div class="row">
-                    <div class="col-2 offset-10">
-                        <button class="btn btn-primary" data-toggle="collapse"
-                                data-target="#sendReplyEmail<?php echo $counter ?>">Reply
-                        </button>
+            <div class="form-border-2 my-5" id="cardContactDiv<?php echo $counter ?>">
+                <div class="card-border-1">
+                    <div class="delete"
+                         onclick="deleteContactCard(<?php echo $row['contact_id'] ?>,<?php echo $counter ?>)">
+                        <i class="far fa-trash-alt"></i>
                     </div>
-                </div>
-                <!--                    start of collapsing div-->
-                <div class="collapse" id="sendReplyEmail<?php echo $counter ?>">
-
-                    <div>
-                            <textarea class="form-control" placeholder="Your Email"
-                                      id="email_message<?php echo $counter ?>"
-                                      rows="5">Hello <?php echo $row['full_name'] ?>, Thanks for contacting us,
-we received your email and read it carefully, we will see in your order.
-Hope you enjoyed our hotel.
-La Terra Santa.
-Best of luck.</textarea>
-                    </div>
-
-                    <div class="row">
-                        <div class="offset-10 col-2">
-                            <button onclick="sendEmailBTN(<?php echo $row['contact_id'] ?>,<?php echo $counter ?>)"
-                                    class="btn btn-primary">Send
+                    <section class="header text-center">
+                        <h2 class="card-h2"><?php echo $row['subject'] ?></h2>
+                        <h5 class="email" id="emailSender<?php echo $counter ?>"><?php echo $row['email'] ?></h5>
+                        <h6 class="col-12"><?php echo $row['date_of_receive'] ?></h6>
+                        <div>
+                            <?php
+                            if ($row['status'] == 1)
+                                echo '<span id="status' . $counter . '" style="color: black; font-family: \'Cabin\', serif;"><i class="fa fa-check"></i> Replied</span>';
+                            else
+                                echo '<span id="status' . $counter . '" style="color: black; font-family: \'Cabin\', serif;"></span>';
+                            ?>
+                        </div>
+                    </section>
+                    <div class="more-details">
+                        <div class="row text-center">
+                            <div class="col-12">
+                                <p class="card-content"><span style="font-size: 25px">&#8220;</span>
+                                    <?php echo $row['message'] ?>
+                                    <span style="font-size: 25px">&#8221;</span> <span class="sender" ">-<?php echo $row['full_name'] ?></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="reply-btn btn btn-primary"><i class="fas fa-envelope"
+                                                                         style="font-size: 20px"></i> Reply
                             </button>
                         </div>
+                        <div class="reply text-center">
+                            <div id="reply<?php echo $counter ?>"></div>
+                            <button onclick="sendEmailBTN(<?php echo $row['contact_id'] ?>,<?php echo $counter ?>)"
+                                    class="btn btn-primary mt-4">Send
+                            </button>
+                            <div id="MSG<?php echo $counter ?>" style="font-family: 'Cabin', serif;"></div>
+                        </div>
+                    </div>
+                    <div class="sepr"></div>
+                    <div class="sepl"></div>
+                    <div class="details">
+                        <h5>More Details</h5>
+                        <hr class="sub-line">
+                        <i class="fal fa-angle-down"></i>
                     </div>
                 </div>
-                <!--                    end of collapsing div-->
-                <div id="MSG<?php echo $counter ?>"></div>
             </div>
-        </div>
+            <?php
+        }
+        ?>
     </div>
 
     <?php
 }
 ?>
+<div id="counter" class="<?php echo $counter ?>"></div>
+<script>
+    $(".details").on("click", function () {
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this).prev().prev().prev().slideUp(300);
+            $(this).children(":first").text("More Details");
+            $(this).children(":last").removeClass("to-up");
+            $(this).children(":last").removeClass("fa-angle-up");
+            $(this).children(":last").addClass("fa-angle-down");
+
+        } else {
+            $(this).addClass("active");
+            $(this).prev().prev().prev().slideDown(300);
+            $(this).children(":first").text("Less Details");
+            $(this).children(":last").removeClass("fa-angle-down");
+            $(this).children(":last").addClass("fa-angle-up to-up");
+        }
+    });
+    $(".reply-btn").on("click", function () {
+        if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+            $(this).parent().next().slideUp(300);
+
+        } else {
+            $(this).addClass("active");
+            $(this).parent().next().slideDown(300);
+        }
+    });
+
+    // configure Quill to use inline styles so the email's format properly
+    var DirectionAttribute = Quill.import('attributors/attribute/direction');
+    Quill.register(DirectionAttribute, true);
+
+    var AlignClass = Quill.import('attributors/class/align');
+    Quill.register(AlignClass, true);
+
+    var BackgroundClass = Quill.import('attributors/class/background');
+    Quill.register(BackgroundClass, true);
+
+    var ColorClass = Quill.import('attributors/class/color');
+    Quill.register(ColorClass, true);
+
+    var DirectionClass = Quill.import('attributors/class/direction');
+    Quill.register(DirectionClass, true);
+
+    var FontClass = Quill.import('attributors/class/font');
+    Quill.register(FontClass, true);
+
+    var SizeClass = Quill.import('attributors/class/size');
+    Quill.register(SizeClass, true);
+
+    var AlignStyle = Quill.import('attributors/style/align');
+    Quill.register(AlignStyle, true);
+
+    var BackgroundStyle = Quill.import('attributors/style/background');
+    Quill.register(BackgroundStyle, true);
+
+    var ColorStyle = Quill.import('attributors/style/color');
+    Quill.register(ColorStyle, true);
+
+    var DirectionStyle = Quill.import('attributors/style/direction');
+    Quill.register(DirectionStyle, true);
+
+    var FontStyle = Quill.import('attributors/style/font');
+    Quill.register(FontStyle, true);
+
+    var SizeStyle = Quill.import('attributors/style/size');
+    Quill.register(SizeStyle, true);
+    let fonts = Quill.import("attributors/style/font");
+    fonts.whitelist = ["initial", "sans-serif", "serif", "monospace", "cabin"];
+    Quill.register(fonts, true);
+    var toolbarOptions = [
+        ['bold', 'italic', 'underline'],        // toggled buttons
+
+        [{'header': 1}, {'header': 2}],               // custom button values
+        [{'list': 'ordered'}, {'list': 'bullet'}],
+        [{'indent': '-1'}, {'indent': '+1'}],          // outdent/indent
+        [{'direction': 'rtl'}],                         // text direction
+
+        [{'header': [1, 2, 3, 4, 5, 6, false]}],
+
+        [{'color': []}, {'background': []}],          // dropdown with defaults from theme
+        [{'font': []}],
+        [{'align': []}],
+
+        ['clean'], // remove formatting button
+
+    ];
+    var count = eval("<?php echo $counter; ?>");
+    var editor = [];
+    for (let i = 1; i <= count; i++) {
+        let temp = '#reply' + i;
+        editor[i] = new Quill(temp, {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
+        });
+        editor[i].setContents([
+            {
+                insert: 'Hello,\n', attributes: {bold: true, align: "center", color: "#232530", header: "2"}
+            },
+            {
+                insert: '\nThanks for Contacting Us,\n' +
+                    '\n' +
+                    'La Terra Santa.' +
+                    '\n\n Best of luck.' + '  \n',
+                attributes: {bold: true, align: "center", color: "#B79040", header: "3"}
+            }
+        ]);
+    }
+
+
+</script>

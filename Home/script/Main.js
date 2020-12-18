@@ -143,6 +143,7 @@
                 url: 'SignUp.php',
                 success:
                     function (data) {
+                        $("#login .close").click()
                         setTimeout(function() {
                             $("#content").html(data);
                         }, 600);

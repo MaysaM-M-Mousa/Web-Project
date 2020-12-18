@@ -11,7 +11,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
     if (strlen($_POST['person_email']) < 1 || strlen($_POST['person_pass']) < 1) {
         $err_msg = 'USERNAME AND PASSWORD ARE REQUIRED';
-        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px">' . $err_msg . '</span>';
+        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px; font-size: 12px">' . $err_msg . '</span>';
         return;
     }
     $person_pass = htmlentities($_POST['person_pass']);
@@ -23,7 +23,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
     if (!strpos($person_email, "@")) {
         $err_msg = 'Invalid Email!';
-        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px">' . $err_msg . '</span>';
+        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px; font-size: 12px">' . $err_msg . '</span>';
         return;
     }
 
@@ -32,7 +32,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
     if ($stmt->rowCount() < 1) {
         $err_msg = "You are not registered!";
-        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px">' . $err_msg . '</span>';
+        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px; font-size: 12px">' . $err_msg . '</span>';
         return;
     }
 
@@ -42,7 +42,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     if ($row['active'] == 0) {
         $_SESSION['hash_verification'] = md5(rand(0, 1000));
         $err_msg = "Your account is not verified yet!";
-        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px">' . $err_msg . '</span>';
+        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px; font-size: 12px">' . $err_msg . '</span>';
         echo '<div id="verificationDiv"><a href="#" onclick="sendEmailVerification()" style="color: darkgreen;font-family: \'Cabin\', serif;margin: 5px">Send me Email</a></div>';
         return;
     }
@@ -50,7 +50,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 
     if ($row['person_pass'] !== $hashed_pass || $row['person_email'] !== $person_email) {
         $err_msg = "Either user name or password are wrong!";
-        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px">' . $err_msg . '</span>';
+        echo '<span style="color: darkred;font-family: \'Cabin\', serif;margin: 5px; font-size: 12px">' . $err_msg . '</span>';
         return;
     }
 

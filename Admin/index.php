@@ -27,8 +27,12 @@
 <body>
 <!--Top Nav Start-->
 <nav class="navbar navbar-dark bg-dark sticky-top">
-    <a class="brand" href="index.php">La Terra Santa</a>
-    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+    <div class="header">
+        <a class="brand" href="index.php">La Terra Santa</a>
+        <div class="sepr"></div>
+        <div class="sepl"></div>
+        <h6>Hotel</h6>
+    </div>    <button type="button" id="sidebarCollapse" class="btn btn-primary">
         <i class="fa fa-bars" style="color:#B79040;font-size: 24px;"></i>
         <span class="sr-only">Toggle Menu</span>
     </button>
@@ -93,16 +97,12 @@
                     </ul>
                 </div>
             </li>
-            <li>
-                <i class="far fa-tshirt icon"></i>
-                <a> Staff</a>
-            </li>
             <li id="jobLink">
                 <i class="far fa-blanket icon"></i>
                 <a> Job Applications</a>
             </li>
-            <li class="sidebar-dropdown">
-                <i class="far fa-user-tie icon"></i>
+            <li class="sidebar-dropdown dropright">
+                <i id="employeeIcon" class="far fa-user-tie icon"></i>
                 <a> Employees</a>
                 <div class="sidebar-submenu">
                     <ul>

@@ -44,6 +44,8 @@
 }
 .header{
     margin: 0 auto;
+    padding-left: 100px;
+
 }
 .header a{
     display: block;
@@ -61,7 +63,6 @@
     font-size: 1.4rem;
     text-align: center;
     color: #B79040;
-    padding-left: 100px;
     margin-top: -20px;
     cursor:default;
 
@@ -73,22 +74,21 @@
     width: 35%;
     margin-right: auto;
     position: relative;
-    top: -7px;
-    left: 20%;
-    padding-left: 100px;
+    top: -8px;
+    left: -2%;
 
 }
 
 .header .sepr {
     /*position: relative;*/
     background-image: linear-gradient(to right,#B79040 60%, #232530);
-    height: 2px;    margin-left: auto;
+    height: 2px;
+    margin-left: auto;
     margin-right: 6%;
     position: relative;
     top: -7px;
-    left: 20%;
+    left: 10%;
     width: 35%;
-    padding-left: 100px;
 }
 
 li:last-child {
@@ -107,7 +107,6 @@ a.brand {
     margin-left: auto;
     margin-right: auto;
     color: #B79040;
-    padding-left: 100px;
 }
 
 body {
@@ -329,7 +328,7 @@ hr.card-line {
         padding: 13px;
     }
 
-    a.brand {
+    .header {
         padding-left: 0;
     }
 }

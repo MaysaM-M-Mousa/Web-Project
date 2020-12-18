@@ -12,9 +12,7 @@
 
     //1. Back Button Handling
     $(document).ready(function () {
-        $(".back-btn").on("click", function () {
-            $("#content").load("Features/ItemRequest/ItemRequestCategories.php", "data1");
-        })
+
     });
     // 2. Sub Category Ajax
     $(document).ready(function () {
@@ -33,6 +31,9 @@ function goToItemReqSub(cat_id) {
         function (data, status) {
             if (status === 'success') {
                 document.getElementById('content').innerHTML = data;
+                $(".back-btn").on("click", function () {
+                    $("#content").load("Features/ItemRequest/ItemRequestCategories.php", "data1");
+                })
             }
         }
     )
@@ -45,6 +46,9 @@ function goToItemReqItems(sub_cat_id) {
     }, function (data, status) {
         if (status === 'success') {
             document.getElementById('content').innerHTML = data;
+            $(".back-btn").on("click", function () {
+                $("#content").load("Features/ItemRequest/ItemRequestSub.php", "data1");
+            })
         }
     })
 }

@@ -108,12 +108,14 @@
 
 // AJAX for Contacts Feature
     $("#contactLink").click(function () {
-        $.post('Features/Contacts/Contacts.php',
-            {}, function (data, status) {
-                if (status === 'success') {
-                    document.getElementById('content').innerHTML = data;
-                }
-            })
+        $.ajax({
+            type: 'POST',
+            url: 'Features/Contacts/Contacts.php',
+            success: function (data) {
+                $("#content").html(data);
+            }
+        })
+
     })
 
 
@@ -150,17 +152,21 @@ function jobSearch() {
     var filter = document.getElementById('searchAppsFilter').value;
     var orderBy = document.getElementById('searchAppsOrdering').value;
     var repliedFlag = document.getElementById('repliedAppCB').checked;
-    $.get('Features/JobApplications/SearchJobApps.php', {
+    $.ajax({
+        type: 'POST',
+        data: {
             'searchBar': searchBar,
             'filter': filter,
             'order_by': orderBy,
             'replied': repliedFlag
+        },
+        url: 'Features/JobApplications/SearchJobApps.php',
+        success: function (data) {
+            $("#searchJobResult").html(data);
+            let count =$("#counter").attr('class');
         }
-        , function (data, status) {
-            if (status === 'success') {
-                document.getElementById('searchJobResult').innerHTML = data;
-            }
-        })
+    })
+
 }
 
 function sendEmailJobBTN(form_id, counter) {
@@ -195,6 +201,7 @@ function deleteContactCard(contact_id, counter) {
 }
 
 function contactSearch() {
+
     // centering the GIF in the center till response
     document.getElementById('searchContactResult').innerHTML =
         '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
@@ -204,25 +211,34 @@ function contactSearch() {
     var filter = document.getElementById('searchContactFilter').value;
     var orderBy = document.getElementById('searchContactOrdering').value;
     var repliedFlag = document.getElementById('repliedContactCB').checked;
-    $.get('Features/Contacts/SearchContacts.php?searchBar=' + searchBar + '&filter=' + filter + '&order_by=' + orderBy + '&replied=' + repliedFlag,
-        function (data, status) {
-            if (status === 'success') {
-                document.getElementById('searchContactResult').innerHTML = data;
-            }
-        })
+    $.ajax({
+        type: 'POST',
+        data: {
+            'searchBar': searchBar,
+            'filter': filter,
+            'order_by': orderBy,
+            'replied': repliedFlag
+        },
+        url: 'Features/Contacts/SearchContacts.php',
+        success: function (data) {
+            $("#searchContactResult").html(data);
+            let count =$("#counter").attr('class');
+        }
+    })
 }
-
+// contact email
 function sendEmailBTN(contact_id, counter) {
     var divID = 'MSG' + counter;
     var emailMSG = 'email_message' + counter;
     var emailSender = 'emailSender' + counter;
     var statusID = 'status' + counter;
+    var edit = editor[counter];
     document.getElementById(statusID).innerHTML = '<img width="35px" height="30px"  src="../images/VZvw.gif">';
     console.log(divID);
     $.post('Features/Contacts/Contacts.php', {
         'sendReplyEmail': 'sendReplyEmail',
         'emailSender': document.getElementById(emailSender).innerText,
-        'email_message': document.getElementById(emailMSG).value,
+        'email_message': edit.root.innerHTML,
         'contact_id': contact_id
     }, function (data, status) {
         if (status === 'success') {

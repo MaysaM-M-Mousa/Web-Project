@@ -87,8 +87,7 @@ if (isset($_POST['item_name'], $_POST['item_price'], $_POST['item_description'],
 
             <div class="row mx-3">
                 <label class="col-12 col-md-2" for="#itemDescription">Description: </label>
-                <textarea class="col-12 col-md-10" placeholder="Item Description" id="itemDescription" rows="5">
-                </textarea>
+                <textarea class="col-12 col-md-10" placeholder="Item Description" id="itemDescription" rows="5"></textarea>
             </div>
             <div class="row mx-3">
                 <label class="col-12 col-md-2" for="#mainCategory">Type: </label>

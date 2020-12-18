@@ -54,7 +54,7 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
             </div>
 
             <div class="row mx-3">
-                <label class="col-12 col-md-3" for="#categoryDescription">Rent: </label>
+                <label class="col-12 col-md-3" for="#categoryDescription">Description: </label>
                 <textarea class="col-12 col-md-9" placeholder="Category Description" id="categoryDescription" rows="5"
                           cols="20"></textarea>
             </div>

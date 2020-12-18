@@ -3,13 +3,14 @@ require_once 'pdo.php';
 sleep(1);
 
 if (isset($_POST['cat_id'], $_POST['subCatChosen'])) {
-
     $cat_id = htmlentities($_POST['cat_id']);
 
     $sql = 'SELECT * FROM category,sub_category WHERE category.cat_id = sub_category.cat_id AND category.cat_id='.$cat_id;
     $result = $pdo->query($sql);
 
 }
+
+
 ?>
 
 <div class="container-fluid">
@@ -18,7 +19,6 @@ if (isset($_POST['cat_id'], $_POST['subCatChosen'])) {
     <div class="back-btn">
         <i class="fal fa-arrow-left"></i>
     </div>
-
     <!--Header-->
     <div class="row">
         <div class="col-8 offset-2">
@@ -55,6 +55,9 @@ if (isset($_POST['cat_id'], $_POST['subCatChosen'])) {
     </div>
     <!--Card end-->
     <script src="Scripts/ItemRequest.js" type="text/javascript"></script>
+    <script>
+
+    </script>
 </div>
 
 

@@ -74,8 +74,7 @@ if (isset($_POST['sub_cat_name'], $_POST['description'], $_POST['image'], $_POST
             <div class="row mx-3">
                 <label class="col-12 col-md-3" for="#subCategoryDescription">Description: </label>
                 <textarea class="col-12 col-md-9" placeholder="Sub-Category Description" id="subCategoryDescription" rows="5"
-                          cols="20">
-                </textarea>
+                          cols="20"></textarea>
             </div>
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
