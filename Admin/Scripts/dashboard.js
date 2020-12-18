@@ -63,7 +63,8 @@
                                 'rgba(255, 206, 86, 0.2)',
                                 'rgba(75, 192, 192, 0.2)',
                                 'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(0, 110, 110, 0.2)'
                             ],
                             borderColor: [
                                 'rgba(255, 99, 132, 1)',
@@ -71,7 +72,8 @@
                                 'rgba(255, 206, 86, 1)',
                                 'rgba(75, 192, 192, 1)',
                                 'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(0, 110, 110, 1)'
                             ],
                             borderWidth: 1,
                         }]
@@ -122,7 +124,8 @@
                                 'rgba(255, 206, 86, 0.2)',
                                 'rgba(75, 192, 192, 0.2)',
                                 'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(255, 159, 64, 0.2)',
+                                'rgba(0, 110, 110, 0.2)'
                             ],
                             borderColor: [
                                 'rgba(255, 99, 132, 1)',
@@ -130,8 +133,8 @@
                                 'rgba(255, 206, 86, 1)',
                                 'rgba(75, 192, 192, 1)',
                                 'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(0, 110, 110, 1)'
                             ],
                             borderWidth: 1,
                         }]
@@ -270,19 +273,19 @@ function removeElement(elementId) {
     element.parentNode.removeChild(element);
 }
 
-var t = new Date();
-var dd = String(t).padStart(2, '0');
-var mm = String(t.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = t.getFullYear()-1;
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
 
-t = yyyy + '-' + mm + '-' + dd;
+today = yyyy + '-' + mm + '-' + dd;
 
-document.getElementById("secondDateCh3").defaultValue = t;
+document.getElementById("secondDateCh3").defaultValue = today;
 
 
 
-var dd = String(t - 2).padStart(2, '0');
-t = yyyy + '-' + mm + '-' + dd;
-document.getElementById("firstDateCh3").defaultValue = t;
+var dd = String(today.getDate() - 2).padStart(2, '0');
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById("firstDateCh3").defaultValue = today;
 
 // end of chart3 ***************************************************************************************************

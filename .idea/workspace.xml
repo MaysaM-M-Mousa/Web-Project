@@ -22,18 +22,14 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/abdelrahman" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="User Table History">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/dashboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" afterDir="false" />
-    </list>
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="Home Ready with signup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +49,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1kUCOcfm8lTi2WePfAjaCktIW3q" />
@@ -82,19 +81,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
-      <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
-      <recent name="C:\xampp\htdocs\WebProject\User" />
-      <recent name="C:\xampp\htdocs\WebProject\Vendor\DatePicker" />
-      <recent name="C:\xampp\htdocs\WebProject\User\Features\Restaurant" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\User\CSS" />
       <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
       <recent name="C:\xampp\htdocs\WebProject\Admin\Features\Orders" />
       <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
       <recent name="C:\xampp\htdocs\WebProject\Admin\Scripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
+      <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
+      <recent name="C:\xampp\htdocs\WebProject\User" />
+      <recent name="C:\xampp\htdocs\WebProject\Vendor\DatePicker" />
+      <recent name="C:\xampp\htdocs\WebProject\User\Features\Restaurant" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.test.php">
