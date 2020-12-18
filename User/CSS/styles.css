@@ -859,6 +859,356 @@ p.main-content {
     -o-transition: all 0.7s ease-in-out;
     -webkit-transition: all 0.7s ease-in-out;
 }
+/****************************************************************
+
+					[16. TABLE ]
+
+*****************************************************************/
+
+
+.table-scrollable > .table-bordered > tbody > tr:last-child > td,
+.table-scrollable > .table-bordered > tbody > tr:last-child > th,
+.table-scrollable > .table-bordered > tfoot > tr:last-child > td,
+.table-scrollable > .table-bordered > tfoot > tr:last-child > th,
+.table-scrollable > .table-bordered > thead > tr:last-child > td,
+.table-scrollable > .table-bordered > thead > tr:last-child > th,
+.table.table-bordered thead > tr > th {
+    border-bottom: 0
+}
+
+.table-scrollable > .table {
+    width: 100% !important;
+    margin: 0 !important;
+    background-color: #fff
+}
+
+.table-scrollable > .table > tbody > tr > th,
+.table-scrollable > .table > tfoot > tr > td,
+.table-scrollable > .table > tfoot > tr > th,
+.table-scrollable > .table > thead > tr > th {
+    white-space: nowrap
+}
+
+.table-scrollable > .table-bordered > tbody > tr > td:first-child,
+.table-scrollable > .table-bordered > tbody > tr > th:first-child,
+.table-scrollable > .table-bordered > tfoot > tr > td:first-child,
+.table-scrollable > .table-bordered > tfoot > tr > th:first-child,
+.table-scrollable > .table-bordered > thead > tr > td:first-child,
+.table-scrollable > .table-bordered > thead > tr > th:first-child {
+    border-left: 0
+}
+
+.table-scrollable > .table-bordered > tbody > tr > td:last-child,
+.table-scrollable > .table-bordered > tbody > tr > th:last-child,
+.table-scrollable > .table-bordered > tfoot > tr > td:last-child,
+.table-scrollable > .table-bordered > tfoot > tr > th:last-child,
+.table-scrollable > .table-bordered > thead > tr > td:last-child,
+.table-scrollable > .table-bordered > thead > tr > th:last-child {
+    border-right: 0
+}
+
+.table td,
+.table th,
+.card .table td,
+.card .table th,
+.card .dataTable td,
+.card .dataTable th {
+    padding: 10px 10px;
+    vertical-align: middle;
+}
+
+#tableGroup {
+    width: 100% !important;
+}
+
+#dataTable {
+    width: 100% !important;
+}
+
+.table td.valigntop {
+    vertical-align: top;
+}
+
+.table-toolbar {
+    margin-bottom: 20px
+}
+
+.table-toolbar:after,
+.table-toolbar:before {
+    content: " ";
+    display: table
+}
+
+.table-toolbar:after {
+    clear: both
+}
+
+.table.table-full-width {
+    width: 100% !important
+}
+
+.table .btn {
+    margin-left: 0;
+    margin-right: 5px
+}
+
+.table thead tr th {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.table.table-light {
+    border: 0 !important
+}
+
+.table.table-light > thead > tr:hover > th {
+    background: 0 0
+}
+
+.table.table-light > thead > tr.uppercase {
+    text-transform: uppercase
+}
+
+.table.table-light > thead > tr > th {
+    font-weight: 600;
+    font-size: 13px;
+    color: #B79040;
+    border: 0;
+    border-bottom: 1px solid #F2F5F8
+}
+
+.table.table-light > tbody > tr:last-child > td {
+    border: 0
+}
+
+.table.table-light > tbody > tr > td {
+    border: 0;
+    border-bottom: 1px solid #F2F5F8;
+    color: rgba(35, 37, 48, 0.5);
+    vertical-align: middle;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.table.table-light > tbody > tr:hover > td {
+    color: #ffffff;
+    cursor: default;
+    background: rgba(183, 144, 64, 0.7);
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.table.table-light > tbody > tr:hover > td button {
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.table.table-light > tbody > tr > td.fit {
+    width: 1px;
+    padding-right: 3px
+}
+
+.table.table-light > tbody > tr > td .user-pic {
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%
+}
+
+.table.table-light.table-hover > tbody > tr:hover > td,
+.table.table-light.table-hover > tbody > tr > td:hover,
+.table.table-light.table-hover > tbody > tr > th:hover {
+    background: #f9fafb !important
+}
+
+.table-hover > tbody > tr:hover,
+.table-hover > tbody > tr:hover > td {
+    background: #f3f4f6 !important;
+    cursor: pointer;
+}
+
+table.dataTable tbody td.patient-img {
+    padding: 2px;
+}
+
+table.valign-middle tbody tr td {
+    vertical-align: middle;
+}
+
+.table-padding {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.table-scroll-height {
+    height: 387px;
+}
+
+.help-block {
+    margin-top: 5px;
+    margin-bottom: 5px
+}
+
+tr.group,
+tr.group:hover {
+    background-color: #ddd !important;
+}
+
+.btn-tbl-edit {
+    background-color: #888;
+    border-radius: 50% !important;
+    padding: 5px !important;
+    color: #fff;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-tbl-edit:HOVER, .btn-tbl-delete:HOVER {
+    color: #fff;
+}
+
+/* .tblHeightSet{
+	height: 350px;
+    margin-bottom: 20px;
+} */
+.user-circle-img img {
+    border-radius: 50%;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #fff;
+}
+
+.paging_simple_numbers .page-item.active a {
+    background-color: #B79040;
+    border-color: #B79040;
+    margin: 5px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    padding: 0px 12px;
+    min-width: 30px;
+    line-height: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.paging_simple_numbers .page-item a {
+    color: gray;
+    margin: 5px;
+    color: gray;
+    margin: 5px;
+    padding: 0px 12px;
+    min-width: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.paging_simple_numbers .page-item.next a,
+.paging_simple_numbers .page-item.previous a {
+    color: #928a8a;
+    background-color: #fff;
+    margin: 5px;
+    text-transform: uppercase;
+    border: 0;
+}
+
+.paging_simple_numbers .page-link:focus {
+    box-shadow: none;
+}
+
+.phone .material-icons {
+
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, .01);
+
+}
+
+.paging_simple_numbers .page-item.next a, .paging_simple_numbers .page-item.previous a {
+    border: 1px solid #B79040;
+    color: rgba(35, 37, 48, 0.8);
+}
+
+.paging_simple_numbers .page-item.next a:hover, .paging_simple_numbers .page-item.previous a:hover {
+    color: #ffffff;
+    background-color: #B79040;
+}
+
+.paging_simple_numbers .page-item a {
+    border: 1px solid #B79040;
+    color: rgba(35, 37, 48, 0.8);
+}
+
+.table .edit-table {
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
+    color: rgba(35, 37, 48, 0.5);
+}
+
+.table .edit-table:hover {
+    cursor: pointer;
+    color: #232530;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+.table .edit_r {
+    text-align: center;
+}
+
+.dataTables_scroll {
+    border: 1px solid rgba(183, 144, 64, 0.6);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.dataTables_scrollHead {
+    background: white;
+}
+
+.paging_simple_numbers .page-item.next.disabled a, .paging_simple_numbers .page-item.previous.disabled a {
+    border: 0;
+    color: darkgray;
+}
+
+.dataTables_filter label {
+    font-family: "Cabin", serif;
+    color: #232530;
+}
+
+.dataTables_length label {
+    font-family: "Cabin", serif;
+    color: #232530;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0;
+    white-space: nowrap;
+}
+
+.edit_r button {
+    background-color: transparent;
+    margin: auto;
+    padding: 0px 0px;
+    border: 0;
+}
 
 
 

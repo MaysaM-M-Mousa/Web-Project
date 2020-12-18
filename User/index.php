@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="../Vendor/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
+    <link rel="stylesheet" href="CSS/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../Vendor/CSS/flexslider.css">
     <link href="../Vendor/DatePicker/ej2-base/fabric.css" rel="stylesheet" type="text/css"/>
     <link href="../Vendor/DatePicker/ej2-calendars/fabric.css" rel="stylesheet" type="text/css"/>
