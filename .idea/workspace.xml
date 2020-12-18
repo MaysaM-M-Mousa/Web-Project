@@ -28,13 +28,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="sign in ++">
-      <change afterPath="$PROJECT_DIR$/User/CSS/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Scripts/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/Scripts/jquery.dataTables.min.js" afterDir="false" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="User Table History">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/History/history.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/History/history.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608323401049</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="User Table History">
+      <created>1608324216188</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1608324216188</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +311,8 @@
     <MESSAGE value="for logo" />
     <MESSAGE value="orders" />
     <MESSAGE value="sign in ++" />
-    <option name="LAST_COMMIT_MESSAGE" value="sign in ++" />
+    <MESSAGE value="User Table History" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Table History" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1607176073908">
@@ -431,11 +437,11 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607169710007" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607456806423" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608323414965">
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608324241992">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="442" y="222" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607217373236" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608323414965" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608324241992" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

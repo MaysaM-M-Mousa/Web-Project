@@ -58,17 +58,20 @@
                             label: 'Bookings Last 7 Days',
                             data: dataArr,
                             backgroundColor: [
-                                'rgba(35, 37, 48, 0.2)',
-                                'rgba(108, 109, 117, 0.2)',
-                                'rgba(109, 117, 108, 0.2)',
-                                'rgba(85, 0, 0, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
                             ],
                             borderColor: [
-                                'rgba(35, 37, 48, 1)',
-                                'rgba(183, 144, 64, 1)',
-                                'rgba(108, 109, 117, 1)',
-                                'rgba(109, 117, 108, 1)',
-                                'rgba(85, 0, 0,  1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
                             ],
                             borderWidth: 1,
                         }]
@@ -114,18 +117,20 @@
                             label: 'Bookings Last 7 Days',
                             data: dataArr,
                             backgroundColor: [
-                                'rgba(183, 144, 64, 0.2)',
-                                'rgba(35, 37, 48, 0.2)',
-                                'rgba(108, 109, 117, 0.2)',
-                                'rgba(109, 117, 108, 0.2)',
-                                'rgba(85, 0, 0, 0.2)',
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
                             ],
                             borderColor: [
-                                'rgba(183, 144, 64, 1)',
-                                'rgba(35, 37, 48, 1)',
-                                'rgba(108, 109, 117, 1)',
-                                'rgba(109, 117, 108, 1)',
-                                'rgba(85, 0, 0,  1)',
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
 
                             ],
                             borderWidth: 1,
@@ -160,7 +165,6 @@ function getReport() {
     var firstDate = document.getElementById('firstDateCh3').value;
     var secondDate = document.getElementById('secondDateCh3').value;
     var method = document.getElementById('methodCh3').value;
-
     var chartType = document.getElementById('chartTypeCh3').value;
     var mainLabel = "";
 
@@ -187,7 +191,7 @@ function getReport() {
 
             // remove old canvas and add new canvas because they are gonna collapse with each other*****************
             removeElement('myChart3');
-            removeElement('holder');
+            // removeElement('holder');
             var html = '<canvas></canvas>';
             addElement('chart3Container', 'canvas', 'myChart3', html);
 
@@ -269,7 +273,7 @@ function removeElement(elementId) {
 var t = new Date();
 var dd = String(t).padStart(2, '0');
 var mm = String(t.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = t.getFullYear();
+var yyyy = t.getFullYear()-1;
 
 t = yyyy + '-' + mm + '-' + dd;
 

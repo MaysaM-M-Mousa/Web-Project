@@ -9,7 +9,7 @@
 <script src="Scripts/dashboard.js"></script>
 
 
-<div class="container">
+<div class="container forms">
     <div id="element">
         <!-- Add the HTML <div> element  -->
         <div>
@@ -91,12 +91,12 @@
                 <div id="two" class="e-panel" data-row="0" data-col="0" data-sizeX="4" data-sizeY="3">
                     <div class="e-panel-container container-fluid">
                         <div class="row" id="chart3Container">
-                            <h2 id="holder" style="margin: 50px auto 0; display: block;" class="main-h2">Please Select a Type and date range to view charts</h2>
                             <canvas class="col-12" id="myChart3"></canvas>
                         </div>
                         <hr>
                         <div class="dash-border-2">
-                            <div class="dash-border-1" style="height: 100%"><!--dates row-->
+                            <div class="dash-border-1" style="height: 100%">
+                                <!--dates row-->
                                 <div class="row">
                                     <div class="form-group col-6 row">
                                         <label for="firstDateCh3" class="col-3 col-form-label">First Date:</label>
@@ -115,31 +115,29 @@
                                 </div>
                                 <!--selection row-->
                                 <div class="row">
-                                    <div class="row col-4">
-                                        <label for="chartType" class="col-3 col-form-label">Chart Type:</label>
-                                        <div class="col-9">
-                                            <select class="form-select" id="chartTypeCh3">
-                                                <option value="line">Line</option>
-                                                <option value="radar">Radar</option>
-                                                <option value="bar">Bar</option>
-                                                <option value="doughnut">Doughnut</option>
-                                                <option value="pie">Pie</option>
-                                                <option value="polarArea">Polar Area</option>
-                                            </select>
-                                        </div>
+                                    <div class="col-4">
+                                        <label for="chartType" class=" col-form-label">Chart Type:</label>
+                                        <select class="form-select" id="chartTypeCh3">
+                                            <option value="line">Line</option>
+                                            <option value="radar">Radar</option>
+                                            <option value="bar">Bar</option>
+                                            <option value="doughnut">Doughnut</option>
+                                            <option value="pie">Pie</option>
+                                            <option value="polarArea">Polar Area</option>
+                                        </select>
                                     </div>
-                                    <div class="row col-4">
-                                        <label for="chartType" class="col-3 col-form-label">Method:</label>
-                                        <div class="col-9">
+                                    <div class="col-4">
+                                        <label for="chartType" class=" col-form-label">Method:</label>
                                             <select class="form-select" id="methodCh3">
                                                 <option value="bookings">Bookings</option>
                                                 <option value="orders">Orders</option>
                                                 <option value="rooms">Rooms</option>
                                             </select>
-                                        </div>
+
                                     </div>
-                                    <div class="row col-4">
-                                        <button class="btn btn-primary" id="clickBTN" onclick="getReport()">Get Report
+                                    <div class=" col-4" style=" margin-top: 28px;">
+                                        <button class="btn btn-primary" style="height: 40px" id="clickBTN"
+                                                onclick="getReport()">Get Report
                                         </button>
                                     </div>
                                 </div>
@@ -253,7 +251,8 @@
                 <div id="six" class="e-panel" data-row="3" data-col="0" data-sizeX="2" data-sizeY="2">
                     <div class="e-panel-container p-4">
                         <div class="chart-container" style="position: relative; height:90%; ">
-                            <canvas id="myChart2" style="    position: absolute;display: block;width: 80%;left: 1%;"></canvas>
+                            <canvas id="myChart2"
+                                    style="    position: absolute;display: block;width: 80%;left: 1%;"></canvas>
                         </div>
                     </div>
                 </div>
