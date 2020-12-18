@@ -41,16 +41,19 @@ if (isset($_POST['reserveRoom'], $_POST['dateRange'], $_POST['roomType'])) {
 
     // check if there interconnected dates, if so, the booking will not be done
     $sql = '
-    select * from booking where booking.person_id=:person_id
+   select * from booking where booking.person_id=14
     and 
     (
-    	((:start_date > booking.start_date and :start_date < booking.end_date) and (not(:end_date > booking.start_date and 
-          :end_date           < booking.end_date))) 	
+    	((:person_id > booking.start_date and :person_id < booking.end_date) and (not(:end_date > booking.start_date and 
+          :end_date < booking.end_date))) 	
 		or
-        ((not(:start_date > booking.start_date and :start_date < booking.end_date)) and (:end_date > booking.start_date and 
-         :end_date < booking.end_date)) 
+        ((not(:person_id > booking.start_date and :person_id < booking.end_date)) and (:end_date > booking.start_date and 
+          :end_date < booking.end_date)) 
         or
-        ((:start_date > booking.start_date and :start_date < booking.end_date) and (:end_date > booking.start_date and :end_date 		< booking.end_date)) 
+        ((:person_id > booking.start_date and :person_id < booking.end_date) and (:end_date > booking.start_date and :end_date 			< booking.end_date)) 
+        or
+        ((:person_id <= booking.start_date) and (:end_date >= booking.end_date))
+        
     )
     order by booking.end_date';
 
@@ -62,7 +65,7 @@ if (isset($_POST['reserveRoom'], $_POST['dateRange'], $_POST['roomType'])) {
         ':end_date' => $endDate
     ));
     if ($stmt->rowCount() > 0) {
-        echo 'You have a crossed dates, choose another date!';
+        echo '<span style="color: red">You have a crossed dates, choose another date!</span>';
         return;
     }
 

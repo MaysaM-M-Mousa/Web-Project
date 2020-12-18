@@ -32,7 +32,7 @@
         <a class="brand" href="index.php">La Terra Santa</a>
         <div class="sepr"></div>
         <div class="sepl"></div>
-        <h6>Hotel</h6>
+<!--        <h6>Hotel</h6>-->
     </div>
     <button type="button" id="sidebarCollapse" class="btn btn-primary">
         <i class="fa fa-bars" style="color:#B79040;font-size: 24px;"></i>
