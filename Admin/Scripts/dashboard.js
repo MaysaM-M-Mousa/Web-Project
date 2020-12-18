@@ -271,19 +271,19 @@ function removeElement(elementId) {
     element.parentNode.removeChild(element);
 }
 
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
+var t = new Date();
+var dd = String(t).padStart(2, '0');
+var mm = String(t.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = t.getFullYear();
 
-today = yyyy + '-' + mm + '-' + dd;
+t = yyyy + '-' + mm + '-' + dd;
 
-document.getElementById("secondDateCh3").defaultValue = today;
+document.getElementById("secondDateCh3").defaultValue = t;
 
 
 
-var dd = String(today.getDate() - 2).padStart(2, '0');
-today = yyyy + '-' + mm + '-' + dd;
-document.getElementById("firstDateCh3").defaultValue = today;
+var dd = String(t - 2).padStart(2, '0');
+t = yyyy + '-' + mm + '-' + dd;
+document.getElementById("firstDateCh3").defaultValue = t;
 
 // end of chart3 ***************************************************************************************************

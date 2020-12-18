@@ -2,10 +2,11 @@
 <link href="https://cdn.syncfusion.com/ej2/ej2-layouts/styles/material.css" rel="stylesheet" type="text/css"/>
 <script src="../Vendor/DatePicker/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
 <script src="../Vendor/DatePicker/ej2-layouts/dist/global/ej2-layouts.min.js" type="text/javascript"></script>
-<script src="Scripts/calender.js" type="text/javascript"></script>
+<!--<script src="Scripts/calender.js" type="text/javascript"></script>-->
 
 <link rel="stylesheet" href="CSS/dashboard.css">
 <link rel="stylesheet" href="CSS/calender.css">
+<script src="Scripts/dashboard.js"></script>
 
 
 <div class="container">
@@ -14,7 +15,7 @@
         <div>
             <!--element which is going to render the dashboardlayout-->
             <div id="dashboard_inline">
-                <div id="one" class="e-panel" data-row="0" data-col="0" data-sizeX="1" data-sizeY="1">
+                <div id="one" class="e-panel" data-row="0" data-col="3" data-sizeX="1" data-sizeY="1">
                     <div class="e-panel-container">
                         <div class="clock">
                             <div class="clock__second"></div>
@@ -85,7 +86,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="two" class="e-panel" data-row="0" data-col="1" data-sizeX="3" data-sizeY="2">
+                <div id="two" class="e-panel" data-row="0" data-col="0" data-sizeX="3" data-sizeY="2">
                     <div class="e-panel-container">
                         <div class="content">
 
@@ -143,12 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="three" class="e-panel" data-row="0" data-col="4" data-sizeX="1" data-sizeY="3">
-                    <div class="e-panel-container">
-                        <div class="content">2</div>
-                    </div>
-                </div>
-                <div id="four" class="e-panel" data-row="1" data-col="0" data-sizeX="1" data-sizeY="1">
+                <div id="four" class="e-panel" data-row="1" data-col="3" data-sizeX="1" data-sizeY="1">
                     <div class="e-panel-container">
                         <div class="yellow">
                             <div id="calendar">
@@ -251,24 +247,16 @@
                         </div>
                     </div>
                 </div>
-                <div id="six" class="e-panel" data-row="2" data-col="2" data-sizeX="1" data-sizeY="1">
+                <div id="six" class="e-panel" data-row="2" data-col="2" data-sizeX="2" data-sizeY="1">
                     <div class="e-panel-container">
                         <div class="content">
                             <canvas id="myChart2" style="width: 100%;height: 100%"></canvas>
                         </div>
                     </div>
                 </div>
-                <div id="seven" class="e-panel" data-row="2" data-col="3" data-sizeX="1" data-sizeY="1">
-                    <div class="e-panel-container">
-                        <div class="content">6</div>
-                    </div>
-                </div>
             </div>
 
         </div>
-        <script src="Scripts/dashboard.js"></script>
-
-
     </div>
 </div>
 

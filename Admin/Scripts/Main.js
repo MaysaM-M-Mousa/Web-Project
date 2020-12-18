@@ -592,9 +592,18 @@ function deleteItemBTN(item_id) {
 
 // AJAX for Booking feature
 $("#bookingLink").click(function () {
-    $.post('Features/Booking/AllBooking.php', function (data, status) {
-        if (status === 'success')
-            document.getElementById('content').innerHTML = data;
+    $.ajax({
+        type: 'POST',
+        url: 'Features/Booking/AllBooking.php',
+        success: function (data) {
+            $("#content").html(data);
+            if ($("#bookings").length > 0) {
+                var table = $('#bookings').DataTable({
+                    "scrollX": true,
+                    responsive: true
+                });
+            }
+        }
     })
 })
 

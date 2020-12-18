@@ -15,6 +15,7 @@
     <title>La Terra Santa &reg;</title>
     <link rel="stylesheet" href="../Vendor/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
     <link rel="stylesheet" href="../Vendor/CSS/flaticon.css" type="text/css">
     <link rel="stylesheet" href="CSS/dropzone.min.css">
@@ -136,6 +137,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="../Vendor/script/bootstrap.min.js"></script>
 <script src="../Vendor/script/popper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 
 <script src="Scripts/Main.js"></script>
 
@@ -143,7 +145,6 @@
 <!-- Main Quill library -->
 <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
 <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-
 
 </body>
 </html>
