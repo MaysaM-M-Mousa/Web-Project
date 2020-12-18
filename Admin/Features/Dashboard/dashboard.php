@@ -2,7 +2,7 @@
 <link href="https://cdn.syncfusion.com/ej2/ej2-layouts/styles/material.css" rel="stylesheet" type="text/css"/>
 <script src="../Vendor/DatePicker/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
 <script src="../Vendor/DatePicker/ej2-layouts/dist/global/ej2-layouts.min.js" type="text/javascript"></script>
-<!--<script src="Scripts/calender.js" type="text/javascript"></script>-->
+<script src="Scripts/calender.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="CSS/dashboard.css">
 <link rel="stylesheet" href="CSS/calender.css">
@@ -15,7 +15,8 @@
         <div>
             <!--element which is going to render the dashboardlayout-->
             <div id="dashboard_inline">
-                <div id="one" class="e-panel" data-row="0" data-col="3" data-sizeX="1" data-sizeY="1">
+                <!--                //clock-->
+                <div id="one" class="e-panel" data-row="0" data-col="4" data-sizeX="1" data-sizeY="1">
                     <div class="e-panel-container">
                         <div class="clock">
                             <div class="clock__second"></div>
@@ -86,65 +87,67 @@
                         </div>
                     </div>
                 </div>
-                <div id="two" class="e-panel" data-row="0" data-col="0" data-sizeX="3" data-sizeY="2">
-                    <div class="e-panel-container">
-                        <div class="content">
-
-                            <div class="row" id="chart3Container">
-                                <canvas id="myChart3"></canvas>
-                            </div>
-                            <hr>
-
-
-                            <!--dates row-->
-                            <div class="row">
-                                <div class="form-group col-6 row">
-                                    <label for="firstDateCh3" class="col-3 col-form-label">First Date:</label>
-                                    <div class="col-9">
-                                        <input class="form-control" type="date" value="2020-12-10" id="firstDateCh3">
+                <!--                //main chart-->
+                <div id="two" class="e-panel" data-row="0" data-col="0" data-sizeX="4" data-sizeY="3">
+                    <div class="e-panel-container container-fluid">
+                        <div class="row" id="chart3Container">
+                            <h2 id="holder" style="margin: 50px auto 0; display: block;" class="main-h2">Please Select a Type and date range to view charts</h2>
+                            <canvas class="col-12" id="myChart3"></canvas>
+                        </div>
+                        <hr>
+                        <div class="dash-border-2">
+                            <div class="dash-border-1" style="height: 100%"><!--dates row-->
+                                <div class="row">
+                                    <div class="form-group col-6 row">
+                                        <label for="firstDateCh3" class="col-3 col-form-label">First Date:</label>
+                                        <div class="col-9">
+                                            <input class="form-control" type="date" value="2020-12-10"
+                                                   id="firstDateCh3">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-6 row">
+                                        <label for="secondDateCh3" class="col-3 col-form-label">Second Date:</label>
+                                        <div class="col-9">
+                                            <input class="form-control" type="date" value="2020-12-20"
+                                                   id="secondDateCh3">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group col-6 row">
-                                    <label for="secondDateCh3" class="col-3 col-form-label">Second Date:</label>
-                                    <div class="col-9">
-                                        <input class="form-control" type="date" value="2020-12-20" id="secondDateCh3">
+                                <!--selection row-->
+                                <div class="row">
+                                    <div class="row col-4">
+                                        <label for="chartType" class="col-3 col-form-label">Chart Type:</label>
+                                        <div class="col-9">
+                                            <select class="form-select" id="chartTypeCh3">
+                                                <option value="line">Line</option>
+                                                <option value="radar">Radar</option>
+                                                <option value="bar">Bar</option>
+                                                <option value="doughnut">Doughnut</option>
+                                                <option value="pie">Pie</option>
+                                                <option value="polarArea">Polar Area</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!--selection row-->
-
-                            <div class="row">
-                                <div class="row col-4">
-                                    <label for="chartType" class="col-3 col-form-label">Chart Type:</label>
-                                    <div class="col-9">
-                                        <select class="form-select" id="chartTypeCh3">
-                                            <option value="line">Line</option>
-                                            <option value="radar">Radar</option>
-                                            <option value="bar">Bar</option>
-                                            <option value="doughnut">Doughnut</option>
-                                            <option value="pie">Pie</option>
-                                            <option value="polarArea">Polar Area</option>
-                                        </select>
+                                    <div class="row col-4">
+                                        <label for="chartType" class="col-3 col-form-label">Method:</label>
+                                        <div class="col-9">
+                                            <select class="form-select" id="methodCh3">
+                                                <option value="bookings">Bookings</option>
+                                                <option value="orders">Orders</option>
+                                                <option value="rooms">Rooms</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row col-4">
-                                    <label for="chartType" class="col-3 col-form-label">Method:</label>
-                                    <div class="col-9">
-                                        <select class="form-select" id="methodCh3">
-                                            <option value="bookings">Bookings</option>
-                                            <option value="orders">Orders</option>
-                                            <option value="rooms">Rooms</option>
-                                        </select>
+                                    <div class="row col-4">
+                                        <button class="btn btn-primary" id="clickBTN" onclick="getReport()">Get Report
+                                        </button>
                                     </div>
-                                </div>
-                                <div class="row col-4">
-                                    <button class="btn btn-primary" id="clickBTN" onclick="getReport()">Get Report</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="four" class="e-panel" data-row="1" data-col="3" data-sizeX="1" data-sizeY="1">
+                <div id="four" class="e-panel" data-row="1" data-col="4" data-sizeX="1" data-sizeY="2">
                     <div class="e-panel-container">
                         <div class="yellow">
                             <div id="calendar">
@@ -240,14 +243,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="five" class="e-panel" data-row="2" data-col="0" data-sizeX="2" data-sizeY="1">
+                <div id="five" class="e-panel" data-row="3" data-col="2" data-sizeX="3" data-sizeY="2">
                     <div class="e-panel-container">
                         <div class="content">
                             <canvas id="myChart1"></canvas>
                         </div>
                     </div>
                 </div>
-                <div id="six" class="e-panel" data-row="2" data-col="2" data-sizeX="2" data-sizeY="1">
+                <div id="six" class="e-panel" data-row="3" data-col="0" data-sizeX="2" data-sizeY="2">
                     <div class="e-panel-container">
                         <div class="content">
                             <canvas id="myChart2" style="width: 100%;height: 100%"></canvas>

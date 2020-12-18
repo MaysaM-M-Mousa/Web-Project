@@ -193,6 +193,7 @@ function getReport() {
 
             // remove old canvas and add new canvas because they are gonna collapse with each other*****************
             removeElement('myChart3');
+            removeElement('holder');
             var html = '<canvas></canvas>';
             addElement('chart3Container', 'canvas', 'myChart3', html);
 

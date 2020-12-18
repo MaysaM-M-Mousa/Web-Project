@@ -67,7 +67,7 @@
             </li>
             <li id=itemRequest>
                 <i class="far fa-blanket icon"></i>
-                <a href="#"> Item Request</a>
+                <a href="#"> Services</a>
             </li>
 
             <li id="settings">

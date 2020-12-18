@@ -5,10 +5,10 @@ session_start();
 
 $sql = 'select * from booking,person,room where person.person_id=booking.person_id and room.room_id=booking.room_id';
 $result = $pdo->query($sql);
-$row = $result->fetch(PDO::FETCH_ASSOC);
+//$row = $result->fetch(PDO::FETCH_ASSOC);
 
 ?>
-<div class="container">
+<div class="container-fluid px-5">
     <section>
         <h1 class="main-h1">Bookings</h1>
         <hr class="line">
@@ -44,7 +44,7 @@ $row = $result->fetch(PDO::FETCH_ASSOC);
                     <td><?php echo $row['end_date'] ?></td>
                     <td><?php echo $row['room_number'] ?></td>
                     <td><?php echo $row['room_type'] ?></td>
-                    <td class="edit_r"><button onclick="EditBook(this.value)" value="<?php echo $row['book_id'] ?>">Edit</button></td>
+                    <td class="edit_r"><button class="edit-table fas fa-edit" onclick="EditBook(this.value)" value="<?php echo $row['book_id'] ?>"></button></td>
                 </tr>
 
                 <?php

@@ -1319,6 +1319,18 @@ span.content {
     margin-left: auto;
     margin-right: auto;
 }
+.dash-border-2{
+    height: 27%;
+    margin-top: 0;
+    padding: 2px;
+    border: 2px solid #B79040;
+    background: white;
+    box-shadow: none;
+}
+.dash-border-1{
+    padding: 35px 20px;
+    border: 1px solid #B79040;
+}
 
 .forms .btn-secondary {
     width: 110px;

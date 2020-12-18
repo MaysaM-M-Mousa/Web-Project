@@ -181,100 +181,115 @@ if (isset($_POST['book_id'])) {
 
 ?>
 <!-- room type, -->
-<div class="container">
 
-    <div class="form-group row">
-        <label class="col-sm-2 control-label" for="cusName">Customer Name:</label>
-        <input type="text" class="col-8 form-control" id="cusName" disabled
-               value="<?php echo $mainRow['first_name'] . ' ' . $mainRow['last_name'] ?>">
+<div class="container forms">
+    <div onclick="allRooms()" class="back-btn">
+        <i class="fal fa-arrow-left"></i>
     </div>
+    <div class="form-border-2">
+        <div class="form-border-1">
+            <section>
+                <h1 class="main-h1 pt-4">Edit <?php echo $mainRow['first_name'] . ' ' . $mainRow['last_name'] ?>'s Booking</h1>
+                <hr class="line">
+                <p class="main-content">Please fill the form below with information about the Booking you want to
+                    edit..</p>
+            </section>
+            <div class="row mx-3">
+                <label for="#cusName" class="col-12 col-md-3">Customer Name:</label>
+                <input type="text" class="col-12 col-md-9 form-control" id="cusName" disabled
+                       value="<?php echo $mainRow['first_name'] . ' ' . $mainRow['last_name'] ?>">
+            </div>
+            <div class="row mx-3">
+                <label for="#cusEmail" class="col-12 col-md-3">Customer Email:</label>
+                <input type="text" class="col-12 col-md  form-control" id="cusEmail" disabled
+                       value="<?php echo $mainRow['person_email'] ?>">
+            </div>
+            <div class="row mx-3">
+                <label for="#mobile" class="col-12 col-md-3">Customer Mobile:</label>
 
-    <div class="form-group row">
-        <label class="col-sm-2 control-label" for="cusEmail">Customer Email:</label>
-        <input type="text" class="col-8  form-control" id="cusEmail" disabled
-               value="<?php echo $mainRow['person_email'] ?>">
+                <input type="text" class="col-12 col-md form-control" id="mobile" disabled
+                       value="<?php echo $mainRow['mobile'] ?>">
+
+            </div>
+            <div class="row mx-3">
+                <label for="#startDateEdit" class="col-12 col-md-3">Start Date:</label>
+
+                <input class="form-control col-12 col-md" type="date" value="<?php echo $mainRow['start_date'] ?>" id="startDateEdit"
+                    <?php echo $passed ? '' : 'disabled' ?>>
+
+            </div>
+            <div class="row mx-3">
+                <label for="#endDateEdit" class="col-12 col-md-3">End Date:</label>
+
+                <input class="form-control col-12 col-md" type="date" value="<?php echo $mainRow['end_date'] ?>" id="endDateEdit"
+                    <?php echo $passed ? '' : 'disabled' ?>>
+
+            </div>
+
+            <div class="row mx-3">
+                <label for="#roomType" class="col-12 col-md-3">Room Number: </label>
+                <select onchange="EditBooking(this.value,<?php echo $mainRow['person_id'] ?>)" class="custom-select col-12 col-md"
+                        required
+                        name="roomType"
+                        id="roomType" <?php echo $passed ? '' : 'disabled' ?>>
+                    <option value="Room Type">Room Type</option>
+                    <?php
+                    $roomTypeArr = array('Single', 'Double', 'Quad', 'King');
+                    for ($i = 0; $i < sizeof($roomTypeArr); $i++)
+                        if ($roomTypeArr[$i] === $mainRow['room_type'])
+                            echo "<option selected value='$roomTypeArr[$i]'>$roomTypeArr[$i]</option>";
+                        else
+                            echo "<option value='$roomTypeArr[$i]'>$roomTypeArr[$i]</option>";
+                    ?>
+                </select>
+            </div>
+            <div class="row mx-3 mb-2">
+                <label for="#roomNumberFB" class="col-12 col-md-3">Room Number: </label>
+                <select class="custom-select col-12 col-md" required id="roomNumberFB" name="roomNumberFB"
+                    <?php echo $passed ? '' : 'disabled' ?>>
+                    <?php
+                    $stmt = $pdo->prepare($roomSQL);
+                    $stmt->execute(array(
+                        ':start_date' => $mainRow['start_date'],
+                        ':end_date' => $mainRow['end_date'],
+                        ':room_type' => $mainRow['room_type']
+                    ));
+
+                    //store roomNum and roomID
+                    $currRoomID = $mainRow['room_id'];
+                    $currRoomNumber = $mainRow['room_number'];
+
+                    echo '<option value="">Available Rooms</option>';
+                    echo "<option selected value='$currRoomID'>$currRoomNumber</option>";
+                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                        $room_id = $row['room_id'];
+                        $room_number = $row['room_number'];
+                        echo "<option value='$room_id'>$room_number</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+
+            <div class="row mx-3 py-4">
+                <div class="col-12 offset-md-3 col-md-3">
+                    <input onclick="deleteBook(<?php echo $mainRow['book_id'] . ',' . "'" . $mainRow['start_date'] . "'" ?>)"
+                        <?php echo $passed ? '' : 'disabled ' ?>
+                           class="btn btn-danger"
+                           value="Delete This Book">
+                </div>
+                <div class="col-12 offset-md-1 col-md-4">
+                    <input  onclick="submitChangingBooking(<?php echo $mainRow['book_id'] . ',' . $mainRow['person_id'] ?>)"
+                        <?php echo $passed ? '' : 'disabled ' ?> type="button"
+                            class="btn btn-primary" value="Update Changes">
+                </div>
+                <div class="row" id="editBookingResult">
+            </div>
+        </div>
     </div>
-
-    <div class="form-group row">
-        <label class="col-2 control-label" for="mobile">Mobile:</label>
-        <input type="text" class="col-8 form-control" id="mobile" disabled
-               value="<?php echo $mainRow['mobile'] ?>">
-    </div>
-
-    <div class="form-group row">
-        <label for="startDateEdit" class="col-2 col-form-label">Start Date:</label>
-        <input class="form-control col-8" type="date" value="<?php echo $mainRow['start_date'] ?>" id="startDateEdit"
-            <?php echo $passed ? '' : 'disabled' ?>>
-    </div>
-
-    <div class="form-group row">
-        <label for="endDateEdit" class="col-2 col-form-label">End Date:</label>
-        <input class="form-control col-8" type="date" value="<?php echo $mainRow['end_date'] ?>" id="endDateEdit"
-            <?php echo $passed ? '' : 'disabled' ?>>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-2" for="roomType">Room Type: </label>
-        <select onchange="EditBooking(this.value,<?php echo $mainRow['person_id'] ?>)" class="custom-select col-8"
-                required
-                name="roomType"
-                id="roomType" <?php echo $passed ? '' : 'disabled' ?>>
-            <option value="Room Type">Room Type</option>
-            <?php
-            $roomTypeArr = array('Single', 'Double', 'Quad', 'King');
-            for ($i = 0; $i < sizeof($roomTypeArr); $i++)
-                if ($roomTypeArr[$i] === $mainRow['room_type'])
-                    echo "<option selected value='$roomTypeArr[$i]'>$roomTypeArr[$i]</option>";
-                else
-                    echo "<option value='$roomTypeArr[$i]'>$roomTypeArr[$i]</option>";
-            ?>
-        </select>
-    </div>
-
-    <div class="form-group row">
-        <label class="col-2" for="roomNumber">Room Number: </label>
-        <select class="custom-select col-8" required id="roomNumberFB" name="roomNumberFB"
-            <?php echo $passed ? '' : 'disabled' ?>>
-            <?php
-            $stmt = $pdo->prepare($roomSQL);
-            $stmt->execute(array(
-                ':start_date' => $mainRow['start_date'],
-                ':end_date' => $mainRow['end_date'],
-                ':room_type' => $mainRow['room_type']
-            ));
-
-            //store roomNum and roomID
-            $currRoomID = $mainRow['room_id'];
-            $currRoomNumber = $mainRow['room_number'];
-
-            echo '<option value="">Available Rooms</option>';
-            echo "<option selected value='$currRoomID'>$currRoomNumber</option>";
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $room_id = $row['room_id'];
-                $room_number = $row['room_number'];
-                echo "<option value='$room_id'>$room_number</option>";
-            }
-            ?>
-        </select>
-    </div>
-
-    <div class="row">
-
-        <button class="btn btn-danger"
-                onclick="deleteBook(<?php echo $mainRow['book_id'] . ',' . "'" . $mainRow['start_date'] . "'" ?>)"
-            <?php echo $passed ? '' : 'disabled' ?>>Delete This Book
-        </button>
-        <button class="btn btn-primary"
-                onclick="submitChangingBooking(<?php echo $mainRow['book_id'] . ',' . $mainRow['person_id'] ?>)"
-            <?php echo $passed ? '' : 'disabled' ?>>Update Changes
-        </button>
-
-    </div>
-
-    <div class="row" id="editBookingResult">
-
-    </div>
+    <script src="Scripts/Rooms.js"></script>
 </div>
+
+
 
 <!-- if the booking starts in the curr day then you cant edit anything-->
 <!-- convert the room number to select menu-->

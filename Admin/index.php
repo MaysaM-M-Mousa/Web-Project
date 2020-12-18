@@ -112,13 +112,19 @@
                     </ul>
                 </div>
             </li>
+            <li  class="sidebar-dropdown dropright">
+                <i id ="orderIcon" class="far fa-database icon"></i>
+                <a> History</a>
+                <div class="sidebar-submenu">
+                    <ul>
+                        <li id="ordersLink">Orders</li>
+                        <li id="customerLink">Customers</li>
+                    </ul>
+                </div>
+            </li>
             <li id="contactLink">
                 <i class="far fa-cog icon"></i>
                 <a> Reviews/Contacts</a>
-            </li>
-            <li id="customerLink">
-                <i class="far fa-hotel icon"></i>
-                <a> Customers</a>
             </li>
             <li id="logOutItem">
                 <i class="far fa-door-open icon"></i>

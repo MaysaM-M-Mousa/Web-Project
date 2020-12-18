@@ -129,6 +129,9 @@
     $("#customerLink").click(function () {
         $("#content").load('Features/Users/AllUsers.php');
     })
+    $("#ordersLink").click(function () {
+        $("#content").load('Features/Orders/allOrders.php');
+    })
 })(jQuery);
 
 //End jQuery

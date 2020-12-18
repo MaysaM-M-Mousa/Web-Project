@@ -8,27 +8,28 @@
 //}
 require_once 'pdo.php';
 
-$sql = 'select * from person where person_role=0 and active=1';
+$sql = 'select * from orders,item,person,booking where person.person_id=booking.person_id and booking.book_id=orders.book_id and item.item_id=orders.item_id';
 $result = $pdo->query($sql);
 ?>
 
 
 <div class="container">
     <section>
-        <h1 class="main-h1">Customers</h1>
+        <h1 class="main-h1">Orders</h1>
         <hr class="line">
-        <p class="main-content">The table below contains all information about hotel's customers..</p>
+        <p class="main-content">The table below contains all information about hotel's orders of all the time..</p>
     </section>
 
     <div class="row forms mt-5">
-        <table id="customers" class="table table-striped table-light " style="width:100%">
+        <table id="orders" class="table table-striped table-light " style="width:100%">
             <thead>
             <tr>
             <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Mobile</th>
-                <th>City</th>
+                <th>Customer Name</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Order Date</th>
+
 
             </tr>
             </tr>
@@ -40,9 +41,9 @@ $result = $pdo->query($sql);
                 ?>
                 <tr>
                     <td><?php echo $row['first_name'].' '.$row['last_name'] ?></td>
-                    <td><?php echo $row['person_email'] ?></td>
-                    <td><?php echo $row['mobile'] ?></td>
-                    <td><?php echo $row['city'] ?></td>
+                    <td><?php echo $row['item_name'] ?></td>
+                    <td><?php echo $row['quantity'] ?></td>
+                    <td><?php echo $row['order_time'] ?></td>
                 </tr>
 
                 <?php
@@ -58,9 +59,9 @@ $result = $pdo->query($sql);
 <script src="Scripts/dataTables.bootstrap4.min.js"></script>
 <script>
    $(document).ready(function (){
-       if ($("#customers").length > 0) {
+       if ($("#orders").length > 0) {
        }
-        var table = $('#customers').DataTable({
+        var table = $('#orders').DataTable({
             "scrollX": true,
             responsive: true
         });
