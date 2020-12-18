@@ -98,6 +98,12 @@
         $("#addRoom").click(function () {
             $('#content').load('Features/Room/addRoom.php');
         })
+        $("#addEmployee").click(function () {
+            $('#content').load('Features/Room/addRoom.php');
+        })
+        $("#allEmployees").click(function () {
+            $('#content').load('Features/Room/addRoom.php');
+        })
     });
 
 // when categories.php is loaded, each category card has Browse btn, this function handles the event when it's clicked

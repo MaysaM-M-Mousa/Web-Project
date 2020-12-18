@@ -119,6 +119,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
             <li class="active"><a href="index.php">Home</a></li>
             <li><a class="aboutmb" >About Us</a></li>
             <li><a href="SignUp.php">Reserve</a></li>
+            <li><a href="#login" class="trigger-btn" data-toggle="modal">Sign In</a></li>
             <li><a class="contactus">Contact</a></li>
         </ul>
     </nav>

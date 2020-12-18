@@ -246,14 +246,14 @@
                 <div id="five" class="e-panel" data-row="3" data-col="2" data-sizeX="3" data-sizeY="2">
                     <div class="e-panel-container">
                         <div class="content">
-                            <canvas id="myChart1"></canvas>
+                            <canvas style="position:absolute;bottom: 10%;" id="myChart1"></canvas>
                         </div>
                     </div>
                 </div>
                 <div id="six" class="e-panel" data-row="3" data-col="0" data-sizeX="2" data-sizeY="2">
-                    <div class="e-panel-container">
-                        <div class="content">
-                            <canvas id="myChart2" style="width: 100%;height: 100%"></canvas>
+                    <div class="e-panel-container p-4">
+                        <div class="chart-container" style="position: relative; height:90%; ">
+                            <canvas id="myChart2" style="    position: absolute;display: block;width: 80%;left: 1%;"></canvas>
                         </div>
                     </div>
                 </div>

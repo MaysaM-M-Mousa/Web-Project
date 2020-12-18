@@ -28,19 +28,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="for logo">
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Orders/AllOrders.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/Features/Orders/pdo.php" afterDir="false" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="orders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/AllBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/AllBooking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/CSS/dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/dashboard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/Scripts/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608313954483</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="orders">
+      <created>1608319758316</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1608319758316</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,7 +297,8 @@
     <MESSAGE value="Home Ready with signup 2" />
     <MESSAGE value="Almost there" />
     <MESSAGE value="for logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="for logo" />
+    <MESSAGE value="orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="orders" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1607176073908">
@@ -421,11 +423,11 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607169710007" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607456806423" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608313965854">
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608319767912">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="442" y="222" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607217373236" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608313965854" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608319767912" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -33,6 +33,11 @@
 }
 
 .e-dashboardlayout.e-control .e-panel {
+    border: 1px #B79040 solid!important;
+}
+
+
+.e-dashboardlayout.e-control .e-panel {
     background: #fff;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
     box-sizing: border-box;
@@ -44,7 +49,9 @@
     background: #232530;
 
 }
+.e-dashboardlayout.e-control .e-panel .e-panel-container {
 
+}
 .clock {
     height: 100%;
     width: 100%;
