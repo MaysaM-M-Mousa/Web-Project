@@ -1733,122 +1733,122 @@ div.dataTables_wrapper div.dataTables_info {
 
 /*********file upload**********************/
 
-.fileuploader {
-    position: relative;
-    margin: auto;
-    height: 120px;
-    border: 2px dashed #B79040;
-    background: #f6f6f6;
-}
+/*.fileuploader {*/
+/*    position: relative;*/
+/*    margin: auto;*/
+/*    height: 120px;*/
+/*    border: 2px dashed #B79040;*/
+/*    background: #f6f6f6;*/
+/*}*/
 
-.fileuploader #upload-label {
-    background: rgba(231, 97, 92, 0);
-    color: #fff;
-    height: 115px;
-    margin-right: auto;
-    margin-left: auto;
-    min-width: 20%;
-    cursor: pointer;
-}
+/*.fileuploader #upload-label {*/
+/*    background: rgba(231, 97, 92, 0);*/
+/*    color: #fff;*/
+/*    height: 115px;*/
+/*    margin-right: auto;*/
+/*    margin-left: auto;*/
+/*    min-width: 20%;*/
+/*    cursor: pointer;*/
+/*}*/
 
-.fileuploader.active {
-    background: #fff;
-}
+/*.fileuploader.active {*/
+/*    background: #fff;*/
+/*}*/
 
-.fileuploader.active #upload-label {
-    background: #fff;
-    color: #B79040;
-}
+/*.fileuploader.active #upload-label {*/
+/*    background: #fff;*/
+/*    color: #B79040;*/
+/*}*/
 
-.fileuploader #upload-label i:hover {
-    color: #B79040;
-    transition: all 0.7s ease-in-out;
-    -moz-transition: all 0.7s ease-in-out;
-    -o-transition: all 0.7s ease-in-out;
-    -webkit-transition: all 0.7s ease-in-out;
-}
+/*.fileuploader #upload-label i:hover {*/
+/*    color: #B79040;*/
+/*    transition: all 0.7s ease-in-out;*/
+/*    -moz-transition: all 0.7s ease-in-out;*/
+/*    -o-transition: all 0.7s ease-in-out;*/
+/*    -webkit-transition: all 0.7s ease-in-out;*/
+/*}*/
 
-.fileuploader #upload-label span.title {
-    position: relative;
-    bottom: 38px;
-    font-size: 1em;
-    font-weight: bold;
-    display: block;
-}
+/*.fileuploader #upload-label span.title {*/
+/*    position: relative;*/
+/*    bottom: 38px;*/
+/*    font-size: 1em;*/
+/*    font-weight: bold;*/
+/*    display: block;*/
+/*}*/
 
-span.tittle {
-    position: relative;
-    bottom: 38px;
-    color: rgba(35, 37, 48, 0.9);
-    font-family: "Cabin", serif;
+/*span.tittle {*/
+/*    position: relative;*/
+/*    bottom: 38px;*/
+/*    color: rgba(35, 37, 48, 0.9);*/
+/*    font-family: "Cabin", serif;*/
 
-}
+/*}*/
 
-.fileuploader #upload-label i {
-    position: relative;
-    bottom: 15px;
-    font-family: "Font Awesome 5 Pro";
-    color: rgba(35, 37, 48, 0.9);
-    text-align: center;
-    display: block;
-    height: 115px;
-    font-size: 5.5rem;
-    font-style: normal;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-    transition: all 0.7s ease-in-out;
-    -moz-transition: all 0.7s ease-in-out;
-    -o-transition: all 0.7s ease-in-out;
-    -webkit-transition: all 0.7s ease-in-out;
-}
+/*.fileuploader #upload-label i {*/
+/*    position: relative;*/
+/*    bottom: 15px;*/
+/*    font-family: "Font Awesome 5 Pro";*/
+/*    color: rgba(35, 37, 48, 0.9);*/
+/*    text-align: center;*/
+/*    display: block;*/
+/*    height: 115px;*/
+/*    font-size: 5.5rem;*/
+/*    font-style: normal;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    margin-right: auto;*/
+/*    margin-left: auto;*/
+/*    transition: all 0.7s ease-in-out;*/
+/*    -moz-transition: all 0.7s ease-in-out;*/
+/*    -o-transition: all 0.7s ease-in-out;*/
+/*    -webkit-transition: all 0.7s ease-in-out;*/
+/*}*/
 
-/** Preview of collections of uploaded documents **/
-.preview-container {
-    position: relative;
-    bottom: 0px;
-    width: 35%;
-    margin: auto;
-    top: 25px;
-    visibility: hidden;
-}
+/*!** Preview of collections of uploaded documents **!*/
+/*.preview-container {*/
+/*    position: relative;*/
+/*    bottom: 0px;*/
+/*    width: 35%;*/
+/*    margin: auto;*/
+/*    top: 25px;*/
+/*    visibility: hidden;*/
+/*}*/
 
-.preview-container #previews {
-    max-height: 400px;
-    overflow: auto;
-}
+/*.preview-container #previews {*/
+/*    max-height: 400px;*/
+/*    overflow: auto;*/
+/*}*/
 
-.preview-container #previews .zdrop-info {
-    width: 88%;
-    margin-right: 2%;
-}
+/*.preview-container #previews .zdrop-info {*/
+/*    width: 88%;*/
+/*    margin-right: 2%;*/
+/*}*/
 
-.preview-container #previews.collection {
-    margin: 0;
-    box-shadow: none;
-}
+/*.preview-container #previews.collection {*/
+/*    margin: 0;*/
+/*    box-shadow: none;*/
+/*}*/
 
-.preview-container #previews.collection .collection-item {
-    background-color: #e0e0e0;
-}
+/*.preview-container #previews.collection .collection-item {*/
+/*    background-color: #e0e0e0;*/
+/*}*/
 
-.preview-container #previews.collection .actions a {
-    width: 1.5em;
-    height: 1.5em;
-    line-height: 1;
-}
+/*.preview-container #previews.collection .actions a {*/
+/*    width: 1.5em;*/
+/*    height: 1.5em;*/
+/*    line-height: 1;*/
+/*}*/
 
-.preview-container #previews.collection .actions a i {
-    font-size: 1em;
-    line-height: 1.6;
-}
+/*.preview-container #previews.collection .actions a i {*/
+/*    font-size: 1em;*/
+/*    line-height: 1.6;*/
+/*}*/
 
-.preview-container #previews.collection .dz-error-message {
-    font-size: 0.8em;
-    margin-top: -12px;
-    color: #F44336;
-}
+/*.preview-container #previews.collection .dz-error-message {*/
+/*    font-size: 0.8em;*/
+/*    margin-top: -12px;*/
+/*    color: #F44336;*/
+/*}*/
 
 
 /*media queries*/

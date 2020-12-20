@@ -7,7 +7,25 @@ require_once 'pdo.php';
 //    return;
 //}
 
-if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
+$ds = DIRECTORY_SEPARATOR;  //1
+$storeFolder = 'images/rooms';   //2
+
+if (isset($_POST['category_name'], $_POST['description'], $_POST['image'], $_POST['image2'])) {
+
+    echo $_POST['image2'];
+
+    if (!empty($_FILES)) {
+        $tempFile = $_FILES['file']['tmp_name'];          //3
+        $targetPath = dirname(__FILE__) . $ds . $storeFolder . $ds;  //4
+        $targetFile = $targetPath . $_FILES['file']['name'];  //5
+        move_uploaded_file($tempFile, $targetFile); //6
+        echo 'fuck abed success';
+        return;
+
+    } else {
+        echo 'fuck abed';
+        return;
+    }
 
     $category_name = htmlentities($_POST['category_name']);
     $description = htmlentities($_POST['description']);
@@ -37,7 +55,9 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
     return;
 }
 
+
 ?>
+<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" type="text/css" rel="stylesheet">-->
 <div class="container forms">
     <div class="form-border-2  my-5">
         <div class="form-border-1">
@@ -49,7 +69,8 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
             </section>
             <div class="row mx-3 mt-3">
                 <label class="col-12 col-md-3" for="#categoryName">Category Name: </label>
-                <input class="col-12 col-md-9 form-control" type="text" name="categoryName" id="categoryName" placeholder="Category Name"
+                <input class="col-12 col-md-9 form-control" type="text" name="categoryName" id="categoryName"
+                       placeholder="Category Name"
                        required>
             </div>
 
@@ -62,48 +83,19 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
 
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
-                <div class="col-12 col-md-9 px-0 pb-4">
-                    <!-- Uploader Dropzone -->
-                    <form action="Features/Room/upload.php" id="zdrop" class="fileuploader text-center"
-                          target="upload_target">
-                        <div id="upload-label">
-                            <i class="fad fa-cloud-upload material-icons"></i>
-                            <span class="tittle d-none d-sm-block">Click the Button or Drop Files Here</span>
-                        </div>
-                    </form>
-                    <iframe id="upload_target" name="upload_target" src="#"
-                            style="width:0;height:0;border:0px solid #fff;"></iframe>
 
-                    <div class="preview-container">
-                        <div class="collection card" id="previews">
-                            <div class="collection-item clearhack valign-wrapper item-template"
-                                 id="zdrop-template">
-                                <div class="left pv zdrop-info" data-dz-thumbnail>
-                                    <div>
-                                        <span data-dz-name></span> <span data-dz-size></span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="determinate" style="width:0" data-dz-uploadprogress></div>
-                                    </div>
-                                    <div class="dz-error-message"><span data-dz-errormessage></span></div>
-                                </div>
+                <form action="Features/Services/Categories/AddCategory.php" class="dropzone" id="form1" method="post">
 
-                                <div class="secondary-content actions">
-                                    <a href="#" data-dz-remove
-                                       class="btn-floating ph red white-text waves-effect waves-light"><i
-                                                class="material-icons white-text">clear</i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
+
             </div>
-            <div class="row">
-                <input class="btn btn-primary" id="addCategoryBTN" type="button" onclick="addCategoryBTN()" value="Add Category">
-                <div class="col-12" id="addCatResult">
-                </div>
+        </div>
+        <div class="row">
+            <input class="btn btn-primary" id="addCategoryBTN" type="button" onclick="addCategoryBTN()"
+                   value="Add Category">
+            <div class="col-12" id="addCatResult">
             </div>
         </div>
     </div>
-    <script src="Scripts/dropzone.min.js"></script>
+</div>
 </div>

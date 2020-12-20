@@ -172,7 +172,7 @@ function jobSearch() {
         url: 'Features/JobApplications/SearchJobApps.php',
         success: function (data) {
             $("#searchJobResult").html(data);
-            let count =$("#counter").attr('class');
+            let count = $("#counter").attr('class');
         }
     })
 
@@ -231,10 +231,11 @@ function contactSearch() {
         url: 'Features/Contacts/SearchContacts.php',
         success: function (data) {
             $("#searchContactResult").html(data);
-            let count =$("#counter").attr('class');
+            let count = $("#counter").attr('class');
         }
     })
 }
+
 // contact email
 function sendEmailBTN(contact_id, counter) {
     var divID = 'MSG' + counter;
@@ -314,22 +315,44 @@ $("#AllCategoriesLink").click(function () {
 });
 
 $("#AddCategoriesLink").click(function () {
-    $.post('Features/Services/Categories/AddCategory.php', {}, function (data, status) {
-        if (status === 'success') {
-            $('#content').html(data);
+
+    $.ajax({
+        type: 'POST',
+        url: 'Features/Services/Categories/AddCategory.php',
+        success: function (data) {
+            $("#content").html(data);
+            $("#form1").dropzone({url:"Features/Services/Categories/AddCategory.php"});
         }
     })
 })
 
 function addCategoryBTN() {
-    $.post('Features/Services/Categories/AddCategory.php', {
-        'category_name': document.getElementById('categoryName').value,
-        'description': document.getElementById('categoryDescription').value,
-        'image': 'none'
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('addCatResult').innerHTML = data;
-        }
+    // $.post('Features/Services/Categories/AddCategory.php', {
+    //     'category_name': document.getElementById('categoryName').value,
+    //     'description': document.getElementById('categoryDescription').value,
+    //     'image': 'none'
+    // }, function (data, status) {
+    //     if (status === 'success') {
+    //         document.getElementById('addCatResult').innerHTML = data;
+    //     }
+    // })
+
+    var data = new FormData();
+    data.append('category_name', document.getElementById('categoryName').value);
+    data.append('description', document.getElementById('categoryDescription').value);
+    data.append('image', 'none');
+    data.append('image2', $('input[type=file]')[0].files[0]);
+
+    alert($('input[type=file]')[0].files[0]);
+    $.ajax({
+        type: 'POST',
+        url: 'Features/Services/Categories/AddCategory.php',
+        data: data,
+        success: function (data) {
+            $("#content").html(data);
+        }, contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
+        processData: false, // NEEDED, DON'T OMIT THIS
+
     })
 }
 
@@ -684,3 +707,4 @@ function deleteBook(book_id, start_date) {
 //         log(ui.item ? "Selected: " + ui.item.value + " aka " + ui.item.id : "Nothing selected, input was " + this.value);
 //     }
 // });
+

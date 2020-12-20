@@ -25,6 +25,8 @@
 <!-- Theme included stylesheets -->
 <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" type="text/css" rel="stylesheet">
 <body>
 <!--Top Nav Start-->
 <nav class="navbar navbar-dark bg-dark sticky-top">
@@ -133,7 +135,6 @@
         </ul>
     </nav>
 
-    <!-- Page Content  -->
     <div id="content">
 
     </div>
@@ -151,6 +152,8 @@
 <!-- Main Quill library -->
 <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
 <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
+
 
 </body>
 </html>

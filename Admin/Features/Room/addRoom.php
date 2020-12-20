@@ -7,8 +7,23 @@
 //}
 require_once 'pdo.php';
 
+$ds = DIRECTORY_SEPARATOR;  //1
+$storeFolder = 'images/rooms';   //2
+
 if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST['badCapacity'],
     $_POST['roomType'], $_POST['roomDescription'])) {
+
+    if (!empty($_FILES)) {
+        $tempFile = $_FILES['file']['tmp_name'];          //3
+        $targetPath = dirname(__FILE__) . $ds . $storeFolder . $ds;  //4
+        $targetFile = $targetPath . $_FILES['file']['name'];  //5
+        move_uploaded_file($tempFile, $targetFile); //6
+
+
+    }else {
+        echo 'fuck abed';
+        return;
+    }
 
     $roomNumber = htmlentities($_POST['roomNumber']);
     $rentPerNight = htmlentities($_POST['rentPerNight']);
@@ -49,6 +64,7 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
 
 ?>
 
+
 <div class="container forms">
     <div class="form-border-2  my-5">
         <div class="form-border-1">
@@ -66,17 +82,17 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
                        placeholder="Room Number"
                        required>
             </div>
-            <dix class="row mx-3">
+            <div class="row mx-3">
                 <label class="col-12 col-md-3" for="#roomType">Room Type: </label>
                 <select class="custom-select col-12 col-md-9" required name="roomType" id="roomType">
                     <option value="">Room Type</option>
                     <?php
-                    $roomTypeArr = array('Single', 'Double', 'Triple', 'Quad', 'King', 'Suit', 'Apartment');
+                    $roomTypeArr = array('Single', 'Double', 'Quad', 'King');
                     for ($i = 0; $i < sizeof($roomTypeArr); $i++)
                         echo "<option value='$roomTypeArr[$i]'>$roomTypeArr[$i]</option>";
                     ?>
                 </select>
-            </dix>
+            </div>
             <div class="row mx-3">
                 <label class="col-12 col-md-3" for="#rentPerNight">Rent: </label>
                 <input class="col-12 col-md-9 form-control" name="rentPerNight" id="rentPerNight"
@@ -105,39 +121,42 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
             </div>
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
-                <div class="col-12 col-md-9 px-0 pb-4">
-                    <!-- Uploader Dropzone -->
-                    <form action="Features/Room/upload.php" id="zdrop" class="fileuploader text-center" target="upload_target">
-                        <div id="upload-label">
-                            <i class="fad fa-cloud-upload material-icons"></i>
-                            <span class="tittle d-none d-sm-block">Click the Button or Drop Files Here</span>
-                        </div>
-                    </form>
-                    <iframe id="upload_target" name="upload_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
 
-                    <div class="preview-container">
-                        <div class="collection card" id="previews">
-                            <div class="collection-item clearhack valign-wrapper item-template"
-                                 id="zdrop-template">
-                                <div class="left pv zdrop-info" data-dz-thumbnail>
-                                    <div>
-                                        <span data-dz-name></span> <span data-dz-size></span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="determinate" style="width:0" data-dz-uploadprogress></div>
-                                    </div>
-                                    <div class="dz-error-message"><span data-dz-errormessage></span></div>
-                                </div>
+                <form action="addRoom.php" class="dropzone" method="POST">
 
-                                <div class="secondary-content actions">
-                                    <a href="#!" data-dz-remove
-                                       class="btn-floating ph red white-text waves-effect waves-light"><i
-                                                class="material-icons white-text">clear</i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
+<!--                <div class="col-12 col-md-9 px-0 pb-4">-->
+<!--                    <form action="addRoom.php" id="zdrop" class="fileuploader text-center" method="post">-->
+<!--                        <div id="upload-label">-->
+<!--                            <i class="fad fa-cloud-upload material-icons"></i>-->
+<!--                            <span class="tittle d-none d-sm-block">Click the Button or Drop Files Here</span>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                    <iframe id="upload_target" name="upload_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>-->
+<!---->
+<!--                    <div class="preview-container">-->
+<!--                        <div class="collection card" id="previews">-->
+<!--                            <div class="collection-item clearhack valign-wrapper item-template"-->
+<!--                                 id="zdrop-template">-->
+<!--                                <div class="left pv zdrop-info" data-dz-thumbnail>-->
+<!--                                    <div>-->
+<!--                                        <span data-dz-name></span> <span data-dz-size></span>-->
+<!--                                    </div>-->
+<!--                                    <div class="progress">-->
+<!--                                        <div class="determinate" style="width:0" data-dz-uploadprogress></div>-->
+<!--                                    </div>-->
+<!--                                    <div class="dz-error-message"><span data-dz-errormessage></span></div>-->
+<!--                                </div>-->
+<!---->
+<!--                                <div class="secondary-content actions">-->
+<!--                                    <a href="#!" data-dz-remove-->
+<!--                                       class="btn-floating ph red white-text waves-effect waves-light"><i-->
+<!--                                                class="material-icons white-text">clear</i></a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
             <div class="row">
                 <input id="addRoomBtn" type="button" class="btn btn-primary" value="Add Room">
@@ -145,7 +164,10 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
             </div>
         </div>
     </div>
-    <script src="Scripts/dropzone.min.js"></script>
-    <script src="Scripts/Rooms.js"></script>
+<!--    <script src="Scripts/dropzone.min.js"></script>-->
+<!--    <script src="Scripts/Rooms.js"></script>-->
+
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" type="text/css" rel="stylesheet">-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>-->
 </div>
 
