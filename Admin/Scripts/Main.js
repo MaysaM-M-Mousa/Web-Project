@@ -321,7 +321,6 @@ $("#AddCategoriesLink").click(function () {
         url: 'Features/Services/Categories/AddCategory.php',
         success: function (data) {
             $("#content").html(data);
-            $("#form1").dropzone({url:"Features/Services/Categories/AddCategory.php"});
         }
     })
 })
@@ -336,22 +335,22 @@ function addCategoryBTN() {
     //         document.getElementById('addCatResult').innerHTML = data;
     //     }
     // })
-
     var data = new FormData();
     data.append('category_name', document.getElementById('categoryName').value);
     data.append('description', document.getElementById('categoryDescription').value);
-    data.append('image', 'none');
-    data.append('image2', $('input[type=file]')[0].files[0]);
+    data.append('image', $("#image").prop("files")[0]);
+    alert(document.getElementById('categoryName').value);
+    alert($("#image").prop("files")[0]);
 
-    alert($('input[type=file]')[0].files[0]);
+    alert(document.getElementById('categoryDescription').value);
     $.ajax({
         type: 'POST',
         url: 'Features/Services/Categories/AddCategory.php',
         data: data,
         success: function (data) {
-            $("#content").html(data);
-        }, contentType: false, // NEEDED, DON'T OMIT THIS (requires jQuery 1.6+)
-        processData: false, // NEEDED, DON'T OMIT THIS
+            $("#addCatResult").html(data);
+        },
+        processData:false
 
     })
 }

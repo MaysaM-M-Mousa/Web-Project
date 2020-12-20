@@ -10,23 +10,22 @@ require_once 'pdo.php';
 $ds = DIRECTORY_SEPARATOR;  //1
 $storeFolder = 'images/rooms';   //2
 
-if (isset($_POST['category_name'], $_POST['description'], $_POST['image'], $_POST['image2'])) {
+if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
 
-    echo $_POST['image2'];
-
-    if (!empty($_FILES)) {
-        $tempFile = $_FILES['file']['tmp_name'];          //3
-        $targetPath = dirname(__FILE__) . $ds . $storeFolder . $ds;  //4
-        $targetFile = $targetPath . $_FILES['file']['name'];  //5
-        move_uploaded_file($tempFile, $targetFile); //6
-        echo 'fuck abed success';
-        return;
-
-    } else {
-        echo 'fuck abed';
-        return;
-    }
-
+//    if (isset($_FILES["file"])) {
+//        $tempFile = $_FILES['file']['tmp_name'];          //3
+//        $targetPath = dirname(__FILE__) . $ds . $storeFolder . $ds;  //4
+//        $targetFile = $targetPath . $_FILES['file']['name'];  //5
+//        move_uploaded_file($tempFile, $targetFile); //6
+//        echo 'fuck abed success';
+//        return;
+//
+//    } else {
+//        echo 'fuck abed';
+//        return;
+//    }
+    echo $_POST['image'];
+    return;
     $category_name = htmlentities($_POST['category_name']);
     $description = htmlentities($_POST['description']);
     $image = htmlentities($_POST['image']);
@@ -57,7 +56,6 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'], $_POS
 
 
 ?>
-<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" type="text/css" rel="stylesheet">-->
 <div class="container forms">
     <div class="form-border-2  my-5">
         <div class="form-border-1">
@@ -83,19 +81,19 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'], $_POS
 
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
-
-                <form action="Features/Services/Categories/AddCategory.php" class="dropzone" id="form1" method="post">
-
-                </form>
-
+                <div class="form-group files col-12 col-md-9">
+                    <label>Upload Your File </label>
+                    <input type="file" id="image" class="form-control" multiple="">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <input class="btn btn-primary" id="addCategoryBTN" type="button" onclick="addCategoryBTN()"
-                   value="Add Category">
-            <div class="col-12" id="addCatResult">
+            <div class="row">
+                <input class="btn btn-primary" id="addCategoryBTN" type="button" onclick="addCategoryBTN()"
+                       value="Add Category">
+                <div class="col-12" id="addCatResult">
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
+
+

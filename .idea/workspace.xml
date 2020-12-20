@@ -24,7 +24,7 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/abdelrahman" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/maysam" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -32,17 +32,8 @@
     <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="charts ready with default dates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/addRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/addRoom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Admin/Scripts/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Scripts/Rooms.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Rooms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/images/7gQj.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/images/Spinner-Loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/images/VZvw.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/images/ZZ5H.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/images/unnamed.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +54,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1kUCOcfm8lTi2WePfAjaCktIW3q" />
