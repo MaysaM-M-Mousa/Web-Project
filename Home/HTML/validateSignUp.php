@@ -67,6 +67,7 @@ if (isset($_POST['resend'])) {
 
 ?>
 <?php
+//TODO: validtiion look up
 
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['user_email'])
     && isset($_POST['user_pass']) && isset($_POST['confirm_user_pass']) && isset($_POST['gender'])
@@ -94,17 +95,17 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
         || strlen($year) < 1 || strlen($country) < 1 || strlen($city) < 1
         || !is_numeric($mobile) || !is_numeric($day) || !is_numeric($year) || !is_numeric($month)
     ) {
-        echo '<span style="color: darkred">All Fields Are Required!</span>';
+        echo '<span>All Fields Are Required!</span>';
         return;
     }
 
     if ($user_pass !== $confirm_user_pass) {
-        echo '<span style="color: darkred">Passwords are not identical!</span>';
+        echo '<span>Passwords are not identical!</span>';
         return;
     }
 
     if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
-        echo '<span style="color: darkred">Email must has @ character.</span>';
+        echo '<span>Email must has @ character.</span>';
         return;
     }
 
@@ -143,7 +144,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 //        header("Location: verify.php");
 
         echo "<span style=\"color: darkgreen; font-family: 'Cabin', serif\">Thank you for signing up!, a verification email was sent to you,
-                                         please verify your account to continue. </span>";
+                                         please verify your account to continue.  you will be redirected to home page in <span id=\"count\">10</span> Seconds </span>";
         return;
     } catch (PDOException $e) {
 

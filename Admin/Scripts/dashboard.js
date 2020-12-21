@@ -274,7 +274,7 @@ function removeElement(elementId) {
 }
 
 var today = new Date();
-var dd = String(today).padStart(2, '0');
+var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
@@ -283,7 +283,7 @@ today = yyyy + '-' + mm + '-' + dd;
 document.getElementById("secondDateCh3").defaultValue = today;
 
 
-var dd = String(today - 2).padStart(2, '0');
+var dd = String(today.getDate() - 2).padStart(2, '0');
 today = yyyy + '-' + mm + '-' + dd;
 document.getElementById("firstDateCh3").defaultValue = today;
 

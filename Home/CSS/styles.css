@@ -94,7 +94,16 @@ h1.insta-h1 {
     text-align: center;
 
 }
-
+#MSGTITLE{
+    color: darkred;
+    font-size: 3rem;
+}
+#MSGBODY{
+    margin-top: 0;
+}
+#msg > div{
+    width: 50% !important;
+}
 /*------------------------
   Button Links
 -------------------------*/
@@ -859,6 +868,7 @@ h1.insta-h1 {
 /*------------------------
           Footer
   -------------------------*/
+
 footer {
     background-color: #232530;
 }

@@ -9,7 +9,7 @@ if (isset($_SESSION['hash_verification']) && isset($_SESSION['user_email'])) {
     $_SESSION['temp_user_email'] = $_SESSION['user_email'];
     $to = $_SESSION['user_email'];
     $subject = 'Email Verification';
-    $headers = 'From: 1.c.f.m.m.a.m@gmail.com';
+    $headers = 'From: galleryartix@gmail.com';
     $email_msg = 'Thanks for signing up!
 Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
 
@@ -23,7 +23,7 @@ http://localhost/WebProject/Home/PHP/SignUp/verify.php?email=' . $_SESSION['user
     mail($to, $subject, $email_msg, $headers);
 
     unset($_SESSION['user_email']);
-    echo 'An Email was sent to you, check it out';
+    echo 'An Email was sent to your email, check it out to activate your account';
     echo '<div>did not send? <a href="#" onclick="resendEmailVerification()" style="color: blue">Resend Email</a></div>';
 //    echo '<div>did not send? <a href="#" onclick="resendEmailVerification()" style="color: blue">Resend Email</a></div>';
 

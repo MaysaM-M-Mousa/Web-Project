@@ -17,6 +17,20 @@ sleep(1);
 <script src="../Vendor/DatePicker/ej2-calendars/dist/global/ej2-calendars.min.js" type="text/javascript"></script>
 
 <div class="container">
+    <div id="msg" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="MSGTITLE">Sign In</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="model-wrapper">
+                        <p class="main-content" id="MSGBODY">Sign In</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <section>
         <h1 class="main-h1">Reservation</h1>
         <hr class="line">
@@ -235,7 +249,7 @@ sleep(1);
                             </div>
                         </section>
                         <!--End Booking Options Section-->
-                        <input type="button" onclick="reserveARoom()" name="next" class="next next0 action-button" value="Next"/>
+                        <input type="button" name="next" class="next next2 action-button" value="Next"/>
                         <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                     </fieldset>
                     <!--Start Finish Section -->
@@ -254,7 +268,7 @@ sleep(1);
                         <br>
                         <div class="row">
                             <div class="col-12 col-md-10 offset-md-1 justify-content-center"><p class="pb-5">
-                                    Thank you for choosing our hotel.
+                                    Thank you for choosing our hotel, Your <span style="color:#232530" id="roomNo"></span>
                                     <br/>
                                     <br/>
 
@@ -282,5 +296,6 @@ sleep(1);
     </div>
 </div>
 <script src="Scripts/Reserve.js" type="text/javascript"></script>
+
 
 

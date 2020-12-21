@@ -1,6 +1,23 @@
 <?php
-// VALIDATION
+
+require 'pdo.php';
 sleep(1);
+session_start();
+
+$sql = "select * from booking,room where booking.person_id = ".$_SESSION['person_id']." and booking.room_id=room.room_id order by end_date DESC";
+$result = $pdo->query($sql);
+$sub="Null";
+$room="You Dont have Any rooms Registered";
+$wifi="Please Reserve a Room to enjoy free wifi";
+if($result->rowCount()>0){
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    $sub= "You can Enjoy your stay with us Until ". $row['end_date'] ;
+    $room= "Your Room Number is ". $row['room_number'];
+    $wifi="Wifi Code for your room is :987852";
+}
+else
+    $sub= "You dont have any active reservations";
+
 ?>
 
 <section class="section-invert dashboard-section">
@@ -22,50 +39,42 @@ sleep(1);
                 <div class="dashboard-item">
                     <i class="far fa-hotel my-3" style="font-size: 50px"></i>
                     <h4>Reservation</h4>
-                    <p>/we add how much days he still has/</p>
+                    <p><?php echo $sub ?></p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item dashboard-item-odd">
                     <i class="fal fa-key my-3" style="font-size: 50px"></i>
                     <h4>Room</h4>
-                    <p>Your Room Number is, refere this when ordring services</p>
+                    <p><?php echo $room ?></p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item">
-                    <i class="flaticon-026-bed"></i>
-                    <h4>Babysitting</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna.</p>
+                    <i class="fal fa-wifi my-3" style="font-size: 50px"></i>
+                    <h4>Free Wifi</h4>
+                    <p><?php echo $wifi ?></p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item dashboard-item-odd">
-                    <i class="flaticon-024-towel"></i>
-                    <h4>Laundry</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna.</p>
+                    <i class="fal fa-user-alt my-3" style="font-size: 50px"></i>
+                    <h4>Discover Your Account</h4>
+                    <p>Check Out the incredible advantages of having Hotel account by navigating the Sidemenu sections.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item">
-                    <i class="flaticon-044-clock-1"></i>
+                    <i class="fal fa-taxi my-3" style="font-size: 50px"></i>
                     <h4>Hire Driver</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna.</p>
+                    <p>We Will arrange everything for you, just tell one of the staff and be there in time..</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item dashboard-item-odd">
-                    <i class="flaticon-012-cocktail"></i>
-                    <h4>Bar & Drink</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna.</p>
+                    <i class="fal fa-map my-3" style="font-size: 50px"></i>
+                    <h4>Daily City Tour</h4>
+                    <p>Dont miss our specialized tutors' tours round all the nice places in the city.</p>
                 </div>
             </div>
         </div>

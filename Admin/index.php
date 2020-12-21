@@ -49,7 +49,7 @@
                 <a> Dashboard</a>
             </li>
             <li id="bookingLink">
-                <i class="far fa-luggage-cart icon"></i>
+                <i class="far fa-book-open icon"></i>
                 <a> Booking</a>
             </li>
             <li  class="sidebar-dropdown dropright">
@@ -63,7 +63,7 @@
                 </div>
             </li>
             <li class="sidebar-dropdown">
-                <i id="servicesIcon" class="far fa-utensils-alt icon"></i>
+                <i id="servicesIcon" class="far fa-server icon"></i>
                 <a>Services</a>
                 <div class="sidebar-submenu">
                     <ul>
@@ -125,7 +125,7 @@
                 </div>
             </li>
             <li id="contactLink">
-                <i class="far fa-cog icon"></i>
+                <i class="far fa-envelope icon"></i>
                 <a> Reviews/Contacts</a>
             </li>
             <li id="logOutItem">

@@ -50,9 +50,21 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
 }
 
 ?>
-
+<div id="msg" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="MSGTITLE">Sign In</h3>
+            </div>
+            <div class="modal-body">
+                <div class="model-wrapper">
+                    <p class="main-content" id="MSGBODY">Sign In</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container-fluid">
-
     <!--Back Button-->
     <div id="back-btn" class="back-btn">
         <i class="fal fa-arrow-left"></i>
@@ -69,15 +81,15 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
     <?php
     $counter = 0;
     for ($i = 0; $i < $result->rowCount() / 2; $i++) {
-        echo '<div class="row">'; ?>
+        echo '<div class="row cardsrow">'; ?>
         <?php for ($j = 0; $j < (($counter == $result->rowCount() && $result->rowCount() % 2 == 1) ? 1 : 2); $j++) {
             $counter++;
             $row = $result->fetch(PDO::FETCH_ASSOC);
             ?>
-            <div class="card card-food col-10 offset-1 col-xl-5 pr-0 ">
+            <div class="card card-food h-limit col-10 offset-1 col-xl-5 pr-0 ">
                 <div class="container-fluid no-gutters">
                     <div class="row">
-                        <img class="col-4 pr-0" src="../Home/images/insta-1.jpg" alt="...">
+                        <img class="col-4 pr-0" src="../<?php echo $row['image']?>">
                         <div class="card-body col-8">
                             <div class="price">
                                 <div class="price-text"><?php echo $row['item_price']?>$
@@ -87,20 +99,22 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
                             <h3 class="main-h3 card-title"><?php echo $row['item_name'] ?></h3>
                             <hr class="card-line"/>
                             <p class="card-text"><?php echo $row['item_description'] ?></p>
-
-                            <button class="btn btn-primary order col-12" type="button" data-toggle="collapse"
+                            <div class="quntity">
+                                <input type="number" id="quantityInput<?php echo $counter ?>" style="text-align: center" value="1" min="1">
+                            </div>
+                            <button class="btn btn-primary order col-12 order-btn" type="button" data-toggle="collapse"
                                     data-target="<?php echo '#collapseOrder' . $counter ?>">
                                 Order
+                            </button>
+                            <button class="btn btn-danger" style="opacity: 0"
+                                    onclick="orderItem(<?php echo $row['item_id'] ?>,document.getElementById('quantityInput<?php echo $counter ?>').value)">
+                                Order Now
                             </button>
                         </div>
                     </div>
                     <div class="row collapse" id="<?php echo 'collapseOrder' . $counter ?>">
-                        <label class="col-4" for="quantityInput<?php echo $counter ?>">Quantity:</label>
-                        <input type="number" id="quantityInput<?php echo $counter ?>" value="1" min="1">
-                        <button class="btn btn-danger"
-                                onclick="orderItem(<?php echo $row['item_id'] ?>,document.getElementById('quantityInput<?php echo $counter ?>').value)">
-                            Order Now
-                        </button>
+
+
                     </div>
                 </div>
             </div>
@@ -109,6 +123,10 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
         <?php echo '</div>' ?>
     <?php } ?>
     <script src="Scripts/Restaurant.js" type="text/javascript"></script>
+    <script>
+
+    </script>
+
 </div>
 
 

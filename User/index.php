@@ -9,11 +9,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--    TODO: Dash board element desgin-->
     <!--    TODO: Reserve Form errors Style -->
     <!--    TODO: Apply For Jop Style -->
     <!--    TODO: Cards Order Style -->
-    <!--    TODO: History Style -->
     <!--    TODO: HF Data + Style -->
     <!--    TODO: item to subcat Button -->
     <!--    TODO: Add Animation -->
@@ -32,9 +30,13 @@
     <link rel="stylesheet" href="../Vendor/CSS/flaticon.css" type="text/css">
     <link rel="stylesheet" href="../Vendor/CSS/Loader.css">
     <link rel="stylesheet" href="CSS/styles.css">
+    <!-- jQuery Modal -->
 
 </head>
 <body>
+
+
+
 <!--Top Nav Start-->
 <nav class="navbar navbar-dark bg-dark">
     <div class="header">
@@ -61,6 +63,7 @@
             <li id="reservation">
                 <i class="far fa-luggage-cart icon"></i>
                 <a href="#"> Reservation</a>
+
             </li>
             <li id="restaurant">
                 <i class="far fa-utensils-alt icon"></i>
@@ -103,6 +106,8 @@
     <div id="content"></div>
     <!-- Main Content End-->
 
+    <button href="#msg" id="trigermsg" class="trigger-btn" data-toggle="modal" style="opacity: 0"></button>
+
 </div>
 <!--Content Wrapper End-->
 
@@ -110,11 +115,12 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
 <script src="../Vendor/script/jquery.slicknav.js"></script>
 <script src="../Vendor/script/popper.js"></script>
 <script src="../Vendor/script/bootstrap.min.js"></script>
 <script src="Scripts/Main.js"></script>
 </body>
 </html>
-<a href=""></a>
 <script src=""></script>

@@ -25,6 +25,7 @@ $result = $pdo->query($sql);
             <thead>
             <tr>
             <tr>
+                <td>ID</td>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Mobile</th>
@@ -39,6 +40,7 @@ $result = $pdo->query($sql);
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                 <tr>
+                    <td><?php echo $row['person_id']?></td>
                     <td><?php echo $row['first_name'].' '.$row['last_name'] ?></td>
                     <td><?php echo $row['person_email'] ?></td>
                     <td><?php echo $row['mobile'] ?></td>

@@ -118,7 +118,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
         <ul>
             <li class="active"><a href="index.php">Home</a></li>
             <li><a class="aboutmb" >About Us</a></li>
-            <li><a href="SignUp.php">Reserve</a></li>
+            <li><a href="#" onclick="signup();return false;" >Reserve</a></li>
             <li><a href="#login" class="trigger-btn" data-toggle="modal">Sign In</a></li>
             <li><a class="contactus">Contact</a></li>
         </ul>
@@ -175,7 +175,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                 <p class="hint-text"><a href="#">Forgot Password?</a></p>
                 <!--                </form>-->
             </div>
-            <div class="modal-footer">Still Without A Room? &nbsp;<a id="reservel" href=""">Reserve Now</a></div>
+            <div class="modal-footer">Still Without A Room? &nbsp;<a href="#"; onclick="signup();return false;">Reserve Now</a></div>
         </div>
     </div>
 </div>
@@ -334,8 +334,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                     <h2 data-aos="fade-right" data-aos-duration="600" class="cta-heading">Reserve A Room Now <span> &mdash; and begin your journey at one of the oldest cites in the world!</span>
                     </h2>
                 </div>
-                <div data-aos="zoom-in" data-aos-delay="700" class="col-8 col-md-2 offset-2 offset-md-0"><a
-                            href="" id="reservebtn" class="btn btn-primary">Reserve
+                <div data-aos="zoom-in" data-aos-delay="400" class="col-8 col-md-2 offset-2 offset-md-0"><a
+                            href="#" id="reservebtn" onclick="signup();return false;" class="btn btn-primary">Reserve
                         now</a></div>
             </div>
         </div>
@@ -474,7 +474,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="SignUp.php" class="primary-link">More Details</a>
+                                <a href="#" onclick="signup();return false;"  class="primary-link">More Details</a>
                             </div>
                         </div>
                     </div>
@@ -503,7 +503,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="SignUp.php" class="primary-link">More Details</a>
+                                <a href="#" onclick="signup();return false;"  class="primary-link">More Details</a>
                             </div>
                         </div>
                     </div>
@@ -532,7 +532,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="SignUp.php" class="primary-link">More Details</a>
+                                <a href="#" onclick="signup();return false;"  class="primary-link">More Details</a>
                             </div>
                         </div>
                     </div>
@@ -561,7 +561,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="SignUp.php" class="primary-link">More Details</a>
+                                <a href="#" onclick="signup();return false;"  class="primary-link details">More Details</a>
                             </div>
                         </div>
                     </div>

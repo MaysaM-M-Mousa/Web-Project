@@ -11,6 +11,23 @@
 <script src="../../Vendor/DatePicker/ej2-popups/dist/global/ej2-popups.min.js" type="text/javascript"></script>
 <script src="../../Vendor/DatePicker/ej2-lists/dist/global/ej2-lists.min.js" type="text/javascript"></script>
 <script src="../../Vendor/DatePicker/ej2-calendars/dist/global/ej2-calendars.min.js" type="text/javascript"></script>
+
+<!--POP UP For Messagess-->
+<div id="msg" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="MSGTITLE">Sign In</h3>
+            </div>
+            <div class="modal-body">
+                <div class="model-wrapper">
+                    <p class="main-content" id="MSGBODY">Sign In</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- SignUp Section Begin -->
 <div class="container">
     <section>
@@ -453,28 +470,48 @@
         </div>
     </div>
 </div>
+<button href="#msg" id="trigermsg" class="trigger-btn" data-toggle="modal" style="opacity: 0"></button>
+
 <!-- SignUp Section End -->
 
 <script>
     $("form").on("submit", function (e) {
         var dataString = $(this).serialize();
-
         $.ajax({
             type: "POST",
             url: "validateSignUp.php",
             data: dataString,
             success: function (data) {
-                $("#resultMSG").html(data);
-                let suc="Thank you for signing up!, a verification email was sent to you, please verify your account to continue.";
+                $("#MSGBODY").html(data);
+                $("#MSGTITLE").html("Ops..");
+                $("#trigermsg").click();
+
                 if (data.toString().includes("Thank you")) {
-                    setTimeout(function () {
-                        window.location.href = "index.php";
-                    }, 2000);
+                    sendEmailVerification()
+                    $("#MSGTITLE").html("Thank You!");
+                    countdown();
                 }
             }
         });
         e.preventDefault();
     });
+    // Total seconds to wait
+
+    var seconds = 10;
+    function countdown() {
+        seconds = seconds - 1;
+        if (seconds < 0) {
+            // Chnage your redirection link here
+            window.location = "index.php";
+        } else {
+            // Update remaining seconds
+            document.getElementById("count").innerHTML = seconds;
+            // Count down using javascript
+            window.setTimeout("countdown()", 1000);
+        }
+    }
+
+    // Run countdown function
     /*  ---------------------------------------------------
         Description: Reserve Scripts
 
@@ -621,10 +658,9 @@
             $('#room_4').next().next().removeClass('selected');
         }
     }
-
     // 4. Validate Date Input
     function validateForm() {
-        // var date = document.getElementById('daterangepicker').innerHTML;
+        let date=document.getElementById('daterangepicker').value;
         if (date === "") {
             $("#errorDate").css("display", "block");
             return false;
@@ -634,26 +670,7 @@
         }
     }
 
-    function reserveARoom() {
 
-        // alert(
-        //     document.querySelector('input[name="room"]:checked').value
-        // )
-
-        $.post('Features/Reservation/reserveRoom.php', {
-            'reserveRoom': 'reserveRoom',
-            'dateRange': document.getElementById('daterangepicker').value,
-            'roomType': document.querySelector('input[name="room"]:checked').value
-        }, function (data, status) {
-            if (status === 'success') {
-                if (data === 'You are not allowed to continue') {
-                    window.location.replace("../Home/PHP/SignIn/logout.php");
-                } else {
-                    document.getElementById('content').innerHTML = data;
-                }
-            }
-        })
-    }
 
 
 </script>

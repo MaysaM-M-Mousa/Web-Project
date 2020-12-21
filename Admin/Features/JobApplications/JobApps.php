@@ -35,8 +35,15 @@ if (isset($_POST['sendReplyJobEmail'], $_POST['emailSender'], $_POST['form_id'])
     return;
 }
 
+if (isset($_POST['counter'])) {
+    $sql = 'select * from person,forms where person.person_id=forms.person_id ORDER BY forms.date_of_applying limit ' . htmlentities(trim($_POST['counter']));
 
-$sql = 'select * from person,forms where person.person_id=forms.person_id ORDER BY forms.date_of_applying ';
+} else {
+    $sql = 'select * from person,forms where person.person_id=forms.person_id ORDER BY forms.date_of_applying limit 3';
+
+}
+
+
 $result = $pdo->query($sql);
 
 ?>
@@ -193,6 +200,7 @@ $result = $pdo->query($sql);
                                         class="btn btn-primary mt-4">Send
                                 </button>
                                 <div id="MSG<?php echo $counter ?>" style="font-family: 'Cabin', serif;"></div>
+
                             </div>
 
                         </div>
@@ -208,6 +216,8 @@ $result = $pdo->query($sql);
                 <?php
             }
             ?>
+            <button onclick="loadMoreCardsJA()">hello</button>
+
         </div>
     </div>
 
@@ -299,7 +309,7 @@ $result = $pdo->query($sql);
     var SizeStyle = Quill.import('attributors/style/size');
     Quill.register(SizeStyle, true);
     let fonts = Quill.import("attributors/style/font");
-    fonts.whitelist = ["initial", "sans-serif", "serif", "monospace","cabin"];
+    fonts.whitelist = ["initial", "sans-serif", "serif", "monospace", "cabin"];
     Quill.register(fonts, true);
     var toolbarOptions = [
         ['bold', 'italic', 'underline'],        // toggled buttons
@@ -330,15 +340,15 @@ $result = $pdo->query($sql);
         });
         editor[i].setContents([
             {
-                insert: 'Hello,\n', attributes: {bold: true,align:"center",color:"#232530",header:"2"}
+                insert: 'Hello,\n', attributes: {bold: true, align: "center", color: "#232530", header: "2"}
             },
             {
                 insert: '\nThanks for Applying for a job,\n' +
                     'we received your application, and we are pleased to tell you that you are accepted to be interviewed in La Terra Santa Hotel.\n' +
                     'We are waiting for you tomorrow on 9:00 AM.\n' +
-                    'La Terra Santa.'+
-                    '\n\n Best of luck.'+'  \n',
-                attributes: {bold: true,align:"center", color: "#B79040",header:"3" }
+                    'La Terra Santa.' +
+                    '\n\n Best of luck.' + '  \n',
+                attributes: {bold: true, align: "center", color: "#B79040", header: "3"}
             }
         ]);
     }

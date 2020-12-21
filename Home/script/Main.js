@@ -134,24 +134,7 @@
             })
         })
     });
-    $(document).ready(function () {
-        $("#reservebtn,#reservel").on("click",function () {
-            document.getElementById('content').innerHTML =
-                '<div class="lds-roller text-center mx-auto" style="margin: 20% 0;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
-            $.ajax({
-                type: 'POST',
-                url: 'SignUp.php',
-                success:
-                    function (data) {
-                        $("#login .close").click()
-                        setTimeout(function() {
-                            $("#content").html(data);
-                        }, 600);
-                    }
-            })
-            return false;
-        })
-    })
+
 
 
 })(jQuery);
@@ -159,5 +142,24 @@
 function sendEmailVerification() {
     $.post('../PHP/SignUp/verify.php', {'resend': 'resendEmail'}, function (data, status) {
         document.getElementById('verificationDiv').innerHTML = data;
+        return data;
     });
+}
+//sign up page ajax
+function signup(){
+    document.getElementById('content').innerHTML =
+        '<div class="lds-roller text-center mx-auto" style="margin: 20% 0;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+    $.ajax({
+        type: 'POST',
+        url: 'SignUp.php',
+        success:
+            function (data) {
+                $("#login .close").click()
+                setTimeout(function() {
+                    $("#content").html(data);
+                }, 600);
+            }
+    })
+    return false;
+
 }

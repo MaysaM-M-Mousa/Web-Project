@@ -29,11 +29,32 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="charts ready with default dates">
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="khara">
+      <change afterPath="$PROJECT_DIR$/User/Features/Dashboard/pdo.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Scripts/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Home/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/SignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/SignUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/validateSignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/validateSignUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/script/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Home/script/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/User/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/History/history.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/History/history.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/HotelFacilities/HF.htm" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/HotelFacilities/HF.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestItems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Reservation/reserveRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/reserveRoom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Scripts/Reserve.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Reserve.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Scripts/Restaurant.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Restaurant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +91,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/User/CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/User/Features/Dashboard" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -83,19 +104,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\User\CSS" />
-      <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Features\Orders" />
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Scripts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
       <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
       <recent name="C:\xampp\htdocs\WebProject\User" />
       <recent name="C:\xampp\htdocs\WebProject\Vendor\DatePicker" />
       <recent name="C:\xampp\htdocs\WebProject\User\Features\Restaurant" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\User\Features\Dashboard" />
+      <recent name="C:\xampp\htdocs\WebProject\User\CSS" />
+      <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
+      <recent name="C:\xampp\htdocs\WebProject\Admin\Features\Orders" />
+      <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.test.php">
@@ -277,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608325880433</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="khara">
+      <created>1608492458715</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1608492458715</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +352,8 @@
     <MESSAGE value="sign in ++" />
     <MESSAGE value="User Table History" />
     <MESSAGE value="Charts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Charts" />
+    <MESSAGE value="khara" />
+    <option name="LAST_COMMIT_MESSAGE" value="khara" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1607176073908">
@@ -449,20 +478,20 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607169710007" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607456806423" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608325893638">
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608492468523">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="442" y="222" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607217373236" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608325893638" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608492468523" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1607189697272" />
-    <state x="504" y="503" width="672" height="677" key="run.anything.popup" timestamp="1608235780943">
+    <state x="504" y="503" width="672" height="677" key="run.anything.popup" timestamp="1608524194576">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="403" y="357" width="538" height="481" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1607639907108" />
-    <state x="504" y="503" width="672" height="677" key="run.anything.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1608235780943" />
+    <state x="504" y="503" width="672" height="677" key="run.anything.popup/0.0.1920.1160@0.0.1920.1160" timestamp="1608524194576" />
     <state x="498" y="181" width="672" height="482" key="search.everywhere.popup" timestamp="1608070789449">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

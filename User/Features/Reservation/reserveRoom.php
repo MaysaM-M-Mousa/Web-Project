@@ -65,7 +65,7 @@ if (isset($_POST['reserveRoom'], $_POST['dateRange'], $_POST['roomType'])) {
         ':end_date' => $endDate
     ));
     if ($stmt->rowCount() > 0) {
-        echo '<span style="color: red">You have a crossed dates, choose another date!</span>';
+        echo "<span style=\"font-family: \'Cabin\', serif; color:darkred; font-size:20px;\">You have a crossed dates, please choose another date!</span>";
         return;
     }
 
@@ -119,7 +119,7 @@ order by booking.end_date
     $auto_inc_result = $stmt->fetch(PDO::FETCH_ASSOC);
     $_SESSION['book_id'] = $auto_inc_result['AUTO_INCREMENT'] - 1;
 
-    echo 'Thank you, your room number is ' . $result['room_number'];
+    echo 'room No. is ' . $result['room_number'];
     return;
 
 }

@@ -13,11 +13,18 @@
     $(document).ready(function () {
         let current_fs, next_fs, previous_fs; //fieldsets
         let opacity;
+
         $(".next").click(function () {
+            if ($(this).hasClass("next2")) {
+                if (!reserveARoom()) {
+                    return;
+                }
+            }
             if ($(this).hasClass("next0")) {
                 if (!validateForm()) {
                     return;
                 }
+
             } else {
                 let url = "SignUp.php"; // the script where you handle the form input.
             }
@@ -158,6 +165,7 @@ function validateForm() {
 }
 
 function reserveARoom() {
+    var flag=false;
     $.post('Features/Reservation/reserveRoom.php', {
         'reserveRoom': 'reserveRoom',
         'dateRange': document.getElementById('daterangepicker').value,
@@ -167,8 +175,16 @@ function reserveARoom() {
             if (data === 'You are not allowed to continue') {
                 window.location.replace("../Home/PHP/SignIn/logout.php");
             } else {
-                document.getElementById('content').innerHTML = data;
+                $("#MSGBODY").html(data);
+                $("#MSGTITLE").html("Ops..");
+                $("#trigermsg").click();
+                if (data.toString().includes("room No.")) {
+                    $("#roomNo").html(data);
+                    flag=true;
+                }
+
             }
         }
     })
+    return flag;
 }

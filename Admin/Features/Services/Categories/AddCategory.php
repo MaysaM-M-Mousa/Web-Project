@@ -7,28 +7,39 @@ require_once 'pdo.php';
 //    return;
 //}
 
-$ds = DIRECTORY_SEPARATOR;  //1
-$storeFolder = 'images/rooms';   //2
 
-if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
+if (isset($_POST['category_name'], $_POST['description'])) {
 
-//    if (isset($_FILES["file"])) {
-//        $tempFile = $_FILES['file']['tmp_name'];          //3
-//        $targetPath = dirname(__FILE__) . $ds . $storeFolder . $ds;  //4
-//        $targetFile = $targetPath . $_FILES['file']['name'];  //5
-//        move_uploaded_file($tempFile, $targetFile); //6
-//        echo 'fuck abed success';
-//        return;
-//
-//    } else {
-//        echo 'fuck abed';
-//        return;
-//    }
-    echo $_POST['image'];
-    return;
+    if (!empty($_FILES)) {
+        if (0 < $_FILES['file']['error']) {
+            echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+        } else {
+        // move_uploaded_file($_FILES['file']['tmp_name'], '../../../images/categories/' . $_FILES['file']['name']);
+        }
+    } else {
+        echo '<span style="color:red;">Please choose a picture!</span>';
+        return;
+    }
+
+    //////////////////////////////////////////////////
+    $sql = 'SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "testdatabase" AND TABLE_NAME = "category"';
+    $stmt = $pdo->query($sql);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $uniqueID = $result['AUTO_INCREMENT'];
+
+    $imageFullName = $_FILES['file']['name'];
+    $imageArray = explode('.', $imageFullName);
+    $imageExtension = $imageArray[1];
+    $newName = 'categories' . $uniqueID;
+    $imageFullName = $newName . '.' . $imageExtension;
+    $newPath = "../../../../images/categories/" . $imageFullName;
+    $databasePath = '/images/categories/'.$imageFullName;
+    move_uploaded_file($_FILES["file"]["tmp_name"], $newPath);
+    //////////////////////////////////////////////////
+
     $category_name = htmlentities($_POST['category_name']);
     $description = htmlentities($_POST['description']);
-    $image = htmlentities($_POST['image']);
+    $image = $databasePath;
 
     if (strlen($category_name) < 1 || strlen($description) < 1 || strlen($image) < 1) {
         echo '<span style="color: darkred">All Fields Are Required!</span>';
@@ -53,7 +64,6 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
     echo '<span style="color: darkgreen">Successfully added!</span>';
     return;
 }
-
 
 ?>
 <div class="container forms">
@@ -83,7 +93,7 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
                 <div class="form-group files col-12 col-md-9">
                     <label>Upload Your File </label>
-                    <input type="file" id="image" class="form-control" multiple="">
+                    <input type="file" id="catImage" class="form-control" multiple="false">
                 </div>
             </div>
             <div class="row">
@@ -91,6 +101,7 @@ if (isset($_POST['category_name'], $_POST['description'], $_POST['image'])) {
                        value="Add Category">
                 <div class="col-12" id="addCatResult">
                 </div>
+
             </div>
         </div>
     </div>

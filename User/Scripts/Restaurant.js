@@ -36,6 +36,15 @@ function goToCategory(sub_cat_id) {
                 $('#back-btn').on("click", function () {
                     $("#content").load("Features/Restaurant/RestaurantCategories.php", "data1");
                 });
+
+                $(".order-btn").on("click",function () {
+                    if($(this).hasClass("toggled-button")){
+                        $(this).siblings(":last").click();
+                    }
+                    else
+                    $(this).addClass("toggled-button");
+
+                });
             }
         })
 }
@@ -45,7 +54,23 @@ function orderItem(item_id, quantity) {
         'quantity':quantity
     }, function (data, status) {
         if (status === 'success') {
-            document.getElementById('content').innerHTML = data;
+            document.getElementById('MSGTITLE').innerHTML = "Thank You!";
+            document.getElementById('MSGBODY').innerHTML = "We will deliver this item to your room in the shortest time Possible";
+            $("#trigermsg").click();
+            countdown();
         }
     })
+}
+var seconds = 5;
+function countdown() {
+    seconds = seconds - 1;
+    if (seconds < 0) {
+        // Chnage your redirection link here
+    $("#msg").modal('hide');
+
+    } else {
+        // Update remaining seconds
+        // Count down using javascript
+        window.setTimeout("countdown()", 1000);
+    }
 }

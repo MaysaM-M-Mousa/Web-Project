@@ -21,15 +21,42 @@ if (isset($_POST['cat_id'], $_POST['findMainCategory'])) {
     return;
 }
 
-if (isset($_POST['item_name'], $_POST['item_price'], $_POST['item_description'], $_POST['sub_cat_id']
-    , $_POST['cat_id'], $_POST['image'])) {
+if (isset($_POST['item_name'], $_POST['item_price'], $_POST['item_description'], $_POST['sub_cat_id'], $_POST['cat_id'])) {
+
+    if (!empty($_FILES)) {
+        if (0 < $_FILES['file']['error']) {
+            echo 'Error: ' . $_FILES['file']['error'] . '<br>';
+        } else {
+            // move_uploaded_file($_FILES['file']['tmp_name'], '../../../images/categories/' . $_FILES['file']['name']);
+        }
+    } else {
+        echo '<span style="color:red;">Please choose a picture!</span>';
+        return;
+    }
+
+    //////////////////////////////////////////////////
+    $sql = 'SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = "testdatabase" AND TABLE_NAME = "item"';
+    $stmt = $pdo->query($sql);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $uniqueID = $result['AUTO_INCREMENT'];
+
+    $imageFullName = $_FILES['file']['name'];
+    $imageArray = explode('.', $imageFullName);
+    $imageExtension = $imageArray[1];
+    $newName = 'items' . $uniqueID;
+    $imageFullName = $newName . '.' . $imageExtension;
+    $newPath = "../../../../images/items/" . $imageFullName;
+    $databasePath = '/images/items/' . $imageFullName;
+    move_uploaded_file($_FILES["file"]["tmp_name"], $newPath);
+    //////////////////////////////////////////////////
+
 
     $item_name = htmlentities(trim($_POST['item_name']));
     $item_price = htmlentities(trim($_POST['item_price']));
     $item_description = htmlentities(trim($_POST['item_description']));
     $sub_cat_id = htmlentities(trim($_POST['sub_cat_id']));
     $cat_id = htmlentities(trim($_POST['cat_id']));
-    $image = htmlentities(trim($_POST['image']));
+    $image = $databasePath;
 
     // check if the item exists in the same cat and sub-cat
     $sql = 'select * from item left join sub_category on item.sub_cat_id = sub_category.sub_cat_id
@@ -110,40 +137,9 @@ if (isset($_POST['item_name'], $_POST['item_price'], $_POST['item_description'],
             </div>
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-2">Photo:</label>
-                <div class="col-12 col-md-10 px-0 pb-4">
-                    <!-- Uploader Dropzone -->
-                    <form action="Features/Room/upload.php" id="zdrop" class="fileuploader text-center"
-                          target="upload_target">
-                        <div id="upload-label">
-                            <i class="fad fa-cloud-upload material-icons"></i>
-                            <span class="tittle d-none d-sm-block">Click the Button or Drop Files Here</span>
-                        </div>
-                    </form>
-                    <iframe id="upload_target" name="upload_target" src="#"
-                            style="width:0;height:0;border:0px solid #fff;"></iframe>
-
-                    <div class="preview-container">
-                        <div class="collection card" id="previews">
-                            <div class="collection-item clearhack valign-wrapper item-template"
-                                 id="zdrop-template">
-                                <div class="left pv zdrop-info" data-dz-thumbnail>
-                                    <div>
-                                        <span data-dz-name></span> <span data-dz-size></span>
-                                    </div>
-                                    <div class="progress">
-                                        <div class="determinate" style="width:0" data-dz-uploadprogress></div>
-                                    </div>
-                                    <div class="dz-error-message"><span data-dz-errormessage></span></div>
-                                </div>
-
-                                <div class="secondary-content actions">
-                                    <a href="#" data-dz-remove
-                                       class="btn-floating ph red white-text waves-effect waves-light"><i
-                                                class="material-icons white-text">clear</i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="form-group files col-12 col-md-9">
+                    <label>Upload Your File </label>
+                    <input type="file" id="itemImage" class="form-control" multiple="false">
                 </div>
             </div>
             <div class="row">

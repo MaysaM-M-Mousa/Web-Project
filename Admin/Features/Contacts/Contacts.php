@@ -34,8 +34,13 @@ if (isset($_POST['sendReplyEmail'], $_POST['emailSender'], $_POST['contact_id'])
     return;
 }
 
+if (isset($_POST['counter'])) {
+    $sql = 'select * from contacts limit ' . htmlentities(trim($_POST['counter']));
+} else {
+    $sql = 'select * from contacts limit 3';
+}
 
-$sql = 'select * from contacts';
+
 $result = $pdo->query($sql);
 ?>
 <link rel="stylesheet" href="../Vendor/CSS/Loader.css">
@@ -92,64 +97,66 @@ $result = $pdo->query($sql);
             <?php
             $counter = 0;
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-            $counter++;
-            ?>
+                $counter++;
+                ?>
 
-            <div class="form-border-2 my-5" id="cardContactDiv<?php echo $counter ?>">
+                <div class="form-border-2 my-5" id="cardContactDiv<?php echo $counter ?>">
                     <div class="card-border-1">
-            <div class="delete"
-                 onclick="deleteContactCard(<?php echo $row['contact_id'] ?>,<?php echo $counter ?>)">
-                <i class="far fa-trash-alt"></i>
-            </div>
-            <section class="header text-center">
-                <h2 class="card-h2"><?php echo $row['subject'] ?></h2>
-                <h5 class="email" id="emailSender<?php echo $counter ?>"><?php echo $row['email'] ?></h5>
-                <h6 class="col-12"><?php echo $row['date_of_receive'] ?></h6>
-                <div>
-                    <?php
-                    if ($row['status'] == 1)
-                        echo '<span id="status' . $counter . '" style="color: black; font-family: \'Cabin\', serif;"><i class="fa fa-check"></i> Replied</span>';
-                    else
-                        echo '<span id="status' . $counter . '" style="color: black; font-family: \'Cabin\', serif;"></span>';
-                    ?>
-                </div>
-            </section>
-            <div class="more-details">
-                <div class="row text-center">
-                    <div class="col-12">
-                        <p class="card-content"><span style="font-size: 25px">&#8220;</span>
-                            <?php echo $row['message'] ?>
-                            <span style="font-size: 25px">&#8221;</span> <span class="sender" ">-<?php echo $row['full_name'] ?></span>
-                        </p>
+                        <div class="delete"
+                             onclick="deleteContactCard(<?php echo $row['contact_id'] ?>,<?php echo $counter ?>)">
+                            <i class="far fa-trash-alt"></i>
+                        </div>
+                        <section class="header text-center">
+                            <h2 class="card-h2"><?php echo $row['subject'] ?></h2>
+                            <h5 class="email" id="emailSender<?php echo $counter ?>"><?php echo $row['email'] ?></h5>
+                            <h6 class="col-12"><?php echo $row['date_of_receive'] ?></h6>
+                            <div>
+                                <?php
+                                if ($row['status'] == 1)
+                                    echo '<span id="status' . $counter . '" style="color: black; font-family: \'Cabin\', serif;"><i class="fa fa-check"></i> Replied</span>';
+                                else
+                                    echo '<span id="status' . $counter . '" style="color: black; font-family: \'Cabin\', serif;"></span>';
+                                ?>
+                            </div>
+                        </section>
+                        <div class="more-details">
+                            <div class="row text-center">
+                                <div class="col-12">
+                                    <p class="card-content"><span style="font-size: 25px">&#8220;</span>
+                                        <?php echo $row['message'] ?>
+                                        <span style="font-size: 25px">&#8221;</span> <span class="sender"
+                                        ">-<?php echo $row['full_name'] ?></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button class="reply-btn btn btn-primary"><i class="fas fa-envelope"
+                                                                             style="font-size: 20px"></i> Reply
+                                </button>
+                            </div>
+                            <div class="reply text-center">
+                                <div id="reply<?php echo $counter ?>"></div>
+                                <button onclick="sendEmailBTN(<?php echo $row['contact_id'] ?>,<?php echo $counter ?>)"
+                                        class="btn btn-primary mt-4">Send
+                                </button>
+                                <div id="MSG<?php echo $counter ?>" style="font-family: 'Cabin', serif;"></div>
+                            </div>
+                        </div>
+                        <div class="sepr"></div>
+                        <div class="sepl"></div>
+                        <div class="details">
+                            <h5>More Details</h5>
+                            <hr class="sub-line">
+                            <i class="fal fa-angle-down"></i>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <button class="reply-btn btn btn-primary"><i class="fas fa-envelope"
-                                                                 style="font-size: 20px"></i> Reply
-                    </button>
-                </div>
-                <div class="reply text-center">
-                    <div id="reply<?php echo $counter ?>"></div>
-                    <button onclick="sendEmailBTN(<?php echo $row['contact_id'] ?>,<?php echo $counter ?>)"
-                            class="btn btn-primary mt-4">Send
-                    </button>
-                    <div id="MSG<?php echo $counter ?>" style="font-family: 'Cabin', serif;"></div>
-                </div>
-            </div>
-            <div class="sepr"></div>
-            <div class="sepl"></div>
-            <div class="details">
-                <h5>More Details</h5>
-                <hr class="sub-line">
-                <i class="fal fa-angle-down"></i>
-            </div>
+                <?php
+            }
+            ?>
+            <button onclick="loadMoreCardsContacts()">hello</button>
         </div>
     </div>
-    <?php
-    }
-    ?>
-</div>
-</div>
 
 </div>
 

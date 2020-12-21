@@ -38,7 +38,8 @@ if (isset($_POST['cat_id'], $_POST['subCatChosen'])) {
                  class="card Catagories col-10 offset-1 col-xl-5 pr-0 <?php if ($counter % 2 == 0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0'; ?>">
                 <div class="container-fluid no-gutters">
                     <div class="row">
-                        <img class="col-md-4 col-12 pr-0" src="../../Home/images/insta-1.jpg"
+                        <img class="col-md-4 col-12 pr-0" src="../<?php echo $row['image']?>"
+
                              alt="...">
                         <div class="card-body col-12 col-md-8">
                             <h3 class="main-h3 card-title"><?php echo $row['sub_cat_name']?></h3>

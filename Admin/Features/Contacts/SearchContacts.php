@@ -6,7 +6,6 @@
 //    return;
 //}
 require_once 'pdo.php';
-sleep(1);
 if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['replied'])) {
 
     $searchbar = htmlentities($_POST['searchBar']);
@@ -61,7 +60,7 @@ if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['rep
     // if search bar is empty
     if (empty($searchbar)) {
         if ($colDBOrderBY === 'none') {
-            $sql = 'select * from contacts';
+            $sql = 'select * from contacts where status='.$status;
         } elseif ($colDBOrderBY !== 'none') {
             $sql = 'select * from contacts where status=' . $status . ' order by ' . $colDBOrderBY . " $typeOfOrdering";
         }
@@ -77,7 +76,14 @@ if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['rep
         }
     }
 
+//    if (isset($_POST['counter'])) {
+//        $sql = $sql . ' limit ' . htmlentities(trim($_POST['counter']));
+//    } else {
+//        $sql = $sql . ' limit 3';
+//    }
 
+//    echo $sql;
+//    return;
     $result = $pdo->query($sql);
 
     if ($result->rowCount() < 1) {
@@ -89,12 +95,6 @@ if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['rep
 
 ?>
 
-
-<?php
-$counter = 0;
-while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    $counter++;
-    ?>
 
     <div class="container forms">
         <?php
@@ -158,9 +158,9 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         ?>
     </div>
 
-    <?php
-}
-?>
+<button onclick="loadMoreCardsSMContacts()">hello</button>
+
+
 <div id="counter" class="<?php echo $counter ?>"></div>
 <script>
     $(".details").on("click", function () {
