@@ -41,18 +41,18 @@ if (isset($_POST['reserveRoom'], $_POST['dateRange'], $_POST['roomType'])) {
 
     // check if there interconnected dates, if so, the booking will not be done
     $sql = '
-   select * from booking where booking.person_id=14
+   select * from booking where booking.person_id=:person_id
     and 
     (
-    	((:person_id > booking.start_date and :person_id < booking.end_date) and (not(:end_date > booking.start_date and 
+    	((:start_date > booking.start_date and :start_date < booking.end_date) and (not(:end_date > booking.start_date and 
           :end_date < booking.end_date))) 	
 		or
-        ((not(:person_id > booking.start_date and :person_id < booking.end_date)) and (:end_date > booking.start_date and 
+        ((not(:start_date > booking.start_date and :start_date < booking.end_date)) and (:end_date > booking.start_date and 
           :end_date < booking.end_date)) 
         or
-        ((:person_id > booking.start_date and :person_id < booking.end_date) and (:end_date > booking.start_date and :end_date 			< booking.end_date)) 
+        ((:start_date > booking.start_date and :start_date < booking.end_date) and (:end_date > booking.start_date and :end_date 			< booking.end_date)) 
         or
-        ((:person_id <= booking.start_date) and (:end_date >= booking.end_date))
+        ((:start_date <= booking.start_date) and (:end_date >= booking.end_date))
         
     )
     order by booking.end_date';
