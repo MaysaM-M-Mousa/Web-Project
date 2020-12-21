@@ -9,17 +9,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--    TODO: Reserve Form errors Style -->
-    <!--    TODO: Apply For Jop Style -->
-    <!--    TODO: Cards Order Style -->
-    <!--    TODO: HF Data + Style -->
-    <!--    TODO: item to subcat Button -->
     <!--    TODO: Add Animation -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>La Terra Santa &reg;</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="../Vendor/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
     <link rel="stylesheet" href="CSS/dataTables.bootstrap4.min.css">
@@ -95,7 +90,7 @@
     <!-- Side Menu End-->
 
     <!-- AJAX Loader Start-->
-    <div id="loader" class="loader-wrapper">
+    <div id="loader" class="loader-wrapper animate__animated animate__fadeIn">
         <div class="globe-loader fas fa-globe-americas">
             <i class="fas fa-plane"></i>
         </div>
@@ -103,7 +98,7 @@
     <!-- AJAX Loader End-->
 
     <!-- Main Content Start-->
-    <div id="content"></div>
+    <div id="content" class="animate__animated animate__fadeIn"></div>
     <!-- Main Content End-->
 
     <button href="#msg" id="trigermsg" class="trigger-btn" data-toggle="modal" style="opacity: 0"></button>

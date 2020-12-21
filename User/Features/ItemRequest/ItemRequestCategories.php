@@ -27,7 +27,7 @@ $result = $pdo->query($sql);
         $counter = 0;
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             ?>
-            <div onclick="goToItemReqSub(<?php echo $row['cat_id']?>)"
+            <div onclick="goToItemReqSub(<?php echo $row['cat_id']?>,'<?php echo $row['category_name']?>')"
                  class="card Catagories col-10 offset-1 col-xl-5 pr-0 <?php if ($counter % 2 == 0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0'; ?>">
                 <div class="container-fluid no-gutters">
                     <div class="row">

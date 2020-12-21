@@ -25,7 +25,7 @@
 
 })(jQuery);
 
-function goToCategory(sub_cat_id) {
+function goToCategory(sub_cat_id,name) {
     $.post('Features/Restaurant/RestaurantSub.php', {
             'catChosen': 'catChosen',
             'sub_cat_id': sub_cat_id
@@ -33,17 +33,21 @@ function goToCategory(sub_cat_id) {
         function (data, status) {
             if (status === 'success') {
                 document.getElementById('content').innerHTML = data;
+                document.getElementById('headerCat').innerHTML = name;
+
                 $('#back-btn').on("click", function () {
                     $("#content").load("Features/Restaurant/RestaurantCategories.php", "data1");
                 });
 
                 $(".order-btn").on("click",function () {
-                    if($(this).hasClass("toggled-button")){
+                        if($(this).hasClass("toggled-button")){
                         $(this).siblings(":last").click();
                     }
-                    else
-                    $(this).addClass("toggled-button");
+                else {
+                            $(".order-btn").removeClass("toggled-button");
 
+                            $(this).addClass("toggled-button");
+                        }
                 });
             }
         })

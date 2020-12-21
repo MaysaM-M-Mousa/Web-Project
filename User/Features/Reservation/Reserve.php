@@ -16,12 +16,13 @@ sleep(1);
 <script src="../Vendor/DatePicker/ej2-lists/dist/global/ej2-lists.min.js" type="text/javascript"></script>
 <script src="../Vendor/DatePicker/ej2-calendars/dist/global/ej2-calendars.min.js" type="text/javascript"></script>
 
-<div class="container">
+<div class="container animate__animated animate__fadeIn">
     <div id="msg" class="modal fade">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 id="MSGTITLE">Sign In</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="model-wrapper">
@@ -249,7 +250,7 @@ sleep(1);
                             </div>
                         </section>
                         <!--End Booking Options Section-->
-                        <input type="button" name="next" class="next next2 action-button" value="Next"/>
+                        <input type="button" onclick="reserveARoom();" id="send" name="next" class="next next2 action-button" value="Next"/>
                         <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
                     </fieldset>
                     <!--Start Finish Section -->
@@ -267,8 +268,8 @@ sleep(1);
                         <h1 class="display-3" style="color:#B79040">Thank You!</h1>
                         <br>
                         <div class="row">
-                            <div class="col-12 col-md-10 offset-md-1 justify-content-center"><p class="pb-5">
-                                    Thank you for choosing our hotel, Your <span style="color:#232530" id="roomNo"></span>
+                            <div class="col-12 col-md-10 offset-md-1 justify-content-center"><p class="pb-5"  style="color:#232530; font-family: 'Cabin', serif">
+                                    Thank you for choosing our hotel, Your <span style="color:#B79040" id="roomNo"></span>
                                     <br/>
                                     <br/>
 
@@ -282,7 +283,7 @@ sleep(1);
 
                                 </p>
                                 <p>
-                                    Having trouble? <a href="">Contact us</a>
+                                    Having trouble? <a href="#" onclick="contactus(); return false;">Contact us</a>
                                 </p>
                             </div>
                         </div>

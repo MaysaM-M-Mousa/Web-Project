@@ -24,14 +24,29 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/maysam" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="dropzone problem">
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="admin was not touched">
+      <change afterPath="$PROJECT_DIR$/images/categories/categories5.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/User/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/HotelFacilities/HF.htm" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/HotelFacilities/HF.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestItems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/Features/Reservation/reserveRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/reserveRoom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Scripts/Reserve.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Reserve.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/Scripts/Restaurant.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Restaurant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tables.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +67,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -90,19 +102,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\WebProject\images" />
+      <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
+      <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
+      <recent name="C:\xampp\htdocs\WebProject\User" />
+      <recent name="C:\xampp\htdocs\WebProject\Vendor\DatePicker" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\WebProject\User\Features\Dashboard" />
       <recent name="C:\xampp\htdocs\WebProject\User\CSS" />
       <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
       <recent name="C:\xampp\htdocs\WebProject\Admin\Features\Orders" />
       <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\WebProject\Admin\Features" />
-      <recent name="C:\xampp\htdocs\WebProject\User\Scripts" />
-      <recent name="C:\xampp\htdocs\WebProject\User" />
-      <recent name="C:\xampp\htdocs\WebProject\Vendor\DatePicker" />
-      <recent name="C:\xampp\htdocs\WebProject\User\Features\Restaurant" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Script.test.php">
@@ -178,6 +190,7 @@
       <workItem from="1608419997978" duration="612000" />
       <workItem from="1608470279314" duration="1305000" />
       <workItem from="1608474528347" duration="8683000" />
+      <workItem from="1608569957783" duration="3507000" />
     </task>
     <task id="LOCAL-00001" summary="home page">
       <created>1606265626691</created>

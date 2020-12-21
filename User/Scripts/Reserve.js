@@ -16,18 +16,16 @@
 
         $(".next").click(function () {
             if ($(this).hasClass("next2")) {
-                if (!reserveARoom()) {
                     return;
-                }
             }
             if ($(this).hasClass("next0")) {
                 if (!validateForm()) {
                     return;
                 }
-
             } else {
                 let url = "SignUp.php"; // the script where you handle the form input.
             }
+
             current_fs = $(this).parent();
             next_fs = $(this).parent().next();
             //Add Class Active
@@ -164,8 +162,14 @@ function validateForm() {
     }
 }
 
+function contactus() {
+        $("#content").load("Features/Settings/edit.php");
+        $(".components li").removeClass("active");
+        $("#settings").addClass("active");
+}
+
+
 function reserveARoom() {
-    var flag=false;
     $.post('Features/Reservation/reserveRoom.php', {
         'reserveRoom': 'reserveRoom',
         'dateRange': document.getElementById('daterangepicker').value,
@@ -175,16 +179,38 @@ function reserveARoom() {
             if (data === 'You are not allowed to continue') {
                 window.location.replace("../Home/PHP/SignIn/logout.php");
             } else {
-                $("#MSGBODY").html(data);
-                $("#MSGTITLE").html("Ops..");
-                $("#trigermsg").click();
                 if (data.toString().includes("room No.")) {
                     $("#roomNo").html(data);
-                    flag=true;
+                    current_fs = $('#send').parent();
+                    next_fs = $('#send').parent().next();
+                    //Add Class Active
+                    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+                    //show the next fieldset
+                    next_fs.show();
+                    //hide the current fieldset with style
+                    current_fs.animate({opacity: 0}, {
+                        step: function (now) {
+                            // for making fieldset appear animation
+                            opacity = 1 - now;
+                            current_fs.css({
+                                'display': 'none',
+                                'position': 'relative'
+                            });
+                            next_fs.css({'opacity': opacity});
+                        },
+                        duration: 500
+                    });
+                }
+                else {
+                    $("#MSGBODY").html(data);
+                    $("#MSGTITLE").html("Ops..");
+                    $("#trigermsg").click();
+                    $('.modal-backdrop').removeClass('show');
+
+
                 }
 
             }
         }
     })
-    return flag;
 }

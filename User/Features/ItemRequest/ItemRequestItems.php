@@ -57,11 +57,12 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
         <div class="modal-dialog modal-login">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 id="MSGTITLE">Sign In</h3>
+                    <h3 id="MSGTITLE"></h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="model-wrapper">
-                        <p class="main-content" id="MSGBODY">Sign In</p>
+                        <p class="main-content" id="MSGBODY"></p>
                     </div>
                 </div>
             </div>
@@ -74,7 +75,7 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
     <!-- Header-->
     <div class="row">
         <div class="col-8 offset-2">
-            <h2 class="main-h2 mt-5">Category 1</h2>
+            <h2 id="headerCat" class="main-h2 mt-5">Category 1</h2>
             <hr class="line">
         </div>
     </div>

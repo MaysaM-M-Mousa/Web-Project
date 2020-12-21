@@ -45,8 +45,8 @@ $result = $pdo->query($sql);
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
             ?>
-            <div onclick="goToCategory(<?php echo $row['sub_cat_id'] ?>)"
-                 class="card Catagories col-10 offset-1 col-xl-5 pr-0 <?php if ($i % 2 == 0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0'; ?>">
+            <div onclick="goToCategory(<?php echo $row['sub_cat_id'] ?>,'<?php echo $row['sub_cat_name'] ?>')"
+                 class="card Catagories animate__animated animate__zoomIn col-10 offset-1 col-xl-5 pr-0 <?php if ($i % 2 == 0) echo 'offset-xl-1'; else echo 'ml-xl-0 offset-xl-0'; ?>">
                 <div class="container-fluid no-gutters">
                     <div class="row">
                         <img class="col-md-4 col-12 pr-0" src="../<?php echo $row['image']?>"

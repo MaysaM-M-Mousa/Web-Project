@@ -22,7 +22,8 @@
 
 })(jQuery);
 
-function goToItemReqSub(cat_id) {
+function goToItemReqSub(cat_id,cat_name) {
+    localStorage.setItem('selectedCat',cat_id );
     $.post('Features/ItemRequest/ItemRequestSub.php', {
             'subCatChosen': 'subCatChosen',
             'cat_id': cat_id
@@ -30,6 +31,8 @@ function goToItemReqSub(cat_id) {
         function (data, status) {
             if (status === 'success') {
                 document.getElementById('content').innerHTML = data;
+                document.getElementById('headerCat').innerHTML = cat_name;
+
                 $(".back-btn").on("click", function () {
                     $("#content").load("Features/ItemRequest/ItemRequestCategories.php", "data1");
                 })
@@ -38,27 +41,32 @@ function goToItemReqSub(cat_id) {
     )
 }
 
-function goToItemReqItems(sub_cat_id) {
+function goToItemReqItems(sub_cat_id,sub_cat_name) {
     $.post('Features/ItemRequest/ItemRequestItems.php', {
         'itemChosen': 'itemChosen',
         'sub_cat_id': sub_cat_id
     }, function (data, status) {
         if (status === 'success') {
             document.getElementById('content').innerHTML = data;
+            document.getElementById('headerCat').innerHTML = sub_cat_name;
+
             $(".back-btn").on("click", function () {
-                $("#content").load("Features/ItemRequest/ItemRequestSub.php", "data1");
+                goToItemReqSub(localStorage.getItem('selectedCat'));
             });
             $(".order-btn").on("click",function () {
                 if($(this).hasClass("toggled-button")){
                     $(this).siblings(":last").click();
                 }
-                else
-                    $(this).addClass("toggled-button");
+                else {
+                    $(".order-btn").removeClass("toggled-button");
 
+                    $(this).addClass("toggled-button");
+                }
             });
         }
     })
 }
+var seconds = 5;
 
 function orderItem(item_id, quantity) {
     $.post('Features/ItemRequest/ItemRequestItems.php', {
@@ -69,12 +77,13 @@ function orderItem(item_id, quantity) {
             document.getElementById('MSGTITLE').innerHTML = "Thank You!";
             document.getElementById('MSGBODY').innerHTML = "We will deliver the meal to your room in the shortest time Possible";
             $("#trigermsg").click();
-            countdown();        }
+            seconds = 4;
+            countdown();
+        }
     })
 }
 
 
-var seconds = 5;
 function countdown() {
     seconds = seconds - 1;
     if (seconds < 0) {

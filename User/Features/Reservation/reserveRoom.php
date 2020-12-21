@@ -65,7 +65,7 @@ if (isset($_POST['reserveRoom'], $_POST['dateRange'], $_POST['roomType'])) {
         ':end_date' => $endDate
     ));
     if ($stmt->rowCount() > 0) {
-        echo "<span style=\"font-family: \'Cabin\', serif; color:darkred; font-size:20px;\">You have a crossed dates, please choose another date!</span>";
+        echo "<span style=\"font-family: 'Cabin', serif; color:darkred; font-size:20px;\">You have a crossed dates, please choose another date!</span>";
         return;
     }
 

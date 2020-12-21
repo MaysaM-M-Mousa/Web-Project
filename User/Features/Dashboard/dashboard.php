@@ -20,10 +20,10 @@ else
 
 ?>
 
-<section class="section-invert dashboard-section">
+<section class="section-invert dashboard-section animate__animated animate__fadeIn">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-8 offset-2">
+            <div class="col-8 offset-2 animate__animated animate__fadeIn">
                 <h1 class="main-h1">Welcome</h1>
                 <hr class="line">
                 <p class="main-content">
@@ -35,42 +35,42 @@ else
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-sm-12 col-md-6 px-0">
+            <div class="animate__animated animate__zoomIn col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item">
                     <i class="far fa-hotel my-3" style="font-size: 50px"></i>
                     <h4>Reservation</h4>
                     <p><?php echo $sub ?></p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12 col-md-6 px-0">
+            <div class="animate__animated animate__zoomIn animate__delay-1s col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item dashboard-item-odd">
                     <i class="fal fa-key my-3" style="font-size: 50px"></i>
                     <h4>Room</h4>
                     <p><?php echo $room ?></p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12 col-md-6 px-0">
+            <div class="animate__animated animate__zoomIn animate__delay-2s col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item">
                     <i class="fal fa-wifi my-3" style="font-size: 50px"></i>
                     <h4>Free Wifi</h4>
                     <p><?php echo $wifi ?></p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12 col-md-6 px-0">
+            <div class="animate__animated animate__zoomIn animate__delay-3s col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item dashboard-item-odd">
                     <i class="fal fa-user-alt my-3" style="font-size: 50px"></i>
                     <h4>Discover Your Account</h4>
                     <p>Check Out the incredible advantages of having Hotel account by navigating the Sidemenu sections.</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12 col-md-6 px-0">
+            <div class="animate__animated animate__zoomIn animate__delay-4s col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item">
                     <i class="fal fa-taxi my-3" style="font-size: 50px"></i>
                     <h4>Hire Driver</h4>
                     <p>We Will arrange everything for you, just tell one of the staff and be there in time..</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-12 col-md-6 px-0">
+            <div class="animate__animated animate__zoomIn animate__delay-5s col-lg-4 col-sm-12 col-md-6 px-0">
                 <div class="dashboard-item dashboard-item-odd">
                     <i class="fal fa-map my-3" style="font-size: 50px"></i>
                     <h4>Daily City Tour</h4>

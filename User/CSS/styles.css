@@ -7,7 +7,9 @@
         font-size: 12px;
     }
 }
-
+:root {
+    --animate-delay: 0.25s;
+}
 /* Medium Device: 1200px */
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -29,14 +31,48 @@
         font-size: 11px;
     }
 }
+#msg{
+    background: rgba(0,0,0,0.5);
+
+}
+.modal-backdrop {
+display: none;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+    background-color: transparent;
+}
 #MSGTITLE{
     color: #B79040;
     font-family: "Cabin", serif;
 
 }
+.modal-header{
+
+    background: #232530;
+    border-radius: 0;
+
+}
+.modal-header{
+    background: #232530;
+    border-radius: 0;
+}
+.modal-header button{
+   color: white;
+    font-size: 16px;
+
+}
+.modal-header button:hover{
+    color: white;
+    font-size: 16px;
+}
+.modal-body{
+    color: #eeeeee;
+}
 #MSGBODY{
     color: #232530;
     font-family: "Cabin", serif;
+    padding-bottom: 10px;
 
 }
 
