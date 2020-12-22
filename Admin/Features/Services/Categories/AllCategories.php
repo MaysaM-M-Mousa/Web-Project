@@ -13,7 +13,7 @@ $result = $pdo->query($sql);
 
 ?>
 
-<div class="container">
+<div class="container animate__animated animate__fadeIn">
     <section>
         <h1 class="main-h1">Categories</h1>
         <hr class="line">

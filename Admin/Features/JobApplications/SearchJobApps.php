@@ -138,7 +138,7 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     ?>
 
     <div class="container forms">
-        <div class="form-border-2  my-5" id="cardJobDiv<?php echo $counter ?>">
+        <div style="animation-delay:<?php echo  0.1*$counter?>s; "class="form-border-2  my-5 animate__animated animate__zoomIn" id="cardJobDiv<?php echo $counter ?>">
 
             <div class="card-border-1">
                 <div class="delete" onclick="deleteJobCard(<?php echo $row['form_id'] ?>,<?php echo $counter ?>)">
@@ -233,7 +233,9 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 }
 ?>
 
-<button onclick="loadMoreCardsSMJA()">hello</button>
+<div id="load-wrapper">
+    <button id="loadMore" class="btn-primary btn load-btn" onclick="loadMoreCardsSMJA()">Load More</button>
+</div>
 <div id="counter" class="<?php echo $counter ?>"></div>
 <script>
     $(".details").on("click", function () {

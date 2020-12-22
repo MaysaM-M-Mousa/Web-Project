@@ -157,9 +157,9 @@ if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['rep
         }
         ?>
     </div>
-
-<button onclick="loadMoreCardsSMContacts()">hello</button>
-
+<div id="load-wrapper">
+    <button id="loadMore" class="btn-primary btn load-btn" onclick="loadMoreCardsSMContacts()">Load More</button>
+</div>
 
 <div id="counter" class="<?php echo $counter ?>"></div>
 <script>

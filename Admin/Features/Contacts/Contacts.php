@@ -154,7 +154,9 @@ $result = $pdo->query($sql);
                 <?php
             }
             ?>
-            <button onclick="loadMoreCardsContacts()">hello</button>
+            <div id="load-wrapper">
+                <button id="loadMore" class="btn-primary btn load-btn" onclick="loadMoreCardsContacts()">Load More</button>
+            </div>
         </div>
     </div>
 

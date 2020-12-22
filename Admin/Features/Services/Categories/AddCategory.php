@@ -66,7 +66,7 @@ if (isset($_POST['category_name'], $_POST['description'])) {
 }
 
 ?>
-<div class="container forms">
+<div class="container forms animate__animated animate__fadeIn">
     <div class="form-border-2  my-5">
         <div class="form-border-1">
             <section>
@@ -92,8 +92,7 @@ if (isset($_POST['category_name'], $_POST['description'])) {
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
                 <div class="form-group files col-12 col-md-9">
-                    <label>Upload Your File </label>
-                    <input type="file" id="catImage" class="form-control" multiple="false">
+                    <input type="file"accept="image/x-png,image/gif,image/jpeg" id="catImage" class="form-control" multiple="false">
                 </div>
             </div>
             <div class="row">

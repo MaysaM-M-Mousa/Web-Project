@@ -138,7 +138,6 @@ if (isset($_POST['item_name'], $_POST['item_price'], $_POST['item_description'],
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-2">Photo:</label>
                 <div class="form-group files col-12 col-md-9">
-                    <label>Upload Your File </label>
                     <input type="file" id="itemImage" class="form-control" multiple="false">
                 </div>
             </div>

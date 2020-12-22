@@ -1,3 +1,4 @@
+
 <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" type="text/css"/>
 <link href="https://cdn.syncfusion.com/ej2/ej2-layouts/styles/material.css" rel="stylesheet" type="text/css"/>
 <script src="../Vendor/DatePicker/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
@@ -16,7 +17,7 @@
             <!--element which is going to render the dashboardlayout-->
             <div id="dashboard_inline">
                 <!--                //clock-->
-                <div id="one" class="e-panel" data-row="0" data-col="4" data-sizeX="1" data-sizeY="1">
+                <div id="one" class="e-panel animate__animated animate__zoomIn animate__delay-1s" data-row="0" data-col="4" data-sizeX="1" data-sizeY="1">
                     <div class="e-panel-container">
                         <div class="clock">
                             <div class="clock__second"></div>
@@ -88,7 +89,7 @@
                     </div>
                 </div>
                 <!--                //main chart-->
-                <div id="two" class="e-panel" data-row="0" data-col="0" data-sizeX="4" data-sizeY="3">
+                <div id="two" class="e-panel animate__animated animate__zoomIn" data-row="0" data-col="0" data-sizeX="4" data-sizeY="3">
                     <div class="e-panel-container container-fluid">
                         <div class="row" id="chart3Container">
                             <canvas class="col-12" id="myChart3"></canvas>
@@ -145,7 +146,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="four" class="e-panel" data-row="1" data-col="4" data-sizeX="1" data-sizeY="2">
+<!--                Date-->
+                <div id="four" class="e-panel animate__animated animate__zoomIn animate__delay-2s" data-row="1" data-col="4" data-sizeX="1" data-sizeY="2">
                     <div class="e-panel-container">
                         <div class="yellow">
                             <div id="calendar">
@@ -241,14 +243,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="five" class="e-panel" data-row="3" data-col="2" data-sizeX="3" data-sizeY="2">
+                <div id="five" class="e-panel animate__animated animate__zoomIn animate__delay-4s" data-row="3" data-col="2" data-sizeX="3" data-sizeY="2">
                     <div class="e-panel-container">
                         <div class="content">
                             <canvas style="position:absolute;bottom: 10%;" id="myChart1"></canvas>
                         </div>
                     </div>
                 </div>
-                <div id="six" class="e-panel" data-row="3" data-col="0" data-sizeX="2" data-sizeY="2">
+                <div id="six" class="e-panel animate__animated animate__zoomIn animate__delay-3s" data-row="3" data-col="0" data-sizeX="2" data-sizeY="2">
                     <div class="e-panel-container p-4">
                         <div class="chart-container" style="position: relative; height:90%; ">
                             <canvas id="myChart2"

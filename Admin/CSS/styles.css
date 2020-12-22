@@ -7,7 +7,9 @@
         font-size: 12px;
     }
 }
-
+:root {
+    --animate-delay: 0.25s;
+}
 .navbar .header{
     margin: 0 auto;
 
@@ -74,9 +76,16 @@
 #sidebar .sidebar-dropdown .sidebar-submenu ul {
     padding: 5px 0;
     list-style: none;
+    font-family: 'Cabin';
+
+}
+#load-wrapper{
+    text-align: center;
+    margin: 20px auto 40px;
 }
 
 #sidebar.active .sidebar-dropdown .sidebar-submenu li {
+
     padding-bottom: 0;
     font-size: 16px;
     border: none;
@@ -1750,7 +1759,7 @@ div.dataTables_wrapper div.dataTables_info {
 .files{ position:relative}
 .files:after {  pointer-events: none;
     position: absolute;
-    top: 40px;
+    top: 0;
     left: 0;
     width: 50px;
     right: 0;

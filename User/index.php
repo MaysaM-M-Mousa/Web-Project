@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--    TODO: Add Animation -->
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,9 +28,6 @@
 
 </head>
 <body>
-
-
-
 <!--Top Nav Start-->
 <nav class="navbar navbar-dark bg-dark">
     <div class="header">

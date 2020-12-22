@@ -182,8 +182,8 @@ if (isset($_POST['book_id'])) {
 ?>
 <!-- room type, -->
 
-<div class="container forms">
-    <div onclick="allRooms()" class="back-btn">
+<div class="container forms animate__animated animate__fadeIn">
+    <div id="back-btn" class="back-btn">
         <i class="fal fa-arrow-left"></i>
     </div>
     <div class="form-border-2">

@@ -13,12 +13,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>La Terra Santa &reg;</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="../Vendor/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="../Vendor/Fonts/font-awesome-4.7.0/css/all.css">
     <link rel="stylesheet" href="../Vendor/CSS/flaticon.css" type="text/css">
-    <link rel="stylesheet" href="CSS/dropzone.min.css">
+    <link rel="stylesheet" href="../Vendor/CSS/Loader.css">
+
     <link rel="stylesheet" href="CSS/styles.css">
 
 </head>
@@ -52,7 +54,7 @@
                 <i class="far fa-book-open icon"></i>
                 <a> Booking</a>
             </li>
-            <li  class="sidebar-dropdown dropright">
+            <li id="roomLink" class="sidebar-dropdown dropright">
                 <i id ="roomIcon" class="far fa-bed icon"></i>
                 <a> Rooms</a>
                 <div class="sidebar-submenu">
@@ -62,7 +64,7 @@
                     </ul>
                 </div>
             </li>
-            <li class="sidebar-dropdown">
+            <li id="servicesLink" class="sidebar-dropdown">
                 <i id="servicesIcon" class="far fa-server icon"></i>
                 <a>Services</a>
                 <div class="sidebar-submenu">
@@ -104,7 +106,7 @@
                 <i class="far fa-blanket icon"></i>
                 <a> Job Applications</a>
             </li>
-            <li class="sidebar-dropdown dropright">
+            <li id="employeeLink"class="sidebar-dropdown dropright">
                 <i id="employeeIcon" class="far fa-user-tie icon"></i>
                 <a> Employees</a>
                 <div class="sidebar-submenu">
@@ -114,7 +116,7 @@
                     </ul>
                 </div>
             </li>
-            <li  class="sidebar-dropdown dropright">
+            <li  id="orderLink" class="sidebar-dropdown dropright">
                 <i id ="orderIcon" class="far fa-database icon"></i>
                 <a> History</a>
                 <div class="sidebar-submenu">
@@ -134,8 +136,7 @@
             </li>
         </ul>
     </nav>
-
-    <div id="content">
+    <div id="content" class="animate__animated animate__fadeIn">
 
     </div>
 </div>
@@ -145,14 +146,13 @@
 <script src="../Vendor/script/bootstrap.min.js"></script>
 <script src="../Vendor/script/popper.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+<!-- Main Quill library -->
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 
 <script src="Scripts/Main.js"></script>
 
 
-<!-- Main Quill library -->
-<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
-<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>
 
 
 </body>

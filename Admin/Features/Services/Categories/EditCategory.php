@@ -6,7 +6,7 @@ require_once 'pdo.php';
 //    header("Location: ../../Home/HTML/index.php");
 //    return;
 //}
-
+//TODO:Handle image edit, (ajax request ready)
 if (isset($_POST['editCategory'], $_POST['cat_id'])) {
 
     $cat_id = htmlentities($_POST['cat_id']);
@@ -20,7 +20,7 @@ if (isset($_POST['editCategory'], $_POST['cat_id'])) {
     $row = $result->fetch(PDO::FETCH_ASSOC);
 }
 
-if (isset($_POST['cat_id_Edit'], $_POST['category_name_Edit'], $_POST['description_Edit'], $_POST['image_Edit'])) {
+if (isset($_POST['cat_id_Edit'], $_POST['category_name_Edit'], $_POST['description_Edit'])) {
 
     $cat_id_Edit = htmlentities($_POST['cat_id_Edit']);
     $category_name_Edit = htmlentities($_POST['category_name_Edit']);
@@ -73,6 +73,13 @@ if (isset($_POST['cat_id_Edit'], $_POST['category_name_Edit'], $_POST['descripti
                 <textarea class="col-12 col-md-9" placeholder="Room Description" id="categoryDescriptionEdit" rows="5"
                           cols="20"><?php echo $row['description'] ?>
                 </textarea>
+            </div>
+
+            <div class="row mx-3 mb-2">
+                <label for="zdrop" class="col-12 col-md-3">Photo:</label>
+                <div class="form-group files col-12 col-md-9">
+                    <input type="file"accept="image/x-png,image/gif,image/jpeg" id="catImage" class="form-control" multiple="false">
+                </div>
             </div>
             <div class="row mx-3">
                 <div class="col-12 offset-md-3 col-md-3">

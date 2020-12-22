@@ -109,8 +109,7 @@ if (isset($_POST['sub_cat_name'], $_POST['description'], $_POST['cat_id'])) {
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
                 <div class="form-group files col-12 col-md-9">
-                    <label>Upload Your File </label>
-                    <input type="file" id="subCatImage" class="form-control" multiple="false">
+                    <input type="file" id="subCatImage" accept="image/x-png,image/gif,image/jpeg" class="form-control" multiple="false">
                 </div>
             </div>
             <div class="row mx-3 mb-2">

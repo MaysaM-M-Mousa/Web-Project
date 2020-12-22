@@ -8,7 +8,7 @@ $result = $pdo->query($sql);
 //$row = $result->fetch(PDO::FETCH_ASSOC);
 
 ?>
-<div class="container-fluid px-5">
+<div class="container-fluid px-5 animate__animated animate__fadeIn">
     <section>
         <h1 class="main-h1">Bookings</h1>
         <hr class="line">

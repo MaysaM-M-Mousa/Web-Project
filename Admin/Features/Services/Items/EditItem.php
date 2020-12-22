@@ -77,7 +77,7 @@ if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_ed
 
 ?>
 
-<div class="container forms">
+<div class="container forms animate__animated animate__fadeIn">
     <div id="back-btn" class="back-btn">
         <i class="fal fa-arrow-left"></i>
     </div>
@@ -139,6 +139,12 @@ if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_ed
                     ?>
 
                 </select>
+            </div>
+            <div class="row mx-3 mb-2">
+                <label for="zdrop" class="col-12 col-md-3">Photo:</label>
+                <div class="form-group files col-12 col-md-9">
+                    <input type="file" id="itemImage" class="form-control" multiple="false">
+                </div>
             </div>
             <div class="row mx-3">
                 <div class="col-12 offset-md-3 col-md-3">

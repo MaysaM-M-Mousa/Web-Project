@@ -13,12 +13,25 @@
 
 ---------------------------------------------------------  */
 
+//To add loader while Ajax Process
+function setLoader() {
+    $("#content").html(" <div style='left: 40%; top:40%' id=\"loader\" class=\"loader-wrapper animate__animated animate__fadeIn\">\n" +
+        "        <div class=\"globe-loader fas fa-globe-americas\">\n" +
+        "            <i class=\"fas fa-plane\"></i>\n" +
+        "        </div>\n" +
+        "    </div>");
+    return;
+}
+
 (function ($) {
+
     // 3. Load DashBoard On Start
     $(document).ready(function () {
+        setLoader();
         $("#content").load("Features/Dashboard/dashboard.php");
         $("#dashboard").addClass("active");
     })
+    //start Sub menu Handling
     $(document).ready(function () {
         "use strict";
         var fullHeight = function () {
@@ -39,7 +52,6 @@
         });
         $(".sidebar-dropdown > a").on("click", submenu);
         $("#content").on("click", submenu);
-
         $(".sidebar-dropdown > i").on("click", function (event) {
             var menu_id = "#" + event.target.id;
             if (!$('#sidebar').hasClass('active') || window.innerWidth > 992) {
@@ -81,39 +93,189 @@
                 $(this).parent().addClass("active");
             }
         }
+    });
+    //end Sub menu Handling
 
-        // for log out icon
-        $("#logOutItem").click(function () {
-            window.location.replace("../PHP/LogOut/logout.php");
-        })
+    /*******************************************
+     *    Start Sub Menu Ajax Requests          *
+     ********************************************/
 
-        $("#Rooms").click(function () {
-            $('#content').load('Features/Room/AllRooms.php');
+// AJAX for Booking feature
+    $("#dashboard").click(function () {
+        setLoader();
+        $("#content").load("Features/Dashboard/dashboard.php");
+        $(".components li").removeClass("active");
+        $("#dashboard").addClass("active");
+    })
+// AJAX for Booking feature
+    $("#bookingLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#bookingLink").addClass("active");
+        setLoader();
+        $.ajax({
+            type: 'POST',
+            url: 'Features/Booking/AllBooking.php',
+            success: function (data) {
+                $("#content").html(data);
+                if ($("#bookings").length > 0) {
+                    var table = $('#bookings').DataTable({
+                        "scrollX": true,
+                        responsive: true
+                    });
+                }
+            }
         })
+    })
 
-        $("#dashboard").click(function () {
-            $("#content").load("Features/Dashboard/dashboard.php");
-            $("#dashboard").addClass("active");
-        })
-        $("#addRoom").click(function () {
-            $('#content').load('Features/Room/addRoom.php');
-        })
-        $("#addEmployee").click(function () {
-            $('#content').load('Features/Staff/AddStaff.php');
-        })
-        $("#allEmployees").click(function () {
-            $('#content').load('Features/Staff/AllStaff.php');
+// AJAX for Contacts Feature All rooms ,add Room
+    $("#Rooms").click(function () {
+        $(".components li").removeClass("active");
+        $("#roomLink").addClass("active");
+        setLoader();
+        $('#content').load('Features/Room/AllRooms.php');
+    })
+    $("#addRoom").click(function () {
+        setLoader();
+
+        $(".components li").removeClass("active");
+        $("#roomLink").addClass("active");
+        $(".components li").removeClass("active");
+        $("#addRoom").addClass("active");
+        setLoader();
+        $('#content').load('Features/Room/addRoom.php');
+    })
+// AJAX for Categories
+
+    $("#AllCategoriesLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#servicesLink").addClass("active");
+        setLoader();
+        $.ajax({
+            type: 'POST',
+            url: 'Features/Services/Categories/AllCategories.php',
+            success: function (data) {
+                $("#content").html(data);
+                if ($("#categoriesTable").length > 0) {
+                    var table = $('#categoriesTable').DataTable({
+                        "scrollX": true,
+                        responsive: true
+                    });
+                }
+            }
         })
     });
+    $("#AddCategoriesLink").click(function () {
+        setLoader();
+        $(".components li").removeClass("active");
+        $("#servicesLink").addClass("active");
+        $.ajax({
+            type: 'POST',
+            url: 'Features/Services/Categories/AddCategory.php',
+            success: function (data) {
+                $("#content").html(data);
+            }
+        })
+    })
 
-// when categories.php is loaded, each category card has Browse btn, this function handles the event when it's clicked
-// it will invoke the cards for the particular category
-// function goToCategory() {
-//     $("#content").load("../Features/Restaurant/category.php", "data1");
-// }
+// AJAX for Sub Categories
+    $("#AllSubCategoriesLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#servicesLink").addClass("active");
+        setLoader();
+        $.ajax({
+            type: 'POST',
+            url: 'Features/Services/Sub-Categories/AllSubCategories.php',
+            success: function (data) {
+                $("#content").html(data);
+                if ($("#subcategoriesTable").length > 0) {
+                    var table = $('#subcategoriesTable').DataTable({
+                        "scrollX": true,
+                        responsive: true
+                    });
+                }
+            }
+        })
+    });
+    $("#AddSubCategoriesLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#servicesLink").addClass("active");
+        setLoader();
+        $.post('Features/Services/Sub-Categories/AddSubCategory.php', {}, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('content').innerHTML = data;
+            }
+        })
+    })
+ // AJAX for Items Menu
+    $("#AllItemsLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#servicesLink").addClass("active");
+        setLoader();
+        $.ajax({
+            type: 'POST',
+            url: 'Features/Services/Items/AllItems.php',
+            success: function (data) {
+                $("#content").html(data);
+                if ($("#itemsTable").length > 0) {
+                    var table = $('#itemsTable').DataTable({
+                        "scrollX": true,
+                        responsive: true
+                    });
+                }
+            }
+        })
+    })
+    $("#AddItemsLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#servicesLink").addClass("active");
+        setLoader();
+        $.post('Features/Services/Items/AddItem.php', {}, function (data, status) {
+            if (status === 'success') {
+                document.getElementById('content').innerHTML = data;
+            }
+        })
+    })
 
+// AJAX for Job Applications
+    $("#jobLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#jobLink").addClass("active");
+        setLoader();
+        $("#content").load('Features/JobApplications/JobApps.php');
+    })
+// AJAX for Employees
+
+    $("#addEmployee").click(function () {
+        $(".components li").removeClass("active");
+        $("#employeeLink").addClass("active");
+        setLoader();
+        $('#content').load('Features/Staff/AddStaff.php');
+    })
+    $("#allEmployees").click(function () {
+        $(".components li").removeClass("active");
+        $("#employeeLink").addClass("active");
+        setLoader();
+        $('#content').load('Features/Staff/AllStaff.php');
+    })
+
+// AJAX for customer item
+    $("#customerLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#customerLink").addClass("active");
+        setLoader();
+        $("#content").load('Features/Users/AllUsers.php');
+    })
+    $("#ordersLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#orderLink").addClass("active");
+        setLoader();
+        $("#content").load('Features/Orders/allOrders.php');
+    })
 // AJAX for Contacts Feature
     $("#contactLink").click(function () {
+        $(".components li").removeClass("active");
+        $("#contactLink").addClass("active");
+        setLoader();
         $.ajax({
             type: 'POST',
             url: 'Features/Contacts/Contacts.php',
@@ -123,21 +285,11 @@
         })
 
     })
-
-
-// AJAX for Job Applications
-    $("#jobLink").click(function () {
-        $("#content").load('Features/JobApplications/JobApps.php');
+// Ajax for log out icon
+    $("#logOutItem").click(function () {
+        window.location.replace("../PHP/LogOut/logout.php");
     })
 
-
-// AJAX for customer item
-    $("#customerLink").click(function () {
-        $("#content").load('Features/Users/AllUsers.php');
-    })
-    $("#ordersLink").click(function () {
-        $("#content").load('Features/Orders/allOrders.php');
-    })
 })(jQuery);
 
 //End jQuery
@@ -154,8 +306,7 @@ function deleteJobCard(form_id, counter) {
 
 function jobSearch() {
     document.getElementById('searchJobResult').innerHTML =
-        '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
-        '" src="images/VZvw.gif">';
+        '<div style="margin: 20% auto; display: block;" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
 
     var searchBar = document.getElementById('searchJobBar').value;
     var filter = document.getElementById('searchAppsFilter').value;
@@ -184,7 +335,8 @@ function sendEmailJobBTN(form_id, counter) {
     var emailSender = 'emailSender' + counter;
     var statusID = 'status' + counter;
     var edit = editor[counter];
-    document.getElementById(statusID).innerHTML = '<img width="35px" height="30px"  src="../images/VZvw.gif">';
+    document.getElementById(statusID).innerHTML =
+        '<div class="lds-ring" style="display: block;margin: auto;"><div></div><div></div><div></div><div></div></div>';
     $.post('Features/JobApplications/JobApps.php', {
         'sendReplyJobEmail': 'sendReplyJobEmail',
         'emailSender': document.getElementById(emailSender).innerText,
@@ -298,32 +450,6 @@ function deleteRoom(room_id) {
 
 // 1.AJAX for Categories Menu
 
-$("#AllCategoriesLink").click(function () {
-    $.ajax({
-        type: 'POST',
-        url: 'Features/Services/Categories/AllCategories.php',
-        success: function (data) {
-            $("#content").html(data);
-            if ($("#categoriesTable").length > 0) {
-                var table = $('#categoriesTable').DataTable({
-                    "scrollX": true,
-                    responsive: true
-                });
-            }
-        }
-    })
-});
-
-$("#AddCategoriesLink").click(function () {
-
-    $.ajax({
-        type: 'POST',
-        url: 'Features/Services/Categories/AddCategory.php',
-        success: function (data) {
-            $("#content").html(data);
-        }
-    })
-})
 
 function addCategoryBTN() {
     var file_data = $('#catImage').prop('files')[0];
@@ -378,16 +504,25 @@ function EditCategory(cat_id) {
 }
 
 function submitChangingCategory(cat_id) {
-    $.post('Features/Services/Categories/EditCategory.php', {
-        'category_name_Edit': document.getElementById('categoryNameEdit').value,
-        'description_Edit': document.getElementById('categoryDescriptionEdit').value,
-        'image_Edit': 'none',
-        'cat_id_Edit': cat_id
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('editCatResult').innerHTML = data;
+    var file_data = $('#catImage').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('image_Edit', file_data);
+    form_data.append('cat_id_Edit',cat_id );
+    form_data.append('category_name_Edit',document.getElementById('categoryNameEdit').value);
+    form_data.append('description_Edit',  document.getElementById('categoryDescriptionEdit').value);
+
+    $.ajax({
+        url: 'Features/Services/Categories/EditCategory.php', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function (data) {
+            $("#editCatResult").html(data); // display response from the PHP script, if any
         }
-    })
+    });
 }
 
 function deleteCategoryBTN(cat_id) {
@@ -404,31 +539,6 @@ function deleteCategoryBTN(cat_id) {
 
 // 2.AJAX for sub Categories Menu
 
-$("#AllSubCategoriesLink").click(function () {
-
-    $.ajax({
-        type: 'POST',
-        url: 'Features/Services/Sub-Categories/AllSubCategories.php',
-        success: function (data) {
-            $("#content").html(data);
-            if ($("#subcategoriesTable").length > 0) {
-                var table = $('#subcategoriesTable').DataTable({
-                    "scrollX": true,
-                    responsive: true
-                });
-            }
-        }
-    })
-});
-
-
-$("#AddSubCategoriesLink").click(function () {
-    $.post('Features/Services/Sub-Categories/AddSubCategory.php', {}, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('content').innerHTML = data;
-        }
-    })
-})
 
 function addSubCategoryBTN() {
 
@@ -453,113 +563,7 @@ function addSubCategoryBTN() {
         }
     });
 }
-
-function EditSubCategory(sub_cat_id) {
-    $.ajax({
-        type: 'POST',
-        data: {
-            'editSubCategory': 'editSubCategory',
-            'sub_cat_id': sub_cat_id
-        },
-        url: 'Features/Services/Sub-Categories/EditSubCategory.php',
-        success: function (data) {
-            $("#content").html(data);
-            if ($("#back-btn").length > 0) {
-                $("#back-btn").click(function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: 'Features/Services/Sub-Categories/AllSubCategories.php',
-                        success: function (data) {
-                            $("#content").html(data);
-                            if ($("#categoriesTable").length > 0) {
-                                var table = $('#categoriesTable').DataTable({
-                                    "scrollX": true,
-                                    responsive: true
-                                });
-                            }
-                        }
-                    })
-                });
-            }
-        }
-    })
-}
-
-function submitChangingSubCategory(sub_cat_id) {
-
-    $.post('Features/Services/Sub-Categories/EditSubCategory.php', {
-        'sub_cat_name_edit': document.getElementById('subCategoryNameEdit').value,
-        'description_edit': document.getElementById('subCategoryDescriptionEdit').value,
-        'cat_id_edit': document.getElementById('parentCategoryEdit').value,
-        'sub_cat_id_edit': sub_cat_id,
-        'image_edit': 'none'
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('editSubCatResult').innerHTML = data;
-        }
-    })
-}
-
-function deleteSubCategoryBTN(sub_cat_id) {
-    $.post('Features/Services/Sub-Categories/DeleteSubCategory.php', {
-        'deleteSubCategory': 'deleteSubCategory',
-        'sub_cat_id': sub_cat_id
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('content').innerHTML = data;
-        }
-    })
-}
-
-// 3.AJAX for Items Menu
-$("#AllItemsLink").click(function () {
-    $.ajax({
-        type: 'POST',
-        url: 'Features/Services/Items/AllItems.php',
-        success: function (data) {
-            $("#content").html(data);
-            if ($("#itemsTable").length > 0) {
-                var table = $('#itemsTable').DataTable({
-                    "scrollX": true,
-                    responsive: true
-                });
-            }
-        }
-    })
-})
-
-$("#AddItemsLink").click(function () {
-    $.post('Features/Services/Items/AddItem.php', {}, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('content').innerHTML = data;
-        }
-    })
-})
-
-function getSubCategories() {
-    $.post('Features/Services/Items/AddItem.php', {
-        'findMainCategory': 'findMainCategory',
-        'cat_id': document.getElementById('mainCategory').value
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('subCategory').innerHTML = data;
-        }
-    })
-}
-
 function addItemBTN() {
-
-    // $.post('Features/Services/Items/AddItem.php', {
-    //     'item_name': document.getElementById('itemName').value,
-    //     'item_price': document.getElementById('itemPrice').value,
-    //     'item_description': document.getElementById('itemDescription').value,
-    //     'sub_cat_id': document.getElementById('subCategory').value,
-    //     'cat_id': document.getElementById('mainCategory').value,
-    // }, function (data, status) {
-    //     if (status === 'success') {
-    //         document.getElementById('addItemResult').innerHTML = data;
-    //     }
-    // })
 
     var file_data = $('#itemImage').prop('files')[0];
     var form_data = new FormData();
@@ -583,6 +587,127 @@ function addItemBTN() {
             $("#addItemResult").html(data); // display response from the PHP script, if any
         }
     });
+}
+function deleteSubCategoryBTN(sub_cat_id) {
+    $.post('Features/Services/Sub-Categories/DeleteSubCategory.php', {
+        'deleteSubCategory': 'deleteSubCategory',
+        'sub_cat_id': sub_cat_id
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('content').innerHTML = data;
+        }
+    })
+}
+function deleteItemBTN(item_id) {
+    $.post('Features/Services/Items/DeleteItem.php', {
+        'deleteItem': 'deleteItem',
+        'item_id': item_id
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('content').innerHTML = data;
+        }
+    })
+}
+function addEmpBTN() {
+
+    var file_data = $('#empImage').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    form_data.append('empID', document.getElementById('empID').value);
+    form_data.append('empSalary', document.getElementById('empSalary').value);
+    form_data.append('empJoiningDate', document.getElementById('empJoiningDate').value);
+    form_data.append('empPosition', document.getElementById('empPosition').value);
+    $.ajax({
+        url: 'Features/Staff/AddStaff.php', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function (data) {
+            $("#empMSG").html(data); // display response from the PHP script, if any
+        }
+    });
+
+}
+
+
+function EditSubCategory(sub_cat_id) {
+    $.ajax({
+        type: 'POST',
+        data: {
+            'editSubCategory': 'editSubCategory',
+            'sub_cat_id': sub_cat_id
+        },
+        url: 'Features/Services/Sub-Categories/EditSubCategory.php',
+        success: function (data) {
+            $("#content").html(data);
+            if ($("#back-btn").length > 0) {
+                $("#back-btn").on("click",function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'Features/Services/Sub-Categories/AllSubCategories.php',
+                        success: function (data) {
+                            $("#content").html(data);
+                            if ($("#subcategoriesTable").length > 0) {
+                                var table = $('#subcategoriesTable').DataTable({
+                                    "scrollX": true,
+                                    responsive: true
+                                });
+                            }
+                        }
+                    })
+                });
+            }
+        }
+    })
+}
+
+function submitChangingSubCategory(sub_cat_id) {
+    var file_data = $('#subCatImage').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    form_data.append('sub_cat_name_edit', document.getElementById('subCategoryNameEdit').value);
+    form_data.append('description_edit', document.getElementById('subCategoryDescriptionEdit').value);
+    form_data.append('sub_cat_id_edit', sub_cat_id);
+    form_data.append('cat_id_edit',document.getElementById('parentCategoryEdit').value);
+
+    $.ajax({
+        url: 'Features/Services/Sub-Categories/EditSubCategory.php', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function (data) {
+            $("#editCatResult").html(data); // display response from the PHP script, if any
+        }
+    });
+
+    $.post('Features/Services/Sub-Categories/EditSubCategory.php', {
+        'sub_cat_name_edit': document.getElementById('subCategoryNameEdit').value,
+        'description_edit': document.getElementById('subCategoryDescriptionEdit').value,
+        'cat_id_edit': document.getElementById('parentCategoryEdit').value,
+        'sub_cat_id_edit': sub_cat_id,
+        'image_edit': 'none'
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('editSubCatResult').innerHTML = data;
+        }
+    })
+}
+
+function getSubCategories() {
+    $.post('Features/Services/Items/AddItem.php', {
+        'findMainCategory': 'findMainCategory',
+        'cat_id': document.getElementById('mainCategory').value
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('subCategory').innerHTML = data;
+        }
+    })
 }
 
 function EditItem(item_id) {
@@ -617,60 +742,61 @@ function EditItem(item_id) {
 }
 
 function submitChangingItem(item_id) {
-
-    $.post('Features/Services/Items/EditItem.php', {
-        'item_name_edit': document.getElementById('itemNameEdit').value,
-        'item_price_edit': document.getElementById('itemPriceEdit').value,
-        'cat_id_edit': document.getElementById('mainCategory').value,
-        'sub_cat_id_edit': document.getElementById('subCategory').value,
-        'item_description_edit': document.getElementById('itemDescriptionEdit').value,
-        'item_id_edit': item_id,
-        'image_edit': 'none'
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('editItemResult').innerHTML = data;
-        }
-    })
-}
-
-function deleteItemBTN(item_id) {
-    $.post('Features/Services/Items/DeleteItem.php', {
-        'deleteItem': 'deleteItem',
-        'item_id': item_id
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('content').innerHTML = data;
-        }
-    })
-}
-
-// AJAX for Booking feature
-$("#bookingLink").click(function () {
+    var file_data = $('#itemImage').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('item_name_edit', document.getElementById('itemNameEdit').value);
+    form_data.append('item_price_edit',document.getElementById('itemPriceEdit').value );
+    form_data.append('cat_id_edit',document.getElementById('mainCategory').value);
+    form_data.append('sub_cat_id_edit',  document.getElementById('subCategory').value);
+    form_data.append('item_description_edit',  document.getElementById('itemDescriptionEdit').value);
+    form_data.append('item_id_edit',item_id );
+    form_data.append('file',  file_data);
     $.ajax({
-        type: 'POST',
-        url: 'Features/Booking/AllBooking.php',
+        url: 'Features/Services/Items/EditItem.php', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
         success: function (data) {
-            $("#content").html(data);
-            if ($("#bookings").length > 0) {
-                var table = $('#bookings').DataTable({
-                    "scrollX": true,
-                    responsive: true
-                });
-            }
+            $("#editItemResult").html(data); // display response from the PHP script, if any
         }
-    })
-})
+    });
+}
+
+
+
 var counter = 0;
 
 function EditBook(book_id) {
+    setLoader();
     $.post('Features/Booking/EditBooking.php', {
         'book_id': book_id
     }, function (data, status) {
         if (status === 'success')
             document.getElementById('content').innerHTML = data;
+        if ($("#back-btn").length > 0) {
+            $("#back-btn").on("click",function () {
+                setLoader();
+                $.ajax({
+                    type: 'POST',
+                    url: 'Features/Booking/AllBooking.php',
+                    success: function (data) {
+                        $("#content").html(data);
+                        if ($("#bookings").length > 0) {
+                            var table = $('#bookings').DataTable({
+                                "scrollX": true,
+                                responsive: true
+                            });
+                        }
+                    }
+                })
+            });
+        }
+
     })
 }
-
 function EditBooking(roomType, person_id) {
 
     $.post('Features/Booking/EditBooking.php', {
@@ -694,7 +820,6 @@ function EditBooking(roomType, person_id) {
         }
     })
 }
-
 function submitChangingBooking(book_id, person_id) {
 
     $.post('Features/Booking/EditBooking.php', {
@@ -710,7 +835,6 @@ function submitChangingBooking(book_id, person_id) {
         }
     })
 }
-
 function deleteBook(book_id, start_date) {
     $.post('Features/Booking/DeleteBook.php', {
         'deleteBook': 'deleteBook',
@@ -723,30 +847,8 @@ function deleteBook(book_id, start_date) {
     })
 }
 
+
 // AJAX for employee
-function addEmpBTN(){
-
-    var file_data = $('#empImage').prop('files')[0];
-    var form_data = new FormData();
-    form_data.append('file', file_data);
-    form_data.append('empID', document.getElementById('empID').value);
-    form_data.append('empSalary', document.getElementById('empSalary').value);
-    form_data.append('empJoiningDate', document.getElementById('empJoiningDate').value);
-    form_data.append('empPosition', document.getElementById('empPosition').value);
-    $.ajax({
-        url: 'Features/Staff/AddStaff.php', // point to server-side PHP script
-        dataType: 'text',  // what to expect back from the PHP script, if anything
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data,
-        type: 'post',
-        success: function (data) {
-            $("#empMSG").html(data); // display response from the PHP script, if any
-        }
-    });
-
-}
 
 
 // loading more cards for job applications
@@ -754,11 +856,14 @@ var jobApplicationsCounter = 3;
 
 function loadMoreCardsJA() {
     jobApplicationsCounter += 3;
-    $.post('Features/JobApplications/JobApps.php', {
-        'counter': jobApplicationsCounter
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('content').innerHTML = data;
+    $.ajax({
+        type: 'POST',
+        data: {
+            'counter': jobApplicationsCounter
+        },
+        url: 'Features/JobApplications/JobApps.php',
+        success: function (data) {
+            $("#content").html(data);
         }
     })
 }
@@ -776,6 +881,7 @@ function loadMoreCardsSMJA() {
     var filter = document.getElementById('searchAppsFilter').value;
     var orderBy = document.getElementById('searchAppsOrdering').value;
     var repliedFlag = document.getElementById('repliedAppCB').checked;
+
     $.ajax({
         type: 'POST',
         data: {
@@ -836,4 +942,6 @@ function loadMoreCardsSMContacts() {
         }
     })
 }
+
+
 

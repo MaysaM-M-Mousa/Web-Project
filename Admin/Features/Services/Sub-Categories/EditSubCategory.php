@@ -7,8 +7,7 @@ require_once 'pdo.php';
 //    return;
 //}
 
-if (isset($_POST['sub_cat_id_edit'], $_POST['sub_cat_name_edit'], $_POST['description_edit'], $_POST['image_edit']
-    , $_POST['cat_id_edit'])) {
+if (isset($_POST['sub_cat_id_edit'], $_POST['sub_cat_name_edit'], $_POST['description_edit'], $_POST['cat_id_edit'])) {
 
     $cat_id_edit = htmlentities($_POST['cat_id_edit']);
     $sub_cat_name_edit = htmlentities($_POST['sub_cat_name_edit']);
@@ -18,7 +17,7 @@ if (isset($_POST['sub_cat_id_edit'], $_POST['sub_cat_name_edit'], $_POST['descri
 
     if (strlen($cat_id_edit) < 1 || strlen($sub_cat_name_edit) < 1 || strlen($sub_cat_id_edit) < 1 ||
         strlen($sub_cat_id_edit) < 1 || strlen($image_edit) < 1) {
-        echo '<span style="color: red">All Fields Are Required!</span>';
+        echo '<span style="color: darkred;font-family: Cabin, serif">All Fields Are Required!</span>';
         return;
     }
 
@@ -26,7 +25,7 @@ if (isset($_POST['sub_cat_id_edit'], $_POST['sub_cat_name_edit'], $_POST['descri
             sub_cat_id !=' . $sub_cat_id_edit;
     $result = $pdo->query($sql);
     if ($result->rowCount() != 0) {
-        echo '<span style="color: red">This Category Already Has The Same Name Of the Entered Sub-Category!</span>';
+        echo '<span style="color: darkred;font-family: Cabin, serif">This Category Already Has The Same Name Of the Entered Sub-Category!</span>';
         return;
     }
 
@@ -41,13 +40,12 @@ if (isset($_POST['sub_cat_id_edit'], $_POST['sub_cat_name_edit'], $_POST['descri
         ));
     } catch (PDOException $e) {
         if ($e->errorInfo[0] == '23000' && $e->errorInfo[1] == '1062') {
-            echo '<span style="color: red">This category name already exists!!</span>';
+            echo '<span style="color: darkred;font-family: Cabin, serif">This category name already exists!!</span>';
             return;
         }
 
     }
-
-    echo '<span style="color: green">Successfully updated!</span>';
+    echo '<span style="color: darkgreen;font-family: Cabin, serif">Successfully updated!</span>';
     return;
 }
 
@@ -66,7 +64,7 @@ if (isset($_POST['editSubCategory'], $_POST['sub_cat_id'])) {
 
 ?>
 
-<div class="container forms">
+<div class="container forms animate__animated animate__fadeIn">
     <div id="back-btn" class="back-btn">
         <i class="fal fa-arrow-left"></i>
     </div>
@@ -107,7 +105,12 @@ if (isset($_POST['editSubCategory'], $_POST['sub_cat_id'])) {
                     ?>
                 </select>
             </div>
-
+            <div class="row mx-3 mb-2">
+                <label for="zdrop" class="col-12 col-md-3">Photo:</label>
+                <div class="form-group files col-12 col-md-9">
+                    <input type="file" id="subCatImage" accept="image/x-png,image/gif,image/jpeg" class="form-control" multiple="false">
+                </div>
+            </div>
             <div class="row mx-3">
                 <div class="col-12 offset-md-3 col-md-3">
                     <input class="btn btn-danger" id="deleteSubCategoryBTN" type="button"

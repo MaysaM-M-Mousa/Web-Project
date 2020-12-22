@@ -65,7 +65,7 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
 ?>
 
 
-<div class="container forms">
+<div class="container forms animate__animated animate__fadeIn">
     <div class="form-border-2  my-5">
         <div class="form-border-1">
             <section>
@@ -119,55 +119,14 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
                 <textarea class="col-12 col-md-9" placeholder="Room Description" id="roomDescription" rows="4"
                           cols="20"></textarea>
             </div>
-            <div class="row mx-3 mb-2">
-                <label for="zdrop" class="col-12 col-md-3">Photo:</label>
-
-                <form action="addRoom.php" class="dropzone" method="POST">
-
-                </form>
-<!--                <div class="col-12 col-md-9 px-0 pb-4">-->
-<!--                    <form action="addRoom.php" id="zdrop" class="fileuploader text-center" method="post">-->
-<!--                        <div id="upload-label">-->
-<!--                            <i class="fad fa-cloud-upload material-icons"></i>-->
-<!--                            <span class="tittle d-none d-sm-block">Click the Button or Drop Files Here</span>-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                    <iframe id="upload_target" name="upload_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>-->
-<!---->
-<!--                    <div class="preview-container">-->
-<!--                        <div class="collection card" id="previews">-->
-<!--                            <div class="collection-item clearhack valign-wrapper item-template"-->
-<!--                                 id="zdrop-template">-->
-<!--                                <div class="left pv zdrop-info" data-dz-thumbnail>-->
-<!--                                    <div>-->
-<!--                                        <span data-dz-name></span> <span data-dz-size></span>-->
-<!--                                    </div>-->
-<!--                                    <div class="progress">-->
-<!--                                        <div class="determinate" style="width:0" data-dz-uploadprogress></div>-->
-<!--                                    </div>-->
-<!--                                    <div class="dz-error-message"><span data-dz-errormessage></span></div>-->
-<!--                                </div>-->
-<!---->
-<!--                                <div class="secondary-content actions">-->
-<!--                                    <a href="#!" data-dz-remove-->
-<!--                                       class="btn-floating ph red white-text waves-effect waves-light"><i-->
-<!--                                                class="material-icons white-text">clear</i></a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
             <div class="row">
                 <input id="addRoomBtn" type="button" class="btn btn-primary" value="Add Room">
                 <div class="col-12" id="MSG"></div>
             </div>
         </div>
     </div>
-<!--    <script src="Scripts/dropzone.min.js"></script>-->
-<!--    <script src="Scripts/Rooms.js"></script>-->
+    <script src="Scripts/Rooms.js"></script>
 
-<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" type="text/css" rel="stylesheet">-->
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.js"></script>-->
+
 </div>
 

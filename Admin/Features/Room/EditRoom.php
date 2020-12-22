@@ -59,7 +59,7 @@ if (isset($_POST['room_id'])) {
 
 ?>
 
-<div class="container forms">
+<div class="container forms animate__animated animate__fadeIn">
         <div onclick="allRooms()" class="back-btn">
             <i class="fal fa-arrow-left"></i>
         </div>

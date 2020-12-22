@@ -13,7 +13,7 @@ $result = $pdo->query($sql);
 ?>
 
 
-<div class="container">
+<div class="container animate__animated animate__fadeIn">
     <section>
         <h1 class="main-h1">Customers</h1>
         <hr class="line">
@@ -25,7 +25,7 @@ $result = $pdo->query($sql);
             <thead>
             <tr>
             <tr>
-                <td>ID</td>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Mobile</th>

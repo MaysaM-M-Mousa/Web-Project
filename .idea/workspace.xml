@@ -29,24 +29,42 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="admin was not touched">
-      <change afterPath="$PROJECT_DIR$/images/categories/categories5.jpg" afterDir="false" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="USER ready, Animated, popups styled, buttons all Finished">
+      <change afterPath="$PROJECT_DIR$/Admin/Scripts/JA.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/User/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Dashboard/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/HotelFacilities/HF.htm" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/HotelFacilities/HF.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestItems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestSub.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/Reserve.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Reservation/reserveRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Reservation/reserveRoom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantCategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/Restaurant/RestaurantSub.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/Reserve.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Reserve.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/Restaurant.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/Restaurant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/AllBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/AllBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Contacts/Contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Contacts/Contacts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Contacts/SearchContacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Contacts/SearchContacts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/JobApplications/JobApps.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/JobApplications/JobApps.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/JobApplications/SearchJobApps.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/JobApplications/SearchJobApps.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Orders/AllOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Orders/AllOrders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/AllRooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/AllRooms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/EditRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/EditRoom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/addRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/addRoom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/AllCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AllCategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/EditCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/EditCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Items/AddItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/AddItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Items/AllItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/AllItems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Items/EditItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/EditItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AddSubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AddSubCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AllSubCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AllSubCategories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/EditSubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/EditSubCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Staff/AddStaff.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Staff/AddStaff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Staff/AllStaff.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Staff/AllStaff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Scripts/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Scripts/Rooms.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Rooms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/images/categories/categories21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/images/categories/categories22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/images/categories/categories23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/HTML/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/contactus.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tables.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +208,7 @@
       <workItem from="1608419997978" duration="612000" />
       <workItem from="1608470279314" duration="1305000" />
       <workItem from="1608474528347" duration="8683000" />
-      <workItem from="1608569957783" duration="3507000" />
+      <workItem from="1608569957783" duration="21737000" />
     </task>
     <task id="LOCAL-00001" summary="home page">
       <created>1606265626691</created>
@@ -304,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608492458715</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="USER ready, Animated, popups styled, buttons all Finished">
+      <created>1608573630147</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1608573630147</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +346,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/abdelrahman" />
+                        <option value="origin/maysam" />
                       </list>
                     </value>
                   </entry>
@@ -352,7 +377,8 @@
     <MESSAGE value="User Table History" />
     <MESSAGE value="Charts" />
     <MESSAGE value="khara" />
-    <option name="LAST_COMMIT_MESSAGE" value="khara" />
+    <MESSAGE value="USER ready, Animated, popups styled, buttons all Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="USER ready, Animated, popups styled, buttons all Finished" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1607176073908">
@@ -477,11 +503,11 @@
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607169710007" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607456806423" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608492468523">
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608573642343">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="442" y="222" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1607217373236" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608492468523" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608573642343" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
