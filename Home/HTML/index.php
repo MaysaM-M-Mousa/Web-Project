@@ -469,7 +469,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                         <div class="room-item" style="background-image: url('../images/room-b1.jpg')">
                             <div class="hr-text">
                                 <h3>Single Room</h3>
-                                <h2>150$<span>/Pernight</span></h2>
+                                <h2 style="opacity: 0">150$<span>/Pernight</span></h2>
                                 <table>
                                     <tbody>
                                     <tr>
@@ -498,7 +498,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                         <div class="room-item" style="background-image: url('../images/room-b2.jpg')">
                             <div class="hr-text">
                                 <h3>Double Room</h3>
-                                <h2>200$<span>/Pernight</span></h2>
+                                <h2 style="opacity: 0">200$<span>/Pernight</span></h2>
                                 <table>
                                     <tbody>
                                     <tr>
@@ -526,8 +526,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                     <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="400" class="col-lg-3 col-md-6">
                         <div class="room-item" style="background-image: url('../images/room-b3.jpg')">
                             <div class="hr-text">
-                                <h3>Duplex Room</h3>
-                                <h2>250$<span>/Pernight</span></h2>
+                                <h3>Quad Room</h3>
+                                <h2 style="opacity: 0">250$<span>/Pernight</span></h2>
                                 <table>
                                     <tbody>
                                     <tr>
@@ -555,8 +555,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                     <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="600" class="col-lg-3 col-md-6">
                         <div class="room-item" style="background-image: url('../images/room-b4.jpg')">
                             <div class="hr-text">
-                                <h3>Studio </h3>
-                                <h2>350$<span>/Pernight</span></h2>
+                                <h3>King Room</h3>
+                                <h2 style="opacity: 0">350$<span>/Pernight</span></h2>
                                 <table>
                                     <tbody>
                                     <tr>

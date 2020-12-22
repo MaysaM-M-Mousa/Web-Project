@@ -96,7 +96,7 @@
                                                 <div class="bg-active"></div>
                                                 <div class="hr-text">
                                                     <h3>Single Room</h3>
-                                                    <h2>150$<span>/Pernight</span></h2>
+                                                    <h2 style="opacity: 0">150$<span>/Pernight</span></h2>
                                                     <a href="#" style="visibility: hidden" class="primary-link">More
                                                         Details</a>
                                                 </div>
@@ -111,7 +111,7 @@
                                                 <div class="bg-active"></div>
                                                 <div class="hr-text">
                                                     <h3>Double Room</h3>
-                                                    <h2>200$<span>/Pernight</span></h2>
+                                                    <h2 style="opacity: 0">200$<span>/Pernight</span></h2>
                                                     <a href="#" style="visibility: hidden" class="primary-link">More
                                                         Details</a>
                                                 </div>
@@ -125,8 +125,8 @@
                                                        id="room_3">
                                                 <div class="bg-active"></div>
                                                 <div class="hr-text">
-                                                    <h3>Duplex Room</h3>
-                                                    <h2>250$<span>/Pernight</span></h2>
+                                                    <h3>Quad Room</h3>
+                                                    <h2 style="opacity: 0">250$<span>/Pernight</span></h2>
                                                     <a href="#" style="visibility: hidden" class="primary-link">More
                                                         Details</a>
                                                 </div>
@@ -141,8 +141,8 @@
                                                 <div class="bg-active"></div>
 
                                                 <div class="hr-text">
-                                                    <h3>Studio </h3>
-                                                    <h2>350$<span>/Pernight</span></h2>
+                                                    <h3>King Room </h3>
+                                                    <h2 style="opacity: 0">350$<span>/Pernight</span></h2>
                                                     <a href="#" style="visibility: hidden" class="primary-link">More
                                                         Details</a>
                                                 </div>

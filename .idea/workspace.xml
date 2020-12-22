@@ -7,6 +7,10 @@
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -19,63 +23,14 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/maysam" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Home/test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/categories/categories6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/employees/employees7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/items/items9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/AllBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/AllBooking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/DeleteBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/DeleteBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Booking/EditBooking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Charts/chart1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Charts/chart1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Charts/chart2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Charts/chart2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Charts/chart3.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Charts/chart3.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Charts/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Contacts/Contacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Contacts/Contacts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Contacts/SearchContacts.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Contacts/SearchContacts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Dashboard/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/JobApplications/JobApps.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/JobApplications/JobApps.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/JobApplications/SearchJobApps.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/JobApplications/SearchJobApps.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Orders/AllOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Orders/AllOrders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/AllRooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/AllRooms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/DeleteRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/DeleteRoom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/EditRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/EditRoom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/SearchRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/SearchRoom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/addRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/addRoom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Room/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Room/upload.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AddCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/AllCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/AllCategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/DeleteCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/DeleteCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Categories/EditCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Categories/EditCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Items/AddItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/AddItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Items/AllItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/AllItems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Items/DeleteItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/DeleteItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Items/EditItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Items/EditItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AddSubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AddSubCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AllSubCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/AllSubCategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/DeleteSubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/DeleteSubCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/EditSubCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Services/Sub-Categories/EditSubCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Staff/AddStaff.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Staff/AddStaff.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Staff/AllStaff.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Staff/AllStaff.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Staff/DeleteStaff.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Staff/DeleteStaff.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Staff/EditStaff.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Staff/EditStaff.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Staff/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Staff/search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Features/Users/AllUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/Scripts/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/Scripts/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/HTML/contactus.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/contactus.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/HTML/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/HTML/validateSignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/validateSignUp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/PHP/SignUp/verify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/script/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Home/script/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/History/history.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/History/history.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/employees/employees6.jpg" beforeDir="false" />
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="TODO: fix Home contactus.php&#10;ALL Front Ready&#10;AJAX FOr images ready">
+      <change beforePath="$PROJECT_DIR$/Home/HTML/SignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/Home/HTML/SignUp.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,9 +51,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
