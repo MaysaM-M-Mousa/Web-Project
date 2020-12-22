@@ -16,7 +16,7 @@ $result = $pdo->query($sql);
     <!--    Header start-->
     <div class="row">
         <div class="col-8 offset-2">
-            <h1 class="main-h1">Item Request</h1>
+            <h1 class="main-h1">Services</h1>
             <hr class="line">
             <p class="main-content">
                 Our Always-On-Duty staff are Happy to serve You what ever you need the moment you order it, making you

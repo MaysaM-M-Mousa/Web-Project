@@ -24,6 +24,8 @@
 
 function goToItemReqSub(cat_id,cat_name) {
     localStorage.setItem('selectedCat',cat_id );
+    localStorage.setItem('selectedCatName',cat_name );
+
     $.post('Features/ItemRequest/ItemRequestSub.php', {
             'subCatChosen': 'subCatChosen',
             'cat_id': cat_id
@@ -51,7 +53,7 @@ function goToItemReqItems(sub_cat_id,sub_cat_name) {
             document.getElementById('headerCat').innerHTML = sub_cat_name;
 
             $(".back-btn").on("click", function () {
-                goToItemReqSub(localStorage.getItem('selectedCat'));
+                goToItemReqSub(localStorage.getItem('selectedCat'),localStorage.getItem('selectedCatName'));
             });
             $(".order-btn").on("click",function () {
                 if($(this).hasClass("toggled-button")){
