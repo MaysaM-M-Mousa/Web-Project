@@ -90,6 +90,9 @@
             }, function (data, status) {
                 if (data === 'You are allowed to log in') {
                     window.location.replace("../../User/index.php");
+                } else if (data === 'You are allowed to log in 2') {
+                    window.location.replace("../../Admin/index.php");
+                    // alert(data);
                 } else {
                     document.getElementById('emailNF').innerHTML = data;
                 }
@@ -99,7 +102,7 @@
     // About us Load for customer item
 
     $(document).ready(function () {
-        $("#aboutus,.aboutmb").on("click",function () {
+        $("#aboutus,.aboutmb").on("click", function () {
             document.getElementById('content').innerHTML =
                 '<div class="lds-roller text-center mx-auto" style="margin: 20% 0;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
             $.ajax({
@@ -107,7 +110,7 @@
                 url: 'about.html',
                 success:
                     function (data) {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $(".active").removeClass("active");
                             $("#aboutus").parent().addClass("active");
                             $("#content").html(data);
@@ -117,7 +120,7 @@
         })
     })
     $(document).ready(function () {
-        $("#contactus,.contactus").on("click",function () {
+        $("#contactus,.contactus").on("click", function () {
             document.getElementById('content').innerHTML =
                 '<div class="lds-roller text-center mx-auto" style="margin: 20% 0;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
             $.ajax({
@@ -125,7 +128,7 @@
                 url: 'contactus.php',
                 success:
                     function (data) {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $(".active").removeClass("active");
                             $("#contactus").parent().addClass("active");
                             $("#content").html(data);
@@ -136,8 +139,8 @@
     });
 
 
-
 })(jQuery);
+
 // 7. email verify
 function sendEmailVerification() {
     $.post('../PHP/SignUp/verify.php', {'resend': 'resendEmail'}, function (data, status) {
@@ -145,8 +148,9 @@ function sendEmailVerification() {
         return data;
     });
 }
+
 //sign up page ajax
-function signup(){
+function signup() {
     document.getElementById('content').innerHTML =
         '<div class="lds-roller text-center mx-auto" style="margin: 20% 0;"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
     $.ajax({
@@ -155,7 +159,7 @@ function signup(){
         success:
             function (data) {
                 $("#login .close").click()
-                setTimeout(function() {
+                setTimeout(function () {
                     $("#content").html(data);
                 }, 600);
             }

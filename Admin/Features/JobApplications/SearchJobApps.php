@@ -1,11 +1,11 @@
 <?php
-//session_start();
-//if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || $_SESSION['person_role'] != 2
-//    || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-//    header("Location: ../../Home/HTML/index.php");
-//    return;
-//}
 require_once 'pdo.php';
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || $_SESSION['person_role'] != 1
+    || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
+    return;
+}
 
 if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['replied'])) {
 
@@ -101,7 +101,6 @@ if (isset($_POST['searchBar'], $_POST['filter'], $_POST['order_by'], $_POST['rep
     }
 
 
-
     $result = $pdo->query($sql);
 
     if ($result->rowCount() < 1) {
@@ -138,7 +137,8 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     ?>
 
     <div class="container forms">
-        <div style="animation-delay:<?php echo  0.1*$counter?>s; "class="form-border-2  my-5 animate__animated animate__zoomIn" id="cardJobDiv<?php echo $counter ?>">
+        <div style="animation-delay:<?php echo 0.1 * $counter ?>s; "
+             class="form-border-2  my-5 animate__animated animate__zoomIn" id="cardJobDiv<?php echo $counter ?>">
 
             <div class="card-border-1">
                 <div class="delete" onclick="deleteJobCard(<?php echo $row['form_id'] ?>,<?php echo $counter ?>)">

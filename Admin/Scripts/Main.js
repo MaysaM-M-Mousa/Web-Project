@@ -365,8 +365,8 @@ function contactSearch() {
 
     // centering the GIF in the center till response
     document.getElementById('searchContactResult').innerHTML =
-        '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
-        '" src="images/VZvw.gif">';
+        '<div style="margin: 20% auto; display: block;" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+
 
     var searchBar = document.getElementById('searchContactBar').value;
     var filter = document.getElementById('searchContactFilter').value;
@@ -395,8 +395,8 @@ function sendEmailBTN(contact_id, counter) {
     var emailSender = 'emailSender' + counter;
     var statusID = 'status' + counter;
     var edit = editor[counter];
-    document.getElementById(statusID).innerHTML = '<img width="35px" height="30px"  src="../images/VZvw.gif">';
-    console.log(divID);
+    document.getElementById(statusID).innerHTML =
+        '<div class="lds-ring" style="display: block;margin: auto;"><div></div><div></div><div></div><div></div></div>';
     $.post('Features/Contacts/Contacts.php', {
         'sendReplyEmail': 'sendReplyEmail',
         'emailSender': document.getElementById(emailSender).innerText,
@@ -411,9 +411,6 @@ function sendEmailBTN(contact_id, counter) {
 }
 
 function roomSearch() {
-    document.getElementById('searchRoomResult').innerHTML =
-        '<img width="55px" height="50px" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%)' +
-        '" src="images/VZvw.gif">';
 
     var searchBar = document.getElementById('searchRoomBar').value;
     var filter = document.getElementById('searchRoomFilter').value;

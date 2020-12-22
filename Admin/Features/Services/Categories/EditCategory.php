@@ -1,12 +1,11 @@
 <?php
 require_once 'pdo.php';
-//session_start();
-//if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || $_SESSION['person_role'] != 2
-//    || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-//    header("Location: ../../Home/HTML/index.php");
-//    return;
-//}
-//TODO:Handle image edit, (ajax request ready)
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || $_SESSION['person_role'] != 1
+    || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../../Home/HTML/index.php");
+    return;
+}
 if (isset($_POST['editCategory'], $_POST['cat_id'])) {
 
     $cat_id = htmlentities($_POST['cat_id']);

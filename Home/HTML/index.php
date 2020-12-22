@@ -61,6 +61,12 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     $_SESSION['person_role'] = $row['person_role'];
     $_SESSION['activated'] = 1;
 
+
+    if ($row['person_role'] == 1) {
+        echo 'You are allowed to log in 2';
+        return;
+    }
+
 //     storing booking id
     $sql = 'select booking.book_id from booking,person where booking.person_id=person.person_id
             and booking.person_id=:person_id and :curr_date between booking.start_date and booking.end_date';
@@ -117,8 +123,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     <nav class="mainmenu mobile-menu">
         <ul>
             <li class="active"><a href="index.php">Home</a></li>
-            <li><a class="aboutmb" >About Us</a></li>
-            <li><a href="#" onclick="signup();return false;" >Reserve</a></li>
+            <li><a class="aboutmb">About Us</a></li>
+            <li><a href="#" onclick="signup();return false;">Reserve</a></li>
             <li><a href="#login" class="trigger-btn" data-toggle="modal">Sign In</a></li>
             <li><a class="contactus">Contact</a></li>
         </ul>
@@ -174,7 +180,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                 <p class="hint-text"><a href="#">Forgot Password?</a></p>
                 <!--                </form>-->
             </div>
-            <div class="modal-footer">Still Without A Room? &nbsp;<a href="#"; onclick="signup();return false;">Reserve Now</a></div>
+            <div class="modal-footer">Still Without A Room? &nbsp;<a href="#" ; onclick="signup();return false;">Reserve
+                    Now</a></div>
         </div>
     </div>
 </div>
@@ -213,16 +220,20 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                                                                       alt="La Terra Santa Logo"></a>
             <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item px-1 mr-1 active"><a class="nav-link px-0" id="home" href="index.php">Home <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item px-1 mr-1 active"><a class="nav-link px-0" id="home" href="index.php">Home <span
+                                    class="sr-only">(current)</span></a></li>
                     <li class="nav-item px-0 mr-1"><a class="nav-link px-1" id="aboutus">About</a></li>
-                    <l1 class="nav-item px-0 mr-5"><a class="nav-link px-1 trigger-btn" id="contactus" data-toggle="modal">Contact</a></l1>
+                    <l1 class="nav-item px-0 mr-5"><a class="nav-link px-1 trigger-btn" id="contactus"
+                                                      data-toggle="modal">Contact</a></l1>
                 </ul>
                 <!--   Show this only lg screens and up   -->
                 <a href="index.php" class="navbar-brand d-none d-lg-block my-5"><img src="../images/logo-full.png"
                                                                                      alt="La Terra Santa Logo"></a>
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item px-0 ml-5"><a class="nav-link px-1" href="#login" class="trigger-btn" data-toggle="modal">Tell Your Story</a></li>
-                    <li class="nav-item px-0 ml-2"><a class="nav-link px-1" href="#login" class="trigger-btn" data-toggle="modal">Be Part Of Us</a></li>
+                    <li class="nav-item px-0 ml-5"><a class="nav-link px-1" href="#login" class="trigger-btn"
+                                                      data-toggle="modal">Tell Your Story</a></li>
+                    <li class="nav-item px-0 ml-2"><a class="nav-link px-1" href="#login" class="trigger-btn"
+                                                      data-toggle="modal">Be Part Of Us</a></li>
                 </ul>
             </div>
             <button class="canvas-open btn" type="button"><span><i class="fa fa-bars"
@@ -360,7 +371,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                     <div data-aos-duration="700" data-aos="zoom-in" class="service-item firstservice">
                         <i class="flaticon-036-parking"></i>
                         <h4>Travel Plan</h4>
-                        <p>Whether you’re sheltered at home or trying to figure out where you can travel right now, we’ve got you covered.
+                        <p>Whether you’re sheltered at home or trying to figure out where you can travel right now,
+                            we’ve got you covered.
                         </p>
                     </div>
                 </div>
@@ -369,14 +381,16 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                          class="service-item service-item-odd ">
                         <i class="flaticon-033-dinner"></i>
                         <h4>Catering Service</h4>
-                        <p>We offer a wide range of catering services, from drop-off to full-service catering, launch parties to weddings.</p>
+                        <p>We offer a wide range of catering services, from drop-off to full-service catering, launch
+                            parties to weddings.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 px-0">
                     <div data-aos="zoom-in" data-aos-duration="700" data-aos-delay="600" class="service-item">
                         <i class="flaticon-026-bed"></i>
                         <h4>Babysitting</h4>
-                        <p>We have a dedicated team who will accurately match your family with one of our screened caregivers. .</p>
+                        <p>We have a dedicated team who will accurately match your family with one of our screened
+                            caregivers. .</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 px-0">
@@ -384,14 +398,16 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                          class="service-item service-item-odd firstservice">
                         <i class="flaticon-024-towel"></i>
                         <h4>Laundry</h4>
-                        <p>From sorting to washing, drying to folding - our laundry pros know how to give your clothes an optimal clean.</p>
+                        <p>From sorting to washing, drying to folding - our laundry pros know how to give your clothes
+                            an optimal clean.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 px-0">
                     <div data-aos="zoom-in" data-aos-duration="700" data-aos-delay="500" class="service-item">
                         <i class="flaticon-044-clock-1"></i>
                         <h4>Hire Driver</h4>
-                        <p>Whether you need to go for your weekly grocery shopping trips, pick kids from school or are looking for a relaxed ride back home or to a business meeting, we have you covered..</p>
+                        <p>Whether you need to go for your weekly grocery shopping trips, pick kids from school or are
+                            looking for a relaxed ride back home or to a business meeting, we have you covered..</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 px-0">
@@ -399,7 +415,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                          class="service-item service-item-odd">
                         <i class="flaticon-012-cocktail"></i>
                         <h4>Cocktail & Drinks</h4>
-                        <p>Whether you're brushing up on your home mixology menu or looking for a go-to order for your next cocktail hour, we will never steer you wrong.</p>
+                        <p>Whether you're brushing up on your home mixology menu or looking for a go-to order for your
+                            next cocktail hour, we will never steer you wrong.</p>
                     </div>
                 </div>
             </div>
@@ -473,7 +490,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="#" onclick="signup();return false;"  class="primary-link">More Details</a>
+                                <a href="#" onclick="signup();return false;" class="primary-link">More Details</a>
                             </div>
                         </div>
                     </div>
@@ -502,7 +519,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="#" onclick="signup();return false;"  class="primary-link">More Details</a>
+                                <a href="#" onclick="signup();return false;" class="primary-link">More Details</a>
                             </div>
                         </div>
                     </div>
@@ -531,7 +548,7 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="#" onclick="signup();return false;"  class="primary-link">More Details</a>
+                                <a href="#" onclick="signup();return false;" class="primary-link">More Details</a>
                             </div>
                         </div>
                     </div>
@@ -560,7 +577,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <a href="#" onclick="signup();return false;"  class="primary-link details">More Details</a>
+                                <a href="#" onclick="signup();return false;" class="primary-link details">More
+                                    Details</a>
                             </div>
                         </div>
                     </div>
@@ -666,7 +684,8 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="../../Vendor/script/bootstrap.min.js"></script>
 <!--Flexslider-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
 <!--photo PopUp-->
 <script src="../../Vendor/script/jquery.magnific-popup.min.js"></script>
 <!--Scroll Up-->

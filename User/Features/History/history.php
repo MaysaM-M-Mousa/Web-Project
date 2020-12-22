@@ -7,6 +7,7 @@ if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset
     header("Location: ../../../Home/HTML/index.php");
     return;
 }
+
 if (!isset($_SESSION['book_id'])) {
     echo '<span style="color: darkgreen;font-family: Cabin, serif;font-size: 32px;text-align: center;margin: 50% auto 100px;display: block;">There is nothing to display!</span>';
     return;
@@ -57,7 +58,7 @@ $result->execute(array(':book_id' => $_SESSION['book_id']));
                             $arr = explode(" ", $row['order_time']);
                             ?>
                             <tr>
-                                <td><?php echo $row['image'] ?></td>
+                                <td><img style="width: 50px;height: 50px" src="../<?php echo $row['image']?>"></td>
                                 <td><?php echo $row['item_name'] ?></td>
                                 <td><?php echo $row['item_price'] ?></td>
                                 <td><?php echo $row['quantity'] ?></td>

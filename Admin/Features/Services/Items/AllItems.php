@@ -1,16 +1,11 @@
 <?php
 require_once 'pdo.php';
-//session_start();
-//if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || $_SESSION['person_role'] != 2
-//    || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-//    header("Location: ../../Home/HTML/index.php");
-//    return;
-//}
-
-//$sql = 'select item.item_id,item.item_name,item.item_description,item.item_price,item.image,category.category_name
-//        ,sub_category.sub_cat_name,category.cat_id,sub_category.sub_cat_id
-//        from item left join sub_category on item.sub_cat_id=sub_category.sub_cat_id
-//        left join category on sub_category.sub_cat_id = category.cat_id where category.cat_id is not null';
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || $_SESSION['person_role'] != 1
+    || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../../Home/HTML/index.php");
+    return;
+}
 
 $sql = 'select item.item_id,item.item_name,item.item_description,item.item_price,item.image,category.category_name
         ,sub_category.sub_cat_name,category.cat_id,sub_category.sub_cat_id from item,sub_category,category where item.sub_cat_id=sub_category.sub_cat_id and sub_category.cat_id=category.cat_id';

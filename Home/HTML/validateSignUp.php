@@ -114,7 +114,7 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 
     $hash_verification = md5(rand(0, 1000));// Generate random 32 character hash and assign it to a local variable.
 // Example output: f4552671f8909587cf485ea990207f3b
-
+    $_SESSION['hash_verification'] = $hash_verification;
 
     try {
         $sql = "insert into person (person_pass,person_email,first_name,last_name,gender,mobile,day_bd,
@@ -142,6 +142,21 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['u
 //        $_SESSION['hash_verification'] = $hash_verification;
 //        $_SESSION['user_email'] = $user_email;
 //        header("Location: verify.php");
+
+        $to = $user_email;
+        $subject = 'La Terra Santa || Email Verification';
+        $headers = 'From: 1.c.f.m.m.a.m@gmail.com';
+        $email_msg = 'Thanks for signing up!
+Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+
+------------------------
+email: ' . $user_email . '
+------------------------
+
+Please click this link to activate your account:
+http://localhost/WebProject/Home/PHP/SignUp/verify.php?email=' . $user_email . '&hash=' . $hash_verification . '';
+
+        mail($to, $subject, $email_msg, $headers);
 
         echo "<span style=\"color: darkgreen; font-family: 'Cabin', serif\">Thank you for signing up!, a verification email was sent to you,
                                          please verify your account to continue.  you will be redirected to home page in <span id=\"count\">10</span> Seconds </span>";

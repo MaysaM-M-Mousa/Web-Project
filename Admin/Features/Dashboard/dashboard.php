@@ -1,4 +1,12 @@
+<?php
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || $_SESSION['person_role'] != 1
+    || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
+    return;
+}
 
+?>
 <link href="https://cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" type="text/css"/>
 <link href="https://cdn.syncfusion.com/ej2/ej2-layouts/styles/material.css" rel="stylesheet" type="text/css"/>
 <script src="../Vendor/DatePicker/ej2-base/dist/global/ej2-base.min.js" type="text/javascript"></script>
