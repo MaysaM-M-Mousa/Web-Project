@@ -3,7 +3,10 @@ require_once 'pdo.php';
 session_start();
 
 // validation
-
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
+    return;
+}
 if (!isset($_SESSION['book_id'])) {
     echo '<span style="color: darkgreen;font-family: Cabin, serif;font-size: 32px;text-align: center;margin: 50% auto 100px;display: block;">There is nothing to display!</span>';
     return;

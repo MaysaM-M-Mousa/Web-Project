@@ -22,27 +22,81 @@ if (isset($_POST['editCategory'], $_POST['cat_id'])) {
 
 if (isset($_POST['cat_id_Edit'], $_POST['category_name_Edit'], $_POST['description_Edit'])) {
 
+
     $cat_id_Edit = htmlentities($_POST['cat_id_Edit']);
     $category_name_Edit = htmlentities($_POST['category_name_Edit']);
     $description_Edit = htmlentities($_POST['description_Edit']);
-    $image_Edit = htmlentities($_POST['image_Edit']);
 
 
-    $sql = 'update category set category_name=:category_name,description=:description,image=:image where cat_id=' . $cat_id_Edit;
-    $result_Edit = $pdo->prepare($sql);
-    try {
-        $result_Edit->execute(array(
-            ':category_name' => $category_name_Edit,
-            ':description' => $description_Edit,
-            ':image' => $image_Edit,
-        ));
-    } catch (PDOException $e) {
-        if ($e->errorInfo[0] == '23000' && $e->errorInfo[1] == '1062') {
-            echo '<span style="color: red">This category name already exists!!</span>';
-            return;
+    if (!empty($_FILES)) {
+
+        $sql = 'select image from category where cat_id=' . $cat_id_Edit;
+        $stmt = $pdo->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        /////////////////////////////////////////////
+        $path = "../../../.." . $result['image'];
+        unlink($path);
+
+        $uniqueID = $cat_id_Edit;
+
+        $imageFullName = $_FILES['file']['name'];
+        $imageArray = explode('.', $imageFullName);
+        $imageExtension = $imageArray[1];
+        $newName = 'categories' . $uniqueID;
+        $imageFullName = $newName . '.' . $imageExtension;
+        $newPath = "../../../../images/categories/" . $imageFullName;
+        $databasePath = '/images/categories/' . $imageFullName;
+        move_uploaded_file($_FILES["file"]["tmp_name"], $newPath);
+        //////////////////////////////////////////////////
+
+        $sql = 'update category set category_name=:category_name,description=:description,image=:image where cat_id=' . $cat_id_Edit;
+        $result_Edit = $pdo->prepare($sql);
+        try {
+            $result_Edit->execute(array(
+                ':category_name' => $category_name_Edit,
+                ':description' => $description_Edit,
+                ':image' => $databasePath,
+            ));
+        } catch (PDOException $e) {
+            if ($e->errorInfo[0] == '23000' && $e->errorInfo[1] == '1062') {
+                echo '<span style="color: red">This category name already exists!!</span>';
+                return;
+            }
         }
+    } else {
 
+        $sql = 'update category set category_name=:category_name,description=:description where cat_id=' . $cat_id_Edit;
+        $result_Edit = $pdo->prepare($sql);
+        try {
+            $result_Edit->execute(array(
+                ':category_name' => $category_name_Edit,
+                ':description' => $description_Edit
+            ));
+        } catch (PDOException $e) {
+            if ($e->errorInfo[0] == '23000' && $e->errorInfo[1] == '1062') {
+                echo '<span style="color: red">This category name already exists!!</span>';
+                return;
+            }
+
+        }
     }
+
+//    $sql = 'update category set category_name=:category_name,description=:description,image=:image where cat_id=' . $cat_id_Edit;
+//    $result_Edit = $pdo->prepare($sql);
+//    try {
+//        $result_Edit->execute(array(
+//            ':category_name' => $category_name_Edit,
+//            ':description' => $description_Edit,
+//            ':image' => $image_Edit,
+//        ));
+//    } catch (PDOException $e) {
+//        if ($e->errorInfo[0] == '23000' && $e->errorInfo[1] == '1062') {
+//            echo '<span style="color: red">This category name already exists!!</span>';
+//            return;
+//        }
+//
+//    }
 
     echo '<span style="color: green">Successfully updated!</span>';
     return;
@@ -78,13 +132,13 @@ if (isset($_POST['cat_id_Edit'], $_POST['category_name_Edit'], $_POST['descripti
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
                 <div class="form-group files col-12 col-md-9">
-                    <input type="file"accept="image/x-png,image/gif,image/jpeg" id="catImage" class="form-control" multiple="false">
+                    <input type="file"accept="image/x-png,image/gif,image/jpeg" id="catImageEdit" class="form-control" multiple="false">
                 </div>
             </div>
             <div class="row mx-3">
                 <div class="col-12 offset-md-3 col-md-3">
                     <input class="btn btn-danger" id="deleteCategoryBTN" type="button"
-                           onclick="deleteCategoryBTN(<?php echo $row['cat_id'] ?>)"
+                           onclick="deleteCategoryBTN(<?php echo $row['cat_id'] ?>,<?php echo "'" . $row['image'] . "'" ?>)"
                            value="Delete Category">
                 </div>
                 <div class="col-12 offset-md-1 col-md-4">

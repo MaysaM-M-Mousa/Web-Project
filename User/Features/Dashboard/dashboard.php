@@ -1,8 +1,13 @@
 <?php
-
 require 'pdo.php';
 sleep(1);
 session_start();
+
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
+    return;
+}
+
 
 $sql = "select * from booking,room where booking.person_id = ".$_SESSION['person_id']." and booking.room_id=room.room_id order by end_date DESC";
 $result = $pdo->query($sql);

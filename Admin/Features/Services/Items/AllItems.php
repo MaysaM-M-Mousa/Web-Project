@@ -45,7 +45,7 @@ $result = $pdo->query($sql);
                 ?>
                 <tr>
 
-                    <td><?php echo $row['image'] ?></td>
+                    <td><img style="width: 50px;height: 50px" src="../<?php echo $row['image']?>"></td>
                     <td><?php echo $row['item_name'] ?></td>
 
                     <td><?php echo $row['category_name'] ?></td>

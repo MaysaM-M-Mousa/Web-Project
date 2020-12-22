@@ -40,7 +40,7 @@ $result = $pdo->query($sql);
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                 <tr>
-                    <td><?php echo $row['image'] ?></td>
+                    <td><img style="width: 50px;height: 50px" src="../<?php echo $row['image']?>"></td>
                     <td><?php echo $row['category_name'] ?></td>
                     <td><?php echo $row['sub_cat_name'] ?></td>
                     <td><?php echo $row['description'] ?></td>

@@ -1,6 +1,11 @@
 <?php
 require_once 'pdo.php';
 sleep(1);
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
+    return;
+}
 
 if (isset($_POST['cat_id'], $_POST['subCatChosen'])) {
     $cat_id = htmlentities($_POST['cat_id']);

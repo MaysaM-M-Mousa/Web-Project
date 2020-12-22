@@ -18,17 +18,16 @@ create table person (
 
 create table forms(
     form_id integer PRIMARY KEY AUTO_INCREMENT,
-    education integer not null,
-    major integer (50),
+    education varchar(50) not null,
+    major varchar(50) not null,
     skills varchar (200) not null ,
     languages varchar(200) not null,
     job_type integer not null,
-    position integer not null,
+    position varchar(50) not null,
     about varchar (1500)not null,
     person_id integer not null,
     status integer not null,
     date_of_applying date not null,
-    date_of_applying date no null,
     FOREIGN KEY (person_id) REFERENCES person(person_id),
     INDEX (form_id)
 );
@@ -74,17 +73,6 @@ create table item (
     FOREIGN KEY (sub_cat_id) REFERENCES sub_category(sub_cat_id)
 );
 
-create table orders (
-    order_id integer PRIMARY KEY AUTO_INCREMENT,
-    book_id integer not null,
-    item_id integer not null,
-    order_time datetime not null,
-    quantity integer not null
-
-    FOREIGN KEY (book_id) REFERENCES booking(book_id),
-    FOREIGN KEY (item_id) REFERENCES item(item_id)
-);
-
 create table booking (
     book_id integer PRIMARY KEY AUTO_INCREMENT,
     start_date date not null,
@@ -95,6 +83,17 @@ create table booking (
     FOREIGN KEY (room_id) REFERENCES room(room_id),
     FOREIGN KEY (person_id) REFERENCES person(person_id),
     index (start_date,end_date)
+);
+
+create table orders (
+    order_id integer PRIMARY KEY AUTO_INCREMENT,
+    book_id integer not null,
+    item_id integer not null,
+    order_time datetime not null,
+    quantity integer not null,
+
+    FOREIGN KEY (book_id) REFERENCES booking(book_id),
+    FOREIGN KEY (item_id) REFERENCES item(item_id)
 );
 
 create table room(

@@ -17,23 +17,29 @@ if (isset($_POST['roomNumberEdit'], $_POST['rentPerNightEdit'], $_POST['telNumEd
     $roomTypeEdit = htmlentities($_POST['roomTypeEdit']);
     $roomDescriptionEdit = empty($_POST['roomDescriptionEdit']) ? NULL : htmlentities($_POST['roomDescriptionEdit']);
 
-    $sqlEdit = 'update room set room_number=:room_number_edit,room_description=:room_description_edit,
+    try {
+        $sqlEdit = 'update room set room_number=:room_number_edit,room_description=:room_description_edit,
                     room_type=:room_type_edit,bad_capacity=:bad_capacity_edit,tel_number=:tel_number_edit,
                     rent_per_night=:rent_per_night_edit
     where room_id=' . htmlentities($_POST['room_id_Edit']);
 
-    $resultEdit = $pdo->prepare($sqlEdit);
+        $resultEdit = $pdo->prepare($sqlEdit);
 
-    $resultEdit->execute(array(
-        ":room_number_edit" => $roomNumberEdit,
-        ":room_description_edit" => $roomDescriptionEdit,
-        ":room_type_edit" => $roomTypeEdit,
-        ":bad_capacity_edit" => $badCapacityEdit,
-        ":tel_number_edit" => $telNumEdit,
-        ":rent_per_night_edit" => $rentPerNightEdit
-    ));
+        $resultEdit->execute(array(
+            ":room_number_edit" => $roomNumberEdit,
+            ":room_description_edit" => $roomDescriptionEdit,
+            ":room_type_edit" => $roomTypeEdit,
+            ":bad_capacity_edit" => $badCapacityEdit,
+            ":tel_number_edit" => $telNumEdit,
+            ":rent_per_night_edit" => $rentPerNightEdit
+        ));
+    }catch (Exception $e){
+        echo '<span style="color: darkred"> There is already a room with that room number!</span>';
+        return;
+    }
 
-    echo '<span style="color: blue">Room successfully updated!</span>';
+
+    echo '<span style="color: green">Room successfully updated!</span>';
     return;
 }
 

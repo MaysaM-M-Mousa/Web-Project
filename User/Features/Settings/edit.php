@@ -1,11 +1,10 @@
 <?php
 require_once 'pdo.php';
 session_start();
-
-/*if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-    header("Location:../../../Home/HTML/index.php");
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
     return;
-}*/
+}
 sleep(1);
 
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['gender']) && isset($_POST['mobile'])
@@ -496,7 +495,7 @@ $person_role_form = $row['person_role'];
                                             "Baccalaureate", "Master");
 
                                         for ($i = 0; $i < sizeof($arr); $i++)
-                                            echo "<option value='$i'>" . $arr[$i] . "</option>";
+                                            echo "<option value='$arr[$i]'>" . $arr[$i] . "</option>";
                                         ?>
                                     </select>
                                 </div>
@@ -562,9 +561,12 @@ $person_role_form = $row['person_role'];
                                     <select class="custom-select col-12" id="position" name="position" required>
                                         <option value="">position</option>
                                         <?php
-                                        $arr = array("Security", "Chef", "Waiter");
-                                        for ($i = 0; $i < sizeof($arr); $i++)
-                                            echo "<option value='$i'>" . $arr[$i] . "</option>";
+                                        $positionType = array('Manager', 'Chef', 'Cook', 'Dishwasher', 'Purchase Officer', 'Receptionist', 'Security', 'Waiter');
+                                        for ($i = 0; $i < sizeof($positionType); $i++)
+                                            if ($positionType[$i] == $row['position'])
+                                                echo "<option selected value='$positionType[$i]'>$positionType[$i]</option>";
+                                            else
+                                                echo "<option value='$positionType[$i]'>$positionType[$i]</option>";
                                         ?>
                                     </select>
                                 </div>

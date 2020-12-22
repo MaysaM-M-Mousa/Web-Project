@@ -251,10 +251,7 @@ function getReport() {
     })
 }
 
-// first initialization
-(function () {
-    document.getElementById('clickBTN').click();
-})()
+
 
 
 //***********************************************************************
@@ -289,3 +286,8 @@ today = yyyy + '-' + mm + '-' + dd;
 document.getElementById("firstDateCh3").defaultValue = today;
 
 // end of chart3 ***************************************************************************************************
+
+// first initialization
+(function () {
+    document.getElementById('clickBTN').click();
+})()

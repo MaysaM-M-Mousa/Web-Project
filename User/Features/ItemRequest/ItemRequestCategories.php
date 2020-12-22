@@ -1,6 +1,11 @@
 <?php
 require 'pdo.php';
 sleep(1);
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
+    return;
+}
 
 $sql = "select * from category where category_name != 'food'";
 $result = $pdo->query($sql);

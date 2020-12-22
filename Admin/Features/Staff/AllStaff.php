@@ -17,7 +17,7 @@ $result = $pdo->query($sql);
     <section>
         <h1 class="main-h1">Employees</h1>
         <hr class="line">
-        <p class="main-content">The table below contains all information about hotel's rooms with ability to modify them..</p>
+        <p class="main-content">The table below contains all information about hotel's Staff with ability to modify them..</p>
     </section>
 
     <div class="row forms mt-5">
@@ -44,7 +44,7 @@ $result = $pdo->query($sql);
                     <td><?php echo $row['start_date'] ?></td>
                     <td><?php echo $row['salary'] ?></td>
                     <td class="edit_r">
-                        <button class="edit-table fas fa-edit"></button>
+                        <button onclick="EditEmployee(this.value)" value="<?php echo $row['employee_id']?>" class="edit-table fas fa-edit"></button>
                     </td>
                 </tr>
 

@@ -1,12 +1,10 @@
 <?php
 require_once 'pdo.php';
 session_start();
-
 if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-    echo 'You are not allowed to continue';
+    header("Location: ../../../Home/HTML/index.php");
     return;
 }
-
 if (isset($_POST['reserveRoom'], $_POST['dateRange'], $_POST['roomType'])) {
 
     $dataRange = htmlentities($_POST['dateRange']);

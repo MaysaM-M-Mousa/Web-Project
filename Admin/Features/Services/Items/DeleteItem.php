@@ -7,9 +7,14 @@
 //}
 require_once 'pdo.php';
 
-if (isset($_POST['item_id'], $_POST['deleteItem'])) {
+if (isset($_POST['item_id'], $_POST['deleteItem'],$_POST['image'])) {
 
     $item_id = htmlentities($_POST['item_id']);
+    $image = htmlentities(trim($_POST['image']));
+
+    $path = "../../../.." . $image;
+    unlink($path);
+
     $sql = 'delete from item where item_id=' . $item_id;
     $result = $pdo->exec($sql);
 

@@ -22,7 +22,7 @@ if (isset($_POST['item_id'], $_POST['editItem'])) {
 }
 
 if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_edit'], $_POST['sub_cat_id_edit']
-    , $_POST['item_description_edit'], $_POST['item_id_edit'], $_POST['image_edit'])) {
+    , $_POST['item_description_edit'], $_POST['item_id_edit'])) {
 
     $item_name_edit = htmlentities(trim($_POST['item_name_edit']));
     $item_price_edit = htmlentities(trim($_POST['item_price_edit']));
@@ -30,11 +30,9 @@ if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_ed
     $sub_cat_id_edit = htmlentities(trim($_POST['sub_cat_id_edit']));
     $item_description_edit = htmlentities(trim($_POST['item_description_edit']));
     $item_id_edit = htmlentities(trim($_POST['item_id_edit']));
-    $image_edit = htmlentities(trim($_POST['image_edit']));
 
     if (strlen($item_name_edit) < 1 || strlen($item_price_edit) < 1 || strlen($cat_id_edit) < 1 ||
-        strlen($sub_cat_id_edit) < 1 || strlen($item_description_edit) < 1 || strlen($item_id_edit) < 1 ||
-        strlen($image_edit) < 1) {
+        strlen($sub_cat_id_edit) < 1 || strlen($item_description_edit) < 1 || strlen($item_id_edit) < 1) {
         echo '<span style="color: red">All Fields Are Required!</span>';
         return;
     }
@@ -57,26 +55,61 @@ if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_ed
         return;
     }
 
-    // everything is ok, update
-    $sql = 'update item set item_name=:item_name,item_description=:item_description,item_price=:item_price
+    if (!empty($_FILES)) {
+
+        $sql = 'select image from item where item.item_id=' . $item_id_edit;
+        $stmt = $pdo->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        /////////////////////////////////////////////
+        $path = "../../../.." . $result['image'];
+        unlink($path);
+
+        $uniqueID = $item_id_edit;
+
+        $imageFullName = $_FILES['file']['name'];
+        $imageArray = explode('.', $imageFullName);
+        $imageExtension = $imageArray[1];
+        $newName = 'items' . $uniqueID;
+        $imageFullName = $newName . '.' . $imageExtension;
+        $newPath = "../../../../images/items/" . $imageFullName;
+        $databasePath = '/images/items/' . $imageFullName;
+        move_uploaded_file($_FILES["file"]["tmp_name"], $newPath);
+        //////////////////////////////////////////////////
+
+        $sql = 'update item set item_name=:item_name,item_description=:item_description,item_price=:item_price
             ,image=:image,sub_cat_id=:sub_cat_id where item_id=:item_id';
 
-    $result = $pdo->prepare($sql);
-    $result->execute(array(
-        ':item_name' => $item_name_edit,
-        ':item_description' => $item_description_edit,
-        ':item_price' => $item_price_edit,
-        ':image' => $image_edit,
-        ':sub_cat_id' => $sub_cat_id_edit,
-        ':item_id' => $item_id_edit
-    ));
+        $result = $pdo->prepare($sql);
+        $result->execute(array(
+            ':item_name' => $item_name_edit,
+            ':item_description' => $item_description_edit,
+            ':item_price' => $item_price_edit,
+            ':sub_cat_id' => $sub_cat_id_edit,
+            ':item_id' => $item_id_edit,
+            ':image' => $databasePath
+        ));
+    } else {
+
+        $sql = 'update item set item_name=:item_name,item_description=:item_description,item_price=:item_price
+            ,sub_cat_id=:sub_cat_id where item_id=:item_id';
+
+        $result = $pdo->prepare($sql);
+        $result->execute(array(
+            ':item_name' => $item_name_edit,
+            ':item_description' => $item_description_edit,
+            ':item_price' => $item_price_edit,
+            ':sub_cat_id' => $sub_cat_id_edit,
+            ':item_id' => $item_id_edit
+        ));
+    }
+
     echo '<span style="color: green">Successfully Updated!</span>';
     return;
 
 }
 
 ?>
-
 <div class="container forms animate__animated animate__fadeIn">
     <div id="back-btn" class="back-btn">
         <i class="fal fa-arrow-left"></i>
@@ -86,7 +119,8 @@ if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_ed
             <section>
                 <h1 class="main-h1">Edit <?php echo $row['item_name'] ?> Service Item</h1>
                 <hr class="line">
-                <p class="main-content">Please fill the form below with information about the the service category you want to
+                <p class="main-content">Please fill the form below with information about the the service category you
+                    want to
                     edit..</p>
             </section>
             <div class="row mx-3">
@@ -103,7 +137,7 @@ if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_ed
             <div class="row mx-3">
                 <label for="#itemDescriptionEdit" class="col-12 col-md-3">Description:</label>
                 <textarea class="col-12 col-md-9" placeholder="Item Description" id="itemDescriptionEdit" rows="5"
-                         ><?php echo $row['item_description'] ?></textarea>
+                ><?php echo $row['item_description'] ?></textarea>
             </div>
             <div class="row mx-3">
                 <label for="#mainCategory" class="col-12 col-md-3">Parent Category:</label>
@@ -143,13 +177,13 @@ if (isset($_POST['item_name_edit'], $_POST['item_price_edit'], $_POST['cat_id_ed
             <div class="row mx-3 mb-2">
                 <label for="zdrop" class="col-12 col-md-3">Photo:</label>
                 <div class="form-group files col-12 col-md-9">
-                    <input type="file" id="itemImage" class="form-control" multiple="false">
+                    <input type="file" id="itemImageEdit" class="form-control" multiple="false">
                 </div>
             </div>
             <div class="row mx-3">
                 <div class="col-12 offset-md-3 col-md-3">
                     <input class="btn btn-danger" id="deleteSubCategoryBTN" type="button"
-                           onclick="deleteItemBTN(<?php echo $row['item_id'] ?>)"
+                           onclick="deleteItemBTN(<?php echo $row['item_id'] ?>,<?php echo "'" . $row['image'] . "'" ?>)"
                            value="Delete Item">
                 </div>
                 <div class="col-12 offset-md-1 col-md-4">

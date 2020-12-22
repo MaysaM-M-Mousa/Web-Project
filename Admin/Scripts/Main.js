@@ -206,7 +206,7 @@ function setLoader() {
             }
         })
     })
- // AJAX for Items Menu
+    // AJAX for Items Menu
     $("#AllItemsLink").click(function () {
         $(".components li").removeClass("active");
         $("#servicesLink").addClass("active");
@@ -504,12 +504,13 @@ function EditCategory(cat_id) {
 }
 
 function submitChangingCategory(cat_id) {
-    var file_data = $('#catImage').prop('files')[0];
+
+    var file_data = $('#catImageEdit').prop('files')[0];
     var form_data = new FormData();
-    form_data.append('image_Edit', file_data);
-    form_data.append('cat_id_Edit',cat_id );
-    form_data.append('category_name_Edit',document.getElementById('categoryNameEdit').value);
-    form_data.append('description_Edit',  document.getElementById('categoryDescriptionEdit').value);
+    form_data.append('file', file_data);
+    form_data.append('cat_id_Edit', cat_id);
+    form_data.append('category_name_Edit', document.getElementById('categoryNameEdit').value);
+    form_data.append('description_Edit', document.getElementById('categoryDescriptionEdit').value);
 
     $.ajax({
         url: 'Features/Services/Categories/EditCategory.php', // point to server-side PHP script
@@ -525,10 +526,11 @@ function submitChangingCategory(cat_id) {
     });
 }
 
-function deleteCategoryBTN(cat_id) {
+function deleteCategoryBTN(cat_id, image) {
     $.post('Features/Services/Categories/DeleteCategory.php', {
         'deleteCategory': 'deleteCategory',
-        'cat_id': cat_id
+        'cat_id': cat_id,
+        'image': image
     }, function (data, status) {
         if (status === 'success') {
             document.getElementById('content').innerHTML = data;
@@ -563,6 +565,7 @@ function addSubCategoryBTN() {
         }
     });
 }
+
 function addItemBTN() {
 
     var file_data = $('#itemImage').prop('files')[0];
@@ -588,48 +591,29 @@ function addItemBTN() {
         }
     });
 }
-function deleteSubCategoryBTN(sub_cat_id) {
+
+function deleteSubCategoryBTN(sub_cat_id, image) {
     $.post('Features/Services/Sub-Categories/DeleteSubCategory.php', {
         'deleteSubCategory': 'deleteSubCategory',
-        'sub_cat_id': sub_cat_id
+        'sub_cat_id': sub_cat_id,
+        'image': image
     }, function (data, status) {
         if (status === 'success') {
             document.getElementById('content').innerHTML = data;
         }
     })
 }
-function deleteItemBTN(item_id) {
+
+function deleteItemBTN(item_id, image) {
     $.post('Features/Services/Items/DeleteItem.php', {
         'deleteItem': 'deleteItem',
-        'item_id': item_id
+        'item_id': item_id,
+        'image': image
     }, function (data, status) {
         if (status === 'success') {
             document.getElementById('content').innerHTML = data;
         }
     })
-}
-function addEmpBTN() {
-
-    var file_data = $('#empImage').prop('files')[0];
-    var form_data = new FormData();
-    form_data.append('file', file_data);
-    form_data.append('empID', document.getElementById('empID').value);
-    form_data.append('empSalary', document.getElementById('empSalary').value);
-    form_data.append('empJoiningDate', document.getElementById('empJoiningDate').value);
-    form_data.append('empPosition', document.getElementById('empPosition').value);
-    $.ajax({
-        url: 'Features/Staff/AddStaff.php', // point to server-side PHP script
-        dataType: 'text',  // what to expect back from the PHP script, if anything
-        cache: false,
-        contentType: false,
-        processData: false,
-        data: form_data,
-        type: 'post',
-        success: function (data) {
-            $("#empMSG").html(data); // display response from the PHP script, if any
-        }
-    });
-
 }
 
 
@@ -644,7 +628,7 @@ function EditSubCategory(sub_cat_id) {
         success: function (data) {
             $("#content").html(data);
             if ($("#back-btn").length > 0) {
-                $("#back-btn").on("click",function () {
+                $("#back-btn").on("click", function () {
                     $.ajax({
                         type: 'POST',
                         url: 'Features/Services/Sub-Categories/AllSubCategories.php',
@@ -665,13 +649,13 @@ function EditSubCategory(sub_cat_id) {
 }
 
 function submitChangingSubCategory(sub_cat_id) {
-    var file_data = $('#subCatImage').prop('files')[0];
+    var file_data = $('#subCatImageEdit').prop('files')[0];
     var form_data = new FormData();
     form_data.append('file', file_data);
     form_data.append('sub_cat_name_edit', document.getElementById('subCategoryNameEdit').value);
     form_data.append('description_edit', document.getElementById('subCategoryDescriptionEdit').value);
     form_data.append('sub_cat_id_edit', sub_cat_id);
-    form_data.append('cat_id_edit',document.getElementById('parentCategoryEdit').value);
+    form_data.append('cat_id_edit', document.getElementById('parentCategoryEdit').value);
 
     $.ajax({
         url: 'Features/Services/Sub-Categories/EditSubCategory.php', // point to server-side PHP script
@@ -682,21 +666,21 @@ function submitChangingSubCategory(sub_cat_id) {
         data: form_data,
         type: 'post',
         success: function (data) {
-            $("#editCatResult").html(data); // display response from the PHP script, if any
+            $("#editSubCatResult").html(data); // display response from the PHP script, if any
         }
     });
 
-    $.post('Features/Services/Sub-Categories/EditSubCategory.php', {
-        'sub_cat_name_edit': document.getElementById('subCategoryNameEdit').value,
-        'description_edit': document.getElementById('subCategoryDescriptionEdit').value,
-        'cat_id_edit': document.getElementById('parentCategoryEdit').value,
-        'sub_cat_id_edit': sub_cat_id,
-        'image_edit': 'none'
-    }, function (data, status) {
-        if (status === 'success') {
-            document.getElementById('editSubCatResult').innerHTML = data;
-        }
-    })
+    // $.post('Features/Services/Sub-Categories/EditSubCategory.php', {
+    //     'sub_cat_name_edit': document.getElementById('subCategoryNameEdit').value,
+    //     'description_edit': document.getElementById('subCategoryDescriptionEdit').value,
+    //     'cat_id_edit': document.getElementById('parentCategoryEdit').value,
+    //     'sub_cat_id_edit': sub_cat_id,
+    //     'image_edit': 'none'
+    // }, function (data, status) {
+    //     if (status === 'success') {
+    //         document.getElementById('editSubCatResult').innerHTML = data;
+    //     }
+    // })
 }
 
 function getSubCategories() {
@@ -742,15 +726,15 @@ function EditItem(item_id) {
 }
 
 function submitChangingItem(item_id) {
-    var file_data = $('#itemImage').prop('files')[0];
+    var file_data = $('#itemImageEdit').prop('files')[0];
     var form_data = new FormData();
     form_data.append('item_name_edit', document.getElementById('itemNameEdit').value);
-    form_data.append('item_price_edit',document.getElementById('itemPriceEdit').value );
-    form_data.append('cat_id_edit',document.getElementById('mainCategory').value);
-    form_data.append('sub_cat_id_edit',  document.getElementById('subCategory').value);
-    form_data.append('item_description_edit',  document.getElementById('itemDescriptionEdit').value);
-    form_data.append('item_id_edit',item_id );
-    form_data.append('file',  file_data);
+    form_data.append('item_price_edit', document.getElementById('itemPriceEdit').value);
+    form_data.append('cat_id_edit', document.getElementById('mainCategory').value);
+    form_data.append('sub_cat_id_edit', document.getElementById('subCategory').value);
+    form_data.append('item_description_edit', document.getElementById('itemDescriptionEdit').value);
+    form_data.append('item_id_edit', item_id);
+    form_data.append('file', file_data);
     $.ajax({
         url: 'Features/Services/Items/EditItem.php', // point to server-side PHP script
         dataType: 'text',  // what to expect back from the PHP script, if anything
@@ -766,7 +750,6 @@ function submitChangingItem(item_id) {
 }
 
 
-
 var counter = 0;
 
 function EditBook(book_id) {
@@ -777,7 +760,7 @@ function EditBook(book_id) {
         if (status === 'success')
             document.getElementById('content').innerHTML = data;
         if ($("#back-btn").length > 0) {
-            $("#back-btn").on("click",function () {
+            $("#back-btn").on("click", function () {
                 setLoader();
                 $.ajax({
                     type: 'POST',
@@ -797,6 +780,7 @@ function EditBook(book_id) {
 
     })
 }
+
 function EditBooking(roomType, person_id) {
 
     $.post('Features/Booking/EditBooking.php', {
@@ -820,6 +804,7 @@ function EditBooking(roomType, person_id) {
         }
     })
 }
+
 function submitChangingBooking(book_id, person_id) {
 
     $.post('Features/Booking/EditBooking.php', {
@@ -835,6 +820,7 @@ function submitChangingBooking(book_id, person_id) {
         }
     })
 }
+
 function deleteBook(book_id, start_date) {
     $.post('Features/Booking/DeleteBook.php', {
         'deleteBook': 'deleteBook',
@@ -849,6 +835,79 @@ function deleteBook(book_id, start_date) {
 
 
 // AJAX for employee
+
+function addEmpBTN() {
+
+    var file_data = $('#empImage').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    form_data.append('empID', document.getElementById('empID').value);
+    form_data.append('empSalary', document.getElementById('empSalary').value);
+    form_data.append('empJoiningDate', document.getElementById('empJoiningDate').value);
+    form_data.append('empPosition', document.getElementById('empPosition').value);
+    $.ajax({
+        url: 'Features/Staff/AddStaff.php', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function (data) {
+            $("#empMSG").html(data); // display response from the PHP script, if any
+        }
+    });
+
+}
+
+function EditEmployee(emp_id) {
+    $.post('Features/Staff/EditStaff.php', {
+        'empID': emp_id
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('content').innerHTML = data;
+        }
+    })
+
+}
+
+function submitSaveEmpChangesBTN(emp_id, person_id) {
+
+    var file_data = $('#empImageEdit').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    form_data.append('empIDEdit', emp_id);
+    form_data.append('personIDEdit', person_id);
+    form_data.append('empSalaryEdit', document.getElementById('empSalaryEdit').value);
+    form_data.append('empJoiningDateEdit', document.getElementById('empJoiningDateEdit').value);
+    form_data.append('empPositionEdit', document.getElementById('empPositionEdit').value);
+    $.ajax({
+        url: 'Features/Staff/EditStaff.php', // point to server-side PHP script
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type: 'post',
+        success: function (data) {
+            $("#editStaffResult").html(data); // display response from the PHP script, if any
+        }
+    });
+
+}
+
+function deleteEmployee(emp_id, image) {
+
+    $.post('Features/Staff/DeleteStaff.php', {
+        'deleteStaff': 'deleteStaff',
+        'employee_id': emp_id,
+        'image': image
+    }, function (data, status) {
+        if (status === 'success') {
+            document.getElementById('content').innerHTML = data;
+        }
+    })
+}
 
 
 // loading more cards for job applications

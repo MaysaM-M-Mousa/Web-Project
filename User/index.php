@@ -1,15 +1,13 @@
 <?php
-//session_start();
-//echo $_SESSION['book_id'];
-//if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
-//    header("Location: ../../Home/HTML/index.php");
-//    return;
-//}
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../Home/HTML/index.php");
+    return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>La Terra Santa &reg;</title>

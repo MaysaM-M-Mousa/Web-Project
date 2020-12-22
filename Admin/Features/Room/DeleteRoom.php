@@ -6,15 +6,23 @@
 //    return;
 //}
 require_once 'pdo.php';
-sleep(1);
 if (isset($_POST['room_id'], $_POST['deleteRoom'])) {
 
-    $room_id = htmlentities($_POST['room_id']);
-    $sql = 'delete from room where room_id=' . $room_id;
-    $result = $pdo->exec($sql);
+    try{
+        $room_id = htmlentities($_POST['room_id']);
+        $sql = 'delete from room where room_id=' . $room_id;
+        $result = $pdo->exec($sql);
 
-    require_once '../Room/AllRooms.php';
-    return;
+        require_once '../Room/AllRooms.php';
+        return;
+    }catch (Exception $e){
+        echo "<span style=\"font-family: 'Cabin', serif;transform: translate(-50%,-50%);position: absolute; top: 50%; left: 50%;;
+            color:darkred; font-size:20px;\">
+            You cant not delete a room that is under usage!</span>";
+
+        return;
+    }
+
 }
 
 ?>

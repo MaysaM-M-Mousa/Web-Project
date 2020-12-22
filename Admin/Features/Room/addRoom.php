@@ -13,18 +13,6 @@ $storeFolder = 'images/rooms';   //2
 if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST['badCapacity'],
     $_POST['roomType'], $_POST['roomDescription'])) {
 
-    if (!empty($_FILES)) {
-        $tempFile = $_FILES['file']['tmp_name'];          //3
-        $targetPath = dirname(__FILE__) . $ds . $storeFolder . $ds;  //4
-        $targetFile = $targetPath . $_FILES['file']['name'];  //5
-        move_uploaded_file($tempFile, $targetFile); //6
-
-
-    }else {
-        echo 'fuck abed';
-        return;
-    }
-
     $roomNumber = htmlentities($_POST['roomNumber']);
     $rentPerNight = htmlentities($_POST['rentPerNight']);
     $telNum = htmlentities($_POST['telNum']);
@@ -44,18 +32,25 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
         return;
     }
 
-    $sql = 'insert into room (room_number,room_description,room_type, bad_capacity,tel_number,rent_per_night)
+    try{
+        $sql = 'insert into room (room_number,room_description,room_type, bad_capacity,tel_number,rent_per_night)
                 values (:room_number,:room_description,:room_type,:bad_capacity,:tel_number,:rent_per_night)';
 
-    $statement = $pdo->prepare($sql);
-    $statement->execute(array(
-        ':room_number' => $roomNumber,
-        ':room_description' => $roomDescription,
-        ':room_type' => $roomType,
-        ':bad_capacity' => $badCapacity,
-        'tel_number' => $telNum,
-        'rent_per_night' => $rentPerNight
-    ));
+        $statement = $pdo->prepare($sql);
+        $statement->execute(array(
+            ':room_number' => $roomNumber,
+            ':room_description' => $roomDescription,
+            ':room_type' => $roomType,
+            ':bad_capacity' => $badCapacity,
+            'tel_number' => $telNum,
+            'rent_per_night' => $rentPerNight
+        ));
+    }catch (Exception $e){
+        echo '<span style="color: darkred"> There is already a room with that room number!</span>';
+        return;
+    }
+
+
 
     echo '<span style="color:darkgreen; font-family: \"Cabin\", serif;">Room was successfully added</span>';
     return;
@@ -120,7 +115,7 @@ if (isset($_POST['roomNumber'], $_POST['rentPerNight'], $_POST['telNum'], $_POST
                           cols="20"></textarea>
             </div>
             <div class="row">
-                <input id="addRoomBtn" type="button" class="btn btn-primary" value="Add Room">
+                <input id="addRoomBtn" type="button" class="btn btn-primary" onclick="" value="Add Room">
                 <div class="col-12" id="MSG"></div>
             </div>
         </div>

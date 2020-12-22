@@ -2,6 +2,11 @@
 // VALIDATION
 require 'pdo.php';
 sleep(1);
+session_start();
+if (!isset($_SESSION['person_id']) || !isset($_SESSION['person_role']) || !isset($_SESSION['activated']) || $_SESSION['activated'] != 1) {
+    header("Location: ../../../Home/HTML/index.php");
+    return;
+}
 
 $sql = "select sub_category.description,sub_category.sub_cat_id,sub_category.sub_cat_name,sub_category.image from sub_category left join category on sub_category.cat_id=category.cat_id where category.category_name='Food' and category.category_name is not null";
 $result = $pdo->query($sql);

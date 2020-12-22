@@ -125,7 +125,6 @@ if (isset($_POST['person_email']) && isset($_POST['person_pass'])) {
     </nav>
     <div id="mobile-menu-wrap"></div>
     <div class="top-social">
-
         <a href="#"><i class="fa fa-facebook"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-tripadvisor"></i></a>
