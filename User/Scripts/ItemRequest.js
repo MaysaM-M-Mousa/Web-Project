@@ -77,7 +77,7 @@ function orderItem(item_id, quantity) {
     }, function (data, status) {
         if (status === 'success') {
             document.getElementById('MSGTITLE').innerHTML = "Thank You!";
-            document.getElementById('MSGBODY').innerHTML = "We will deliver the meal to your room in the shortest time Possible";
+            document.getElementById('MSGBODY').innerHTML = (data);
             $("#trigermsg").click();
             seconds = 4;
             countdown();

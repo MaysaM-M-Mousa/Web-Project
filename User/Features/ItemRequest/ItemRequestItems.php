@@ -18,7 +18,7 @@ if (isset($_POST['sub_cat_id'], $_POST['itemChosen'])) {
 
 if (isset($_POST['item_id'], $_POST['quantity'])) {
     if (!isset($_SESSION['book_id']) || $_SESSION['book_id'] === 'none') {
-        echo '<span style="color: red">You are not allowed to order till you reserve and you are in hotel lands!</span>';
+        echo '<span style="color: darkred;font-family: Cabin, serif">You are not allowed to order till you reserve and you are in hotel lands!</span>';
         return;
     } else {
         $date = date('Y-m-d H:i:s');
@@ -48,7 +48,7 @@ if (isset($_POST['item_id'], $_POST['quantity'])) {
             ':quantity' => $quantity
         ));
 
-        echo '<span style="color: green">Thank you, your order is successfully registered!</span>';
+        echo '<span style="color: darkgreen; font-family: Cabin, serif;">We will deliver the Service to your room in the shortest time Possible</span>';
         return;
     }
 }

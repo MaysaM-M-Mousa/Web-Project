@@ -107,6 +107,10 @@ display: none;
     cursor:pointer;
 
 }
+.card-text{
+    overflow-y:auto ;
+    height: 78px;
+}
 .header h6{
     display: block;
     font-family: 'Cinzel Decorative', serif;
@@ -806,7 +810,9 @@ position: relative;
     margin-right: 0;
     border-right: 1px solid #B79040;
     width: auto;
-    height: 220px;
+    height: 205px;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .card-food img {
