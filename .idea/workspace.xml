@@ -7,10 +7,6 @@
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
       <path>
@@ -24,15 +20,60 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/maysam" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="FinaLLLLLLLLLL">
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="ready">
+      <change afterPath="$PROJECT_DIR$/images/categories/categories7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/categories/categories8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items22.13" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items25.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items27.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items29._SL1500_" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items30.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items31._SL1000_" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items32.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items33.4357e6e7e5735988499e8fe415f0a8cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items34._SL1000_" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items35.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items37.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items38.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items40.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items41.jpg_350x350" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items43.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items44.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories7.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories9.webp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" beforeDir="false" afterPath="$PROJECT_DIR$/User/Features/ItemRequest/ItemRequestCategories.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/User/Scripts/ItemRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/categories/categories6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/categories/categories6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/items/items9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/subcategories/subcategories4.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +94,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/consoles/db/10b5cd19-5faa-4a8d-9fd7-6ff53b733c06/console.sql" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -179,6 +223,9 @@
       <workItem from="1608569957783" duration="21737000" />
       <workItem from="1608615182658" duration="144000" />
       <workItem from="1608644717037" duration="9517000" />
+      <workItem from="1608674126351" duration="2170000" />
+      <workItem from="1608678671279" duration="341000" />
+      <workItem from="1608715925209" duration="1800000" />
     </task>
     <task id="LOCAL-00001" summary="home page">
       <created>1606265626691</created>
@@ -324,7 +371,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
