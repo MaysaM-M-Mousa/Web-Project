@@ -810,8 +810,6 @@ position: relative;
     margin-right: 0;
     border-right: 1px solid #B79040;
     width: auto;
-    height: 205px;
-    z-index: -1;
     overflow: hidden;
 }
 
