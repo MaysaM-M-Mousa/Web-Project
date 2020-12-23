@@ -29,10 +29,21 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="Fix POP UPs">
+    <list default="true" id="33d863f3-bc9c-4888-945e-7c09523787ba" name="Default Changelist" comment="fix Images">
+      <change afterPath="$PROJECT_DIR$/images/categories/categories10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/categories/categories9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/employees/employees2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items45.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items46.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items47.rsquare" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items48.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items49.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items50.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/items/items51.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories12.rsquare" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/subcategories/subcategories4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/User/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/subcategories/subcategories4.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -323,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608739686443</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix Images">
+      <created>1608741948267</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1608741948267</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +393,8 @@
     <MESSAGE value="User session ready + employee + edit for services + contact home but maybe it need to be ajax" />
     <MESSAGE value="FinaLLLLLLLLLL" />
     <MESSAGE value="Fix POP UPs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix POP UPs" />
+    <MESSAGE value="fix Images" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix Images" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Deployment" timestamp="1607176073908">
@@ -500,11 +519,11 @@
     </state>
     <state x="173" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608611198576" />
     <state x="346" y="80" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1607456806423" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608739694919">
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1608741951778">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="442" y="222" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1608615290655" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608739694919" />
+    <state x="552" y="313" key="Vcs.Push.Dialog.v2/0.0.1920.1160@0.0.1920.1160" timestamp="1608741951778" />
     <state x="586" y="326" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607189697272">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
